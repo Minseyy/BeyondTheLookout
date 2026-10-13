@@ -1,0 +1,8 @@
+group_type,group,net_satisfied_pct
+Overall,Overall,89
+Origin,Intrastate (NSW residents),90
+Origin,Interstate,85
+Age,18-34,85
+Age,35-49,89
+Age,50-64,94
+Age,65+,90

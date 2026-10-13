@@ -1,0 +1,158 @@
+park,park_full,lookouts,on_ground,platforms,viewpoints
+Blue Mountains NP,Blue Mountains National Park,125,89,6,30
+Outside NPWS estate,,73,27,33,7
+Morton NP,Morton National Park,49,33,15,1
+Oxley Wild Rivers NP,Oxley Wild Rivers National Park,36,12,22,2
+Nightcap NP,Nightcap National Park,28,3,3,0
+Kosciuszko NP,Kosciuszko National Park,28,3,15,10
+Beowa NP,Beowa National Park,23,2,11,0
+Wombeyan KCR,Wombeyan Karst Conservation Reserve,17,3,14,0
+Budderoo NP,Budderoo National Park,16,6,10,0
+Border Ranges NP,Border Ranges National Park,15,0,5,0
+Mount Jerusalem NP,Mount Jerusalem National Park,14,3,0,0
+Tomaree NP,Tomaree National Park,13,0,11,2
+Walgun Cape Byron SCA,Walgun Cape Byron State Conservation Area,13,7,6,0
+Guy Fawkes River NP,Guy Fawkes River National Park,13,4,4,5
+Sydney Harbour NP,Sydney Harbour National Park,11,4,7,0
+Bouddi NP,Bouddi National Park,11,6,5,0
+Coffs Coast RP,Coffs Coast Regional Park,10,3,7,0
+Warrumbungle NP,Warrumbungle National Park,10,10,0,0
+Mount Kaputar NP,Mount Kaputar National Park,9,1,7,1
+Wollemi NP,Wollemi National Park,8,4,0,1
+Royal NP,Royal National Park,8,3,1,4
+Brisbane Water NP,Brisbane Water National Park,8,6,2,0
+Yuraygir NP,Yuraygir National Park,8,0,2,6
+South East Forest NP,South East Forest National Park,8,1,6,1
+Abercrombie KCR,Abercrombie Karst Conservation Reserve,7,5,2,0
+Glenrock SCA,Glenrock State Conservation Area,7,0,6,1
+Barrington Tops NP,Barrington Tops National Park,7,2,4,1
+Wyrrabalong NP,Wyrrabalong National Park,7,1,3,3
+Coolah Tops NP,Coolah Tops National Park,7,5,1,1
+Ku-ring-gai Chase NP,Ku-ring-gai Chase National Park,6,3,2,1
+Murramarang NP,Murramarang National Park,6,0,6,0
+Guula Ngurra NP,Guula Ngurra National Park,5,1,0,4
+Kamay Botany Bay NP,Kamay Botany Bay National Park,5,0,5,0
+Myall Lakes NP,Myall Lakes National Park,5,0,2,1
+Watagans NP,Watagans National Park,5,5,0,0
+Dorrigo NP,Dorrigo National Park,5,0,5,0
+New England NP,New England National Park,5,0,3,2
+Kattang NR,Kattang Nature Reserve,5,3,2,0
+Sherwood NR,Sherwood Nature Reserve,5,0,1,4
+Whian Whian SCA,Whian Whian State Conservation Area,5,0,0,0
+Gibraltar Range NP,Gibraltar Range National Park,5,2,3,0
+Eurobodalla NP,Eurobodalla National Park,5,3,2,0
+Mimosa Rocks NP,Mimosa Rocks National Park,5,0,5,0
+Bungonia NP,Bungonia National Park,5,1,4,0
+Mungo NP,Mungo National Park,5,0,5,0
+Kanangra-Boyd NP,Kanangra-Boyd National Park,4,1,2,1
+Gardens of Stone SCA,Gardens of Stone State Conservation Area,4,3,0,1
+Sugarloaf SCA,Sugarloaf State Conservation Area,4,3,0,1
+Wollumbin NP,Wollumbin National Park,4,0,4,0
+Brindingabba NP,Brindingabba National Park,4,0,0,4
+Jervis Bay NP,Jervis Bay National Park,4,2,2,0
+Capertee NP,Capertee National Park,3,3,0,0
+Mugii Murum-ban SCA,Mugii Murum-ban State Conservation Area,3,2,0,1
+Berowra Valley NP,Berowra Valley National Park,3,3,0,0
+Bundjalung NP,Bundjalung National Park,3,2,1,0
+Arakoon NP,Arakoon National Park,3,0,3,0
+Moonee Beach NR,Moonee Beach Nature Reserve,3,0,1,2
+Dooragan NP,Dooragan National Park,3,0,3,0
+Ngambaa NR,Ngambaa Nature Reserve,3,0,0,0
+Mebbin NP,Mebbin National Park,3,0,0,0
+Washpool NP,Washpool National Park,3,0,2,1
+Kwiambal NP,Kwiambal National Park,3,2,1,0
+Gundabooka NP,Gundabooka National Park,3,0,2,1
+Timmallallie CCAZ1 NP,Timmallallie CCA Zone 1 National Park,3,2,1,0
+Dharawal NP,Dharawal National Park,3,0,3,0
+Bournda NP,Bournda National Park,3,0,2,1
+Conjola NP,Conjola National Park,3,0,3,0
+Cocoparra NP,Cocoparra National Park,3,3,0,0
+Mutawintji HS,Mutawintji Historic Site,3,0,3,0
+Mount Canobolas SCA,Mount Canobolas State Conservation Area,3,0,2,1
+Yengo NP,Yengo National Park,2,0,1,1
+Yellomundee RP,Yellomundee Regional Park,2,1,0,1
+Jenolan KCR,Jenolan Karst Conservation Reserve,2,1,0,1
+Parramatta River RP,Parramatta River Regional Park,2,0,1,1
+Coorabakh NP,Coorabakh National Park,2,1,1,0
+Munmorah SCA,Munmorah State Conservation Area,2,1,1,0
+Saltwater NP,Saltwater National Park,2,0,2,0
+Willi Willi NP,Willi Willi National Park,2,1,0,1
+Limeburners Creek NP,Limeburners Creek National Park,2,2,0,0
+Bongil Bongil NP,Bongil Bongil National Park,2,0,2,0
+Mount Hyland NR,Mount Hyland Nature Reserve,2,0,0,2
+Banyabba NR,Banyabba Nature Reserve,2,0,0,2
+Hat Head NP,Hat Head National Park,2,1,0,1
+Broken Head NR,Broken Head Nature Reserve,2,0,2,0
+Boonoo Boonoo NP,Boonoo Boonoo National Park,2,0,1,1
+Pilliga NR,Pilliga Nature Reserve,2,1,1,0
+Cathedral Rock NP,Cathedral Rock National Park,2,0,0,2
+Toorale SCA,Toorale State Conservation Area,2,1,1,0
+Deriah CCAZ2 AA,Deriah CCA Zone 2 Aboriginal Area,2,1,1,0
+Biamanga NP,Biamanga National Park,2,1,1,0
+Deua NP,Deua National Park,2,0,2,0
+Nadgee NR,Nadgee Nature Reserve,2,0,0,2
+Barren Grounds NR,Barren Grounds Nature Reserve,2,1,1,0
+Bomaderry Creek RP,Bomaderry Creek Regional Park,2,2,0,0
+Murramarang AA,Murramarang Aboriginal Area,2,0,2,0
+Killalea RP,Killalea Regional Park,2,0,2,0
+Wadbilliga NP,Wadbilliga National Park,2,0,2,0
+Sturt NP,Sturt National Park,2,0,1,1
+Weddin Mountains NP,Weddin Mountains National Park,2,2,0,0
+Yanga NP,Yanga National Park,2,0,2,0
+Gardens of Stone NP,Gardens of Stone National Park,1,0,0,1
+Goulburn River NP,Goulburn River National Park,1,0,1,0
+Burragorang SCA,Burragorang State Conservation Area,1,0,1,0
+Nattai NP,Nattai National Park,1,1,0,0
+Mount Royal NP,Mount Royal National Park,1,0,0,1
+Muogamarra NR,Muogamarra Nature Reserve,1,1,0,0
+Towra Point NR,Towra Point Nature Reserve,1,0,1,0
+Cattai NP,Cattai National Park,1,0,1,0
+William Howe RP,William Howe Regional Park,1,1,0,0
+Leacock RP,Leacock Regional Park,1,0,1,0
+Garawarra SCA,Garawarra State Conservation Area,1,1,0,0
+Scheyville NP,Scheyville National Park,1,0,1,0
+Lane Cove NP,Lane Cove National Park,1,0,1,0
+Towarri NP,Towarri National Park,1,0,1,0
+Scone Mountain NP,Scone Mountain National Park,1,0,0,1
+Burning Mountain NR,Burning Mountain Nature Reserve,1,0,1,0
+Wallingat NP,Wallingat National Park,1,1,0,0
+Booti Booti NP,Booti Booti National Park,1,0,1,0
+Tapin Tops NP,Tapin Tops National Park,1,0,1,0
+Jilliby SCA,Jilliby State Conservation Area,1,1,0,0
+Lake Macquarie SCA,Lake Macquarie State Conservation Area,1,1,0,0
+Blue Gum Hills RP,Blue Gum Hills Regional Park,1,0,1,0
+Wamberal Lagoon NR,Wamberal Lagoon Nature Reserve,1,0,1,0
+Hunter Wetlands NP,Hunter Wetlands National Park,1,0,1,0
+Popran NP,Popran National Park,1,0,0,1
+Toonumbar NP,Toonumbar National Park,1,0,1,0
+Boorganna NR,Boorganna Nature Reserve,1,0,1,0
+Bindarri NP,Bindarri National Park,1,0,1,0
+Yarriabini NP,Yarriabini National Park,1,1,0,0
+Cunnawarra NP,Cunnawarra National Park,1,1,0,0
+Muttonbird Island NR,Muttonbird Island Nature Reserve,1,0,1,0
+Chambigne NR,Chambigne Nature Reserve,1,0,0,1
+Crowdy Bay NP,Crowdy Bay National Park,1,0,1,0
+Mummel Gulf NP,Mummel Gulf National Park,1,1,0,0
+Bulagaranda (Mt Yarrowyck) AA,Bulagaranda (Mt Yarrowyck) Aboriginal Area,1,0,1,0
+Horton Falls CCAZ1 NP,Horton Falls CCA Zone 1 National Park,1,1,0,0
+Bald Rock NP,Bald Rock National Park,1,0,0,1
+Mann River NR,Mann River Nature Reserve,1,1,0,0
+Torrington SCA,Torrington State Conservation Area,1,0,1,0
+Barool NP,Barool National Park,1,1,0,0
+Goonoowigal CCAZ3 SCA,Goonoowigal CCA Zone 3 State Conservation Area,1,0,0,1
+Illawarra Escarpment SCA,Illawarra Escarpment State Conservation Area,1,0,1,0
+Bungonia SCA,Bungonia State Conservation Area,1,1,0,0
+Cambewarra Range NR,Cambewarra Range Nature Reserve,1,1,0,0
+Morton SCA,Morton State Conservation Area,1,0,0,1
+Meroo NP,Meroo National Park,1,0,1,0
+Cecil Hoskins NR,Cecil Hoskins Nature Reserve,1,0,1,0
+Conimbla NP,Conimbla National Park,1,1,0,0
+Goobang NP,Goobang National Park,1,0,1,0
+Nangar NP,Nangar National Park,1,0,1,0
+Mutawintji NP,Mutawintji National Park,1,0,1,0
+Murray Valley RP,Murray Valley Regional Park,1,0,0,1
+Narriearra Caryapundy Swamp NP,Narriearra Caryapundy Swamp National Park,1,1,0,0
+Woomargama NP,Woomargama National Park,1,0,0,1
+The Rock NR,The Rock Nature Reserve,1,1,0,0
+Woomargama SCA,Woomargama State Conservation Area,1,0,1,0
+Bimberi NR,Bimberi Nature Reserve,1,0,0,1
