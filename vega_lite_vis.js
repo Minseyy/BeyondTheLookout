@@ -488,6 +488,10 @@ const regionsMap = {
                 values: [1000000, 4000000, 8000000],
                 format: "~s",
                 orient: "bottom",
+                symbolFillColor: CORAL, // same orange as the circles on the map
+                symbolOpacity: 0.9,
+                symbolStrokeColor: "white",
+                symbolStrokeWidth: 1.2,
               },
             },
             order: { field: "visits_2024_25", sort: "descending" },
@@ -1212,8 +1216,7 @@ const durationChart = {
   transform: [
     { fold: ["intrastate_pct", "interstate_pct"], as: ["visitor", "pct"] },
     {
-      calculate:
-        "datum.visitor == 'intrastate_pct' ? 'Local' : 'Non-local'",
+      calculate: "datum.visitor == 'intrastate_pct' ? 'Local' : 'Non-local'",
       as: "visitor",
     },
   ],
