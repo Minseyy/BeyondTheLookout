@@ -1115,6 +1115,14 @@ const originChart = {
   width: "container",
   height: 300,
   data: { url: "data/visitor_origin_2024_25.csv" },
+  transform: [
+    {
+      calculate:
+        "datum.group == 'Intrastate' ? 'Local' : datum.group == 'Interstate' ? 'Non-local' : datum.group",
+      as: "group",
+    },
+    { filter: "datum.group_type != 'Overall'" },
+  ],
   mark: "bar",
   encoding: {
     y: { field: "origin", type: "nominal", sort: "-x", title: null },
@@ -1141,8 +1149,7 @@ const tripRoleChart = {
   transform: [
     { fold: ["intrastate_pct", "interstate_pct"], as: ["visitor", "pct"] },
     {
-      calculate:
-        "datum.visitor == 'intrastate_pct' ? 'NSW residents' : 'Interstate'",
+      calculate: "datum.visitor == 'intrastate_pct' ? 'Local' : 'Non-local'",
       as: "visitor",
     },
   ],
@@ -1206,7 +1213,7 @@ const durationChart = {
     { fold: ["intrastate_pct", "interstate_pct"], as: ["visitor", "pct"] },
     {
       calculate:
-        "datum.visitor == 'intrastate_pct' ? 'NSW residents' : 'Interstate'",
+        "datum.visitor == 'intrastate_pct' ? 'Local' : 'Non-local'",
       as: "visitor",
     },
   ],
@@ -1258,6 +1265,13 @@ const satisfactionChart = {
   width: "container",
   height: 240,
   data: { url: "data/satisfaction_2024_25.csv" },
+  transform: [
+    {
+      calculate:
+        "datum.group == 'Intrastate (NSW residents)' ? 'Local' : datum.group == 'Interstate' ? 'Non-local' : datum.group",
+      as: "group",
+    },
+  ],
   layer: [
     {
       transform: [{ filter: "datum.group_type != 'Overall'" }],
@@ -1304,7 +1318,7 @@ const DIFFICULTY = [
 ];
 
 // 3a. The waffle is built when the page loads, from tracks_by_class.csv
-const WAFFLE_SIZE = 320; 
+const WAFFLE_SIZE = 320;
 async function buildWaffle() {
   const rows = await loadCSV("data/tracks_by_class.csv");
 
@@ -1366,7 +1380,12 @@ async function buildWaffle() {
     height: WAFFLE_SIZE,
     data: { values: squares },
 
-        mark: { type: "square", size: Math.pow(WAFFLE_SIZE / 10 * 0.85, 2), stroke: "white", strokeWidth: 1.5 },
+    mark: {
+      type: "square",
+      size: Math.pow((WAFFLE_SIZE / 10) * 0.85, 2),
+      stroke: "white",
+      strokeWidth: 1.5,
+    },
     encoding: {
       x: { field: "col", type: "ordinal", axis: null },
       y: { field: "row", type: "ordinal", axis: null },

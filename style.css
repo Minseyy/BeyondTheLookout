@@ -678,7 +678,6 @@ h1, h2, .lead, .stat dd, .marker {
    10. Footer: one small green strip of sources
    ===================================================================== */
 .site-footer {
-  margin-top: 72px;
   /* full-width green bar; the text lines up with the 1100px page column */
   padding: 14px max(clamp(16px, 4vw, 40px), calc((100% - 1100px) / 2 + clamp(16px, 4vw, 40px)));
   background: var(--green-dark);
