@@ -1,0 +1,12 @@
+origin,state,visits,lon,lat,label_pos
+ACT,ACT,1692130,149.13,-35.28,south
+Melbourne,VIC,2260821,144.96,-37.81,south
+Regional VIC,VIC,1194316,142.3,-36.4,west
+Brisbane,QLD,1955529,153.03,-27.47,north
+Regional QLD,QLD,2147837,145.5,-22.0,north
+Adelaide,SA,340212,138.6,-34.93,north
+Regional SA & NT,SA & NT,759353,134.5,-27.5,north
+Perth,WA,79059,115.86,-31.95,south
+Regional WA,WA,62267,121.5,-26.0,north
+Hobart,TAS,85825,147.33,-42.88,east
+Regional TAS,TAS,196633,146.0,-41.6,west

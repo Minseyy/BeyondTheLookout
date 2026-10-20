@@ -1,0 +1,349 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Where interstate park visitors come from",
+    "subtitle": [
+      "Lines into NSW, thicker = more visits to NSW national parks, 2024/25.",
+      "Interstate visitors made 10.8 million visits; NSW residents made the other 54.8 million."
+    ]
+  },
+  "width": "container",
+  "height": 380,
+  "projection": {
+    "type": "conicEqualArea",
+    "parallels": [
+      -18,
+      -36
+    ],
+    "rotate": [
+      -132,
+      0
+    ]
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "data/australia_states.json",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#f7f2e4",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "color": {
+          "condition": {
+            "test": "datum.properties.is_nsw",
+            "value": "#cfe3c4"
+          },
+          "value": "#e9e4d8"
+        },
+        "tooltip": [
+          {
+            "field": "properties.state",
+            "title": "State"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/interstate_flows_2024_25.csv",
+        "format": {
+          "parse": {
+            "visits": "number",
+            "lon": "number",
+            "lat": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "calculate": "147.6",
+          "as": "dlon"
+        },
+        {
+          "calculate": "-32.3",
+          "as": "dlat"
+        },
+        {
+          "calculate": "datum.origin + ' ' + (datum.visits >= 1e6 ? format(datum.visits / 1e6, '.1f') + 'M' : format(datum.visits / 1e3, '.0f') + 'k')",
+          "as": "label"
+        }
+      ],
+      "layer": [
+        {
+          "mark": {
+            "type": "rule",
+            "color": "#e76f51",
+            "opacity": 0.65,
+            "strokeCap": "round"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "longitude2": {
+              "field": "dlon"
+            },
+            "latitude2": {
+              "field": "dlat"
+            },
+            "size": {
+              "field": "visits",
+              "type": "quantitative",
+              "scale": {
+                "range": [
+                  1,
+                  14
+                ]
+              },
+              "legend": null
+            },
+            "tooltip": [
+              {
+                "field": "origin",
+                "title": "From"
+              },
+              {
+                "field": "visits",
+                "title": "Visits to NSW parks",
+                "format": ","
+              }
+            ]
+          }
+        },
+        {
+          "mark": {
+            "type": "circle",
+            "color": "#8a3b24",
+            "opacity": 0.9,
+            "stroke": "white",
+            "strokeWidth": 1
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "size": {
+              "field": "visits",
+              "type": "quantitative",
+              "scale": {
+                "range": [
+                  20,
+                  320
+                ]
+              },
+              "legend": null
+            },
+            "tooltip": [
+              {
+                "field": "origin",
+                "title": "From"
+              },
+              {
+                "field": "visits",
+                "title": "Visits to NSW parks",
+                "format": ","
+              }
+            ]
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.label_pos == 'east'"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "dx": 10,
+            "dy": 0,
+            "baseline": "middle",
+            "fontSize": 11,
+            "color": "#2b2b2b"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "label"
+            }
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.label_pos == 'west'"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "right",
+            "dx": -10,
+            "dy": 0,
+            "baseline": "middle",
+            "fontSize": 11,
+            "color": "#2b2b2b"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "label"
+            }
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.label_pos == 'north'"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "center",
+            "dx": 0,
+            "dy": -14,
+            "baseline": "middle",
+            "fontSize": 11,
+            "color": "#2b2b2b"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "label"
+            }
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.label_pos == 'south'"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "center",
+            "dx": 0,
+            "dy": 14,
+            "baseline": "middle",
+            "fontSize": 11,
+            "color": "#2b2b2b"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "label"
+            }
+          }
+        }
+      ],
+      "resolve": {
+        "scale": {
+          "size": "independent"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "lon": 147.6,
+            "lat": -32.3,
+            "t": "NSW national parks"
+          }
+        ]
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "circle",
+            "size": 160,
+            "color": "#1f3d17"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "dx": 10,
+            "dy": -10,
+            "fontSize": 12,
+            "fontWeight": "bold",
+            "color": "#1f3d17"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "t"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}

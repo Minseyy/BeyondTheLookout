@@ -43,6 +43,7 @@ body {
   font-family: var(--body);
   font-size: 17px;
   line-height: 1.7;
+  overflow-x: hidden;
 }
 
 h1, h2, h3 {
@@ -264,14 +265,16 @@ a {
 }
 
 .stop:not(.stop-start) {
-  padding-top: 52px;                 /* room for the band above the heading */
+  padding-top: 52px;
+  /* room for the band above the heading */
 }
 
 .stop:not(.stop-start)::before {
   content: "";
   position: absolute;
   top: 12px;
-  left: calc(var(--gutter) / 2);     /* starts at the centre of the marker */
+  left: calc(var(--gutter) / 2);
+  /* starts at the centre of the marker */
   right: 0;
   height: 24px;
   background: var(--green-dark);
@@ -564,6 +567,102 @@ a {
 }
 
 /* =====================================================================
+   Section 2 info panel: one top-20 park, filled in by main.js
+   ===================================================================== */
+.park-info {
+  margin: 18px 0 8px;
+  padding: 20px 24px;
+}
+
+.park-info-empty {
+  margin: 0;
+  font-style: italic;
+  color: var(--muted);
+}
+
+.park-info-body {
+  display: grid;
+  grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+  gap: 20px 28px;
+  align-items: start;
+}
+
+.park-info-body.no-photo {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.park-info figure {
+  margin: 0;
+}
+
+.park-info img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 1px solid var(--line);
+}
+
+.park-info figcaption {
+  margin-top: 4px;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.park-info h3 {
+  margin: 0 0 2px;
+  font-size: clamp(1.3rem, 2.6vw, 1.6rem);
+}
+
+.park-info-region {
+  margin: 0 0 10px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.park-info-text {
+  margin: 0 0 14px;
+  max-width: 38em;
+}
+
+.park-info-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 10px 18px;
+  margin: 0 0 14px;
+}
+
+.park-info-stats dt {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.park-info-stats dd {
+  margin: 0;
+  font-family: var(--heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--green-dark);
+}
+
+.park-info-link {
+  padding: 0 0 1px;
+  border: none;
+  border-bottom: 2px solid var(--coral);
+  background: none;
+  font: inherit;
+  font-size: 0.9rem;
+  color: var(--coral);
+  cursor: pointer;
+}
+
+.park-info-link:hover {
+  color: var(--green);
+  border-bottom-color: var(--green);
+}
+
+/* =====================================================================
    Takeaways: big number + sentence, with a "field notes" label
    ===================================================================== */
 .takeaway {
@@ -710,6 +809,10 @@ a {
     grid-template-columns: minmax(0, 1fr);
   }
 
+  .park-info-body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .pair>div+div {
     border-left: none;
     border-top: 1px solid var(--rule);
@@ -754,3 +857,73 @@ a {
     border-top: 1px solid var(--rule);
   }
 }
+
+.rank-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.rank-table caption {
+  text-align: left;
+  font-family: Fraunces, Georgia, serif;
+  font-size: 1rem;
+  color: #1f3d17;
+  padding-bottom: 0.5rem;
+}
+
+.rank-table th {
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b6b6b;
+  padding: 0.4rem 0.6rem;
+  border-bottom: 2px solid #1f3d17;
+}
+
+.rank-table td {
+  padding: 0.45rem 0.6rem;
+  border-bottom: 1px solid #ecebe4;
+}
+
+.rank-table td:first-child {
+  width: 3rem;
+  font-family: Fraunces, Georgia, serif;
+  font-weight: 700;
+  color: #e76f51;
+}
+
+.rank-table tr.hl td {
+  font-weight: 600;
+  color: #1f3d17;
+}
+
+
+/* Radio buttons for the mosaic toggle (section 5) */
+.vega-bindings input[type="radio"] {
+  accent-color: var(--green);
+  margin: 0 4px 0 12px;
+  vertical-align: -2px;
+}
+
+.vega-bindings label {
+  cursor: pointer;
+}
+
+/* Top 10 activities table (section 7) - skip this block if you already added it */
+.rank-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+.rank-table caption {
+  text-align: left; font-family: Fraunces, Georgia, serif; font-size: 1rem;
+  color: #1f3d17; padding-bottom: 0.5rem;
+}
+.rank-table th {
+  text-align: left; font-size: 0.75rem; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.05em; color: #6b6b6b; padding: 0.4rem 0.6rem; border-bottom: 2px solid #1f3d17;
+}
+.rank-table td { padding: 0.45rem 0.6rem; border-bottom: 1px solid #ecebe4; }
+.rank-table td:first-child {
+  width: 3rem; font-family: Fraunces, Georgia, serif; font-weight: 700; color: #e76f51;
+}
+.rank-table tr.hl td { font-weight: 600; color: #1f3d17; }

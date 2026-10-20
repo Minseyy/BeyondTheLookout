@@ -1,0 +1,17 @@
+question,origin,answer,order,pct,origin_visits,x0,x1,colour,text_colour
+Why they came,NSW visitors,Main reason for the trip,0,70,54816130,0,0.8297,#8a3b24,white
+Why they came,Interstate visitors,Main reason for the trip,0,28,10773982,0.8417,1,#8a3b24,white
+Why they came,NSW visitors,Part of the reason,1,18,54816130,0,0.8297,#e9c46a,#2b2b2b
+Why they came,Interstate visitors,Part of the reason,1,37,10773982,0.8417,1,#e9c46a,#2b2b2b
+Why they came,NSW visitors,Not a reason / can't say,2,12,54816130,0,0.8297,#d9d4c7,#2b2b2b
+Why they came,Interstate visitors,Not a reason / can't say,2,35,10773982,0.8417,1,#d9d4c7,#2b2b2b
+How long they stayed,NSW visitors,Day trip,0,88,54816130,0,0.8297,#8a3b24,white
+How long they stayed,Interstate visitors,Day trip,0,69,10773982,0.8417,1,#8a3b24,white
+How long they stayed,NSW visitors,Stayed one night or more,1,10,54816130,0,0.8297,#e9c46a,#2b2b2b
+How long they stayed,Interstate visitors,Stayed one night or more,1,28,10773982,0.8417,1,#e9c46a,#2b2b2b
+How long they stayed,NSW visitors,Can't say,2,2,54816130,0,0.8297,#d9d4c7,#2b2b2b
+How long they stayed,Interstate visitors,Can't say,2,2,10773982,0.8417,1,#d9d4c7,#2b2b2b
+How satisfied they were,NSW visitors,Satisfied,0,90,54816130,0,0.8297,#8a3b24,white
+How satisfied they were,Interstate visitors,Satisfied,0,85,10773982,0.8417,1,#8a3b24,white
+How satisfied they were,NSW visitors,Neutral or dissatisfied,1,10,54816130,0,0.8297,#d9d4c7,#2b2b2b
+How satisfied they were,Interstate visitors,Neutral or dissatisfied,1,15,10773982,0.8417,1,#d9d4c7,#2b2b2b
