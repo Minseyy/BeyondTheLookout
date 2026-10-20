@@ -1,0 +1,1358 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Share of park visits by region",
+  "autosize": "pad",
+  "columns": 3,
+  "spacing": {
+    "row": 14,
+    "column": 26
+  },
+  "params": [
+    {
+      "name": "hoverRegion",
+      "select": {
+        "type": "point",
+        "fields": [
+          "branch"
+        ],
+        "on": "mouseover",
+        "clear": "mouseout"
+      },
+      "views": [
+        "share_map_0",
+        "share_map_1",
+        "share_map_2",
+        "share_map_3",
+        "share_map_4",
+        "share_map_5",
+        "share_map_6",
+        "share_map_7",
+        "share_map_8"
+      ]
+    }
+  ],
+  "concat": [
+    {
+      "width": 240,
+      "height": 200,
+      "title": {
+        "text": "2008",
+        "font": "Fraunces, Georgia, serif",
+        "fontSize": 15,
+        "color": "#1f3d17",
+        "offset": 4
+      },
+      "projection": {
+        "type": "mercator"
+      },
+      "view": {
+        "fill": "#a8dcef",
+        "stroke": null
+      },
+      "layer": [
+        {
+          "name": "share_map_0",
+          "data": {
+            "url": "data/region_share_maps.json"
+          },
+          "transform": [
+            {
+              "filter": "datum.year == '2008'"
+            }
+          ],
+          "mark": {
+            "type": "geoshape",
+            "cursor": "pointer"
+          },
+          "encoding": {
+            "color": {
+              "field": "share",
+              "type": "quantitative",
+              "title": "Share of all visits (%)",
+              "scale": {
+                "type": "threshold",
+                "domain": [
+                  3,
+                  6,
+                  10,
+                  15,
+                  30,
+                  40
+                ],
+                "range": [
+                  "#f1f7e9",
+                  "#d6ecc6",
+                  "#b3dba0",
+                  "#86c17a",
+                  "#57a05a",
+                  "#2f7a3d",
+                  "#173d1a"
+                ]
+              },
+              "legend": {
+                "orient": "right"
+              }
+            },
+            "stroke": {
+              "condition": {
+                "param": "hoverRegion",
+                "empty": false,
+                "value": "#e76f51"
+              },
+              "value": "white"
+            },
+            "strokeWidth": {
+              "condition": {
+                "param": "hoverRegion",
+                "empty": false,
+                "value": 2.2
+              },
+              "value": 0.6
+            },
+            "tooltip": [
+              {
+                "field": "branch",
+                "title": "NPWS region"
+              },
+              {
+                "field": "year",
+                "title": "Survey year"
+              },
+              {
+                "field": "share",
+                "title": "Share of visits (%)",
+                "format": ".1f"
+              },
+              {
+                "field": "yearTotal",
+                "title": "All 8 regions add to (%)",
+                "format": ".1f"
+              }
+            ]
+          }
+        },
+        {
+          "data": {
+            "url": "data/region_share_maps.json"
+          },
+          "transform": [
+            {
+              "filter": "datum.year == '2008' && datum.branch == 'Greater Sydney'"
+            },
+            {
+              "calculate": "'Sydney\\n' + round(datum.share) + '%'",
+              "as": "label"
+            },
+            {
+              "calculate": "151.5",
+              "as": "lon"
+            },
+            {
+              "calculate": "-34.5",
+              "as": "lat"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "lineBreak": "\n",
+            "fontSize": 11,
+            "fontWeight": "bold",
+            "color": "#8a3b24"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "label",
+              "type": "nominal"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "width": 240,
+      "height": 200,
+      "title": {
+        "text": "2010",
+        "font": "Fraunces, Georgia, serif",
+        "fontSize": 15,
+        "color": "#1f3d17",
+        "offset": 4
+      },
+      "projection": {
+        "type": "mercator"
+      },
+      "view": {
+        "fill": "#a8dcef",
+        "stroke": null
+      },
+      "layer": [
+        {
+          "name": "share_map_1",
+          "data": {
+            "url": "data/region_share_maps.json"
+          },
+          "transform": [
+            {
+              "filter": "datum.year == '2010'"
+            }
+          ],
+          "mark": {
+            "type": "geoshape",
+            "cursor": "pointer"
+          },
+          "encoding": {
+            "color": {
+              "field": "share",
+              "type": "quantitative",
+              "title": "Share of all visits (%)",
+              "scale": {
+                "type": "threshold",
+                "domain": [
+                  3,
+                  6,
+                  10,
+                  15,
+                  30,
+                  40
+                ],
+                "range": [
+                  "#f1f7e9",
+                  "#d6ecc6",
+                  "#b3dba0",
+                  "#86c17a",
+                  "#57a05a",
+                  "#2f7a3d",
+                  "#173d1a"
+                ]
+              },
+              "legend": {
+                "orient": "right"
+              }
+            },
+            "stroke": {
+              "condition": {
+                "param": "hoverRegion",
+                "empty": false,
+                "value": "#e76f51"
+              },
+              "value": "white"
+            },
+            "strokeWidth": {
+              "condition": {
+                "param": "hoverRegion",
+                "empty": false,
+                "value": 2.2
+              },
+              "value": 0.6
+            },
+            "tooltip": [
+              {
+                "field": "branch",
+                "title": "NPWS region"
+              },
+              {
+                "field": "year",
+                "title": "Survey year"
+              },
+              {
+                "field": "share",
+                "title": "Share of visits (%)",
+                "format": ".1f"
+              },
+              {
+                "field": "yearTotal",
+                "title": "All 8 regions add to (%)",
+                "format": ".1f"
+              }
+            ]
+          }
+        },
+        {
+          "data": {
+            "url": "data/region_share_maps.json"
+          },
+          "transform": [
+            {
+              "filter": "datum.year == '2010' && datum.branch == 'Greater Sydney'"
+            },
+            {
+              "calculate": "'Sydney\\n' + round(datum.share) + '%'",
+              "as": "label"
+            },
+            {
+              "calculate": "151.5",
+              "as": "lon"
+            },
+            {
+              "calculate": "-34.5",
+              "as": "lat"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "lineBreak": "\n",
+            "fontSize": 11,
+            "fontWeight": "bold",
+            "color": "#8a3b24"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "label",
+              "type": "nominal"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "width": 240,
+      "height": 200,
+      "title": {
+        "text": "2012",
+        "font": "Fraunces, Georgia, serif",
+        "fontSize": 15,
+        "color": "#1f3d17",
+        "offset": 4
+      },
+      "projection": {
+        "type": "mercator"
+      },
+      "view": {
+        "fill": "#a8dcef",
+        "stroke": null
+      },
+      "layer": [
+        {
+          "name": "share_map_2",
+          "data": {
+            "url": "data/region_share_maps.json"
+          },
+          "transform": [
+            {
+              "filter": "datum.year == '2012'"
+            }
+          ],
+          "mark": {
+            "type": "geoshape",
+            "cursor": "pointer"
+          },
+          "encoding": {
+            "color": {
+              "field": "share",
+              "type": "quantitative",
+              "title": "Share of all visits (%)",
+              "scale": {
+                "type": "threshold",
+                "domain": [
+                  3,
+                  6,
+                  10,
+                  15,
+                  30,
+                  40
+                ],
+                "range": [
+                  "#f1f7e9",
+                  "#d6ecc6",
+                  "#b3dba0",
+                  "#86c17a",
+                  "#57a05a",
+                  "#2f7a3d",
+                  "#173d1a"
+                ]
+              },
+              "legend": {
+                "orient": "right"
+              }
+            },
+            "stroke": {
+              "condition": {
+                "param": "hoverRegion",
+                "empty": false,
+                "value": "#e76f51"
+              },
+              "value": "white"
+            },
+            "strokeWidth": {
+              "condition": {
+                "param": "hoverRegion",
+                "empty": false,
+                "value": 2.2
+              },
+              "value": 0.6
+            },
+            "tooltip": [
+              {
+                "field": "branch",
+                "title": "NPWS region"
+              },
+              {
+                "field": "year",
+                "title": "Survey year"
+              },
+              {
+                "field": "share",
+                "title": "Share of visits (%)",
+                "format": ".1f"
+              },
+              {
+                "field": "yearTotal",
+                "title": "All 8 regions add to (%)",
+                "format": ".1f"
+              }
+            ]
+          }
+        },
+        {
+          "data": {
+            "url": "data/region_share_maps.json"
+          },
+          "transform": [
+            {
+              "filter": "datum.year == '2012' && datum.branch == 'Greater Sydney'"
+            },
+            {
+              "calculate": "'Sydney\\n' + round(datum.share) + '%'",
+              "as": "label"
+            },
+            {
+              "calculate": "151.5",
+              "as": "lon"
+            },
+            {
+              "calculate": "-34.5",
+              "as": "lat"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "lineBreak": "\n",
+            "fontSize": 11,
+            "fontWeight": "bold",
+            "color": "#8a3b24"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "label",
+              "type": "nominal"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "width": 240,
+      "height": 200,
+      "title": {
+        "text": "2014",
+        "font": "Fraunces, Georgia, serif",
+        "fontSize": 15,
+        "color": "#1f3d17",
+        "offset": 4
+      },
+      "projection": {
+        "type": "mercator"
+      },
+      "view": {
+        "fill": "#a8dcef",
+        "stroke": null
+      },
+      "layer": [
+        {
+          "name": "share_map_3",
+          "data": {
+            "url": "data/region_share_maps.json"
+          },
+          "transform": [
+            {
+              "filter": "datum.year == '2014'"
+            }
+          ],
+          "mark": {
+            "type": "geoshape",
+            "cursor": "pointer"
+          },
+          "encoding": {
+            "color": {
+              "field": "share",
+              "type": "quantitative",
+              "title": "Share of all visits (%)",
+              "scale": {
+                "type": "threshold",
+                "domain": [
+                  3,
+                  6,
+                  10,
+                  15,
+                  30,
+                  40
+                ],
+                "range": [
+                  "#f1f7e9",
+                  "#d6ecc6",
+                  "#b3dba0",
+                  "#86c17a",
+                  "#57a05a",
+                  "#2f7a3d",
+                  "#173d1a"
+                ]
+              },
+              "legend": {
+                "orient": "right"
+              }
+            },
+            "stroke": {
+              "condition": {
+                "param": "hoverRegion",
+                "empty": false,
+                "value": "#e76f51"
+              },
+              "value": "white"
+            },
+            "strokeWidth": {
+              "condition": {
+                "param": "hoverRegion",
+                "empty": false,
+                "value": 2.2
+              },
+              "value": 0.6
+            },
+            "tooltip": [
+              {
+                "field": "branch",
+                "title": "NPWS region"
+              },
+              {
+                "field": "year",
+                "title": "Survey year"
+              },
+              {
+                "field": "share",
+                "title": "Share of visits (%)",
+                "format": ".1f"
+              },
+              {
+                "field": "yearTotal",
+                "title": "All 8 regions add to (%)",
+                "format": ".1f"
+              }
+            ]
+          }
+        },
+        {
+          "data": {
+            "url": "data/region_share_maps.json"
+          },
+          "transform": [
+            {
+              "filter": "datum.year == '2014' && datum.branch == 'Greater Sydney'"
+            },
+            {
+              "calculate": "'Sydney\\n' + round(datum.share) + '%'",
+              "as": "label"
+            },
+            {
+              "calculate": "151.5",
+              "as": "lon"
+            },
+            {
+              "calculate": "-34.5",
+              "as": "lat"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "lineBreak": "\n",
+            "fontSize": 11,
+            "fontWeight": "bold",
+            "color": "#8a3b24"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "label",
+              "type": "nominal"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "width": 240,
+      "height": 200,
+      "title": {
+        "text": "2016",
+        "font": "Fraunces, Georgia, serif",
+        "fontSize": 15,
+        "color": "#1f3d17",
+        "offset": 4
+      },
+      "projection": {
+        "type": "mercator"
+      },
+      "view": {
+        "fill": "#a8dcef",
+        "stroke": null
+      },
+      "layer": [
+        {
+          "name": "share_map_4",
+          "data": {
+            "url": "data/region_share_maps.json"
+          },
+          "transform": [
+            {
+              "filter": "datum.year == '2016'"
+            }
+          ],
+          "mark": {
+            "type": "geoshape",
+            "cursor": "pointer"
+          },
+          "encoding": {
+            "color": {
+              "field": "share",
+              "type": "quantitative",
+              "title": "Share of all visits (%)",
+              "scale": {
+                "type": "threshold",
+                "domain": [
+                  3,
+                  6,
+                  10,
+                  15,
+                  30,
+                  40
+                ],
+                "range": [
+                  "#f1f7e9",
+                  "#d6ecc6",
+                  "#b3dba0",
+                  "#86c17a",
+                  "#57a05a",
+                  "#2f7a3d",
+                  "#173d1a"
+                ]
+              },
+              "legend": {
+                "orient": "right"
+              }
+            },
+            "stroke": {
+              "condition": {
+                "param": "hoverRegion",
+                "empty": false,
+                "value": "#e76f51"
+              },
+              "value": "white"
+            },
+            "strokeWidth": {
+              "condition": {
+                "param": "hoverRegion",
+                "empty": false,
+                "value": 2.2
+              },
+              "value": 0.6
+            },
+            "tooltip": [
+              {
+                "field": "branch",
+                "title": "NPWS region"
+              },
+              {
+                "field": "year",
+                "title": "Survey year"
+              },
+              {
+                "field": "share",
+                "title": "Share of visits (%)",
+                "format": ".1f"
+              },
+              {
+                "field": "yearTotal",
+                "title": "All 8 regions add to (%)",
+                "format": ".1f"
+              }
+            ]
+          }
+        },
+        {
+          "data": {
+            "url": "data/region_share_maps.json"
+          },
+          "transform": [
+            {
+              "filter": "datum.year == '2016' && datum.branch == 'Greater Sydney'"
+            },
+            {
+              "calculate": "'Sydney\\n' + round(datum.share) + '%'",
+              "as": "label"
+            },
+            {
+              "calculate": "151.5",
+              "as": "lon"
+            },
+            {
+              "calculate": "-34.5",
+              "as": "lat"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "lineBreak": "\n",
+            "fontSize": 11,
+            "fontWeight": "bold",
+            "color": "#8a3b24"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "label",
+              "type": "nominal"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "width": 240,
+      "height": 200,
+      "title": {
+        "text": "2018",
+        "font": "Fraunces, Georgia, serif",
+        "fontSize": 15,
+        "color": "#1f3d17",
+        "offset": 4
+      },
+      "projection": {
+        "type": "mercator"
+      },
+      "view": {
+        "fill": "#a8dcef",
+        "stroke": null
+      },
+      "layer": [
+        {
+          "name": "share_map_5",
+          "data": {
+            "url": "data/region_share_maps.json"
+          },
+          "transform": [
+            {
+              "filter": "datum.year == '2018'"
+            }
+          ],
+          "mark": {
+            "type": "geoshape",
+            "cursor": "pointer"
+          },
+          "encoding": {
+            "color": {
+              "field": "share",
+              "type": "quantitative",
+              "title": "Share of all visits (%)",
+              "scale": {
+                "type": "threshold",
+                "domain": [
+                  3,
+                  6,
+                  10,
+                  15,
+                  30,
+                  40
+                ],
+                "range": [
+                  "#f1f7e9",
+                  "#d6ecc6",
+                  "#b3dba0",
+                  "#86c17a",
+                  "#57a05a",
+                  "#2f7a3d",
+                  "#173d1a"
+                ]
+              },
+              "legend": {
+                "orient": "right"
+              }
+            },
+            "stroke": {
+              "condition": {
+                "param": "hoverRegion",
+                "empty": false,
+                "value": "#e76f51"
+              },
+              "value": "white"
+            },
+            "strokeWidth": {
+              "condition": {
+                "param": "hoverRegion",
+                "empty": false,
+                "value": 2.2
+              },
+              "value": 0.6
+            },
+            "tooltip": [
+              {
+                "field": "branch",
+                "title": "NPWS region"
+              },
+              {
+                "field": "year",
+                "title": "Survey year"
+              },
+              {
+                "field": "share",
+                "title": "Share of visits (%)",
+                "format": ".1f"
+              },
+              {
+                "field": "yearTotal",
+                "title": "All 8 regions add to (%)",
+                "format": ".1f"
+              }
+            ]
+          }
+        },
+        {
+          "data": {
+            "url": "data/region_share_maps.json"
+          },
+          "transform": [
+            {
+              "filter": "datum.year == '2018' && datum.branch == 'Greater Sydney'"
+            },
+            {
+              "calculate": "'Sydney\\n' + round(datum.share) + '%'",
+              "as": "label"
+            },
+            {
+              "calculate": "151.5",
+              "as": "lon"
+            },
+            {
+              "calculate": "-34.5",
+              "as": "lat"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "lineBreak": "\n",
+            "fontSize": 11,
+            "fontWeight": "bold",
+            "color": "#8a3b24"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "label",
+              "type": "nominal"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "width": 240,
+      "height": 200,
+      "title": {
+        "text": "2020",
+        "font": "Fraunces, Georgia, serif",
+        "fontSize": 15,
+        "color": "#1f3d17",
+        "offset": 4
+      },
+      "projection": {
+        "type": "mercator"
+      },
+      "view": {
+        "fill": "#a8dcef",
+        "stroke": null
+      },
+      "layer": [
+        {
+          "name": "share_map_6",
+          "data": {
+            "url": "data/region_share_maps.json"
+          },
+          "transform": [
+            {
+              "filter": "datum.year == '2020'"
+            }
+          ],
+          "mark": {
+            "type": "geoshape",
+            "cursor": "pointer"
+          },
+          "encoding": {
+            "color": {
+              "field": "share",
+              "type": "quantitative",
+              "title": "Share of all visits (%)",
+              "scale": {
+                "type": "threshold",
+                "domain": [
+                  3,
+                  6,
+                  10,
+                  15,
+                  30,
+                  40
+                ],
+                "range": [
+                  "#f1f7e9",
+                  "#d6ecc6",
+                  "#b3dba0",
+                  "#86c17a",
+                  "#57a05a",
+                  "#2f7a3d",
+                  "#173d1a"
+                ]
+              },
+              "legend": {
+                "orient": "right"
+              }
+            },
+            "stroke": {
+              "condition": {
+                "param": "hoverRegion",
+                "empty": false,
+                "value": "#e76f51"
+              },
+              "value": "white"
+            },
+            "strokeWidth": {
+              "condition": {
+                "param": "hoverRegion",
+                "empty": false,
+                "value": 2.2
+              },
+              "value": 0.6
+            },
+            "tooltip": [
+              {
+                "field": "branch",
+                "title": "NPWS region"
+              },
+              {
+                "field": "year",
+                "title": "Survey year"
+              },
+              {
+                "field": "share",
+                "title": "Share of visits (%)",
+                "format": ".1f"
+              },
+              {
+                "field": "yearTotal",
+                "title": "All 8 regions add to (%)",
+                "format": ".1f"
+              }
+            ]
+          }
+        },
+        {
+          "data": {
+            "url": "data/region_share_maps.json"
+          },
+          "transform": [
+            {
+              "filter": "datum.year == '2020' && datum.branch == 'Greater Sydney'"
+            },
+            {
+              "calculate": "'Sydney\\n' + round(datum.share) + '%'",
+              "as": "label"
+            },
+            {
+              "calculate": "151.5",
+              "as": "lon"
+            },
+            {
+              "calculate": "-34.5",
+              "as": "lat"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "lineBreak": "\n",
+            "fontSize": 11,
+            "fontWeight": "bold",
+            "color": "#8a3b24"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "label",
+              "type": "nominal"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "width": 240,
+      "height": 200,
+      "title": {
+        "text": "2022",
+        "font": "Fraunces, Georgia, serif",
+        "fontSize": 15,
+        "color": "#1f3d17",
+        "offset": 4
+      },
+      "projection": {
+        "type": "mercator"
+      },
+      "view": {
+        "fill": "#a8dcef",
+        "stroke": null
+      },
+      "layer": [
+        {
+          "name": "share_map_7",
+          "data": {
+            "url": "data/region_share_maps.json"
+          },
+          "transform": [
+            {
+              "filter": "datum.year == '2022'"
+            }
+          ],
+          "mark": {
+            "type": "geoshape",
+            "cursor": "pointer"
+          },
+          "encoding": {
+            "color": {
+              "field": "share",
+              "type": "quantitative",
+              "title": "Share of all visits (%)",
+              "scale": {
+                "type": "threshold",
+                "domain": [
+                  3,
+                  6,
+                  10,
+                  15,
+                  30,
+                  40
+                ],
+                "range": [
+                  "#f1f7e9",
+                  "#d6ecc6",
+                  "#b3dba0",
+                  "#86c17a",
+                  "#57a05a",
+                  "#2f7a3d",
+                  "#173d1a"
+                ]
+              },
+              "legend": {
+                "orient": "right"
+              }
+            },
+            "stroke": {
+              "condition": {
+                "param": "hoverRegion",
+                "empty": false,
+                "value": "#e76f51"
+              },
+              "value": "white"
+            },
+            "strokeWidth": {
+              "condition": {
+                "param": "hoverRegion",
+                "empty": false,
+                "value": 2.2
+              },
+              "value": 0.6
+            },
+            "tooltip": [
+              {
+                "field": "branch",
+                "title": "NPWS region"
+              },
+              {
+                "field": "year",
+                "title": "Survey year"
+              },
+              {
+                "field": "share",
+                "title": "Share of visits (%)",
+                "format": ".1f"
+              },
+              {
+                "field": "yearTotal",
+                "title": "All 8 regions add to (%)",
+                "format": ".1f"
+              }
+            ]
+          }
+        },
+        {
+          "data": {
+            "url": "data/region_share_maps.json"
+          },
+          "transform": [
+            {
+              "filter": "datum.year == '2022' && datum.branch == 'Greater Sydney'"
+            },
+            {
+              "calculate": "'Sydney\\n' + round(datum.share) + '%'",
+              "as": "label"
+            },
+            {
+              "calculate": "151.5",
+              "as": "lon"
+            },
+            {
+              "calculate": "-34.5",
+              "as": "lat"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "lineBreak": "\n",
+            "fontSize": 11,
+            "fontWeight": "bold",
+            "color": "#8a3b24"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "label",
+              "type": "nominal"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "width": 240,
+      "height": 200,
+      "title": {
+        "text": "2024/25",
+        "font": "Fraunces, Georgia, serif",
+        "fontSize": 15,
+        "color": "#1f3d17",
+        "offset": 4
+      },
+      "projection": {
+        "type": "mercator"
+      },
+      "view": {
+        "fill": "#a8dcef",
+        "stroke": null
+      },
+      "layer": [
+        {
+          "name": "share_map_8",
+          "data": {
+            "url": "data/region_share_maps.json"
+          },
+          "transform": [
+            {
+              "filter": "datum.year == '2024/25'"
+            }
+          ],
+          "mark": {
+            "type": "geoshape",
+            "cursor": "pointer"
+          },
+          "encoding": {
+            "color": {
+              "field": "share",
+              "type": "quantitative",
+              "title": "Share of all visits (%)",
+              "scale": {
+                "type": "threshold",
+                "domain": [
+                  3,
+                  6,
+                  10,
+                  15,
+                  30,
+                  40
+                ],
+                "range": [
+                  "#f1f7e9",
+                  "#d6ecc6",
+                  "#b3dba0",
+                  "#86c17a",
+                  "#57a05a",
+                  "#2f7a3d",
+                  "#173d1a"
+                ]
+              },
+              "legend": {
+                "orient": "right"
+              }
+            },
+            "stroke": {
+              "condition": {
+                "param": "hoverRegion",
+                "empty": false,
+                "value": "#e76f51"
+              },
+              "value": "white"
+            },
+            "strokeWidth": {
+              "condition": {
+                "param": "hoverRegion",
+                "empty": false,
+                "value": 2.2
+              },
+              "value": 0.6
+            },
+            "tooltip": [
+              {
+                "field": "branch",
+                "title": "NPWS region"
+              },
+              {
+                "field": "year",
+                "title": "Survey year"
+              },
+              {
+                "field": "share",
+                "title": "Share of visits (%)",
+                "format": ".1f"
+              },
+              {
+                "field": "yearTotal",
+                "title": "All 8 regions add to (%)",
+                "format": ".1f"
+              }
+            ]
+          }
+        },
+        {
+          "data": {
+            "url": "data/region_share_maps.json"
+          },
+          "transform": [
+            {
+              "filter": "datum.year == '2024/25' && datum.branch == 'Greater Sydney'"
+            },
+            {
+              "calculate": "'Sydney\\n' + round(datum.share) + '%'",
+              "as": "label"
+            },
+            {
+              "calculate": "151.5",
+              "as": "lon"
+            },
+            {
+              "calculate": "-34.5",
+              "as": "lat"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "lineBreak": "\n",
+            "fontSize": 11,
+            "fontWeight": "bold",
+            "color": "#8a3b24"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "label",
+              "type": "nominal"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "resolve": {
+    "scale": {
+      "color": "shared"
+    },
+    "legend": {
+      "color": "shared"
+    }
+  }
+}

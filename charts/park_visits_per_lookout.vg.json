@@ -1,0 +1,412 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Park visits per lookout",
+  "autosize": "pad",
+  "spacing": 30,
+  "hconcat": [
+    {
+      "width": 540,
+      "height": 480,
+      "projection": {
+        "type": "mercator"
+      },
+      "view": {
+        "fill": "#a8dcef",
+        "stroke": null
+      },
+      "layer": [
+        {
+          "data": {
+            "url": "data/nsw_fixed.json",
+            "format": {
+              "type": "json",
+              "property": "features"
+            }
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": "#e3f5ea",
+            "stroke": null
+          }
+        },
+        {
+          "data": {
+            "url": "data/branches_fixed.json",
+            "format": {
+              "type": "json",
+              "property": "features"
+            }
+          },
+          "transform": [
+            {
+              "filter": "datum.properties.NAME != 'ACT'"
+            },
+            {
+              "calculate": "datum.properties.NAME",
+              "as": "branch"
+            },
+            {
+              "lookup": "branch",
+              "from": {
+                "data": {
+                  "url": "data/region_lookouts.json"
+                },
+                "key": "branch",
+                "fields": [
+                  "visits",
+                  "lookouts",
+                  "perLookout"
+                ]
+              }
+            }
+          ],
+          "params": [
+            {
+              "name": "pickLookoutRegion",
+              "select": {
+                "type": "point",
+                "fields": [
+                  "branch"
+                ],
+                "on": "click",
+                "clear": "dblclick"
+              }
+            }
+          ],
+          "mark": {
+            "type": "geoshape",
+            "stroke": "white",
+            "cursor": "pointer"
+          },
+          "encoding": {
+            "color": {
+              "field": "perLookout",
+              "type": "quantitative",
+              "title": "Park visits per lookout",
+              "scale": {
+                "type": "threshold",
+                "domain": [
+                  25000,
+                  50000,
+                  75000,
+                  100000
+                ],
+                "range": [
+                  "#fbf3dc",
+                  "#f4dcae",
+                  "#eebd8c",
+                  "#e0956c",
+                  "#c0573c"
+                ]
+              },
+              "legend": {
+                "orient": "bottom",
+                "direction": "horizontal",
+                "format": "~s",
+                "titleLimit": 200
+              }
+            },
+            "strokeWidth": {
+              "condition": {
+                "param": "pickLookoutRegion",
+                "empty": false,
+                "value": 2.5
+              },
+              "value": 0.8
+            },
+            "fillOpacity": {
+              "condition": {
+                "param": "pickLookoutRegion",
+                "empty": true,
+                "value": 1
+              },
+              "value": 0.35
+            },
+            "tooltip": [
+              {
+                "field": "branch",
+                "title": "NPWS region"
+              },
+              {
+                "field": "lookouts",
+                "title": "Lookouts"
+              },
+              {
+                "field": "visits",
+                "title": "Park visits (2024/25)",
+                "format": ","
+              },
+              {
+                "field": "perLookout",
+                "title": "Visits per lookout",
+                "format": ",.0f"
+              }
+            ]
+          }
+        },
+        {
+          "data": {
+            "url": "data/lookouts_by_region.json"
+          },
+          "params": [
+            {
+              "name": "pickType",
+              "select": {
+                "type": "point",
+                "fields": [
+                  "type"
+                ]
+              },
+              "bind": "legend"
+            }
+          ],
+          "mark": {
+            "type": "circle",
+            "size": 16,
+            "stroke": "white",
+            "strokeWidth": 0.4
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "fill": {
+              "field": "type",
+              "type": "nominal",
+              "title": "Lookout type (click to filter)",
+              "scale": {
+                "domain": [
+                  "Viewing platform",
+                  "On-ground lookout",
+                  "Viewpoint"
+                ],
+                "range": [
+                  "#2f5e22",
+                  "#2a9d8f",
+                  "#6d4c7d"
+                ]
+              },
+              "legend": {
+                "orient": "bottom",
+                "direction": "horizontal",
+                "titleLimit": 220
+              }
+            },
+            "opacity": {
+              "condition": {
+                "test": {
+                  "and": [
+                    {
+                      "param": "pickType"
+                    },
+                    {
+                      "param": "pickLookoutRegion"
+                    }
+                  ]
+                },
+                "value": 0.9
+              },
+              "value": 0.06
+            },
+            "tooltip": [
+              {
+                "field": "name",
+                "title": "Lookout"
+              },
+              {
+                "field": "type",
+                "title": "Type"
+              },
+              {
+                "field": "park",
+                "title": "Park"
+              },
+              {
+                "field": "branch",
+                "title": "NPWS region"
+              }
+            ]
+          }
+        },
+        {
+          "data": {
+            "values": [
+              {
+                "name": "Sydney",
+                "lon": 151.2093,
+                "lat": -33.8688
+              },
+              {
+                "name": "Newcastle",
+                "lon": 151.7817,
+                "lat": -32.9283
+              },
+              {
+                "name": "Canberra",
+                "lon": 149.13,
+                "lat": -35.2809
+              }
+            ]
+          },
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "dx": 6,
+            "dy": -4,
+            "fontSize": 10,
+            "fontStyle": "italic",
+            "fontWeight": "bold",
+            "color": "#3d3d3d"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "name",
+              "type": "nominal"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "width": 250,
+      "height": 480,
+      "title": {
+        "text": "By region",
+        "subtitle": "Each region's visits ÷ its lookouts",
+        "anchor": "start",
+        "fontSize": 13,
+        "subtitleFontSize": 11
+      },
+      "data": {
+        "url": "data/region_lookouts.json"
+      },
+      "transform": [
+        {
+          "filter": "datum.lookouts > 0"
+        }
+      ],
+      "encoding": {
+        "y": {
+          "field": "branch",
+          "type": "nominal",
+          "sort": "-x",
+          "title": null,
+          "axis": {
+            "labelLimit": 140
+          }
+        },
+        "x": {
+          "field": "perLookout",
+          "type": "quantitative",
+          "title": "Visits per lookout (2024/25)",
+          "axis": {
+            "format": "~s",
+            "tickCount": 4
+          }
+        }
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "bar",
+            "cornerRadiusEnd": 3,
+            "stroke": "#c9bfa5",
+            "strokeWidth": 0.6
+          },
+          "encoding": {
+            "color": {
+              "field": "perLookout",
+              "type": "quantitative",
+              "title": "Park visits per lookout",
+              "scale": {
+                "type": "threshold",
+                "domain": [
+                  25000,
+                  50000,
+                  75000,
+                  100000
+                ],
+                "range": [
+                  "#fbf3dc",
+                  "#f4dcae",
+                  "#eebd8c",
+                  "#e0956c",
+                  "#c0573c"
+                ]
+              },
+              "legend": null
+            },
+            "opacity": {
+              "condition": {
+                "param": "pickLookoutRegion",
+                "empty": true
+              },
+              "value": 0.25
+            },
+            "tooltip": [
+              {
+                "field": "branch",
+                "title": "NPWS region"
+              },
+              {
+                "field": "lookouts",
+                "title": "Lookouts"
+              },
+              {
+                "field": "visits",
+                "title": "Park visits (2024/25)",
+                "format": ","
+              },
+              {
+                "field": "perLookout",
+                "title": "Visits per lookout",
+                "format": ",.0f"
+              }
+            ]
+          }
+        },
+        {
+          "transform": [
+            {
+              "calculate": "datum.lookouts + ' lookouts'",
+              "as": "lookoutsLabel"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "dx": 4,
+            "fontSize": 10,
+            "color": "#6b6b6b"
+          },
+          "encoding": {
+            "text": {
+              "field": "lookoutsLabel",
+              "type": "nominal"
+            },
+            "opacity": {
+              "condition": {
+                "param": "pickLookoutRegion",
+                "empty": true
+              },
+              "value": 0.3
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

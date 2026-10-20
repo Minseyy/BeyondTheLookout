@@ -1,0 +1,48 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Where visitors live",
+  "width": "container",
+  "height": 300,
+  "data": {
+    "url": "data/visitor_origin_2024_25.csv"
+  },
+  "transform": [
+    {
+      "calculate": "indexof(datum.group, 'Intrastate') == 0 ? 'Local' : datum.group == 'Interstate' ? 'Non-local' : datum.group",
+      "as": "group"
+    }
+  ],
+  "mark": "bar",
+  "encoding": {
+    "y": {
+      "field": "origin",
+      "type": "nominal",
+      "sort": "-x",
+      "title": null
+    },
+    "x": {
+      "field": "total_visits",
+      "type": "quantitative",
+      "title": "Visits (2024/25)",
+      "axis": {
+        "format": "~s"
+      }
+    },
+    "color": {
+      "field": "group",
+      "type": "nominal",
+      "title": "Visitor from"
+    },
+    "tooltip": [
+      {
+        "field": "origin",
+        "title": "Lives in"
+      },
+      {
+        "field": "total_visits",
+        "title": "Visits",
+        "format": ","
+      }
+    ]
+  }
+}

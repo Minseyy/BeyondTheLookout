@@ -37,17 +37,27 @@
     </nav>
 
     <!-- Hero -->
+    <!-- Hero -->
     <header class="hero">
         <div class="hero-inner">
-            <h1>NSW's scenic lookouts never disappoint</h1>
-            <p>Last year people made <span data-stat="visitsLatestWords">65.6 million</span> visits to NSW national parks. A lot of them were walking to a view.</p>
-            <a class="hero-button" href="#intro">Start the walk</a>
+            <h1>Is the view <em>worth</em> the walk?</h1>
+            <p class="hero-deck">Last year people made <strong data-stat="visitsLatestWords">65.6 million</strong>
+                visits to <strong>New South Wales (NSW)</strong> national parks, and many of them walked to a lookout. This story
+                compares those lookouts and walking tracks: how popular they are, how hard they are to reach, and
+                what they mean for tourism.</p>
+            <ul class="hero-themes">
+                <li><a href="#sec2">Popularity</a></li>
+                <li><a href="#sec4">Accessibility</a></li>
+                <li><a href="#sec5">Tourism</a></li>
+                <li><a href="#sec7">Visitor experience</a></li>
+            </ul>
+            <a class="hero-button" href="#intro">Start the walk <span aria-hidden="true">↓</span></a>
         </div>
+        <p class="hero-credit">Photo: [name / source]</p>
     </header>
 
     <main class="trail">
 
-        <!-- Trailhead: intro + key numbers -->
         <section id="intro" class="stop stop-start">
             <span class="marker" aria-hidden="true"></span>
             <p class="lead">
@@ -91,7 +101,7 @@
             </div>
         </section>
 
-        <!-- Stop 2 -->
+        <!-- Sec 2 -->
         <section id="sec2" class="stop">
             <span class="marker" aria-hidden="true">2</span>
             <h2>Where do people go? The 20 most visited parks</h2>
@@ -302,7 +312,7 @@
         </ul>
     </footer>
 
-    <script src="vega_lite_vis.js"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>

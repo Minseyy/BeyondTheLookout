@@ -1,41 +1,60 @@
-/* =====================================================================
-   Palette: Blue Mountains on a hazy day
-   ===================================================================== */
 :root {
-  /* your original colours */
   --green-dark: #1f3d17;
   --green: #2f5e22;
   --green-light: #d6e8c8;
   --teal: #2a9d8f;
   --coral: #e76f51;
-  --paper: #fdfcf7;
+  --sand: #e9c46a;
+  /* "moderate" track colour */
+  --rust: #8a3b24;
+  /* handwritten notes color*/
+
+  --paper: #f7f2e4;
+  /* page background */
+  --plate: #fffdf6;
+  /* chart panels */
   --ink: #2b2b2b;
   --muted: #6b6b6b;
   --rule: #e4e2d8;
+  /* thin dividers */
+  --line: #d9d2bd;
+  /* panel borders */
+  --shadow: 5px 5px 0 rgba(31, 61, 23, 0.14);
 
-  /* your original fonts */
   --heading: 'Fraunces', Georgia, serif;
   --body: 'Inter', system-ui, sans-serif;
   --brand: 'Poiret One', Georgia, serif;
+  --hand: 'Caveat', cursive;
 
-  --gutter: 72px;         /* width of the trail column on the left */
+  --gutter: 72px;
+  /* width of the trail column on the left */
+  --side: clamp(16px, 4vw, 40px);
 }
 
-/* ---------- Base ---------- */
+/* =====================================================================
+   Base
+   ===================================================================== */
 body {
   margin: 0;
-  background: var(--paper);
+  background-color: var(--paper);
+  /* faint paper grain */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.35  0 0 0 0 0.3  0 0 0 0 0.2  0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   color: var(--ink);
   font-family: var(--body);
   font-size: 17px;
   line-height: 1.7;
 }
 
-h1, h2 {
+h1, h2, h3 {
   font-family: var(--heading);
   font-weight: 700;
   line-height: 1.15;
   color: var(--green-dark);
+}
+
+/* Fraunces in its soft, slightly wonky mode */
+h1, h2, .lead, .stat dd, .marker, .takeaway-num, .hero-deck strong {
+  font-variation-settings: "SOFT"100, "WONK"1;
 }
 
 p {
@@ -51,7 +70,9 @@ a {
   outline-offset: 3px;
 }
 
-/* ---------- Navbar: like the top strip of a park sign ---------- */
+/* =====================================================================
+   Navbar
+   ===================================================================== */
 .navbar {
   position: sticky;
   top: 0;
@@ -59,7 +80,7 @@ a {
   display: flex;
   align-items: baseline;
   gap: 28px;
-  padding: 12px clamp(16px, 4vw, 40px);
+  padding: 12px var(--side);
   background: var(--green-dark);
 }
 
@@ -69,12 +90,11 @@ a {
   font-family: var(--brand);
   font-size: 1.35rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--plate);
 }
 
 .navbar a {
   white-space: nowrap;
-  font-family: var(--body);
   font-size: 0.95rem;
   font-weight: 500;
   color: var(--green-light);
@@ -82,20 +102,34 @@ a {
 }
 
 .navbar a:hover {
-  color: #fff;
+  color: var(--plate);
 }
 
-/* ---------- Hero: photo, text sits bottom-left like a caption ---------- */
+/* =====================================================================
+   Hero: faded photo, torn bottom edge, text bottom-left
+   ===================================================================== */
 .hero {
+  position: relative;
+  isolation: isolate;
   min-height: 78vh;
   display: flex;
   align-items: flex-end;
-  padding: 0 clamp(16px, 5vw, 64px) clamp(40px, 8vh, 80px);
+  padding: 0 clamp(16px, 5vw, 64px) calc(clamp(40px, 8vh, 80px) + 14px);
+  background: var(--green);
+  color: var(--plate);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5px), 98.33% calc(100% - 3px), 96.67% calc(100% - 7px), 95% calc(100% - 11px), 93.33% 100%, 91.67% 100%, 90% calc(100% - 14px), 88.33% calc(100% - 9px), 86.67% 100%, 85% calc(100% - 5px), 83.33% calc(100% - 9px), 81.67% 100%, 80% calc(100% - 9px), 78.33% calc(100% - 3px), 76.67% 100%, 75% 100%, 73.33% calc(100% - 7px), 71.67% calc(100% - 7px), 70% 100%, 68.33% calc(100% - 3px), 66.67% 100%, 65% calc(100% - 9px), 63.33% calc(100% - 7px), 61.67% 100%, 60% calc(100% - 14px), 58.33% calc(100% - 9px), 56.67% 100%, 55% calc(100% - 3px), 53.33% calc(100% - 11px), 51.67% calc(100% - 11px), 50% calc(100% - 9px), 48.33% 100%, 46.67% calc(100% - 9px), 45% calc(100% - 9px), 43.33% calc(100% - 7px), 41.67% 100%, 40% calc(100% - 3px), 38.33% 100%, 36.67% calc(100% - 9px), 35% calc(100% - 14px), 33.33% calc(100% - 3px), 31.67% calc(100% - 5px), 30% calc(100% - 7px), 28.33% calc(100% - 3px), 26.67% calc(100% - 9px), 25% 100%, 23.33% calc(100% - 9px), 21.67% calc(100% - 5px), 20% calc(100% - 9px), 18.33% calc(100% - 14px), 16.67% calc(100% - 11px), 15% calc(100% - 3px), 13.33% 100%, 11.67% calc(100% - 9px), 10% calc(100% - 9px), 8.33% calc(100% - 11px), 6.67% calc(100% - 3px), 5% calc(100% - 5px), 3.33% 100%, 1.67% calc(100% - 9px), 0 calc(100% - 11px));
+}
+
+/* the photo, with a dark fade at the bottom so the text reads */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   background:
-    linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.35) 55%, rgba(0, 0, 0, 0.15) 100%),
-    url("img/hero2.jpg") center / cover no-repeat,
-    var(--green);
-  color: #fff;
+    linear-gradient(to top, rgba(31, 24, 10, 0.82) 0%, rgba(31, 24, 10, 0.3) 55%, rgba(31, 24, 10, 0.1) 100%),
+    url("img/hero2.jpg") center / cover no-repeat;
+  filter: sepia(0.35) saturate(0.8) contrast(1.05) brightness(0.95);
 }
 
 .hero-inner {
@@ -103,57 +137,111 @@ a {
 }
 
 .hero h1 {
-  margin: 0 0 18px;
-  color: #fff;
-  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  margin: 0 0 16px;
+  max-width: 14ch;
+  font-size: clamp(2.6rem, 7vw, 4.8rem);
+  line-height: 1.05;
+  color: var(--plate);
 }
 
-.hero p {
+.hero h1 em {
+  font-style: italic;
+  color: var(--coral);
+}
+
+.hero-deck {
+  margin: 0 0 20px;
+  max-width: 38em;
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  color: color-mix(in srgb, var(--plate) 88%, transparent);
+}
+
+.hero-deck strong {
+  font-family: var(--heading);
+  font-size: 1.1em;
+  color: var(--coral);
+}
+
+/* the brief's themes as small tags that jump to their sections */
+.hero-themes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
   margin: 0 0 28px;
-  font-size: clamp(1.05rem, 2vw, 1.25rem);
-  color: #eef0ec;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-themes a {
+  display: inline-block;
+  padding: 3px 12px;
+  border: 1px solid color-mix(in srgb, var(--green-light) 60%, transparent);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--green-light);
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.hero-themes a:hover {
+  background: var(--green-light);
+  color: var(--green-dark);
 }
 
 .hero-button {
-  display: inline-block;
-  padding: 10px 26px;
-  border: 2px solid #fff;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 24px;
+  border: 2px solid var(--coral);
   border-radius: 6px;
-  color: #fff;
-  font-family: var(--body);
+  background: var(--coral);
+  color: var(--plate);
   font-weight: 600;
   text-decoration: none;
+  transition: background 0.2s;
 }
 
 .hero-button:hover {
-  background: #fff;
-  color: var(--green);
+  background: transparent;
+}
+
+.hero-button span {
+  transition: transform 0.2s;
+}
+
+.hero-button:hover span {
+  transform: translateY(3px);
+}
+
+.hero-credit {
+  position: absolute;
+  right: clamp(16px, 5vw, 64px);
+  bottom: 22px;
+  margin: 0;
+  font-size: 0.72rem;
+  color: color-mix(in srgb, var(--plate) 60%, transparent);
 }
 
 /* =====================================================================
-   The trail: a dashed track down the left, each section is a stop
+   The trail: dashed line down the left, each section is a stop
    ===================================================================== */
 .trail {
   position: relative;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 72px clamp(16px, 4vw, 40px) 96px;
+  padding: 72px var(--side) 96px;
 }
 
-/* the track line */
 .trail::before {
   content: "";
   position: absolute;
   top: 96px;
   bottom: 96px;
-  left: calc(clamp(16px, 4vw, 40px) + var(--gutter) / 2 - 1px);
+  left: calc(var(--side) + var(--gutter) / 2 - 1px);
   border-left: 2px dashed var(--coral);
-  opacity: 0.6;
-}
-
-.hint::before{
-  content: "Tips: ";
-  font-weight: 600;
+  opacity: 0.8;
 }
 
 .stop {
@@ -167,9 +255,49 @@ a {
   margin-bottom: 0;
 }
 
-/* the track marker for each stop */
+.stop h2 {
+  margin: 0 0 18px;
+  font-size: clamp(2rem, 4.5vw, 3rem);
+}
+
+.stop h3 {
+  margin: 56px 0 10px;
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+}
+
+.stop:not(.stop-start) {
+  padding-top: 52px;                 /* room for the band above the heading */
+}
+
+.stop:not(.stop-start)::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: calc(var(--gutter) / 2);     /* starts at the centre of the marker */
+  right: 0;
+  height: 24px;
+  background: var(--green-dark);
+}
+
+/* marker sits on top of the band, centred on it */
 .marker {
-  box-sizing: border-box;              /* border counts inside the width, so it centres on the line */
+  z-index: 1;
+  top: 4px;
+}
+
+.stop-end .marker {
+  top: 11px;
+}
+
+@media (max-width: 720px) {
+  .marker {
+    top: 9px;
+  }
+}
+
+/* numbered marker on the line */
+.marker {
+  box-sizing: border-box;
   position: absolute;
   top: 2px;
   left: calc(var(--gutter) / 2 - 20px);
@@ -179,29 +307,36 @@ a {
   place-items: center;
   border-radius: 50%;
   background: var(--coral);
-  color: #fff;
+  color: var(--plate);
   font-family: var(--heading);
   font-size: 1.25rem;
   font-weight: 700;
-  box-shadow: 0 0 0 6px var(--paper);   /* gap in the dashed line around the marker */
+  box-shadow: 0 0 0 6px var(--paper);
+  /* gap in the dashed line */
 }
 
-/* trailhead marker: hollow ring */
+/* start: hollow ring */
 .stop-start .marker {
+  top: 12px;
+  left: calc(var(--gutter) / 2 - 11px);
   width: 22px;
   height: 22px;
-  left: calc(var(--gutter) / 2 - 11px);
-  top: 12px;
   background: var(--paper);
   border: 4px solid var(--coral);
 }
 
-.stop h2 {
-  margin: 0 0 18px;
-  font-size: clamp(2rem, 4.5vw, 3rem);
+/* end: dark dot with a coral ring */
+.stop-end .marker {
+  top: 12px;
+  left: calc(var(--gutter) / 2 - 13px);
+  width: 26px;
+  height: 26px;
+  border: 4px solid var(--coral);
 }
 
-/* ---------- Intro ---------- */
+/* =====================================================================
+   Intro
+   ===================================================================== */
 .lead {
   margin: 0 0 48px;
   max-width: 34em;
@@ -211,19 +346,18 @@ a {
   color: var(--green-dark);
 }
 
-/* stats: one row split by thin rules, like a track sign's distance panel */
 .stats {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   margin: 0;
-  border-top: 2px solid var(--green-dark);
+  border-top: 4px double var(--green-dark);
 }
 
 .stat {
   padding: 14px 20px 0 0;
 }
 
-.stat + .stat {
+.stat+.stat {
   padding-left: 20px;
   border-left: 1px solid var(--rule);
 }
@@ -237,9 +371,9 @@ a {
   margin: 0;
   font-family: var(--heading);
   font-size: clamp(2.1rem, 4.5vw, 2.9rem);
-  color: var(--teal);
   font-weight: 700;
   line-height: 1.1;
+  color: var(--teal);
 }
 
 .stat dd small {
@@ -249,53 +383,341 @@ a {
   color: var(--muted);
 }
 
-/* ---------- Charts + their notes ---------- */
+/* =====================================================================
+   Charts: printed plates
+   ===================================================================== */
+.chart,
+.plate,
+.canvas {
+  box-sizing: border-box;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.chart canvas,
+.chart svg {
+  display: block;
+}
+
 .chart {
   width: 100%;
   margin: 28px 0 8px;
 }
 
-.hint {
-  margin: 0;
-  font-size: 0.9rem;
-  color: var(--teal);
-  font-style: italic;
+.plate {
+  padding: 16px 28px;
 }
 
-.source {
-  margin: 0;
-  font-size: 0.8rem;
-  color: var(--muted);
-}
-
-/* the point of each stop, written like a note in a field guide */
-.takeaway {
-  margin: 28px 0 0;
-  padding-top: 14px;
-  border-top: 2px solid var(--coral);
-  max-width: 40em;
-  font-family: var(--heading);
-  font-size: 1.2rem;
-  color: var(--green-dark);
-  line-height: 1.5;
-}
-
-/* the map + bar chart is wider than a phone: let it scroll sideways there */
+/* wide maps scroll sideways on phones */
 #regions_map,
 #share_maps,
 #lookout_map {
   overflow-x: auto;
 }
 
-/* a second chart inside the same stop */
-.stop h3 {
-  margin: 56px 0 10px;
+.hint {
+  margin: 0;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--teal);
+}
+
+.hint::before {
+  content: "Tips: ";
+  font-weight: 600;
+}
+
+.todo {
+  font-style: italic;
+  color: var(--muted);
+}
+
+/* ---------- Waffle + track-class key ---------- */
+.split {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 32px 56px;
+  margin: 28px 0 8px;
+}
+
+.class-key {
+  display: grid;
+  gap: 18px;
+}
+
+.key-group p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.key-group .key-title {
+  margin-bottom: 2px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.swatch {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-right: 8px;
+  vertical-align: -1px;
+}
+
+.swatch-easy {
+  background: var(--teal);
+}
+
+.swatch-moderate {
+  background: var(--sand);
+}
+
+.swatch-hard {
+  background: var(--coral);
+}
+
+/* ---------- Park bar chart + map on one canvas ---------- */
+.canvas {
+  margin: 14px 0 8px;
+}
+
+.canvas-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 14px;
+  padding: 14px 20px 12px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.canvas-header label,
+.map-summary {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* park picker: serif name with a coral underline */
+.canvas-header select {
+  appearance: none;
+  padding: 0 28px 2px 0;
+  border: none;
+  border-bottom: 2px solid var(--coral);
+  border-radius: 0;
+  background: var(--rule) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%23e76f51' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 4px center;
   font-family: var(--heading);
-  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  font-variation-settings: "SOFT"100, "WONK"1;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--green-dark);
+  cursor: pointer;
+}
+
+.canvas-header select:hover {
+  color: var(--green);
+}
+
+.pair {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  align-items: start;
+}
+
+.pair>div+div {
+  border-left: 1px solid var(--rule);
+}
+
+/* ---------- Controls Vega-Lite adds under charts ---------- */
+.vega-bindings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin-top: 14px;
+  font-size: 0.92rem;
+  color: var(--ink);
+}
+
+.vega-bind-name {
+  margin-right: 6px;
+  font-weight: 600;
+}
+
+.vega-bindings select {
+  appearance: none;
+  padding: 6px 34px 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--plate) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%231f3d17' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 12px center;
+  font: inherit;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.vega-bindings input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  vertical-align: -3px;
+  accent-color: var(--green);
+}
+
+/* =====================================================================
+   Takeaways: big number + sentence, with a "field notes" label
+   ===================================================================== */
+.takeaway {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 4px 20px;
+  max-width: 44em;
+  margin: 64px 0 0;
+}
+
+.takeaway-num {
+  position: relative;
+  margin: 0;
+  font-family: var(--heading);
+  font-size: clamp(2.6rem, 6vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--coral);
+}
+
+.takeaway-num::before {
+  content: "field notes";
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  margin-bottom: 2px;
+  font-family: var(--hand);
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--rust);
+  transform: rotate(-3deg);
+  transform-origin: left bottom;
+}
+
+.takeaway-text {
+  margin: 0;
+  padding-top: 10px;
+  border-top: 2px dashed var(--coral);
+  font-family: var(--heading);
+  font-size: 1.2rem;
+  line-height: 1.5;
   color: var(--green-dark);
 }
 
-/* ---------- Small screens ---------- */
+/* =====================================================================
+   Conclusion: numbered findings
+   ===================================================================== */
+.findings {
+  max-width: 44em;
+  margin: 28px 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: finding;
+}
+
+.findings li {
+  position: relative;
+  padding: 14px 0 14px 52px;
+  border-top: 1px solid var(--rule);
+  line-height: 1.6;
+  counter-increment: finding;
+}
+
+.findings li:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+.findings li::before {
+  content: counter(finding);
+  position: absolute;
+  top: 12px;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--coral);
+  border-radius: 50%;
+  font-family: var(--heading);
+  font-weight: 700;
+  color: var(--coral);
+}
+
+.findings strong {
+  color: var(--green-dark);
+}
+
+/* =====================================================================
+   Footer: one green strip of sources
+   ===================================================================== */
+.site-footer {
+  /* text lines up with the 1100px page column */
+  padding: 14px max(var(--side), calc((100% - 1100px) / 2 + var(--side)));
+  background: var(--green-dark);
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: color-mix(in srgb, var(--green-light) 75%, var(--green-dark));
+}
+
+.site-footer h2 {
+  display: inline;
+  margin: 0 10px 0 0;
+  font-family: var(--body);
+  font-size: inherit;
+  font-weight: 600;
+  color: var(--plate);
+}
+
+.sources {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sources li {
+  display: inline;
+}
+
+.sources li+li::before {
+  content: "·";
+  margin: 0 8px;
+}
+
+.site-footer a {
+  color: var(--green-light);
+  text-underline-offset: 2px;
+}
+
+.site-footer a:hover {
+  color: var(--coral);
+}
+
+/* =====================================================================
+   Smaller screens
+   ===================================================================== */
+@media (max-width: 900px) {
+  .pair {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .pair>div+div {
+    border-left: none;
+    border-top: 1px solid var(--rule);
+  }
+}
+
 @media (max-width: 720px) {
   :root {
     --gutter: 40px;
@@ -314,9 +736,9 @@ a {
   }
 
   .marker {
+    left: calc(var(--gutter) / 2 - 15px);
     width: 30px;
     height: 30px;
-    left: calc(var(--gutter) / 2 - 15px);
     font-size: 1.1rem;
   }
 
@@ -330,402 +752,7 @@ a {
   }
 
   .stat:nth-child(n + 3) {
-    border-top: 1px solid var(--rule);
     margin-top: 12px;
+    border-top: 1px solid var(--rule);
   }
-}
-
-
-/* ---------- Section 3: waffle beside the track-class key ---------- */
-/* waffle + key side by side, sharing one full-width frame */
-.split {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-evenly;
-  gap: 32px 56px;
-  margin: 28px 0 8px;
-}
-
-.class-key {
-  display: grid;
-  gap: 18px;
-}
-
-.key-group p {
-  margin: 0;
-  font-size: 0.92rem;
-  color: var(--muted);
-  line-height: 1.6;
-}
-
-.key-group .key-title {
-  font-weight: 600;
-  font-size: 1rem;
-  color: var(--ink);
-  margin-bottom: 2px;
-}
-
-.swatch {
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  margin-right: 8px;
-  vertical-align: -1px;
-}
-
-.swatch-easy { background: var(--teal); }
-.swatch-moderate { background: #e9c46a; }
-.swatch-hard { background: var(--coral); }
-
-/* ---------- Dropdowns + tick boxes that Vega-Lite adds under a chart ---------- */
-.vega-bindings {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 24px;
-  margin-top: 14px;
-  font-family: var(--body);
-  font-size: 0.92rem;
-  color: var(--ink);
-}
-
-.vega-bind-name {
-  font-weight: 600;
-  margin-right: 6px;
-}
-
-.vega-bindings select {
-  font: inherit;
-  padding: 5px 10px;
-  border: 1px solid #cfc7ae;
-  border-radius: 4px;
-  background: #fffdf6;
-  color: var(--ink);
-}
-
-.vega-bindings input[type="checkbox"] {
-  accent-color: var(--green);
-  width: 16px;
-  height: 16px;
-  vertical-align: -3px;
-}
-
-/* ---------- Park trail map: dropdown row ---------- */
-/* bar chart and map on one shared canvas, with the park picker in a header strip */
-.canvas {
-  margin: 14px 0 8px;
-  background: #fffdf6;
-  border: 1px solid #d9d2bd;
-  box-shadow: 5px 5px 0 rgba(31, 61, 23, 0.14);
-}
-
-.canvas-header {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 6px 14px;
-  padding: 14px 20px 12px;
-  border-bottom: 1px solid #e6dfca;
-  
-}
-
-.canvas-header label {
-  font-size: 0.9rem;
-  color: var(--muted);
-}
-
-/* the park picker: big serif name with a coral underline, like a heading you can change */
-.canvas-header select {
-  appearance: none;
-  -webkit-appearance: none;
-  font-family: var(--heading);
-  font-variation-settings: "SOFT" 100, "WONK" 1;
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--green-dark);
-  background-color: var(--rule) !important;
-
-  padding: 0 28px 2px 0;
-  border: none;
-  border-bottom: 2px solid var(--coral);
-  border-radius: 0;
-  cursor: pointer;
-  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%23e76f51' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 4px center;
-}
-
-.canvas-header select:hover {
-  color: var(--green);
-}
-
-.map-summary {
-  font-size: 0.9rem;
-  color: var(--muted);
-}
-
-.pair {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-  align-items: start;
-}
-
-/* thin divider between the two charts */
-.pair > div + div {
-  border-left: 1px solid #e6dfca;
-}
-
-@media (max-width: 900px) {
-  .pair {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .pair > div + div {
-    border-left: none;
-    border-top: 1px solid #e6dfca;
-  }
-}
-
-/* dropdowns that Vega-Lite adds under charts (section 2 map) */
-.vega-bindings select {
-  appearance: none;
-  -webkit-appearance: none;
-  font: inherit;
-  padding: 6px 34px 6px 12px;
-  border: 1px solid #cfc7ae;
-  border-radius: 4px;
-  color: var(--ink);
-  cursor: pointer;
-  background: #fffdf6 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%231f3d17' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 12px center;
-}
-
-/* =====================================================================
-   RETRO LAYER
-   Everything below makes the page feel like an old printed park guide.
-   Delete from here to the end of the file to go back to the plain look.
-   ===================================================================== */
-
-/* 1. Paper: warmer tone + faint grain (an SVG noise texture, no image file needed) */
-body {
-  background-color: #f7f2e4;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.35  0 0 0 0 0.3  0 0 0 0 0.2  0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-/* 2. Fraunces in its "soft + wonky" 1970s mode */
-h1, h2, .lead, .stat dd, .marker {
-  font-variation-settings: "SOFT" 100, "WONK" 1;
-}
-
-/* 4. Hero photo: faded, warm print + torn bottom edge */
-.hero {
-  position: relative;
-  isolation: isolate;
-  background: var(--green);              /* photo moves to the layer below */
-  clip-path: polygon(0 0, 100% 0, 100.00% calc(100% - 5px), 98.33% calc(100% - 3px), 96.67% calc(100% - 7px), 95.00% calc(100% - 11px), 93.33% calc(100% - 0px), 91.67% calc(100% - 0px), 90.00% calc(100% - 14px), 88.33% calc(100% - 9px), 86.67% calc(100% - 0px), 85.00% calc(100% - 5px), 83.33% calc(100% - 9px), 81.67% calc(100% - 0px), 80.00% calc(100% - 9px), 78.33% calc(100% - 3px), 76.67% calc(100% - 0px), 75.00% calc(100% - 0px), 73.33% calc(100% - 7px), 71.67% calc(100% - 7px), 70.00% calc(100% - 0px), 68.33% calc(100% - 3px), 66.67% calc(100% - 0px), 65.00% calc(100% - 9px), 63.33% calc(100% - 7px), 61.67% calc(100% - 0px), 60.00% calc(100% - 14px), 58.33% calc(100% - 9px), 56.67% calc(100% - 0px), 55.00% calc(100% - 3px), 53.33% calc(100% - 11px), 51.67% calc(100% - 11px), 50.00% calc(100% - 9px), 48.33% calc(100% - 0px), 46.67% calc(100% - 9px), 45.00% calc(100% - 9px), 43.33% calc(100% - 7px), 41.67% calc(100% - 0px), 40.00% calc(100% - 3px), 38.33% calc(100% - 0px), 36.67% calc(100% - 9px), 35.00% calc(100% - 14px), 33.33% calc(100% - 3px), 31.67% calc(100% - 5px), 30.00% calc(100% - 7px), 28.33% calc(100% - 3px), 26.67% calc(100% - 9px), 25.00% calc(100% - 0px), 23.33% calc(100% - 9px), 21.67% calc(100% - 5px), 20.00% calc(100% - 9px), 18.33% calc(100% - 14px), 16.67% calc(100% - 11px), 15.00% calc(100% - 3px), 13.33% calc(100% - 0px), 11.67% calc(100% - 9px), 10.00% calc(100% - 9px), 8.33% calc(100% - 11px), 6.67% calc(100% - 3px), 5.00% calc(100% - 5px), 3.33% calc(100% - 0px), 1.67% calc(100% - 9px), 0.00% calc(100% - 11px));
-  padding-bottom: calc(clamp(40px, 8vh, 80px) + 14px);
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background:
-    linear-gradient(to top, rgba(31, 24, 10, 0.82) 0%, rgba(31, 24, 10, 0.3) 55%, rgba(31, 24, 10, 0.1) 100%),
-    url("img/hero2.jpg") center / cover no-repeat;
-  filter: sepia(0.35) saturate(0.8) contrast(1.05) brightness(0.95);
-}
-
-/* 5. Trail markers as embroidered park badges */
-
-.stop-start .marker {
-  outline: none;
-}
-
-.trail::before {
-  opacity: 0.8;
-}
-
-/* 6. Stats: a double printed rule on top */
-.stats {
-  border-top: 4px double var(--green-dark);
-}
-
-/* 7. Charts as printed plates: lighter panel + hard offset shadow
-      (the padding inside the frame is set in vega_lite_vis.js, so charts fit exactly) */
-.chart,
-.plate {
-  box-sizing: border-box;
-  background: #fffdf6;
-  border: 1px solid #d9d2bd;
-  box-shadow: 5px 5px 0 rgba(31, 61, 23, 0.14);
-}
-
-.plate {
-  padding: 16px 28px;
-}
-
-/* 8. Takeaways: a big number on the left, the sentence beside it,
-      with a small handwritten "field note" label as the human touch */
-.takeaway {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  align-items: center;          /* sentence sits level with the middle of the number */
-  gap: 4px 20px;
-  max-width: 44em;
-  margin: 64px 0 0;             /* extra room above for the "field notes" label */
-  padding: 0;
-  border: none;
-}
-
-.takeaway-num {
-  position: relative;           /* the label is placed relative to the number */
-  margin: 0;
-  font-family: var(--heading);
-  font-variation-settings: "SOFT" 100, "WONK" 1;
-  font-weight: 700;
-  font-size: clamp(2.6rem, 6vw, 3.6rem);
-  line-height: 1;
-  color: var(--coral);
-  white-space: nowrap;
-}
-
-/* the handwritten label floats just above the number, so it doesn't push the sentence down */
-.takeaway-num::before {
-  content: "field notes";
-  position: absolute;
-  bottom: 100%;
-  left: 0;
-  margin-bottom: 2px;
-  font-family: 'Caveat', cursive;
-  font-weight: 500;
-  font-size: 2rem;
-  line-height: 1;
-  color: #8a3b24;
-  white-space: nowrap;
-  transform: rotate(-3deg);
-  transform-origin: left bottom;
-  font-style: italic;
-}
-
-.takeaway-text {
-  margin: 0;
-  padding-top: 10px;
-  border-top: 2px dashed var(--coral);
-  font-family: var(--heading);
-  font-size: 1.2rem;
-  line-height: 1.5;
-  color: var(--green-dark);
-}
-/* =====================================================================
-   9. Conclusion: the end of the trail
-   ===================================================================== */
-.stop-end .marker {
-  width: 26px;
-  height: 26px;
-  left: calc(var(--gutter) / 2 - 13px);
-  top: 12px;
-  background: var(--green-dark);
-  border: 4px solid var(--coral);
-  outline: none;
-}
-
-/* the dashed trail line stops at the last marker */
-.stop-end {
-  margin-bottom: 0;
-}
-
-/* what we found, as a numbered list of trail stops */
-.findings {
-  list-style: none;
-  counter-reset: finding;
-  margin: 28px 0;
-  padding: 0;
-  max-width: 44em;
-}
-
-.findings li {
-  counter-increment: finding;
-  position: relative;
-  padding: 14px 0 14px 52px;
-  border-top: 1px solid var(--rule);
-  line-height: 1.6;
-}
-
-.findings li:last-child {
-  border-bottom: 1px solid var(--rule);
-}
-
-.findings li::before {
-  content: counter(finding);
-  position: absolute;
-  left: 0;
-  top: 12px;
-  width: 32px;
-  height: 32px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  border: 2px solid var(--coral);
-  color: var(--coral);
-  font-family: var(--heading);
-  font-weight: 700;
-}
-
-.findings strong {
-  color: var(--green-dark);
-}
-
-/* =====================================================================
-   10. Footer: one small green strip of sources
-   ===================================================================== */
-.site-footer {
-  /* full-width green bar; the text lines up with the 1100px page column */
-  padding: 14px max(clamp(16px, 4vw, 40px), calc((100% - 1100px) / 2 + clamp(16px, 4vw, 40px)));
-  background: var(--green-dark);
-  font-size: 0.78rem;
-  line-height: 1.6;
-  color: #b9c2ad;
-}
-
-.site-footer h2 {
-  display: inline;
-  margin: 0 10px 0 0;
-  font-family: var(--body);
-  font-size: inherit;
-  font-weight: 600;
-  color: #fffdf6;
-}
-
-.sources {
-  display: inline;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.sources li {
-  display: inline;
-}
-
-/* a small dot between sources */
-.sources li + li::before {
-  content: "·";
-  margin: 0 8px;
-  color: #7f8f74;
-}
-
-.site-footer a {
-  color: var(--green-light);
-  text-decoration: underline;
-  text-decoration-color: rgba(214, 232, 200, 0.4);
-  text-underline-offset: 2px;
-}
-
-.site-footer a:hover {
-  color: #f4c4b3;
-}
-
-/* italic grey intro line for sections still being written */
-.todo {
-  color: var(--muted);
-  font-style: italic;
 }

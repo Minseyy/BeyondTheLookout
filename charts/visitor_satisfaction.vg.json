@@ -1,0 +1,80 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Visitor satisfaction",
+  "width": "container",
+  "height": 240,
+  "data": {
+    "url": "data/satisfaction_2024_25.csv"
+  },
+  "transform": [
+    {
+      "calculate": "indexof(datum.group, 'Intrastate') == 0 ? 'Local' : datum.group == 'Interstate' ? 'Non-local' : datum.group",
+      "as": "group"
+    }
+  ],
+  "layer": [
+    {
+      "transform": [
+        {
+          "filter": "datum.group_type != 'Overall'"
+        }
+      ],
+      "mark": "bar",
+      "encoding": {
+        "y": {
+          "field": "group",
+          "type": "nominal",
+          "sort": null,
+          "title": null
+        },
+        "x": {
+          "field": "net_satisfied_pct",
+          "type": "quantitative",
+          "title": "Net satisfied (%)",
+          "scale": {
+            "domain": [
+              0,
+              100
+            ]
+          }
+        },
+        "color": {
+          "field": "group_type",
+          "type": "nominal",
+          "title": "Group by"
+        },
+        "tooltip": [
+          {
+            "field": "group",
+            "title": "Group"
+          },
+          {
+            "field": "net_satisfied_pct",
+            "title": "Net satisfied (%)"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.group_type == 'Overall'"
+        }
+      ],
+      "mark": {
+        "type": "rule",
+        "strokeDash": [
+          4,
+          4
+        ],
+        "color": "black"
+      },
+      "encoding": {
+        "x": {
+          "field": "net_satisfied_pct",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

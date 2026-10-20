@@ -1,0 +1,50 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Top 10 activities",
+  "width": "container",
+  "height": 300,
+  "data": {
+    "url": "data/top10_activities_2024_25.csv"
+  },
+  "mark": {
+    "type": "point",
+    "filled": true,
+    "size": 120
+  },
+  "encoding": {
+    "y": {
+      "field": "activity",
+      "type": "nominal",
+      "sort": {
+        "field": "rank",
+        "order": "ascending"
+      },
+      "title": null
+    },
+    "x": {
+      "field": "rank",
+      "type": "quantitative",
+      "title": "Rank (1 = most common)",
+      "scale": {
+        "domain": [
+          1,
+          10
+        ],
+        "reverse": true
+      },
+      "axis": {
+        "tickCount": 10
+      }
+    },
+    "tooltip": [
+      {
+        "field": "rank",
+        "title": "Rank"
+      },
+      {
+        "field": "activity",
+        "title": "Activity"
+      }
+    ]
+  }
+}

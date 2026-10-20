@@ -1,0 +1,62 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Role of the park in the trip",
+  "width": "container",
+  "height": 260,
+  "data": {
+    "url": "data/trip_role_2024_25.csv"
+  },
+  "transform": [
+    {
+      "fold": [
+        "intrastate_pct",
+        "interstate_pct"
+      ],
+      "as": [
+        "visitor",
+        "pct"
+      ]
+    },
+    {
+      "calculate": "datum.visitor == 'intrastate_pct' ? 'Local' : 'Non-local'",
+      "as": "visitor"
+    }
+  ],
+  "mark": {
+    "type": "point",
+    "filled": true,
+    "size": 110
+  },
+  "encoding": {
+    "y": {
+      "field": "role",
+      "type": "nominal",
+      "sort": null,
+      "title": "The park was..."
+    },
+    "x": {
+      "field": "pct",
+      "type": "quantitative",
+      "title": "% of visitors"
+    },
+    "color": {
+      "field": "visitor",
+      "type": "nominal",
+      "title": null
+    },
+    "tooltip": [
+      {
+        "field": "role",
+        "title": "The park was"
+      },
+      {
+        "field": "visitor",
+        "title": "Visitor"
+      },
+      {
+        "field": "pct",
+        "title": "% of visitors"
+      }
+    ]
+  }
+}

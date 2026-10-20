@@ -1,0 +1,400 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Top 20 parks by region",
+  "autosize": "pad",
+  "spacing": 30,
+  "hconcat": [
+    {
+      "width": 520,
+      "height": 480,
+      "projection": {
+        "type": "mercator"
+      },
+      "view": {
+        "fill": "#a8dcef",
+        "stroke": null
+      },
+      "layer": [
+        {
+          "data": {
+            "url": "data/nsw_fixed.json",
+            "format": {
+              "type": "json",
+              "property": "features"
+            }
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": "#e3f5ea",
+            "stroke": null
+          }
+        },
+        {
+          "data": {
+            "url": "data/parks.geojson",
+            "format": {
+              "type": "json",
+              "property": "features"
+            }
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": "#c0e8cc",
+            "stroke": null
+          },
+          "encoding": {
+            "tooltip": [
+              {
+                "field": "properties.park",
+                "title": "Park"
+              }
+            ]
+          }
+        },
+        {
+          "data": {
+            "url": "data/branches_fixed.json",
+            "format": {
+              "type": "json",
+              "property": "features"
+            }
+          },
+          "transform": [
+            {
+              "filter": "datum.properties.NAME != 'ACT'"
+            },
+            {
+              "calculate": "datum.properties.NAME",
+              "as": "branch"
+            },
+            {
+              "lookup": "branch",
+              "from": {
+                "data": {
+                  "url": "data/branch_visits_2024_25.csv"
+                },
+                "key": "branch",
+                "fields": [
+                  "visits"
+                ]
+              }
+            }
+          ],
+          "params": [
+            {
+              "name": "pickRegion",
+              "select": {
+                "type": "point",
+                "fields": [
+                  "branch"
+                ],
+                "on": "click",
+                "clear": "dblclick"
+              }
+            }
+          ],
+          "mark": {
+            "type": "geoshape",
+            "fill": "#2f5e22",
+            "stroke": "#9aa8a2",
+            "strokeDash": [
+              3,
+              3
+            ],
+            "cursor": "pointer"
+          },
+          "encoding": {
+            "fillOpacity": {
+              "condition": {
+                "param": "pickRegion",
+                "empty": false,
+                "value": 0.12
+              },
+              "value": 0.01
+            },
+            "strokeWidth": {
+              "condition": {
+                "param": "pickRegion",
+                "empty": false,
+                "value": 2.5
+              },
+              "value": 0.8
+            },
+            "tooltip": [
+              {
+                "field": "branch",
+                "title": "NPWS region"
+              },
+              {
+                "field": "visits",
+                "title": "Region visits (2024/25)",
+                "format": ","
+              }
+            ]
+          }
+        },
+        {
+          "data": {
+            "url": "data/branch_visits_2024_25.csv"
+          },
+          "transform": [
+            {
+              "filter": "datum.branch != 'Greater Sydney' && datum.branch != 'Blue Mountains'"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "fontSize": 10,
+            "fontStyle": "italic",
+            "color": "#5f6b66",
+            "opacity": 0.9
+          },
+          "encoding": {
+            "longitude": {
+              "field": "label_lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "label_lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "branch",
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "data": {
+            "values": [
+              {
+                "name": "Sydney",
+                "lon": 151.2093,
+                "lat": -33.8688
+              },
+              {
+                "name": "Newcastle",
+                "lon": 151.7817,
+                "lat": -32.9283
+              },
+              {
+                "name": "Wollongong",
+                "lon": 150.8931,
+                "lat": -34.4278
+              },
+              {
+                "name": "Canberra",
+                "lon": 149.13,
+                "lat": -35.2809
+              }
+            ]
+          },
+          "mark": {
+            "type": "circle",
+            "size": 12,
+            "color": "#5f6b66"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            }
+          }
+        },
+        {
+          "data": {
+            "values": [
+              {
+                "name": "Sydney",
+                "lon": 151.2093,
+                "lat": -33.8688
+              },
+              {
+                "name": "Newcastle",
+                "lon": 151.7817,
+                "lat": -32.9283
+              },
+              {
+                "name": "Wollongong",
+                "lon": 150.8931,
+                "lat": -34.4278
+              },
+              {
+                "name": "Canberra",
+                "lon": 149.13,
+                "lat": -35.2809
+              }
+            ]
+          },
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "dx": 5,
+            "dy": -5,
+            "fontSize": 10,
+            "color": "#5f6b66"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "name",
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "data": {
+            "url": "data/top20_parks_located.csv"
+          },
+          "transform": [
+            {
+              "filter": "isValid(datum.lon)"
+            }
+          ],
+          "mark": {
+            "type": "circle",
+            "color": "#e76f51",
+            "stroke": "white",
+            "strokeWidth": 1.2
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "size": {
+              "field": "visits_2024_25",
+              "type": "quantitative",
+              "title": "Park visits (2024/25)",
+              "scale": {
+                "domain": [
+                  0,
+                  8000000
+                ],
+                "range": [
+                  0,
+                  900
+                ]
+              },
+              "legend": {
+                "values": [
+                  1000000,
+                  4000000,
+                  8000000
+                ],
+                "format": "~s",
+                "orient": "bottom",
+                "symbolFillColor": "#e76f51",
+                "symbolOpacity": 0.9,
+                "symbolStrokeColor": "white",
+                "symbolStrokeWidth": 1.2
+              }
+            },
+            "order": {
+              "field": "visits_2024_25",
+              "sort": "descending"
+            },
+            "opacity": {
+              "condition": {
+                "param": "pickRegion",
+                "empty": true
+              },
+              "value": 0.15
+            },
+            "tooltip": [
+              {
+                "field": "rank",
+                "title": "Rank"
+              },
+              {
+                "field": "park_full",
+                "title": "Park"
+              },
+              {
+                "field": "branch",
+                "title": "NPWS region"
+              },
+              {
+                "field": "visits_2024_25",
+                "title": "Visits (2024/25)",
+                "format": ","
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "width": 300,
+      "height": 480,
+      "title": {
+        "text": "Top 20 parks by visits",
+        "subtitle": "Click a region on the map to highlight its parks",
+        "anchor": "start",
+        "fontSize": 13,
+        "subtitleFontSize": 11
+      },
+      "data": {
+        "url": "data/top20_parks_located.csv"
+      },
+      "mark": {
+        "type": "bar",
+        "cornerRadiusEnd": 3
+      },
+      "encoding": {
+        "y": {
+          "field": "park",
+          "type": "nominal",
+          "sort": "-x",
+          "title": null
+        },
+        "x": {
+          "field": "visits_2024_25",
+          "type": "quantitative",
+          "title": "Visits (2024/25)",
+          "axis": {
+            "format": "~s"
+          }
+        },
+        "color": {
+          "condition": {
+            "param": "pickRegion",
+            "empty": true,
+            "value": "#e76f51"
+          },
+          "value": "#dddddd"
+        },
+        "tooltip": [
+          {
+            "field": "park_full",
+            "title": "Park"
+          },
+          {
+            "field": "branch",
+            "title": "NPWS region"
+          },
+          {
+            "field": "visits_2024_25",
+            "title": "Visits",
+            "format": ","
+          }
+        ]
+      }
+    }
+  ]
+}

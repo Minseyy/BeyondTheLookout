@@ -1,0 +1,74 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Park visits per survey year",
+  "width": "container",
+  "height": 280,
+  "data": {
+    "url": "data/visits_by_year.csv",
+    "format": {
+      "parse": {
+        "year": "string"
+      }
+    }
+  },
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "ordinal",
+      "title": "Survey year",
+      "axis": {
+        "labelAngle": 0
+      }
+    },
+    "y": {
+      "field": "total_visits",
+      "type": "quantitative",
+      "title": "Visits per year",
+      "axis": {
+        "format": "~s"
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "cornerRadiusEnd": 3
+      },
+      "encoding": {
+        "color": {
+          "condition": {
+            "test": "datum.year == '2020'",
+            "value": "#e76f51"
+          },
+          "value": "#2f5e22"
+        },
+        "tooltip": [
+          {
+            "field": "year",
+            "title": "Year"
+          },
+          {
+            "field": "total_visits",
+            "title": "Visits",
+            "format": ","
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.year == '2020'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "text": "COVID-19",
+        "dy": -8,
+        "color": "#e76f51",
+        "fontWeight": "bold"
+      }
+    }
+  ]
+}

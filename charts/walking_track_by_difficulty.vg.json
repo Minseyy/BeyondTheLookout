@@ -1,0 +1,59 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Walking track by difficulty",
+  "autosize": "pad",
+  "width": 320,
+  "height": 320,
+  "data": {
+    "url": "data/track_waffle.json"
+  },
+  "mark": {
+    "type": "square",
+    "size": 739.84,
+    "stroke": "white",
+    "strokeWidth": 1.5
+  },
+  "encoding": {
+    "x": {
+      "field": "col",
+      "type": "ordinal",
+      "axis": null
+    },
+    "y": {
+      "field": "row",
+      "type": "ordinal",
+      "axis": null
+    },
+    "color": {
+      "field": "group",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Easy (Class 1–2)",
+          "Moderate (Class 3–4)",
+          "Hard (Class 5–6)"
+        ],
+        "range": [
+          "#2a9d8f",
+          "#e9c46a",
+          "#e76f51"
+        ]
+      },
+      "legend": null
+    },
+    "tooltip": [
+      {
+        "field": "difficulty",
+        "title": "Difficulty"
+      },
+      {
+        "field": "km",
+        "title": "Total track (km)",
+        "format": ","
+      }
+    ]
+  },
+  "view": {
+    "stroke": null
+  }
+}
