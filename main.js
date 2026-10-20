@@ -2,11 +2,11 @@ const CHARTS = {
   "#bar_chart": "1_park_visits_per_survey_year",
   "#regions_map": "top_20_parks_by_region",
   "#share_maps": "share_of_park_visits_by_region",
-  "#lookout_map": "park_visits_per_lookout",
+  "#lookout_map": "3_park_visits_per_lookout",
   "#track_waffle": "walking_track_by_difficulty",
   "#park_difficulty": "track_difficulty_in_top_20_parks",
-  "#origin_chart": "where_visitors_live",
-  "#trip_role_chart": "role_of_the_park_in_the_trip",
+  "#origin_chart": "5.1_where_visitors_live",
+  "#trip_role_chart": "5.2_role_of_the_park_in_the_trip",
   "#monthly_chart": "visits_through_the_year",
   "#duration_chart": "length_of_visit",
   "#activities_chart": "top_10_activities",
@@ -42,7 +42,7 @@ function showError(divId, err) {
 
 const loadJSON = (url) => fetch(url).then((res) => res.json());
 
-// ---------------------------------------------------------------- draw the charts
+// draw the charts
 for (const [divId, name] of Object.entries(CHARTS)) {
   vegaEmbed(divId, chartFile(name), OPTIONS)
     .then((result) => {

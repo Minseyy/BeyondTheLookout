@@ -57,9 +57,7 @@ h1, h2, .lead, .stat dd, .marker, .takeaway-num, .hero-deck strong {
   font-variation-settings: "SOFT"100, "WONK"1;
 }
 
-p {
-  max-width: 66ch;
-}
+
 
 a {
   color: var(--teal);

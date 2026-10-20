@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Where visitors live",
+  "title": "Where do visitors come from",
   "width": "container",
   "height": 300,
   "data": {
