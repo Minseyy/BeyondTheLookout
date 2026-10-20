@@ -1,6 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Where do visitors come from",
+  "title": {
+    "text": "Where visitors live",
+    "subtitle": "Park visits by home location, 2024/25"
+  },
   "width": "container",
   "height": 300,
   "data": {
@@ -25,18 +28,33 @@
       "type": "quantitative",
       "title": "Visits (2024/25)",
       "axis": {
-        "format": "~s"
+        "format": "~s",
+        "tickCount": 5
       }
     },
     "color": {
       "field": "group",
       "type": "nominal",
-      "title": "Visitor from"
+      "title": "Visitor from",
+      "scale": {
+        "domain": [
+          "Local",
+          "Non-local"
+        ],
+        "range": [
+          "#2a9d8f",
+          "#e76f51"
+        ]
+      }
     },
     "tooltip": [
       {
         "field": "origin",
         "title": "Lives in"
+      },
+      {
+        "field": "group",
+        "title": "Visitor"
       },
       {
         "field": "total_visits",

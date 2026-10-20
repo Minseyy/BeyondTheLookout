@@ -30,19 +30,19 @@
         <a href="#sec2">Where people go</a>
         <a href="#sec3">Lookouts</a>
         <a href="#sec4">Access</a>
-        <a href="#sec5">Who</a>
+        <a href="#sec5">Who &amp; tourism</a>
         <a href="#sec6">When</a>
         <a href="#sec7">Why</a>
         <a href="#end">Trail's end</a>
     </nav>
 
     <!-- Hero -->
-    <!-- Hero -->
     <header class="hero">
         <div class="hero-inner">
             <h1>Is the view <em>worth</em> the walk?</h1>
             <p class="hero-deck">Last year people made <strong data-stat="visitsLatestWords">65.6 million</strong>
-                visits to <strong>New South Wales (NSW)</strong> national parks, and many of them walked to a lookout. This story
+                visits to <strong>New South Wales (NSW)</strong> national parks, and many of them walked to a lookout.
+                This story
                 compares those lookouts and walking tracks: how popular they are, how hard they are to reach, and
                 what they mean for tourism.</p>
             <ul class="hero-themes">
@@ -53,7 +53,7 @@
             </ul>
             <a class="hero-button" href="#intro">Start the walk <span aria-hidden="true">↓</span></a>
         </div>
-        <!-- <p class="hero-credit">Photo: [name / source]</p> -->
+        <!-- <p class="hero-credit">Photo from </p> -->
     </header>
 
     <main class="trail">
@@ -61,27 +61,28 @@
         <section id="intro" class="stop stop-start">
             <span class="marker" aria-hidden="true"></span>
             <p class="lead">
-                Walking is the most popular activity in NSW national parks, with more people hitting the trails each year. But which places draw the most visitors? How hard are those walks to the lookouts? And do visitors actually leave satisfied?
+                Walking is the most popular activity in NSW national parks, with more people hitting the trails each
+                year. But which places draw the most visitors? How hard are those walks to the lookouts? And do visitors
+                actually leave satisfied?
                 <br><br>
                 <strong>Walk</strong> with us to explore the data to find out.
             </p>
-
             <dl class="stats">
                 <div class="stat">
                     <dt>Park visits, <span data-stat="latestYear">2024/25</span></dt>
-                    <dd data-stat="visitsLatest">65.6M</dd>
+                    <dd data-stat="visitsLatest"></dd>
                 </div>
                 <div class="stat">
                     <dt>Lookouts</dt>
-                    <dd data-stat="lookouts">794</dd>
+                    <dd data-stat="lookouts"></dd>
                 </div>
                 <div class="stat">
                     <dt>Walking track</dt>
-                    <dd><span data-stat="trackKm">2,700</span><small>km</small></dd>
+                    <dd><span data-stat="trackKm"></span><small>km</small></dd>
                 </div>
                 <div class="stat">
                     <dt>Visitors satisfied</dt>
-                    <dd data-stat="satisfied">89%</dd>
+                    <dd data-stat="satisfied">%</dd>
                 </div>
             </dl>
         </section>
@@ -89,9 +90,12 @@
         <!-- Stop 1 -->
         <section id="sec1" class="stop">
             <span class="marker" aria-hidden="true">1</span>
-            <h2>Visits to NSW national parks, <span data-stat="firstYear">2008</span>–<span data-stat="latestYear">2024/25</span></h2>
-            <p>NSW National Parks and Wildlife Service (NPWS) counts park visits every two years. The numbers barely moved until 2014, then jumped. During the
-                2020 lockdowns visits fell by about <span data-stat="covidDrop">10 million</span>, but by <span data-stat="latestYear">2024/25</span> they were higher than ever.</p>
+            <h2>Visits to NSW national parks, <span data-stat="firstYear">2008</span>–<span
+                    data-stat="latestYear">2024/25</span></h2>
+            <p>NSW National Parks and Wildlife Service (NPWS) counts park visits every two years. The numbers barely
+                moved until 2014, then jumped. During the
+                2020 lockdowns visits fell by about <span data-stat="covidDrop">10 million</span>, but by <span
+                    data-stat="latestYear">2024/25</span> they were higher than ever.</p>
             <div id="bar_chart" class="chart"></div>
             <div class="takeaway">
                 <p class="takeaway-num" data-stat="visitsLatest">65.6M</p>
@@ -104,51 +108,62 @@
         <!-- Sec 2 -->
         <section id="sec2" class="stop">
             <span class="marker" aria-hidden="true">2</span>
-            <h2>Where do people go? The 20 most visited parks</h2>
+            <h2>Where do people go, and where are the views?</h2>
             <p>NPWS runs its parks in eight regions. Greater Sydney is the smallest of them, yet its parks get about
                 <span data-stat="sydneyVisits">28 million</span> visits a year, more than any other region.
-                <span data-stat="sydneyTop20">8</span> of the 20 busiest parks are in it.</p>
-            <p class="hint">Click a region to highlight its parks. Double-click to reset.</p>
+                <span data-stat="sydneyTop20">8</span> of the 20 busiest parks are in it. The grey dots are the
+                state's <span data-stat="lookouts">794</span> lookouts: the views are spread right across NSW, but
+                the visitors are not.
+            </p>
+            <p class="hint">Click a park on either map, or its bar, to see more about it. Double-click to reset.</p>
             <div id="regions_map" class="chart"></div>
 
-            <h3>And the pull of Sydney keeps growing</h3>
+            <!-- Filled in by main.js when a park is clicked. Photos and descriptions: data/park_details.json -->
+            <aside id="park_info" class="park-info plate" aria-live="polite">
+                <p class="park-info-empty">Click a park to see its photo, details and walking tracks.</p>
+            </aside>
+        </section>
+
+        <!-- Stop 3 -->
+        <section id="sec3" class="stop">
+            <span class="marker" aria-hidden="true">3</span>
+            <h2>How crowded are the lookouts?</h2>
+            <p>NPWS lists <span data-stat="lookouts">794</span> lookouts across its parks (the grey dots on the map
+                above).
+                <span data-stat="platformShare">43%</span> are built viewing platforms and
+                <span data-stat="onGroundShare">41%</span> are simpler spots on the ground; the rest are viewpoints.
+                <span data-stat="mostLookoutsRegion">Blue Mountains</span> has the most of any region
+                (<span data-stat="mostLookouts">195</span>). Greater Sydney, the busiest region, has only
+                <span data-stat="sydneyLookouts">55</span>.
+            </p>
+            <p>So I divided each region's park visits by its number of lookouts. In
+                <span data-stat="crowdedRegion">Greater Sydney</span> that comes to about
+                <span data-stat="crowdedPerLookout">514,000</span> visits for every lookout. In
+                <span data-stat="quietRegion">Northern Inland</span> it is about
+                <span data-stat="quietPerLookout">12,000</span>.
+            </p>
+            <div id="lookout_map" class="chart"></div>
+            <div class="takeaway">
+                <p class="takeaway-num"><span data-stat="crowdRatio">42</span>×</p>
+                <p class="takeaway-text">as many park visits per lookout in Greater Sydney as in
+                    <span data-stat="quietRegion">Northern Inland</span>.
+                </p>
+            </div>
+             <h3>And the pull of Sydney keeps growing</h3>
             <p>Each little map below is one survey. The darker a region, the bigger its share of all park visits
                 that year. In <span data-stat="sydneyShareFirstYear">2008</span> Greater Sydney had
                 <span data-stat="sydneyShareFirst">30%</span> of visits. By <span data-stat="latestYear">2024/25</span>
                 it had <span data-stat="sydneyShareLast">43%</span>. Every other region except the West ended up with
-                a slightly smaller share.</p>
+                a slightly smaller share.
+            </p>
             <p class="hint">Hover a region to follow it through the years.</p>
             <div id="share_maps" class="chart"></div>
             <div class="takeaway">
                 <p class="takeaway-num" data-stat="sydneyShare">43%</p>
                 <p class="takeaway-text">of all park visits are now to parks in Greater Sydney, up from
                     <span data-stat="sydneyShareFirst">30%</span> in
-                    <span data-stat="sydneyShareFirstYear">2008</span>.</p>
-            </div>
-        </section>
-
-        <!-- Stop 3 -->
-        <section id="sec3" class="stop">
-            <span class="marker" aria-hidden="true">3</span>
-            <h2>Where are the lookouts?</h2>
-            <p>NPWS lists <span data-stat="lookouts">794</span> lookouts across its parks.
-                <span data-stat="platformShare">43%</span> are built viewing platforms and
-                <span data-stat="onGroundShare">41%</span> are simpler spots on the ground; the rest are viewpoints.
-                <span data-stat="mostLookoutsRegion">Blue Mountains</span> has the most of any region
-                (<span data-stat="mostLookouts">195</span>). Greater Sydney, the busiest region, has only
-                <span data-stat="sydneyLookouts">55</span>.</p>
-            <p>So I divided each region's park visits by its number of lookouts. In
-                <span data-stat="crowdedRegion">Greater Sydney</span> that comes to about
-                <span data-stat="crowdedPerLookout">514,000</span> visits for every lookout. In
-                <span data-stat="quietRegion">Northern Inland</span> it is about
-                <span data-stat="quietPerLookout">12,000</span>.</p>
-            <p class="hint">Click a region to show only its lookouts, double-click to reset. Click a lookout type in the
-                legend to show just that type.</p>
-            <div id="lookout_map" class="chart"></div>
-            <div class="takeaway">
-                <p class="takeaway-num"><span data-stat="crowdRatio">42</span>×</p>
-                <p class="takeaway-text">as many park visits per lookout in Greater Sydney as in
-                    <span data-stat="quietRegion">Northern Inland</span>.</p>
+                    <span data-stat="sydneyShareFirstYear">2008</span>.
+                </p>
             </div>
         </section>
 
@@ -166,17 +181,20 @@
                 <div class="class-key">
                     <div class="key-group">
                         <p class="key-title"><span class="swatch swatch-easy"></span>Easy,
-                            <span data-stat="easyShare">7%</span> of track</p>
+                            <span data-stat="easyShare">7%</span> of track
+                        </p>
                         <p>Class 1 · All access<br>Class 2 · Graded track</p>
                     </div>
                     <div class="key-group">
                         <p class="key-title"><span class="swatch swatch-moderate"></span>Moderate,
-                            <span data-stat="moderateShare">69%</span> of track</p>
+                            <span data-stat="moderateShare">69%</span> of track
+                        </p>
                         <p>Class 3 · Walking track<br>Class 4 · Hiking track</p>
                     </div>
                     <div class="key-group">
                         <p class="key-title"><span class="swatch swatch-hard"></span>Hard,
-                            <span data-stat="hardShare">24%</span> of track</p>
+                            <span data-stat="hardShare">24%</span> of track
+                        </p>
                         <p>Class 5 · Marked route<br>Class 6 · Unmarked route</p>
                     </div>
                 </div>
@@ -188,7 +206,8 @@
                 <span data-stat="hardestPark">Morton</span>, <span data-stat="hardestShare">87%</span> is hard.
                 And the most visited park of all, <span data-stat="busiestPark">Blue Mountains</span>, is one of the
                 tougher ones: <span data-stat="busiestHard">37%</span> of its track is hard and only
-                <span data-stat="busiestEasy">4%</span> is easy.</p>
+                <span data-stat="busiestEasy">4%</span> is easy.
+            </p>
             <p class="hint">Click a bar, or pick a park from the list, to see its tracks on the map.</p>
             <div class="canvas">
                 <div class="canvas-header">
@@ -206,49 +225,142 @@
             <div class="takeaway">
                 <p class="takeaway-num"><span data-stat="class1Km">26</span><small>km</small></p>
                 <p class="takeaway-text">is all the park track built for wheelchairs (Class 1), out of
-                    <span data-stat="trackKm">2,700</span> km across NSW.</p>
+                    <span data-stat="trackKm">2,700</span> km across NSW.
+                </p>
             </div>
         </section>
 
-        <!-- Stop 5 -->
+        <!-- Sec 5: replaces the whole old section 5 -->
         <section id="sec5" class="stop">
             <span class="marker" aria-hidden="true">5</span>
-            <h2>Who goes to the parks?</h2>
-            <p class="todo">TODO: where visitors come from, and who they come with</p>
-            <div id="origin_chart" class="chart"></div>
-            <div id="trip_role_chart" class="chart"></div>
-            <!-- <p>Data: <code>visitor_origin_2024_25.csv, trip_role_2024_25.csv</code></p> -->
+            <h2>Who goes to the parks, and where do they come from?</h2>
+            <p>Most park visitors live close by. People from Sydney made 42.1 million visits in 2024/25 (64% of
+                all visits) and people from the rest of NSW another 12.7 million. The other 10.8 million visits,
+                about one in six, came from interstate. Melbourne, regional Queensland and Brisbane each sent
+                around two million, and Canberra, just over the border, another 1.7 million.</p>
+            <p class="hint">Hover a line or a city for its number of visits.</p>
+            <div id="flow_map" class="chart"></div>
+
+            <h3>And they come from overseas too</h3>
+            <p>National parks are also one of the main things international tourists do in NSW. 72% of
+                international visitors to the state, about 2.8 million people, went to at least one NPWS park.
+                A third of them visited more than one. China, South Korea and the United States sent the most.
+                These visitors are not part of the 65.6 million domestic visits above.</p>
+            <div id="intl_isotype" class="chart"></div>
+            <p class="hint">Hover a circle for the exact number of visitors.</p>
+            <div id="intl_map" class="chart"></div>
+
+            <h3>For locals the park is the trip. For interstate visitors it's one stop</h3>
+            <p>Splitting visitors into these two groups explains most of how they use the parks. For 70% of NSW
+                visitors the park was the only or main reason for the trip, and 88% went home the same day.
+                For interstate visitors only 28% came mainly for the park, but 28% stayed at least one night.
+                That is where parks help tourism: the park is one part of a longer trip that brings
+                accommodation, meals and other spending. Both groups left happy, although NSW visitors were a
+                little more satisfied (90% against 85%).</p>
+            <p class="hint">Switch between the three questions. Each block's area is the number of visits it
+                stands for. Hover a block for the details.</p>
+            <div id="profile_mosaic" class="chart"></div>
+            <div id="profile_bars" class="chart"></div>
+
             <div class="takeaway">
-                <!-- <p class="takeaway-num">00%</p>
-                <p class="takeaway-text">[Takeaway about who visits.]</p> -->
+                <p class="takeaway-num">28%</p>
+                <p class="takeaway-text">of interstate visitors stayed at least one night, almost three times as
+                    many as NSW visitors (10%).</p>
             </div>
         </section>
 
-        <!-- Stop 6 -->
+        <!-- Sec 6: now only "when" (length of stay moved into the mosaic above) -->
         <section id="sec6" class="stop">
             <span class="marker" aria-hidden="true">6</span>
-            <h2>When do people go, and for how long?</h2>
-            <p class="todo">TODO: Most Popular months, and how long a visit lasts</p>
+            <h2>When do people go?</h2>
+            <p>Parks are busy all year round. Most months are within about 5% of an average month, but the
+                summer holidays stand out: December was 11% busier than average and January 9%. Easter gave
+                April a smaller lift.</p>
+            <p class="hint">Hover a bar for that month's exact figure.</p>
             <div id="monthly_chart" class="chart"></div>
-            <div id="duration_chart" class="chart"></div>
-            <!-- <p>Data: <code>monthly_index_2024_25_CHECK.csv, visit_duration_2024_25.csv</code></p> -->
+
             <div class="takeaway">
-                <!-- <p class="takeaway-num">00%</p>
-                <p class="takeaway-text">[Takeaway about timing.]</p> -->
+                <p class="takeaway-num">+11%</p>
+                <p class="takeaway-text">more visits than an average month in December, the busiest month of
+                    the year.</p>
             </div>
         </section>
+
 
         <!-- Stop 7 -->
         <section id="sec7" class="stop">
             <span class="marker" aria-hidden="true">7</span>
             <h2>Why do they go?</h2>
-            <p class="todo">TODO: What people do in the parks, and how happy they are afterwards</p>
-            <div id="activities_chart" class="chart"></div>
+            <p>Walking is the most common thing people do in a national park, and touring and sightseeing comes
+                second. That is the lookout story: most visitors come to walk somewhere and look at the view.
+                Photography makes the top ten as well.</p>
+
+            <table class="rank-table plate">
+                <caption>Top 10 activities in NSW national parks, 2024/25</caption>
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Activity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="hl">
+                        <td>1</td>
+                        <td>Walking</td>
+                    </tr>
+                    <tr class="hl">
+                        <td>2</td>
+                        <td>Touring &amp; sightseeing</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Picnicking &amp; dining</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Rest &amp; relaxation</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Water-based recreation</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Enjoyment &amp; appreciation of nature</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Camping &amp; accommodation</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Exercise &amp; sport</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Socialising</td>
+                    </tr>
+                    <tr class="hl">
+                        <td>10</td>
+                        <td>Photography</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="hint">The 2024/25 survey changed how it asked about activities, so it only publishes the
+                order, not how many people did each one.</p>
+
+            <h3>And they come home happy</h3>
+            <p>89% of visitors were satisfied with their last park visit, and more than half (55%) were very
+                satisfied. NSW visitors were a little happier than interstate visitors (90% against 85%).
+                Visitors aged 50 to 64 were the most satisfied (94%), and 18 to 34 year olds the least (85%),
+                though still a large majority.</p>
+            <p class="hint">The dashed line is the overall level for all visitors (89%).</p>
             <div id="satisfaction_chart" class="chart"></div>
-            <!-- <p>Data: <code>top10_activities_2024_25.csv, satisfaction_2024_25.csv</code></p> -->
+
             <div class="takeaway">
-                <!-- <p class="takeaway-num">00%</p> -->
-                <!-- <p class="takeaway-text">[Takeaway about why parks are popular.]</p> -->
+                <p class="takeaway-num" data-stat="satisfied">89%</p>
+                <p class="takeaway-text">of visitors were satisfied with their park visit. Even with the crowds
+                    and the hard tracks, people still love the view.</p>
             </div>
         </section>
 
@@ -302,11 +414,20 @@
     <footer class="site-footer">
         <h2>Sources</h2>
         <ul class="sources">
-            <li><a href="https://www.environment.nsw.gov.au/topics/parks-reserves-and-protected-areas/park-management/npws-park-management/park-visitor-survey">NPWS Park Visitor Survey</a>
-                (<a href="https://www.environment.nsw.gov.au/sites/default/files/2026-04/NPWS_parks_visitation_survey_annual_report_fy24-25-optimised.pdf">2024/25 report</a>)</li>
-            <li><a href="https://mapprod2.environment.nsw.gov.au/arcgis/rest/services/Assets/AMS_Assets/FeatureServer/14">NPWS lookouts</a></li>
-            <li><a href="https://mapprod2.environment.nsw.gov.au/arcgis/rest/services/Assets/AMS_Assets/FeatureServer/34">NPWS walking tracks</a></li>
-            <li><a href="https://mapprod3.environment.nsw.gov.au/arcgis/rest/services/EDP/Estate/MapServer/0">NPWS park boundaries</a></li>
+            <li><a
+                    href="https://www.environment.nsw.gov.au/topics/parks-reserves-and-protected-areas/park-management/npws-park-management/park-visitor-survey">NPWS
+                    Park Visitor Survey</a>
+                (<a
+                    href="https://www.environment.nsw.gov.au/sites/default/files/2026-04/NPWS_parks_visitation_survey_annual_report_fy24-25-optimised.pdf">2024/25
+                    report</a>)</li>
+            <li><a
+                    href="https://mapprod2.environment.nsw.gov.au/arcgis/rest/services/Assets/AMS_Assets/FeatureServer/14">NPWS
+                    lookouts</a></li>
+            <li><a
+                    href="https://mapprod2.environment.nsw.gov.au/arcgis/rest/services/Assets/AMS_Assets/FeatureServer/34">NPWS
+                    walking tracks</a></li>
+            <li><a href="https://mapprod3.environment.nsw.gov.au/arcgis/rest/services/EDP/Estate/MapServer/0">NPWS park
+                    boundaries</a></li>
             <li><a href="https://data.nsw.gov.au/data/dataset/npws-branches">NPWS regions</a></li>
             <li><a href="https://www.naturalearthdata.com/">Natural Earth</a></li>
         </ul>

@@ -1,0 +1,89 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "72% of international visitors to NSW went to a national park",
+    "subtitle": "Each figure stands for 1% of the roughly 3.9 million international visitors to NSW in 2024/25."
+  },
+  "width": "container",
+  "height": 260,
+  "data": {
+    "sequence": {
+      "start": 0,
+      "stop": 100,
+      "as": "i"
+    }
+  },
+  "transform": [
+    {
+      "calculate": "datum.i % 20",
+      "as": "col"
+    },
+    {
+      "calculate": "floor(datum.i / 20)",
+      "as": "row"
+    },
+    {
+      "calculate": "datum.i < 72 ? 'Visited a national park: 72%, about 2.8 million people' : 'Did not visit: 28%'",
+      "as": "group"
+    }
+  ],
+  "mark": {
+    "type": "point",
+    "shape": "M-0.22,-1 L0.22,-1 L0.32,-0.78 L0.22,-0.56 L-0.22,-0.56 L-0.32,-0.78 Z M-0.55,-0.45 L0.55,-0.45 L0.62,0.25 L0.34,0.25 L0.34,1 L-0.34,1 L-0.34,0.25 L-0.62,0.25 Z",
+    "filled": true,
+    "size": 380,
+    "opacity": 1
+  },
+  "encoding": {
+    "x": {
+      "field": "col",
+      "type": "ordinal",
+      "axis": null,
+      "scale": {
+        "paddingInner": 0.1
+      }
+    },
+    "y": {
+      "field": "row",
+      "type": "ordinal",
+      "axis": null,
+      "scale": {
+        "paddingInner": 0.15
+      }
+    },
+    "color": {
+      "field": "group",
+      "type": "nominal",
+      "title": null,
+      "scale": {
+        "domain": [
+          "Visited a national park: 72%, about 2.8 million people",
+          "Did not visit: 28%"
+        ],
+        "range": [
+          "#e76f51",
+          "#d9d4c7"
+        ]
+      },
+      "legend": {
+        "orient": "bottom",
+        "direction": "horizontal",
+        "symbolType": "square",
+        "labelLimit": 0,
+        "labelFontSize": 12,
+        "symbolSize": 120
+      }
+    },
+    "tooltip": [
+      {
+        "field": "group",
+        "title": " "
+      }
+    ]
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}

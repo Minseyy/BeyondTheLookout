@@ -1,16 +1,17 @@
 const CHARTS = {
   "#bar_chart": "1_park_visits_per_survey_year",
-  "#regions_map": "top_20_parks_by_region",
-  "#share_maps": "share_of_park_visits_by_region",
+  "#regions_map": "2_top_20_parks_and_lookouts",
+  "#share_maps": "3.2_share_of_park_visits_by_region",
   "#lookout_map": "3_park_visits_per_lookout",
-  "#track_waffle": "walking_track_by_difficulty",
-  "#park_difficulty": "track_difficulty_in_top_20_parks",
-  "#origin_chart": "5.1_where_visitors_live",
-  "#trip_role_chart": "5.2_role_of_the_park_in_the_trip",
-  "#monthly_chart": "visits_through_the_year",
-  "#duration_chart": "length_of_visit",
-  "#activities_chart": "top_10_activities",
-  "#satisfaction_chart": "visitor_satisfaction",
+  "#track_waffle": "4.1_walking_track_by_difficulty",
+  "#park_difficulty": "4.2_track_difficulty_in_top_20_parks",
+  "#flow_map": "5.1_interstate_flow_map",
+  "#intl_isotype": "5.2_international_isotype",
+  "#intl_map": "5.3_international_visitors_map",
+  "#profile_mosaic": "5.4_visitor_profile_mosaic",
+  "#profile_bars": "5.4b_visitor_profile_bars",
+  "#monthly_chart": "6.1_visits_through_the_year",
+  "#satisfaction_chart": "7.2_visitor_satisfaction",
 };
 const chartFile = (name) => `charts/${name}.vg.json`;
 
@@ -46,9 +47,78 @@ const loadJSON = (url) => fetch(url).then((res) => res.json());
 for (const [divId, name] of Object.entries(CHARTS)) {
   vegaEmbed(divId, chartFile(name), OPTIONS)
     .then((result) => {
+      if (divId === "#regions_map") linkParkInfo(result.view);
       if (divId === "#park_difficulty") linkBarsToParkMap(result.view);
     })
     .catch((err) => showError(divId, err));
+}
+
+// ---------------------------------------------------------------- park info panel (Section 2)
+// Clicking a park (on either map or its bar) shows it in the panel under the chart.
+// The numbers come from park_info.json (made by prepare_data.py). The photo and
+// description come from park_details.json, which you fill in by hand.
+const parkInfo = loadJSON("data/park_info.json");
+const parkDetails = loadJSON("data/park_details.json").catch(() => ({}));
+const panel = document.getElementById("park_info");
+const EMPTY_PANEL = panel ? panel.innerHTML : "";
+
+const escapeHTML = (text) =>
+  String(text).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+const formatNumber = (n) => Math.round(n).toLocaleString("en-AU");
+
+async function showParkInfo(park) {
+  if (!panel) return;
+  // the map selects by full name (park_full), the old version by short name (park): accept both
+  const info = (await parkInfo).find((p) => p.park === park || p.park_full === park);
+  if (!info) {
+    panel.innerHTML = EMPTY_PANEL; // nothing picked (double-click)
+    return;
+  }
+  const extra = (await parkDetails)[info.park] || {};
+  const photo = extra.image
+    ? `<figure><img src="${escapeHTML(extra.image)}" alt="${escapeHTML(info.park_full)}" loading="lazy" referrerpolicy="no-referrer">` +
+      (extra.image_credit ? `<figcaption>${escapeHTML(extra.image_credit)}</figcaption>` : "") +
+      `</figure>`
+    : "";
+  const stat = (label, value) => (value === null || value === undefined ? "" : `<div><dt>${label}</dt><dd>${value}</dd></div>`);
+
+  panel.innerHTML = `
+    <div class="park-info-body${photo ? "" : " no-photo"}">
+      ${photo}
+      <div>
+        <h3>${info.rank}. ${escapeHTML(info.park_full)}</h3>
+        <p class="park-info-region">${escapeHTML(info.branch)} region</p>
+        ${extra.description ? `<p class="park-info-text">${escapeHTML(extra.description)}</p>` : ""}
+        <dl class="park-info-stats">
+          ${stat("Visits (2024/25)", formatNumber(info.visits))}
+          ${stat("Lookouts", info.lookouts)}
+          ${stat("Walking track", info.track_km === null ? null : `${formatNumber(info.track_km)} km`)}
+          ${stat("Easy track", info.easy_pct === null ? null : `${info.easy_pct}%`)}
+          ${stat("Hard track", info.hard_pct === null ? null : `${info.hard_pct}%`)}
+        </dl>
+        <button type="button" class="park-info-link">See its tracks on the map ↓</button>
+      </div>
+    </div>`;
+  // no photo file yet (or a wrong path): drop the photo and use the full width
+  const img = panel.querySelector("img");
+  if (img) {
+    img.addEventListener("error", () => {
+      img.closest("figure").remove();
+      panel.querySelector(".park-info-body").classList.add("no-photo");
+    });
+  }
+
+  panel.querySelector(".park-info-link").addEventListener("click", () => {
+    drawParkMap(info.park);
+    document.getElementById("park_map").scrollIntoView({ behavior: "smooth", block: "center" });
+  });
+}
+
+function linkParkInfo(view) {
+  view.addSignalListener("pickPark", (name, value) => {
+    const picked = value && (value.park_full || value.park);
+    showParkInfo(Array.isArray(picked) ? picked[0] : picked);
+  });
 }
 
 // ---------------------------------------------------------------- park map (Section 4)
