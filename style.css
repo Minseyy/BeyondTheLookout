@@ -927,3 +927,12 @@ a {
   width: 3rem; font-family: Fraunces, Georgia, serif; font-weight: 700; color: #e76f51;
 }
 .rank-table tr.hl td { font-weight: 600; color: #1f3d17; }
+
+.vega-bindings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}

@@ -1,8 +1,8 @@
 const CHARTS = {
   "#bar_chart": "1_park_visits_per_survey_year",
   "#regions_map": "2_top_20_parks_and_lookouts",
-  "#share_maps": "3.2_share_of_park_visits_by_region",
   "#lookout_map": "3_park_visits_per_lookout",
+  "#share_maps": "3.2_share_of_park_visits_by_region",
   "#track_waffle": "4.1_walking_track_by_difficulty",
   "#park_difficulty": "4.2_track_difficulty_in_top_20_parks",
   "#flow_map": "5.1_interstate_flow_map",
@@ -10,9 +10,11 @@ const CHARTS = {
   "#intl_map": "5.3_international_visitors_map",
   "#profile_mosaic": "5.4_visitor_profile_mosaic",
   "#profile_bars": "5.4b_visitor_profile_bars",
+  "#profile_bars2": "5.4c_v_p_b",
   "#monthly_chart": "6.1_visits_through_the_year",
   "#satisfaction_chart": "7.2_visitor_satisfaction",
 };
+
 const chartFile = (name) => `charts/${name}.vg.json`;
 
 // Fonts & colours for every chart
