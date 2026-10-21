@@ -45,7 +45,6 @@ function showError(divId, err) {
 
 const loadJSON = (url) => fetch(url).then((res) => res.json());
 
-// draw the charts
 for (const [divId, name] of Object.entries(CHARTS)) {
   vegaEmbed(divId, chartFile(name), OPTIONS)
     .then((result) => {
@@ -55,10 +54,9 @@ for (const [divId, name] of Object.entries(CHARTS)) {
     .catch((err) => showError(divId, err));
 }
 
-// ---------------------------------------------------------------- park info panel (Section 2)
-// Clicking a park (on either map or its bar) shows it in the panel under the chart.
-// The numbers come from park_info.json (made by prepare_data.py). The photo and
-// description come from park_details.json, which you fill in by hand.
+// Clicking a park(map/bar) shows it in the panel under the chart.
+// numbers from park_info.json
+// Photo n description come from park_details.json
 const parkInfo = loadJSON("data/park_info.json");
 const parkDetails = loadJSON("data/park_details.json").catch(() => ({}));
 const panel = document.getElementById("park_info");
@@ -79,8 +77,8 @@ async function showParkInfo(park) {
   const extra = (await parkDetails)[info.park] || {};
   const photo = extra.image
     ? `<figure><img src="${escapeHTML(extra.image)}" alt="${escapeHTML(info.park_full)}" loading="lazy" referrerpolicy="no-referrer">` +
-      (extra.image_credit ? `<figcaption>${escapeHTML(extra.image_credit)}</figcaption>` : "") +
-      `</figure>`
+    (extra.image_credit ? `<figcaption>${escapeHTML(extra.image_credit)}</figcaption>` : "") +
+    `</figure>`
     : "";
   const stat = (label, value) => (value === null || value === undefined ? "" : `<div><dt>${label}</dt><dd>${value}</dd></div>`);
 
@@ -101,7 +99,7 @@ async function showParkInfo(park) {
         <button type="button" class="park-info-link">See its tracks on the map ↓</button>
       </div>
     </div>`;
-  // no photo file yet (or a wrong path): drop the photo and use the full width
+  // no photo file = no photo and card use the full width
   const img = panel.querySelector("img");
   if (img) {
     img.addEventListener("error", () => {
@@ -126,7 +124,7 @@ function linkParkInfo(view) {
 // ---------------------------------------------------------------- park map (Section 4)
 // The dropdown, the difficulty bars and the map all show the same park.
 let parkBarsView = null;
-const parkMapSpec = loadJSON(chartFile("park_track_map"));
+const parkMapSpec = loadJSON(chartFile("4.2_park_track_map"));
 const parkList = loadJSON("data/park_list.json"); // [{ park, rank, summary }]
 const parkSelect = document.getElementById("park_select");
 

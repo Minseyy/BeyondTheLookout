@@ -3,8 +3,7 @@
   "title": {
     "text": "Locals come for the park. Interstate visitors come for the trip",
     "subtitle": [
-      "Left: NSW visitors (84% of visits). Right: interstate visitors (16%).",
-      "Each block's size is the number of visits it stands for, 2024/25."
+      "Left: NSW visitors (84% of visits). Right: interstate visitors (16%)."
     ]
   },
   "width": "container",
@@ -42,9 +41,7 @@
     },
     {
       "stack": "pct",
-      "groupby": [
-        "origin"
-      ],
+      "groupby": ["origin"],
       "sort": [
         {
           "field": "order",
@@ -52,10 +49,7 @@
         }
       ],
       "offset": "normalize",
-      "as": [
-        "y0",
-        "y1"
-      ]
+      "as": ["y0", "y1"]
     },
     {
       "calculate": "(datum.y0 + datum.y1) / 2",
@@ -82,10 +76,7 @@
           "field": "x0",
           "type": "quantitative",
           "scale": {
-            "domain": [
-              0,
-              1
-            ]
+            "domain": [0, 1]
           },
           "axis": null
         },
@@ -96,10 +87,7 @@
           "field": "y0",
           "type": "quantitative",
           "scale": {
-            "domain": [
-              0,
-              1
-            ],
+            "domain": [0, 1],
             "reverse": true
           },
           "axis": null
@@ -108,9 +96,31 @@
           "field": "y1"
         },
         "color": {
-          "field": "colour",
+          "field": "answer",
           "type": "nominal",
-          "scale": null
+          "legend": null,
+          "scale": {
+            "domain": [
+              "Main reason for the trip",
+              "Part of the reason",
+              "Not a reason / can't say",
+              "Day trip",
+              "Stayed one night or more",
+              "Can't say",
+              "Satisfied",
+              "Neutral or dissatisfied"
+            ],
+            "range": [
+              "#b5462b",
+              "#f4a261",
+              "#e4ddd0",
+              "#2f5e22",
+              "#8fb98a",
+              "#e4ddd0",
+              "#2a6f97",
+              "#e4ddd0"
+            ]
+          }
         },
         "tooltip": [
           {
