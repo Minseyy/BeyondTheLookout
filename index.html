@@ -141,21 +141,20 @@
         <section id="sec3" class="stop">
             <span class="marker" aria-hidden="true">3</span>
             <h2>How crowded are the lookouts?</h2>
-            <p>NPWS lists <span data-stat="lookouts">794</span> lookouts across its parks (the grey dots on the map
-                above).
-                <span data-stat="platformShare">43%</span> are built viewing platforms and
-                <span data-stat="onGroundShare">41%</span> are simpler spots on the ground; the rest are viewpoints.
-                <span data-stat="mostLookoutsRegion">Blue Mountains</span> has the most of any region
-                (<span data-stat="mostLookouts">195</span>). Greater Sydney, the busiest region, has only
-                <span data-stat="sydneyLookouts">55</span>.
-            </p>
-            <p>So I divided each region's park visits by its number of lookouts. In
-                <span data-stat="crowdedRegion">Greater Sydney</span> that comes to about
-                <span data-stat="crowdedPerLookout">514,000</span> visits for every lookout. In
-                <span data-stat="quietRegion">Northern Inland</span> it is about
-                <span data-stat="quietPerLookout">12,000</span>.
-            </p>
-            <div id="lookout_map" class="chart"></div>
+            <h3>Lookouts are spread unevenly across NSW</h3>
+            <p>NPWS records <strong><span data-stat="lookouts">794</span> lookouts</strong> across its parks. The Blue
+                Mountains has the most (<span data-stat="mostLookouts">195</span>), while Greater Sydney has just <span
+                    data-stat="sydneyLookouts">55</span> — despite being the region with the most park visits.</p>
+
+            <p>To compare visitation with lookout numbers, I divided each region's park visits in 2024/25 by its number
+                of lookouts. Greater Sydney had around <strong><span data-stat="crowdedPerLookout">514,000</span> visits
+                    per lookout</strong>, compared with about <strong><span
+                        data-stat="quietPerLookout">12,000</span></strong> in <span data-stat="quietRegion">Northern
+                    Inland</span>.</p>
+
+            <p class="hint">Hover over a region to see its lookout count, total park visits and visits per lookout. This
+                is a regional comparison, not a direct measure of crowding at individual lookouts.</p>
+            <div id="lookout_map" class="chart lookout-card"></div>
             <div class="takeaway">
                 <p class="takeaway-num"><span data-stat="crowdRatio">42</span>×</p>
                 <p class="takeaway-text">as many park visits per lookout in Greater Sydney as in
@@ -381,50 +380,39 @@
             </div>
         </section>
 
-        <!-- Trail's end: conclusion -->
-        <section id="end" class="stop stop-end">
-            <span class="marker" aria-hidden="true"></span>
-            <h2>The view from the end of the trail</h2>
-            <p>TODO: Conclusion Content</p>
+        <!-- conclusion -->
+<section id="end" class="stop stop-end">
+    <span class="marker" aria-hidden="true"></span>
+    <h2>The view from the end of the trail</h2>
 
-            <!-- <ol class="findings">
-                <li><strong>More people are going.</strong> Visits climbed from
-                    <span data-stat="firstVisitsWords">37.9 million</span> in <span data-stat="firstYear">2008</span>
-                    to <span data-stat="visitsLatestWords">65.6 million</span> in
-                    <span data-stat="latestYear">2024/25</span>. Even the 2020 lockdowns only slowed that down for
-                    a while.</li>
-                <li><strong>Most of them stay close to Sydney.</strong> Greater Sydney's parks get
-                    <span data-stat="sydneyShare">43%</span> of all visits, a bigger share than in any earlier
-                    survey.</li>
-                <li><strong>So Sydney's lookouts are the busiest.</strong> The region has only
-                    <span data-stat="sydneyLookouts">55</span> lookouts, about
-                    <span data-stat="crowdedPerLookout">514,000</span> park visits for each one. In
-                    <span data-stat="quietRegion">Northern Inland</span> it is about
-                    <span data-stat="quietPerLookout">12,000</span>.</li>
-                <li><strong>Getting to a view takes some effort.</strong> Only
-                    <span data-stat="easyShare">7%</span> of park track is easy walking, and just
-                    <span data-stat="class1Km">26</span> km is built for wheelchairs.</li>
-                <li><strong>And people still love it.</strong> <span data-stat="satisfied">89%</span> of visitors
-                    were satisfied with their visit.</li>
-            </ol> -->
-            <ol class="findings">
-                <li></li>
-                <li></li>
-                <li></li>
-            </ol>
+    <p>
+        So, is the view worth the walk? The data points to a growing
+        interest in NSW's national parks, but that interest is not
+        spread evenly across the state. Greater Sydney attracts a
+        large share of visits, while the accessibility of walking
+        tracks varies considerably. The appeal of these landscapes
+        is clear, but the opportunity to experience them is not the
+        same everywhere.
+    </p>
 
-            <p>TODO: Ending Note</p>
-            <!-- <p>If you want a view with fewer people in it, the numbers point away from the city. The regions with
-                the fewest visits per lookout are a long drive from Sydney, but you might have the platform to
-                yourself.</p> -->
+    <p>
+        There is also an important distinction between visiting a
+        national park and visiting a lookout. Park visitation figures
+        cannot tell us exactly how crowded individual lookouts are,
+        and visits per lookout should be treated as a broad regional
+        comparison rather than a direct measure of crowding.
+    </p>
 
-            <div class="takeaway">
-                <p class="takeaway-num" data-stat="lookouts">794</p>
-                <p class="takeaway-text">lookouts across NSW's national parks. Most people only ever see a few of
-                    them.</p>
-            </div>
-        </section>
-
+    <p>
+        These findings point to two considerations for park
+        management: making natural experiences more accessible and
+        understanding where visitor demand places the greatest
+        pressure on park facilities. The goal is not simply to bring
+        more people to the parks, but to help them experience these
+        landscapes sustainably.
+    </p>
+    <div class=" conclusion-end"></div>
+</section>
     </main>
 
     <!-- Footer: data sources -->

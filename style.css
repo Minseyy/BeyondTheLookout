@@ -928,11 +928,27 @@ a {
 }
 .rank-table tr.hl td { font-weight: 600; color: #1f3d17; }
 
-.vega-bindings {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 1rem;
+
+.lookout-card {
+  background-color: #dceef2;
+  padding: 16px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+}
+
+.lookout-card .vega-embed,
+.lookout-card .vega-embed canvas,
+.lookout-card .vega-embed svg {
+  max-width: 100%;
+}
+
+.conclusion-end {
+    width: 100%;
+    height: 4px;
+    background-color: #E07A5F;
+    margin: 40px auto 0;
+    border-radius: 2px;
 }

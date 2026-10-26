@@ -1,16 +1,26 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Park visits per lookout",
-    "subtitle": "Each region's park visits divided by its number of lookouts, 2024/25"
+    "text": "Visits per lookout by region",
+    "subtitle": [
+      "2024/25 park visits divided by the number of lookouts: how many visits each lookout has to share.",
+      "Hover over a region for details."
+    ],
+    "font": "Fraunces, Georgia, serif",
+    "fontSize": 20,
+    "color": "#1f3d17",
+    "anchor": "start",
+    "subtitleFontSize": 12,
+    "subtitleColor": "#444444"
   },
   "width": "container",
-  "height": 420,
+  "height": 520,
+  "background": "#dceef2",
   "projection": {
     "type": "mercator"
   },
   "view": {
-    "fill": "#a8dcef",
+    "fill": "#dceef2",
     "stroke": null
   },
   "layer": [
@@ -24,7 +34,7 @@
       },
       "mark": {
         "type": "geoshape",
-        "fill": "#e3f5ea",
+        "fill": "#a8dcef",
         "stroke": null
       }
     },
@@ -36,6 +46,17 @@
           "property": "features"
         }
       },
+      "params": [
+        {
+          "name": "hoverRegion",
+          "select": {
+            "type": "point",
+            "fields": ["branch"],
+            "on": "mouseover",
+            "clear": "mouseout"
+          }
+        }
+      ],
       "transform": [
         {
           "filter": "datum.properties.NAME != 'ACT'"
@@ -51,18 +72,13 @@
               "url": "data/3_park_visits_per_lookout/region_lookouts.json"
             },
             "key": "branch",
-            "fields": [
-              "visits",
-              "lookouts",
-              "perLookout"
-            ]
+            "fields": ["visits", "lookouts", "perLookout"]
           }
         }
       ],
       "mark": {
         "type": "geoshape",
-        "stroke": "white",
-        "strokeWidth": 1
+        "cursor": "pointer"
       },
       "encoding": {
         "color": {
@@ -71,26 +87,39 @@
           "title": "Park visits per lookout",
           "scale": {
             "type": "threshold",
-            "domain": [
-              25000,
-              50000,
-              75000,
-              150000
-            ],
-            "range": [
-              "#fbf3dc",
-              "#f4dcae",
-              "#eebd8c",
-              "#e0956c",
-              "#a8432a"
-            ]
+            "domain": [25000, 50000, 75000, 150000],
+            "range": ["#fbf3dc", "#f4dcae", "#eebd8c", "#e0956c", "#a8432a"]
           },
           "legend": {
-            "orient": "bottom",
+            "type": "symbol",
+            "orient": "top",
             "direction": "horizontal",
+            "titleOrient": "top",
+            "symbolType": "square",
+            "symbolSize": 220,
+            "titleFontSize": 12,
+            "labelFontSize": 11,
+            "columnPadding": 10,
             "format": "~s",
-            "titleLimit": 200
+            "padding": 0,
+            "offset": 10
           }
+        },
+        "stroke": {
+          "condition": {
+            "param": "hoverRegion",
+            "empty": false,
+            "value": "#e76f51"
+          },
+          "value": "white"
+        },
+        "strokeWidth": {
+          "condition": {
+            "param": "hoverRegion",
+            "empty": false,
+            "value": 3
+          },
+          "value": 1.2
         },
         "tooltip": [
           {
@@ -116,43 +145,181 @@
     },
     {
       "data": {
-        "values": [
-          {
-            "branch": "Greater Sydney",
-            "lon": 150.944,
-            "lat": -33.845,
-            "lon2": 152.29999999999998,
-            "lat2": -34.63
-          },
-          {
-            "branch": "South Coast",
-            "lon": 150.15,
-            "lat": -35.6,
-            "lon2": 151.0,
-            "lat2": -35.93
-          }
-        ]
+        "url": "data/3_park_visits_per_lookout/branch_visits_2024_25.csv"
       },
+      "transform": [
+        {
+          "filter": "datum.branch != 'West' && datum.branch != 'Northern Inland' && datum.branch != 'Southern Ranges' && datum.branch != 'ACT'"
+        },
+        {
+          "lookup": "branch",
+          "from": {
+            "data": {
+              "url": "data/3_park_visits_per_lookout/region_lookouts.json"
+            },
+            "key": "branch",
+            "fields": ["lookouts", "perLookout"]
+          }
+        },
+        {
+          "calculate": "datum.branch == 'North Coast' || datum.branch == 'Hunter Central Coast' || datum.branch == 'Blue Mountains' || datum.branch == 'Greater Sydney' ? 155.2 : 146.0",
+          "as": "labelLon"
+        },
+        {
+          "calculate": "datum.branch == 'North Coast' ? -29.5 : datum.branch == 'Hunter Central Coast' ? -31.5 : datum.branch == 'Blue Mountains' ? -33.5 : datum.branch == 'Greater Sydney' ? -35.5 : datum.branch == 'Southern Ranges' ? -35.5 : -38.0",
+          "as": "labelLat"
+        },
+        {
+          "calculate": "format(datum.perLookout, ',.0f')",
+          "as": "valueLabel"
+        }
+      ],
+      "layer": [
+        {
+          "mark": {
+            "type": "rule",
+            "color": "#53666a",
+            "strokeWidth": 1
+          },
+          "encoding": {
+            "longitude": {
+              "field": "label_lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "label_lat",
+              "type": "quantitative"
+            },
+            "longitude2": {
+              "field": "labelLon"
+            },
+            "latitude2": {
+              "field": "labelLat"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "circle",
+            "size": 30,
+            "fill": "#26352a",
+            "stroke": "white",
+            "strokeWidth": 1
+          },
+          "encoding": {
+            "longitude": {
+              "field": "label_lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "label_lat",
+              "type": "quantitative"
+            },
+            "tooltip": [
+              {
+                "field": "branch",
+                "title": "NPWS region"
+              },
+              {
+                "field": "lookouts",
+                "title": "Lookouts"
+              },
+              {
+                "field": "visits",
+                "title": "Park visits (2024/25)",
+                "format": ","
+              },
+              {
+                "field": "perLookout",
+                "title": "Visits per lookout",
+                "format": ",.0f"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "data": {
+        "url": "data/3_park_visits_per_lookout/branch_visits_2024_25.csv"
+      },
+      "transform": [
+        {
+          "filter": "datum.branch != 'West' && datum.branch != 'Northern Inland' && datum.branch != 'Southern Ranges' && datum.branch != 'ACT'"
+
+        },
+        {
+          "lookup": "branch",
+          "from": {
+            "data": {
+              "url": "data/3_park_visits_per_lookout/region_lookouts.json"
+            },
+            "key": "branch",
+            "fields": ["lookouts", "perLookout"]
+          }
+        },
+        {
+          "calculate": "datum.branch == 'North Coast' || datum.branch == 'Hunter Central Coast' || datum.branch == 'Blue Mountains' || datum.branch == 'Greater Sydney' ? 155.2 : 146.0",
+          "as": "labelLon"
+        },
+        {
+          "calculate": "datum.branch == 'North Coast' ? -29.5 : datum.branch == 'Hunter Central Coast' ? -31.5 : datum.branch == 'Blue Mountains' ? -33.5 : datum.branch == 'Greater Sydney' ? -35.5 : -38.0",
+          "as": "labelLat"
+        },
+        {
+          "calculate": "datum.branch + '\\n' + format(datum.perLookout, ',.0f')",
+          "as": "label"
+        }
+      ],
       "mark": {
-        "type": "rule",
-        "color": "#3d3d3d",
-        "strokeWidth": 1
+        "type": "text",
+        "fontSize": 10.5,
+        "fontWeight": "bold",
+        "baseline": "middle",
+        "align": "left",
+        "lineBreak": "\n",
+        "lineHeight": 13
       },
       "encoding": {
         "longitude": {
-          "field": "lon",
+          "field": "labelLon",
           "type": "quantitative"
         },
         "latitude": {
-          "field": "lat",
+          "field": "labelLat",
           "type": "quantitative"
         },
-        "longitude2": {
-          "field": "lon2"
+        "text": {
+          "field": "label",
+          "type": "nominal"
         },
-        "latitude2": {
-          "field": "lat2"
-        }
+        "color": {
+          "condition": {
+            "test": "datum.branch == 'Greater Sydney'",
+            "value": "#9b2d1a"
+          },
+          "value": "#26352a"
+        },
+        "tooltip": [
+          {
+            "field": "branch",
+            "title": "NPWS region"
+          },
+          {
+            "field": "lookouts",
+            "title": "Lookouts"
+          },
+          {
+            "field": "visits",
+            "title": "Park visits (2024/25)",
+            "format": ","
+          },
+          {
+            "field": "perLookout",
+            "title": "Visits per lookout",
+            "format": ",.0f"
+          }
+        ]
       }
     },
     {
@@ -161,47 +328,40 @@
       },
       "transform": [
         {
+          "filter": "datum.branch == 'West' || datum.branch == 'Northern Inland' || datum.branch == 'Southern Ranges'"
+        },
+        {
           "lookup": "branch",
           "from": {
             "data": {
               "url": "data/3_park_visits_per_lookout/region_lookouts.json"
             },
             "key": "branch",
-            "fields": [
-              "lookouts",
-              "perLookout"
-            ]
+            "fields": ["lookouts", "perLookout"]
           }
         },
         {
-          "calculate": "datum.branch == 'Greater Sydney' ? 152.85 : datum.branch == 'South Coast' ? 151.55 : toNumber(datum.label_lon)",
-          "as": "lon"
-        },
-        {
-          "calculate": "datum.branch == 'Greater Sydney' ? -34.75 : datum.branch == 'South Coast' ? -36.05 : toNumber(datum.label_lat)",
-          "as": "lat"
-        },
-        {
-          "calculate": "datum.branch + '\\n' + format(datum.perLookout, '.3~s') + ' per lookout'",
+          "calculate": "datum.branch + '\\n' + format(datum.perLookout, ',.0f')",
           "as": "label"
         }
       ],
       "mark": {
         "type": "text",
-        "lineBreak": "\n",
         "fontSize": 10.5,
         "fontWeight": "bold",
-        "color": "#2b2b2b",
+        "color": "#26352a",
+        "baseline": "middle",
         "align": "center",
-        "baseline": "middle"
+        "lineBreak": "\n",
+        "lineHeight": 13
       },
       "encoding": {
         "longitude": {
-          "field": "lon",
+          "field": "label_lon",
           "type": "quantitative"
         },
         "latitude": {
-          "field": "lat",
+          "field": "label_lat",
           "type": "quantitative"
         },
         "text": {
