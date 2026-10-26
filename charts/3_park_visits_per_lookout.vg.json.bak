@@ -1,0 +1,234 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Park visits per lookout",
+    "subtitle": "Each region's park visits divided by its number of lookouts, 2024/25"
+  },
+  "width": "container",
+  "height": 420,
+  "projection": {
+    "type": "mercator"
+  },
+  "view": {
+    "fill": "#a8dcef",
+    "stroke": null
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "data/nsw_fixed.json",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#e3f5ea",
+        "stroke": null
+      }
+    },
+    {
+      "data": {
+        "url": "data/branches_fixed.json",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.properties.NAME != 'ACT'"
+        },
+        {
+          "calculate": "datum.properties.NAME",
+          "as": "branch"
+        },
+        {
+          "lookup": "branch",
+          "from": {
+            "data": {
+              "url": "data/region_lookouts.json"
+            },
+            "key": "branch",
+            "fields": [
+              "visits",
+              "lookouts",
+              "perLookout"
+            ]
+          }
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "white",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "color": {
+          "field": "perLookout",
+          "type": "quantitative",
+          "title": "Park visits per lookout",
+          "scale": {
+            "type": "threshold",
+            "domain": [
+              25000,
+              50000,
+              75000,
+              150000
+            ],
+            "range": [
+              "#fbf3dc",
+              "#f4dcae",
+              "#eebd8c",
+              "#e0956c",
+              "#a8432a"
+            ]
+          },
+          "legend": {
+            "orient": "bottom",
+            "direction": "horizontal",
+            "format": "~s",
+            "titleLimit": 200
+          }
+        },
+        "tooltip": [
+          {
+            "field": "branch",
+            "title": "NPWS region"
+          },
+          {
+            "field": "lookouts",
+            "title": "Lookouts"
+          },
+          {
+            "field": "visits",
+            "title": "Park visits (2024/25)",
+            "format": ","
+          },
+          {
+            "field": "perLookout",
+            "title": "Visits per lookout",
+            "format": ",.0f"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "branch": "Greater Sydney",
+            "lon": 150.944,
+            "lat": -33.845,
+            "lon2": 152.29999999999998,
+            "lat2": -34.63
+          },
+          {
+            "branch": "South Coast",
+            "lon": 150.15,
+            "lat": -35.6,
+            "lon2": 151.0,
+            "lat2": -35.93
+          }
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "color": "#3d3d3d",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "longitude2": {
+          "field": "lon2"
+        },
+        "latitude2": {
+          "field": "lat2"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/branch_visits_2024_25.csv"
+      },
+      "transform": [
+        {
+          "lookup": "branch",
+          "from": {
+            "data": {
+              "url": "data/region_lookouts.json"
+            },
+            "key": "branch",
+            "fields": [
+              "lookouts",
+              "perLookout"
+            ]
+          }
+        },
+        {
+          "calculate": "datum.branch == 'Greater Sydney' ? 152.85 : datum.branch == 'South Coast' ? 151.55 : toNumber(datum.label_lon)",
+          "as": "lon"
+        },
+        {
+          "calculate": "datum.branch == 'Greater Sydney' ? -34.75 : datum.branch == 'South Coast' ? -36.05 : toNumber(datum.label_lat)",
+          "as": "lat"
+        },
+        {
+          "calculate": "datum.branch + '\\n' + format(datum.perLookout, '.3~s') + ' per lookout'",
+          "as": "label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "lineBreak": "\n",
+        "fontSize": 10.5,
+        "fontWeight": "bold",
+        "color": "#2b2b2b",
+        "align": "center",
+        "baseline": "middle"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label",
+          "type": "nominal"
+        },
+        "tooltip": [
+          {
+            "field": "branch",
+            "title": "NPWS region"
+          },
+          {
+            "field": "lookouts",
+            "title": "Lookouts"
+          },
+          {
+            "field": "visits",
+            "title": "Park visits (2024/25)",
+            "format": ","
+          },
+          {
+            "field": "perLookout",
+            "title": "Visits per lookout",
+            "format": ",.0f"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -23,7 +23,7 @@
   "layer": [
     {
       "data": {
-        "url": "data/australia_states.json",
+        "url": "data/5.1_interstate_flow_map/australia_states.json",
         "format": {
           "type": "json",
           "property": "features"
@@ -52,7 +52,7 @@
     },
     {
       "data": {
-        "url": "data/interstate_flows_2024_25.csv",
+        "url": "data/5.1_interstate_flow_map/interstate_flows_2024_25.csv",
         "format": {
           "parse": {
             "visits": "number",

@@ -75,7 +75,7 @@
         },
         {
           "data": {
-            "url": "data/nsw_fixed.json",
+            "url": "data/_shared/nsw_fixed.json",
             "format": {
               "type": "json",
               "property": "features"
@@ -89,7 +89,7 @@
         },
         {
           "data": {
-            "url": "data/parks.geojson",
+            "url": "data/2_top_20_parks_and_lookouts/parks.geojson",
             "format": {
               "type": "json",
               "property": "features"
@@ -103,7 +103,7 @@
         },
         {
           "data": {
-            "url": "data/branches_fixed.json",
+            "url": "data/_shared/branches_fixed.json",
             "format": {
               "type": "json",
               "property": "features"
@@ -127,7 +127,7 @@
         },
         {
           "data": {
-            "url": "data/lookouts_by_region.json"
+            "url": "data/2_top_20_parks_and_lookouts/lookouts_by_region.json"
           },
           "mark": {
             "type": "circle",
@@ -191,7 +191,7 @@
         },
         {
           "data": {
-            "url": "data/park_circles.json"
+            "url": "data/2_top_20_parks_and_lookouts/park_circles.json"
           },
           "transform": [
             {
@@ -236,7 +236,7 @@
         },
         {
           "data": {
-            "url": "data/park_circles.json"
+            "url": "data/2_top_20_parks_and_lookouts/park_circles.json"
           },
           "transform": [
             {
@@ -281,7 +281,7 @@
         },
         {
           "data": {
-            "url": "data/park_circles.json"
+            "url": "data/2_top_20_parks_and_lookouts/park_circles.json"
           },
           "transform": [
             {
@@ -326,7 +326,7 @@
         },
         {
           "data": {
-            "url": "data/park_circles.json"
+            "url": "data/2_top_20_parks_and_lookouts/park_circles.json"
           },
           "transform": [
             {
@@ -409,7 +409,7 @@
         },
         {
           "data": {
-            "url": "data/sydney_lens.json",
+            "url": "data/2_top_20_parks_and_lookouts/sydney_lens.json",
             "format": {
               "type": "json",
               "property": "features"
@@ -429,7 +429,7 @@
         },
         {
           "data": {
-            "url": "data/sydney_lens.json",
+            "url": "data/2_top_20_parks_and_lookouts/sydney_lens.json",
             "format": {
               "type": "json",
               "property": "features"
@@ -450,7 +450,7 @@
         },
         {
           "data": {
-            "url": "data/sydney_lens.json",
+            "url": "data/2_top_20_parks_and_lookouts/sydney_lens.json",
             "format": {
               "type": "json",
               "property": "features"
@@ -470,7 +470,7 @@
         },
         {
           "data": {
-            "url": "data/sydney_lens.json",
+            "url": "data/2_top_20_parks_and_lookouts/sydney_lens.json",
             "format": {
               "type": "json",
               "property": "features"
@@ -489,7 +489,7 @@
         },
         {
           "data": {
-            "url": "data/sydney_lens.json",
+            "url": "data/2_top_20_parks_and_lookouts/sydney_lens.json",
             "format": {
               "type": "json",
               "property": "features"
@@ -508,7 +508,7 @@
         },
         {
           "data": {
-            "url": "data/sydney_lens.json",
+            "url": "data/2_top_20_parks_and_lookouts/sydney_lens.json",
             "format": {
               "type": "json",
               "property": "features"
@@ -527,7 +527,7 @@
         },
         {
           "data": {
-            "url": "data/lookouts_by_region.json"
+            "url": "data/2_top_20_parks_and_lookouts/lookouts_by_region.json"
           },
           "transform": [
             {
@@ -589,7 +589,7 @@
         {
           "name": "park_circles",
           "data": {
-            "url": "data/park_circles.json"
+            "url": "data/2_top_20_parks_and_lookouts/park_circles.json"
           },
           "mark": {
             "type": "circle",
@@ -689,7 +689,7 @@
         },
         {
           "data": {
-            "url": "data/park_circles.json"
+            "url": "data/2_top_20_parks_and_lookouts/park_circles.json"
           },
           "mark": {
             "type": "text",
@@ -744,7 +744,7 @@
         },
         {
           "data": {
-            "url": "data/park_circles.json"
+            "url": "data/2_top_20_parks_and_lookouts/park_circles.json"
           },
           "transform": [
             {
@@ -788,7 +788,7 @@
         },
         {
           "data": {
-            "url": "data/park_circles.json"
+            "url": "data/2_top_20_parks_and_lookouts/park_circles.json"
           },
           "transform": [
             {
@@ -832,7 +832,7 @@
         },
         {
           "data": {
-            "url": "data/park_circles.json"
+            "url": "data/2_top_20_parks_and_lookouts/park_circles.json"
           },
           "transform": [
             {
@@ -876,7 +876,7 @@
         },
         {
           "data": {
-            "url": "data/sydney_lens.json",
+            "url": "data/2_top_20_parks_and_lookouts/sydney_lens.json",
             "format": {
               "type": "json",
               "property": "features"
@@ -896,7 +896,7 @@
         },
         {
           "data": {
-            "url": "data/sydney_lens_label.json"
+            "url": "data/2_top_20_parks_and_lookouts/sydney_lens_label.json"
           },
           "mark": {
             "type": "text",
@@ -932,7 +932,7 @@
         "fontSize": 13
       },
       "data": {
-        "url": "data/park_info.json"
+        "url": "data/_shared/park_info.json"
       },
       "mark": {
         "type": "bar",

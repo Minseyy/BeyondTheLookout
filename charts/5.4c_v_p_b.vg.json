@@ -8,7 +8,7 @@
     ]
   },
   "data": {
-    "url": "data/visitor_profile_2024_25.csv",
+    "url": "data/_shared/visitor_profile_2024_25.csv",
     "format": {
       "parse": {
         "order": "number",

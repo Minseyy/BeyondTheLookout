@@ -16,7 +16,7 @@
   "layer": [
     {
       "data": {
-        "url": "data/nsw_fixed.json",
+        "url": "data/_shared/nsw_fixed.json",
         "format": {
           "type": "json",
           "property": "features"
@@ -30,7 +30,7 @@
     },
     {
       "data": {
-        "url": "data/branches_fixed.json",
+        "url": "data/_shared/branches_fixed.json",
         "format": {
           "type": "json",
           "property": "features"
@@ -48,7 +48,7 @@
           "lookup": "branch",
           "from": {
             "data": {
-              "url": "data/region_lookouts.json"
+              "url": "data/3_park_visits_per_lookout/region_lookouts.json"
             },
             "key": "branch",
             "fields": [
@@ -157,14 +157,14 @@
     },
     {
       "data": {
-        "url": "data/branch_visits_2024_25.csv"
+        "url": "data/3_park_visits_per_lookout/branch_visits_2024_25.csv"
       },
       "transform": [
         {
           "lookup": "branch",
           "from": {
             "data": {
-              "url": "data/region_lookouts.json"
+              "url": "data/3_park_visits_per_lookout/region_lookouts.json"
             },
             "key": "branch",
             "fields": [

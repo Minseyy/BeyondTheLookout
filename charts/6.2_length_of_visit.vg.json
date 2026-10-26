@@ -7,7 +7,7 @@
   "width": "container",
   "height": 220,
   "data": {
-    "url": "data/visit_duration_2024_25.csv",
+    "url": "data/6.2_length_of_visit/visit_duration_2024_25.csv",
     "format": {
       "parse": {
         "intrastate_pct": "number",

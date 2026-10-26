@@ -5,7 +5,7 @@
     "subtitle": "How Local (NSW) and Non-Local (Interstate) visitors answered three survey questions about their last park visit, 2024/25 (% of each group)"
   },
   "data": {
-    "url": "data/visitor_profile_2024_25.csv",
+    "url": "data/_shared/visitor_profile_2024_25.csv",
     "format": {
       "parse": {
         "order": "number",

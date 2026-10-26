@@ -1,0 +1,870 @@
+id,name,type,park,park_full,lon,lat
+1,Mt Yengo,Viewpoint,Yengo NP,Yengo National Park,150.84909,-32.97974
+2,Finchley Trig Lookout,Viewing platform,Yengo NP,Yengo National Park,151.02078,-32.97783
+3,Anvil,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.33938,-33.59545
+4,Perrys Lookdown - Nth,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.34675,-33.59966
+5,Perrys Lookdown - Sth,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.34704,-33.60019
+6,Monument,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.34734,-33.60189
+7,McMahons Sth,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.38303,-33.8905
+8,Victoria Falls,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.29322,-33.57304
+9,Pulpit Rock,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.32811,-33.62123
+10,Vanimans,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.30223,-33.72787
+11,Juliets Balcony,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.30239,-33.72866
+12,McMahons Nth,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.38374,-33.88773
+13,Underfalls,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.30423,-33.7278
+14,Rainforest,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.30273,-33.72809
+15,Queen Victoria,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.303,-33.72929
+16,Lynes Point,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.30296,-33.72935
+17,Furber Rock,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.30293,-33.72973
+18,Veras Grotto,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.30314,-33.72834
+19,Turpentine,Viewing platform,Blue Mountains NP,Blue Mountains National Park,150.30372,-33.72955
+20,Cooks Crossing,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.30427,-33.72911
+21,National Pass,Viewpoint,Blue Mountains NP,Blue Mountains National Park,150.36331,-33.72487
+22,Cliff View,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.30535,-33.72852
+23,Leura Cascades,Viewing platform,Blue Mountains NP,Blue Mountains National Park,150.32239,-33.72171
+24,Flying Fox,Viewpoint,Outside NPWS estate,,150.32304,-33.72182
+25,Gordon Falls,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.33251,-33.72663
+26,Glen Davis,On-ground lookout,Wollemi NP,Wollemi National Park,150.30059,-33.12265
+27,Honeymoon Point,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.31813,-33.72657
+28,Banksis,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.31805,-33.72607
+29,Echo Tree,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.3193,-33.72171
+30,Fossil Rock,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.32006,-33.72223
+31,Twin Falls,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.31289,-33.6231
+32,Rodriguez,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.31141,-33.62544
+33,Daly,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.31182,-33.6268
+34,Queen Victoria,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.3603,-33.72148
+35,Empress,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.35977,-33.72102
+36,Lyrebird,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.36166,-33.72202
+37,Breakfast Point,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.3648,-33.72613
+38,Dan Fenella,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.36608,-33.72676
+39,Eagles Nest,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.37121,-33.72761
+40,Fletchers,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.37423,-33.72754
+41,Princes Rock,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.37142,-33.7274
+42,Boyd,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.31872,-33.62315
+43,Cripps,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.31321,-33.62361
+44,Bradley,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.31135,-33.62455
+45,Lady Sees,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.36596,-33.72675
+46,Best View,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.37333,-33.72875
+47,Rocket Point,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.37355,-33.72856
+48,Wentworth Falls,Viewing platform,Blue Mountains NP,Blue Mountains National Park,150.37203,-33.72595
+49,Jamison,Viewing platform,Blue Mountains NP,Blue Mountains National Park,150.36917,-33.72558
+50,Leura Falls,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.32238,-33.72198
+51,Gertrudes,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.32214,-33.72194
+52,Evelyns,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.3218,-33.72211
+53,The Rocks,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.32382,-33.72287
+54,Bridal Veil View SE,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.32292,-33.72354
+55,Tarpeian Rock SE,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.32515,-33.72417
+56,Tarpeian Rock SW,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.32505,-33.72402
+57,Golf Links,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.33564,-33.72729
+58,Gladstone,Viewpoint,Outside NPWS estate,,150.35407,-33.72874
+59,Moya Point,Viewpoint,Blue Mountains NP,Blue Mountains National Park,150.3557,-33.72899
+60,Walls,Viewpoint,Blue Mountains NP,Blue Mountains National Park,150.3397,-33.57272
+61,George Phillips,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.31112,-33.62656
+62,Laws,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.31176,-33.62686
+63,Breakfast Rock,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.31204,-33.62818
+64,Williams,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.31201,-33.62842
+65,Burrow,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.31393,-33.63193
+66,Govetts Leap - Sth,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.31152,-33.62796
+67,Govetts Leap - Nth,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.31155,-33.62782
+68,Lady Darleys,On-ground lookout,Outside NPWS estate,,150.3089,-33.73032
+69,Wollumai,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.30678,-33.72989
+70,Bellbird,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.3073,-33.72965
+71,Allambie,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.30764,-33.72996
+72,Kedumba View,On-ground lookout,Outside NPWS estate,,150.3105,-33.73101
+73,Spooners,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.31306,-33.73278
+74,Oreades,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.31469,-33.73443
+75,Lady Game,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.31482,-33.73476
+76,Honeymoon Bridge,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.31479,-33.73499
+77,Lady Carrington,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.31559,-33.73214
+78,Tallawalla,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.31605,-33.73033
+79,Millamurra,On-ground lookout,Outside NPWS estate,,150.31587,-33.73008
+80,Burralaroo,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.31804,-33.72292
+81,Lomandra,On-ground lookout,Outside NPWS estate,,150.31773,-33.72348
+82,Flat Rock,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.31917,-33.7216
+83,Jamisons,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.31852,-33.72129
+84,Copelands,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.32063,-33.72363
+85,Bridal Veil LO,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.32109,-33.72251
+86,Majestic,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.32203,-33.72178
+87,Three Sisters,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.31492,-33.73489
+88,Halfway Point,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.31525,-33.73507
+89,Ruined Castle,Viewpoint,Blue Mountains NP,Blue Mountains National Park,150.29424,-33.76334
+90,Therabulat,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.29104,-33.71128
+91,Narrow Neck NE,Viewpoint,Blue Mountains NP,Blue Mountains National Park,150.26546,-33.81138
+92,Bottings,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.28303,-33.73559
+93,Lockley Pylon,Viewpoint,Blue Mountains NP,Blue Mountains National Park,150.35693,-33.62747
+94,Walls Cave,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.30239,-33.65666
+95,Baltzer,Viewpoint,Blue Mountains NP,Blue Mountains National Park,150.31392,-33.58351
+96,Asmodeus Pool,Viewpoint,Blue Mountains NP,Blue Mountains National Park,150.35697,-33.71687
+97,Edinburgh Rock,Viewpoint,Blue Mountains NP,Blue Mountains National Park,150.35733,-33.71561
+98,Overcliff Lookout,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.36986,-33.72702
+99,Bedford Creek,Viewpoint,Blue Mountains NP,Blue Mountains National Park,150.4569,-33.76604
+100,McKay's,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.32026,-33.72121
+101,Castle Head S,Viewpoint,Blue Mountains NP,Blue Mountains National Park,150.28727,-33.75583
+102,Castle Head N,Viewpoint,Blue Mountains NP,Blue Mountains National Park,150.28304,-33.74977
+103,Carlon's Head,Viewpoint,Blue Mountains NP,Blue Mountains National Park,150.24815,-33.7884
+104,Cleary's,Viewpoint,Blue Mountains NP,Blue Mountains National Park,150.37831,-33.7833
+105,Chinamans N,Viewpoint,Blue Mountains NP,Blue Mountains National Park,150.31318,-33.78049
+106,Chinamans S,Viewpoint,Blue Mountains NP,Blue Mountains National Park,150.31242,-33.78413
+107,Mt Solitary,Viewpoint,Blue Mountains NP,Blue Mountains National Park,150.32102,-33.78162
+108,Mt Solitary,Viewpoint,Blue Mountains NP,Blue Mountains National Park,150.3299,-33.78306
+109,Kedumba Valley,Viewpoint,Blue Mountains NP,Blue Mountains National Park,150.33775,-33.78932
+110,Beuchamp,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.32816,-33.65184
+111,Pipeline,Viewpoint,Wollemi NP,Wollemi National Park,150.26407,-33.16905
+112,Skarratts,Viewpoint,Blue Mountains NP,Blue Mountains National Park,150.40395,-33.71586
+113,Point Pilcher,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.33143,-33.65526
+114,Hawkesbury,On-ground lookout,Yellomundee RP,Yellomundee Regional Park,150.65154,-33.66724
+115,Grose Head South,Viewpoint,Blue Mountains NP,Blue Mountains National Park,150.60849,-33.62608
+116,Yellow Rock,Viewpoint,Yellomundee RP,Yellomundee Regional Park,150.65101,-33.68074
+117,Vale of Avoca,Viewpoint,Blue Mountains NP,Blue Mountains National Park,150.63111,-33.61332
+118,Falconbridge Point,Viewpoint,Blue Mountains NP,Blue Mountains National Park,150.5651,-33.61681
+119,Riley's Mountain,Viewpoint,Blue Mountains NP,Blue Mountains National Park,150.62925,-33.80611
+120,The Rock,Viewpoint,Blue Mountains NP,Blue Mountains National Park,150.61793,-33.81846
+121,Nepean,Viewpoint,Blue Mountains NP,Blue Mountains National Park,150.58564,-33.84435
+122,Pisgah Rock,Viewpoint,Blue Mountains NP,Blue Mountains National Park,150.56674,-33.83303
+123,Portal Lookout,Viewing platform,Blue Mountains NP,Blue Mountains National Park,150.6381,-33.78096
+124,Tunnel View,Viewpoint,Blue Mountains NP,Blue Mountains National Park,150.62768,-33.78385
+125,Martins,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.57548,-33.73482
+126,Phipps Cutting,On-ground lookout,Outside NPWS estate,,150.41045,-32.38766
+127,Dunns Swamp,On-ground lookout,Wollemi NP,Wollemi National Park,150.19638,-32.83163
+128,Keiths,On-ground lookout,Wollemi NP,Wollemi National Park,150.24417,-32.58546
+129,Morong Falls,Viewpoint,Outside NPWS estate,,149.97928,-33.98143
+130,Mount Inspiration,On-ground lookout,Jenolan KCR,Jenolan Karst Conservation Reserve,150.03706,-33.81067
+131,Kalang Falls West,Viewing platform,Kanangra-Boyd NP,Kanangra-Boyd National Park,150.1087,-33.98438
+132,Kalang Falls East,Viewing platform,Kanangra-Boyd NP,Kanangra-Boyd National Park,150.11075,-33.98467
+133,Tinted Cave NW,On-ground lookout,Wombeyan KCR,Wombeyan Karst Conservation Reserve,149.95983,-34.31442
+134,Dancefloor,Viewing platform,Abercrombie KCR,Abercrombie Karst Conservation Reserve,149.35943,-33.91108
+135,Archway Cave Nth,Viewing platform,Abercrombie KCR,Abercrombie Karst Conservation Reserve,149.35933,-33.91038
+136,KST - 03,On-ground lookout,Abercrombie KCR,Abercrombie Karst Conservation Reserve,149.35894,-33.91088
+137,KST - 02,Viewing platform,Outside NPWS estate,,149.35901,-33.91119
+138,KST - 01,On-ground lookout,Abercrombie KCR,Abercrombie Karst Conservation Reserve,149.35909,-33.91131
+139,Grove Ck Waterfall,On-ground lookout,Abercrombie KCR,Abercrombie Karst Conservation Reserve,149.36308,-33.93446
+140,Kanangra Walls,Viewpoint,Kanangra-Boyd NP,Kanangra-Boyd National Park,150.11121,-33.98485
+141,Caves Track,Viewing platform,Wombeyan KCR,Wombeyan Karst Conservation Reserve,149.96698,-34.30912
+142,MC Chalkers Retreat,Viewing platform,Wombeyan KCR,Wombeyan Karst Conservation Reserve,149.96613,-34.30925
+143,MC Chalkers Retreat,On-ground lookout,Wombeyan KCR,Wombeyan Karst Conservation Reserve,149.96609,-34.30932
+144,Fairy's Grotto,Viewing platform,Wombeyan KCR,Wombeyan Karst Conservation Reserve,149.96629,-34.3098
+145,Tinted Cave SE,On-ground lookout,Wombeyan KCR,Wombeyan Karst Conservation Reserve,149.9603,-34.31469
+146,Katoomba View,Viewpoint,Jenolan KCR,Jenolan Karst Conservation Reserve,150.03194,-33.79021
+147,Newness Plateau,Viewpoint,Gardens of Stone NP,Gardens of Stone National Park,150.22429,-33.29376
+149,Valley lookout,On-ground lookout,Capertee NP,Capertee National Park,150.03181,-32.99889
+150,Oaky Creek,On-ground lookout,Capertee NP,Capertee National Park,150.02118,-33.06816
+151,Good Views,On-ground lookout,Capertee NP,Capertee National Park,150.01622,-33.0466
+152,Anteroom,Viewing platform,Wombeyan KCR,Wombeyan Karst Conservation Reserve,149.96515,-34.31596
+153,Galleries,Viewing platform,Wombeyan KCR,Wombeyan Karst Conservation Reserve,149.96657,-34.31169
+154,Operah House 2,Viewing platform,Wombeyan KCR,Wombeyan Karst Conservation Reserve,149.96703,-34.31164
+155,Operah House - 01,Viewing platform,Wombeyan KCR,Wombeyan Karst Conservation Reserve,149.96676,-34.31171
+156,Broken Columns,Viewing platform,Wombeyan KCR,Wombeyan Karst Conservation Reserve,149.96673,-34.3112
+157,Victoria Arch,Viewing platform,Wombeyan KCR,Wombeyan Karst Conservation Reserve,149.9677,-34.31018
+158,Star Chamber,Viewing platform,Wombeyan KCR,Wombeyan Karst Conservation Reserve,149.96576,-34.30991
+159,Cathedral Cavern - 1,Viewing platform,Wombeyan KCR,Wombeyan Karst Conservation Reserve,149.96555,-34.3099
+160,Cathedral Cavern - 2,Viewing platform,Wombeyan KCR,Wombeyan Karst Conservation Reserve,149.96556,-34.30993
+161,Bat's Retreat,Viewing platform,Wombeyan KCR,Wombeyan Karst Conservation Reserve,149.96637,-34.30991
+162,The Drip WT,Viewing platform,Goulburn River NP,Goulburn River National Park,149.79845,-32.21244
+163,Mt Penang Lookout,On-ground lookout,Guula Ngurra NP,Guula Ngurra National Park,150.16026,-34.4288
+164,B'gong Lookout,Viewing platform,Burragorang SCA,Burragorang State Conservation Area,150.43366,-34.06846
+165,Singajingawell,Viewpoint,Blue Mountains NP,Blue Mountains National Park,150.33437,-33.78515
+166,Hatteras Lookout,On-ground lookout,Mugii Murum-ban SCA,Mugii Murum-ban State Conservation Area,150.05321,-33.09619
+167,Airly Lookout,On-ground lookout,Mugii Murum-ban SCA,Mugii Murum-ban State Conservation Area,150.04686,-33.10777
+168,Genowlan Lookout,Viewpoint,Mugii Murum-ban SCA,Mugii Murum-ban State Conservation Area,150.07146,-33.08215
+169,Onground Lookout - Pagoda Lookout,On-ground lookout,Wollemi NP,Wollemi National Park,150.19722,-32.8354
+170,Victoria Arch,Viewing platform,Wombeyan KCR,Wombeyan Karst Conservation Reserve,149.9676,-34.31015
+171,Camping Pad - Sheepskin Hut CG - 03,Other,Wollemi NP,Wollemi National Park,150.72796,-32.71647
+172,Camping Pad - Sheepskin Hut CG - 02,Other,Wollemi NP,Wollemi National Park,150.72789,-32.71672
+173,Evans,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.32633,-33.64687
+174,Valley View,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.32537,-33.64569
+175,VoW DUA,Viewing platform,Blue Mountains NP,Blue Mountains National Park,150.36285,-33.72041
+176,Magdala Falls,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.57069,-33.72796
+177,Pool of Siloam,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.33548,-33.72405
+178,Furber Steps WT,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.30296,-33.72928
+179,Furber Steps WT,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.30266,-33.72806
+180,King Solomons Cave,On-ground lookout,Abercrombie KCR,Abercrombie Karst Conservation Reserve,149.35906,-33.91151
+181,Camping Pad - Sheepskin Hut CG - 01,Other,Wollemi NP,Wollemi National Park,150.72777,-32.71697
+182,Two Falls,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.3117,-33.62677
+183,Witches Leap,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.30248,-33.72711
+184,View Point - Inspiration Point,Viewpoint,Blue Mountains NP,Blue Mountains National Park,150.35447,-33.73021
+185,Eastern Galleries Dual Lookout,On-ground lookout,Abercrombie KCR,Abercrombie Karst Conservation Reserve,149.3595,-33.91049
+186,McKillops,On-ground lookout,Blue Mountains NP,Blue Mountains National Park,150.32161,-33.72363
+187,Little Jellore,On-ground lookout,Outside NPWS estate,,150.33901,-34.38263
+188,Kanangra Walls,On-ground lookout,Kanangra-Boyd NP,Kanangra-Boyd National Park,150.11119,-33.98485
+189,Wollondilly Lookout,On-ground lookout,Nattai NP,Nattai National Park,150.20108,-34.33847
+190,Viewpoint - Lost City South,On-ground lookout,Gardens of Stone SCA,Gardens of Stone State Conservation Area,150.17296,-33.42401
+191,Viewpoint - Lost City North,On-ground lookout,Gardens of Stone SCA,Gardens of Stone State Conservation Area,150.17432,-33.41626
+192,View Point - Champagne Lookout,Viewpoint,Guula Ngurra NP,Guula Ngurra National Park,150.1441,-34.39412
+193,View Point - Dyirrawity Lookout,Viewpoint,Guula Ngurra NP,Guula Ngurra National Park,150.14007,-34.38371
+194,View Point - Mandari Lookout,Viewpoint,Guula Ngurra NP,Guula Ngurra National Park,150.17685,-34.39038
+195,Onground Lookout - Miners Pass Waterfall,On-ground lookout,Gardens of Stone SCA,Gardens of Stone State Conservation Area,150.1708,-33.42113
+196,Onground Lookout - GWT-Newnes Donkey Mtn,On-ground lookout,Outside NPWS estate,,150.22031,-33.23623
+197,View Point - Ngurra Lookout,Viewpoint,Guula Ngurra NP,Guula Ngurra National Park,150.15118,-34.39224
+198,Carne View,Viewpoint,Gardens of Stone SCA,Gardens of Stone State Conservation Area,150.22791,-33.32247
+199,Pieries Peak,Viewpoint,Mount Royal NP,Mount Royal National Park,151.30423,-32.2092
+204,Apple Tree Flat,On-ground lookout,Ku-ring-gai Chase NP,Ku-ring-gai Chase National Park,151.15801,-33.65321
+205,Tipper's Lookout,On-ground lookout,Muogamarra NR,Muogamarra Nature Reserve,151.18856,-33.55396
+206,Galston Gorge,On-ground lookout,Berowra Valley NP,Berowra Valley National Park,151.08738,-33.66164
+207,Naa Badu,On-ground lookout,Berowra Valley NP,Berowra Valley National Park,151.12806,-33.61799
+208,Kalkari,Viewing platform,Ku-ring-gai Chase NP,Ku-ring-gai Chase National Park,151.1503,-33.66393
+209,Koolewong,On-ground lookout,Ku-ring-gai Chase NP,Ku-ring-gai Chase National Park,151.30187,-33.57495
+210,West Head,On-ground lookout,Ku-ring-gai Chase NP,Ku-ring-gai Chase National Park,151.30927,-33.57929
+211,Viewing Platform,Viewing platform,Sydney Harbour NP,Sydney Harbour National Park,151.2884,-33.81537
+212,Arabanoo,On-ground lookout,Sydney Harbour NP,Sydney Harbour National Park,151.26912,-33.80786
+213,Crater Cove,On-ground lookout,Sydney Harbour NP,Sydney Harbour National Park,151.26764,-33.8102
+214,SE,On-ground lookout,Outside NPWS estate,,151.30047,-33.8234
+215,Gazebo TBT BH/Clifto,Viewing platform,Sydney Harbour NP,Sydney Harbour National Park,151.2472,-33.85191
+216,Timber - Reef Beach,Viewing platform,Sydney Harbour NP,Sydney Harbour National Park,151.27381,-33.80777
+217,Audrey Lenning Lookou,Viewing platform,Outside NPWS estate,,151.24489,-33.8517
+218,Viewing Platform -Timber - 02,Viewing platform,Outside NPWS estate,,151.24448,-33.84985
+219,Quibray Bay,Viewing platform,Towra Point NR,Towra Point Nature Reserve,151.18258,-34.02465
+220,Bungoona,On-ground lookout,Royal NP,Royal National Park,151.06164,-34.0626
+221,Providential Point,On-ground lookout,Royal NP,Royal National Park,151.12068,-34.13966
+222,Governor Game,On-ground lookout,Royal NP,Royal National Park,151.05319,-34.17111
+223,Viewing Platform,Viewing platform,Cattai NP,Cattai National Park,150.89315,-33.54675
+224,South Head Loop,Viewing platform,Sydney Harbour NP,Sydney Harbour National Park,151.28009,-33.83469
+225,Lady Bay,Viewing platform,Sydney Harbour NP,Sydney Harbour National Park,151.27986,-33.83519
+226,Gap Bluff WT - 01,On-ground lookout,Sydney Harbour NP,Sydney Harbour National Park,151.28459,-33.84078
+227,Turkeys Nest,On-ground lookout,William Howe RP,William Howe Regional Park,150.74665,-34.06434
+228,Leacocks Lane,Viewing platform,Leacock RP,Leacock Regional Park,150.90479,-33.95923
+229,Bellbird Lookout,Viewing platform,Outside NPWS estate,,150.90584,-33.95223
+230,Viewpoint - Foreshore WT - 01,Viewpoint,Outside NPWS estate,,151.1284,-33.84118
+231,Viewpoint - Foreshore WT - 02,Viewpoint,Parramatta River RP,Parramatta River Regional Park,151.1305,-33.84077
+232,Sports Oval Footpath,Viewing platform,Parramatta River RP,Parramatta River Regional Park,151.13205,-33.84076
+233,Kellys Falls,On-ground lookout,Garawarra SCA,Garawarra State Conservation Area,150.9807,-34.21245
+234,Viewpoint - Otford,Viewpoint,Royal NP,Royal National Park,151.01075,-34.21136
+235,Viewpoint - Werrong,Viewpoint,Royal NP,Royal National Park,151.02305,-34.19884
+236,Viewpoint - Marley Head,Viewpoint,Royal NP,Royal National Park,151.14981,-34.11435
+237,Viewpoint - Garie Overflow,Viewpoint,Royal NP,Royal National Park,151.06349,-34.17229
+238,Dobroyd Head,On-ground lookout,Sydney Harbour NP,Sydney Harbour National Park,151.27364,-33.81069
+239,Longneck Lagoon,Viewing platform,Scheyville NP,Scheyville National Park,150.89029,-33.57961
+240,Viewing Platform over pond,Viewing platform,Lane Cove NP,Lane Cove National Park,151.14454,-33.79193
+241,Viewpoint - Willunga Trig,Viewpoint,Ku-ring-gai Chase NP,Ku-ring-gai Chase National Park,151.25854,-33.61818
+242,Barnetts Lookout,On-ground lookout,Berowra Valley NP,Berowra Valley National Park,151.12782,-33.61632
+243,Gap Bluff 2014 - 01,Viewing platform,Outside NPWS estate,,151.28491,-33.84206
+244,Gap Bluff 2014 - 02,Viewing platform,Outside NPWS estate,,151.28486,-33.84234
+245,Gathering Platform - Jibbon Engravings,Viewing platform,Outside NPWS estate,,151.1672,-34.07728
+246,Boora Point 1,Viewing platform,Outside NPWS estate,,151.2598,-33.95494
+247,Boora Point 2,Viewing platform,Outside NPWS estate,,151.26066,-33.95505
+248,Boora Point 3,Viewing platform,Outside NPWS estate,,151.26151,-33.95557
+249,West Head Army Track,Viewing platform,Ku-ring-gai Chase NP,Ku-ring-gai Chase National Park,151.30869,-33.5774
+250,Viewing PLatform - Northern 'Yiningma',Viewing platform,Sydney Harbour NP,Sydney Harbour National Park,151.30079,-33.82197
+251,Wattamolla Falls,Viewing platform,Royal NP,Royal National Park,151.11472,-34.13719
+252,Gap Bluff 2014 - 03,Viewing platform,Sydney Harbour NP,Sydney Harbour National Park,151.28435,-33.84267
+253,Whale Watching - 02,Viewing platform,Kamay Botany Bay NP,Kamay Botany Bay National Park,151.23074,-34.01724
+254,Whale Watching - 03,Viewing platform,Kamay Botany Bay NP,Kamay Botany Bay National Park,151.23055,-34.01742
+255,Whale Watching - 04,Viewing platform,Kamay Botany Bay NP,Kamay Botany Bay National Park,151.2304,-34.0175
+256,Whale Watching - 05,Viewing platform,Kamay Botany Bay NP,Kamay Botany Bay National Park,151.23018,-34.01763
+257,Whale Watching - 01,Viewing platform,Kamay Botany Bay NP,Kamay Botany Bay National Park,151.23091,-34.01707
+258,Southern 'Burragula',Viewing platform,Outside NPWS estate,,151.29844,-33.82322
+259,Barry Park Lookout,Viewing platform,Outside NPWS estate,,152.17411,-32.74966
+260,Staples Lookout,Viewing platform,Brisbane Water NP,Brisbane Water National Park,151.28846,-33.47182
+261,Marie Byles Lookout,Viewing platform,Bouddi NP,Bouddi National Park,151.38107,-33.52279
+262,Blue Gum off park E,On-ground lookout,Outside NPWS estate,,151.63401,-32.8906
+263,Blue Gum off park NE,On-ground lookout,Outside NPWS estate,,151.6324,-32.88448
+264,Washpools Platform,Viewing platform,Towarri NP,Towarri National Park,150.78265,-31.90006
+265,Scone Mountain,Viewpoint,Scone Mountain NP,Scone Mountain National Park,150.89578,-32.04035
+266,Burning Mountain,Viewing platform,Burning Mountain NR,Burning Mountain Nature Reserve,150.90004,-31.86881
+267,Leichhardt,Viewing platform,Glenrock SCA,Glenrock State Conservation Area,151.72656,-32.95911
+268,Bombala,Viewing platform,Glenrock SCA,Glenrock State Conservation Area,151.72729,-32.9833
+269,Jerusalem Creek,Viewing platform,Barrington Tops NP,Barrington Tops National Park,151.72649,-32.23598
+270,Andrew Laurie,Viewing platform,Barrington Tops NP,Barrington Tops National Park,151.60207,-32.0969
+271,Thunderbolts,On-ground lookout,Barrington Tops NP,Barrington Tops National Park,151.50523,-31.91591
+272,Careys Peak,On-ground lookout,Barrington Tops NP,Barrington Tops National Park,151.45518,-32.0533
+273,Eremeran,Viewpoint,Barrington Tops NP,Barrington Tops National Park,151.42415,-32.04847
+274,Whoota Whoota,On-ground lookout,Wallingat NP,Wallingat National Park,152.46468,-32.29896
+275,Yagon,Viewing platform,Myall Lakes NP,Myall Lakes National Park,152.49403,-32.45446
+276,Cape Hawke,Viewing platform,Booti Booti NP,Booti Booti National Park,152.56298,-32.21655
+277,South Lookout - 8,Viewing platform,Tomaree NP,Tomaree National Park,152.18721,-32.71681
+278,Tomaree Headland - 9,Viewing platform,Tomaree NP,Tomaree National Park,152.18709,-32.7165
+279,Motel Trail,Viewpoint,Outside NPWS estate,,152.53853,-31.74621
+280,Newbys Lookout,Viewing platform,Coorabakh NP,Coorabakh National Park,152.51749,-31.73019
+281,Big Nellie,Viewing platform,Outside NPWS estate,,152.52343,-31.6982
+282,Flat Rock Lookout,On-ground lookout,Coorabakh NP,Coorabakh National Park,152.50679,-31.68726
+283,Rowleys Rock Lookout,Viewing platform,Tapin Tops NP,Tapin Tops National Park,152.15875,-31.65301
+284,125R Lookout,On-ground lookout,Watagans NP,Watagans National Park,151.33537,-32.9838
+285,Gap Creek Lookout,On-ground lookout,Watagans NP,Watagans National Park,151.43003,-33.01626
+286,Monkey Face Lookout,On-ground lookout,Watagans NP,Watagans National Park,151.42808,-33.01977
+287,Muirs Lookout,On-ground lookout,Jilliby SCA,Jilliby State Conservation Area,151.38014,-33.0993
+288,Narrow Place Lookout,On-ground lookout,Watagans NP,Watagans National Park,151.35873,-32.97647
+289,Snapper Point Caves,On-ground lookout,Munmorah SCA,Munmorah State Conservation Area,151.62822,-33.18612
+290,Wetland,On-ground lookout,Lake Macquarie SCA,Lake Macquarie State Conservation Area,151.61459,-32.9961
+291,Pelican Beach Lookout,Viewing platform,Wyrrabalong NP,Wyrrabalong National Park,151.55055,-33.29804
+292,Redgums Lookout North,Viewing platform,Wyrrabalong NP,Wyrrabalong National Park,151.54461,-33.28565
+293,Redgums Lookout West,Viewing platform,Wyrrabalong NP,Wyrrabalong National Park,151.53904,-33.28859
+294,Tea Tree,Viewing platform,Munmorah SCA,Munmorah State Conservation Area,151.60309,-33.20639
+295,Girrakool,On-ground lookout,Brisbane Water NP,Brisbane Water National Park,151.26745,-33.43948
+296,Piles Creek,On-ground lookout,Brisbane Water NP,Brisbane Water National Park,151.26855,-33.44169
+297,Bundilla,On-ground lookout,Brisbane Water NP,Brisbane Water National Park,151.27459,-33.43384
+298,Broula,On-ground lookout,Brisbane Water NP,Brisbane Water National Park,151.27572,-33.43364
+299,Illoura,On-ground lookout,Brisbane Water NP,Brisbane Water National Park,151.27514,-33.4337
+300,Anadamira,Viewing platform,Outside NPWS estate,,151.27506,-33.42959
+301,Boondi,On-ground lookout,Outside NPWS estate,,151.2752,-33.42981
+302,Doyles Walking Track,On-ground lookout,Brisbane Water NP,Brisbane Water National Park,151.28901,-33.55286
+303,Allen Strom,On-ground lookout,Bouddi NP,Bouddi National Park,151.36079,-33.5165
+304,Lobster Beach,Viewing platform,Bouddi NP,Bouddi National Park,151.34141,-33.52895
+305,Gerrin Point,Viewing platform,Bouddi NP,Bouddi National Park,151.38295,-33.53098
+306,The Maze,Viewing platform,Blue Gum Hills RP,Blue Gum Hills Regional Park,151.62083,-32.88474
+307,Spoonbay,Viewing platform,Wamberal Lagoon NR,Wamberal Lagoon Nature Reserve,151.45849,-33.41881
+308,Mount Sugarloaf south,On-ground lookout,Sugarloaf SCA,Sugarloaf State Conservation Area,151.53462,-32.88877
+309,Mount Sugarloaf north,On-ground lookout,Sugarloaf SCA,Sugarloaf State Conservation Area,151.53982,-32.88567
+310,North Loop,On-ground lookout,Sugarloaf SCA,Sugarloaf State Conservation Area,151.54042,-32.88322
+311,Zenith Beach,Viewing platform,Tomaree NP,Tomaree National Park,152.18334,-32.7204
+312,crabhole wlk,Viewing platform,Hunter Wetlands NP,Hunter Wetlands National Park,151.69718,-32.84449
+313,Ingles road,On-ground lookout,Watagans NP,Watagans National Park,151.34891,-33.00039
+314,Mount Olive,Viewpoint,Popran NP,Popran National Park,151.18893,-33.38746
+315,Camping Platform - 3,Other,Myall Lakes NP,Myall Lakes National Park,152.31616,-32.61717
+316,Camping Platform - 1,Other,Myall Lakes NP,Myall Lakes National Park,152.31523,-32.6176
+317,Camping Platform - 2,Other,Outside NPWS estate,,152.31535,-32.61749
+318,Treachery Beach Access,Viewing platform,Myall Lakes NP,Myall Lakes National Park,152.51715,-32.45067
+319,Box Head,On-ground lookout,Bouddi NP,Bouddi National Park,151.3455,-33.5465
+320,Gloucester Falls,Viewing platform,Barrington Tops NP,Barrington Tops National Park,151.60138,-32.09962
+321,Hickson Street,Viewpoint,Glenrock SCA,Glenrock State Conservation Area,151.74642,-32.95336
+322,Coals Shaft,Viewpoint,Myall Lakes NP,Myall Lakes National Park,152.31272,-32.61774
+323,hickson 01,Viewing platform,Glenrock SCA,Glenrock State Conservation Area,151.74638,-32.95426
+324,hickson 02,Viewing platform,Glenrock SCA,Glenrock State Conservation Area,151.74618,-32.95472
+325,On-Ground Lookout - Garawa,On-ground lookout,Bouddi NP,Bouddi National Park,151.41862,-33.51009
+326,View Point - 100m N south lookout,Viewpoint,Sugarloaf SCA,Sugarloaf State Conservation Area,151.5358,-32.88858
+327,On-Ground Lookout - Ganyi,On-ground lookout,Bouddi NP,Bouddi National Park,151.38879,-33.52381
+328,On-Ground Lookout - Marang,On-ground lookout,Bouddi NP,Bouddi National Park,151.38988,-33.52392
+329,Dadar,Viewing platform,Bouddi NP,Bouddi National Park,151.39653,-33.52635
+330,Mullian,Viewing platform,Bouddi NP,Bouddi National Park,151.39925,-33.52607
+331,On-Ground Lookout - Toorongong,On-ground lookout,Bouddi NP,Bouddi National Park,151.39682,-33.52624
+332,Dudley Beach,Viewing platform,Glenrock SCA,Glenrock State Conservation Area,151.72859,-32.97364
+333,Dudley Bch Access,Viewing platform,Glenrock SCA,Glenrock State Conservation Area,151.72908,-32.97312
+334,SalwaterPtBreak,Viewing platform,Saltwater NP,Saltwater National Park,152.56655,-32.00794
+335,DiamondBeach,Viewing platform,Saltwater NP,Saltwater National Park,152.56542,-32.00888
+336,FingalIs Lighthouse,Viewing platform,Tomaree NP,Tomaree National Park,152.20141,-32.74703
+337,slot canyon,Viewing platform,Tomaree NP,Tomaree National Park,152.11872,-32.78699
+338,Birubi Gateway,Viewing platform,Tomaree NP,Tomaree National Park,152.07948,-32.78658
+339,Devils Hole,Viewing platform,Barrington Tops NP,Barrington Tops National Park,151.48442,-31.91817
+340,wcw - 01,Viewpoint,Wyrrabalong NP,Wyrrabalong National Park,151.48273,-33.38869
+341,wcw - 02,Viewpoint,Wyrrabalong NP,Wyrrabalong National Park,151.48217,-33.38554
+342,wcw - 03,Viewpoint,Wyrrabalong NP,Wyrrabalong National Park,151.48189,-33.38485
+343,On-Ground Lookout -  Catho,On-ground lookout,Outside NPWS estate,,151.62984,-33.15132
+344,tcw pacific ave,Viewing platform,Tomaree NP,Tomaree National Park,152.08201,-32.78691
+345,tcw iris moore,Viewing platform,Tomaree NP,Tomaree National Park,152.08562,-32.78807
+346,Fingal Bch,Viewing platform,Tomaree NP,Tomaree National Park,152.17628,-32.73968
+347,SkateBay 01,Viewing platform,Tomaree NP,Tomaree National Park,152.14023,-32.76393
+348,Big Rocky,Viewpoint,Tomaree NP,Tomaree National Park,152.14331,-32.76556
+349,Fingal Sth Ridge,Viewing platform,Tomaree NP,Tomaree National Park,152.167,-32.75591
+350,Box Beach,Viewpoint,Tomaree NP,Tomaree National Park,152.18204,-32.73135
+351,Crackneck Lookout,On-ground lookout,Wyrrabalong NP,Wyrrabalong National Park,151.4828,-33.39425
+352,Somersby Top Falls,Viewing platform,Brisbane Water NP,Brisbane Water National Park,151.27023,-33.40079
+368,Frazers,On-ground lookout,Bundjalung NP,Bundjalung National Park,153.36858,-29.38688
+369,Iluka Bluff,Viewing platform,Bundjalung NP,Bundjalung National Park,153.37163,-29.39785
+370,Sky Walk,Viewing platform,Dorrigo NP,Dorrigo National Park,152.72966,-30.36352
+371,Glade Lookout,Viewing platform,Dorrigo NP,Dorrigo National Park,152.72601,-30.37194
+372,Point Lookout - 01,Viewing platform,New England NP,New England National Park,152.41027,-30.4886
+373,Point Lookout - 02,Viewing platform,New England NP,New England National Park,152.41067,-30.48807
+374,Killiekrankie,Viewing platform,New England NP,New England National Park,152.53841,-30.5412
+375,Murray Scrub,Viewing platform,Toonumbar NP,Toonumbar National Park,152.77313,-28.49679
+376,Border Loop,Viewing platform,Border Ranges NP,Border Ranges National Park,152.96452,-28.34854
+377,Tooloom,On-ground lookout,Outside NPWS estate,,152.38991,-28.47518
+378,Brushbox Falls,Viewing platform,Border Ranges NP,Border Ranges National Park,153.02322,-28.40948
+379,Blackbutts,Viewing platform,Border Ranges NP,Border Ranges National Park,153.14365,-28.43778
+380,Bar Mountain,Viewing platform,Border Ranges NP,Border Ranges National Park,153.12168,-28.45517
+381,Cosy Corner,Viewing platform,Walgun Cape Byron SCA,Walgun Cape Byron State Conservation Area,153.63216,-28.64431
+382,Fishermans Lookout,Viewing platform,Walgun Cape Byron SCA,Walgun Cape Byron State Conservation Area,153.62836,-28.63645
+383,Lighthouse Track - 02,On-ground lookout,Walgun Cape Byron SCA,Walgun Cape Byron State Conservation Area,153.63788,-28.63632
+384,Lighthouse Track - 01,On-ground lookout,Walgun Cape Byron SCA,Walgun Cape Byron State Conservation Area,153.63772,-28.6362
+385,Lighthouse Track - 03,On-ground lookout,Walgun Cape Byron SCA,Walgun Cape Byron State Conservation Area,153.63776,-28.63676
+386,Lighthouse Track - 04,On-ground lookout,Walgun Cape Byron SCA,Walgun Cape Byron State Conservation Area,153.63743,-28.63718
+387,Lighthouse Track - 05,On-ground lookout,Walgun Cape Byron SCA,Walgun Cape Byron State Conservation Area,153.63697,-28.63802
+388,Lighthouse Track - 06,On-ground lookout,Walgun Cape Byron SCA,Walgun Cape Byron State Conservation Area,153.63678,-28.6385
+389,Over Tallows,Viewing platform,Walgun Cape Byron SCA,Walgun Cape Byron State Conservation Area,153.63437,-28.6402
+390,Southern binocs,On-ground lookout,Walgun Cape Byron SCA,Walgun Cape Byron State Conservation Area,153.63592,-28.64029
+391,Mt Warning - north,Viewing platform,Wollumbin NP,Wollumbin National Park,153.27157,-28.39774
+392,Mt Warning - east,Viewing platform,Wollumbin NP,Wollumbin National Park,153.27165,-28.39793
+393,Mt Warning - south,Viewing platform,Wollumbin NP,Wollumbin National Park,153.27146,-28.39795
+394,Mt Warning - west,Viewing platform,Wollumbin NP,Wollumbin National Park,153.27144,-28.39781
+395,Minyon Grass,Viewing platform,Nightcap NP,Nightcap National Park,153.39804,-28.61952
+396,Rawson Falls,Viewing platform,Boorganna NR,Boorganna Nature Reserve,152.41109,-31.61456
+397,Lighthouse,On-ground lookout,Outside NPWS estate,,152.93684,-31.47186
+398,Miners Beach Lookout,Viewing platform,Outside NPWS estate,,152.93719,-31.47183
+399,Viewpoint - Spokes Mountain,Viewpoint,Willi Willi NP,Willi Willi National Park,152.35594,-31.12417
+400,Perpendicular Point,Viewing platform,Outside NPWS estate,,152.84933,-31.64132
+401,Fishermans Bluff,On-ground lookout,Outside NPWS estate,,152.84415,-31.64408
+402,Pebbly Beach,On-ground lookout,Kattang NR,Kattang Nature Reserve,152.84192,-31.64432
+403,Kattang,On-ground lookout,Kattang NR,Kattang Nature Reserve,152.84116,-31.64654
+404,Charles Hamey Lookout,Viewing platform,Kattang NR,Kattang Nature Reserve,152.84011,-31.64782
+405,Dunbogan Lookout,Viewing platform,Kattang NR,Kattang Nature Reserve,152.83838,-31.64738
+406,Logans Lookout,On-ground lookout,Kattang NR,Kattang Nature Reserve,152.84338,-31.64266
+407,Monument,Viewing platform,Arakoon NP,Arakoon National Park,153.07513,-30.88002
+408,North East Guardtower,Viewing platform,Arakoon NP,Arakoon National Park,153.06969,-30.87689
+409,Stage Over Old Toilet,Viewing platform,Arakoon NP,Arakoon National Park,153.07044,-30.87744
+410,Plomer Headland South,On-ground lookout,Limeburners Creek NP,Limeburners Creek National Park,152.97465,-31.31437
+411,Plomer Headland North,On-ground lookout,Limeburners Creek NP,Limeburners Creek National Park,152.97554,-31.31384
+412,Bangalore Falls Lkt,Viewing platform,Bindarri NP,Bindarri National Park,152.91993,-30.29492
+413,BB Picnic Area,Viewing platform,Bongil Bongil NP,Bongil Bongil National Park,153.06552,-30.37262
+414,Sherwood Viewing Area,Viewing platform,Sherwood NR,Sherwood Nature Reserve,153.13793,-30.12519
+415,Bare Bluff,Viewing platform,Moonee Beach NR,Moonee Beach Nature Reserve,153.20034,-30.15622
+416,YNP Lower,On-ground lookout,Yarriabini NP,Yarriabini National Park,152.92406,-30.81545
+417,Bottom,Viewing platform,Outside NPWS estate,,153.15414,-30.30487
+418,Bundageree Creek,Viewing platform,Bongil Bongil NP,Bongil Bongil National Park,153.0577,-30.44342
+419,Southern,Viewing platform,Coffs Coast RP,Coffs Coast Regional Park,153.14355,-30.2766
+420,Middle,Viewing platform,Coffs Coast RP,Coffs Coast Regional Park,153.14242,-30.27456
+421,Woolgoolga Backbeach,Viewing platform,Coffs Coast RP,Coffs Coast Regional Park,153.20554,-30.11822
+422,Sapphire Beach - sth,Viewing platform,Coffs Coast RP,Coffs Coast Regional Park,153.15345,-30.23093
+423,OVH Mullawarra Beach,Viewing platform,Coffs Coast RP,Coffs Coast Regional Park,153.20275,-30.06717
+424,Woopi Headland,On-ground lookout,Coffs Coast RP,Coffs Coast Regional Park,153.21117,-30.11091
+425,Woopi Water Tank,On-ground lookout,Coffs Coast RP,Coffs Coast Regional Park,153.20919,-30.11142
+426,Pinnacle,Viewing platform,Border Ranges NP,Border Ranges National Park,153.12995,-28.40562
+427,Red Cliff camping,On-ground lookout,Outside NPWS estate,,153.33677,-29.57422
+428,Beech,On-ground lookout,Cunnawarra NP,Cunnawarra National Park,152.35429,-30.51858
+429,Kosekai,Viewing platform,Outside NPWS estate,,152.65976,-30.66217
+430,Top Viewing Platform,Viewing platform,Muttonbird Island NR,Muttonbird Island Nature Reserve,153.15044,-30.30526
+431,Vista Point,Viewpoint,Mount Hyland NR,Mount Hyland Nature Reserve,152.43213,-30.13568
+432,Wrights New England NP,Viewpoint,New England NP,New England National Park,152.40533,-30.50742
+433,Mt Hyland,Viewpoint,Mount Hyland NR,Mount Hyland Nature Reserve,152.42598,-30.17226
+434,Look at Me Now Headland,Viewpoint,Moonee Beach NR,Moonee Beach Nature Reserve,153.1889,-30.17397
+435,Corkwood Walk,Viewpoint,Yuraygir NP,Yuraygir National Park,153.24585,-29.94816
+436,Dammerals H'land,Viewpoint,Moonee Beach NR,Moonee Beach Nature Reserve,153.19041,-30.17261
+437,Chambigne Trig,Viewpoint,Chambigne NR,Chambigne Nature Reserve,152.75736,-29.78099
+438,14,Viewpoint,Sherwood NR,Sherwood Nature Reserve,153.02102,-30.01238
+439,Get Lost Trl,Viewpoint,Sherwood NR,Sherwood Nature Reserve,153.03669,-30.0418
+440,Sherwood Rd,Viewpoint,Sherwood NR,Sherwood Nature Reserve,153.00738,-30.03985
+441,Falls Trl,Viewpoint,Sherwood NR,Sherwood Nature Reserve,153.01756,-30.06622
+442,Dog Falls,Viewpoint,Yuraygir NP,Yuraygir National Park,153.25313,-29.62908
+443,Woody Head,On-ground lookout,Bundjalung NP,Bundjalung National Park,153.3734,-29.36475
+444,Sportsmans Ck Trl 01,Viewpoint,Banyabba NR,Banyabba Nature Reserve,152.90172,-29.36048
+445,Sportsmans Ck Trl 02,Viewpoint,Banyabba NR,Banyabba Nature Reserve,152.90404,-29.36367
+446,Shelley Track,Viewpoint,Yuraygir NP,Yuraygir National Park,153.34479,-29.55111
+447,Eagles Nest,Viewpoint,New England NP,New England National Park,152.41105,-30.48988
+448,Through Rd,Viewpoint,Yuraygir NP,Yuraygir National Park,153.26533,-29.62081
+449,Captain Cook,Viewpoint,Hat Head NP,Hat Head National Park,153.08501,-30.92103
+450,Smokey Cape Light,On-ground lookout,Hat Head NP,Hat Head National Park,153.08747,-30.92289
+451,Sapphire Beach Cafe,Viewing platform,Coffs Coast RP,Coffs Coast Regional Park,153.15565,-30.22505
+452,Darlington Park,Viewing platform,Coffs Coast RP,Coffs Coast Regional Park,153.19485,-30.04768
+453,Lorikeet,On-ground lookout,Coffs Coast RP,Coffs Coast Regional Park,153.19518,-30.04548
+454,Angourie Point,On-ground lookout,Outside NPWS estate,,153.36442,-29.48227
+455,Mermaid Lookout,Viewing platform,Crowdy Bay NP,Crowdy Bay National Park,152.8004,-31.72124
+456,Minyon Falls,Viewing platform,Nightcap NP,Nightcap National Park,153.39014,-28.61259
+457,Angourie Bay,Viewing platform,Yuraygir NP,Yuraygir National Park,153.36418,-29.48363
+458,Durrangan,Viewpoint,Yuraygir NP,Yuraygir National Park,153.35953,-29.50959
+459,Shelley Headland,Viewpoint,Yuraygir NP,Yuraygir National Park,153.35956,-29.52808
+460,Little Wategos,Viewing platform,Walgun Cape Byron SCA,Walgun Cape Byron State Conservation Area,153.6379,-28.63419
+461,Little Wategos lower,Viewing platform,Walgun Cape Byron SCA,Walgun Cape Byron State Conservation Area,153.63758,-28.63442
+462,Little Wategos steps,Viewing platform,Walgun Cape Byron SCA,Walgun Cape Byron State Conservation Area,153.63673,-28.63473
+463,Three Sisters,Viewing platform,Broken Head NR,Broken Head Nature Reserve,153.61879,-28.70722
+464,Falls,On-ground lookout,Willi Willi NP,Willi Willi National Park,152.33798,-31.01578
+465,Willi Willi,On-ground lookout,Outside NPWS estate,,152.35263,-30.99336
+466,Balaminda,Viewing platform,Dorrigo NP,Dorrigo National Park,152.72986,-30.36506
+467,Budaabang (Hardwood),Viewing platform,Dorrigo NP,Dorrigo National Park,152.7344,-30.37961
+468,Protestors Creek view,Viewing platform,Nightcap NP,Nightcap National Park,153.31062,-28.57009
+469,Northern Lookout,Viewing platform,Dooragan NP,Dooragan National Park,152.77758,-31.65703
+470,Don Johnstone Lookout,Viewing platform,Outside NPWS estate,,152.7778,-31.65799
+471,Laurieton Lookout,Viewing platform,Dooragan NP,Dooragan National Park,152.77801,-31.65736
+472,Diamond Head Lookout,Viewing platform,Dooragan NP,Dooragan National Park,152.7746,-31.65708
+473,02,Viewing platform,Dorrigo NP,Dorrigo National Park,152.72646,-30.37281
+474,Illaroo,Viewing platform,Yuraygir NP,Yuraygir National Park,153.29318,-29.75924
+475,Byron View,Viewpoint,Outside NPWS estate,,153.33472,-28.53896
+476,Grass Tree,On-ground lookout,Mount Jerusalem NP,Mount Jerusalem National Park,153.35723,-28.50864
+477,Tweed Valley,On-ground lookout,Mount Jerusalem NP,Mount Jerusalem National Park,153.34884,-28.51851
+478,Doughboy Mtn View,On-ground lookout,Nightcap NP,Nightcap National Park,153.32964,-28.53856
+479,Jerusalem Cliffs,On-ground lookout,Mount Jerusalem NP,Mount Jerusalem National Park,153.34152,-28.52717
+480,Wanganui Gorge,On-ground lookout,Nightcap NP,Nightcap National Park,153.39447,-28.58304
+483,Tea Tree,On-ground lookout,Nightcap NP,Nightcap National Park,153.32881,-28.53999
+498,Broken Head Dayuse,Viewing platform,Broken Head NR,Broken Head Nature Reserve,153.61431,-28.70413
+499,Camping Platform - Site 4,Other,Border Ranges NP,Border Ranges National Park,153.02279,-28.41319
+500,Camping Platform - Site 7,Other,Border Ranges NP,Border Ranges National Park,153.02216,-28.41283
+501,Camping Platform - Site 9,Other,Border Ranges NP,Border Ranges National Park,153.02209,-28.41262
+502,Camping Platform - Site 12,Other,Border Ranges NP,Border Ranges National Park,153.02211,-28.41214
+503,Camping Platform - Site 7,Other,Whian Whian SCA,Whian Whian State Conservation Area,153.37843,-28.59857
+504,Camping Platform - Site 9,Other,Whian Whian SCA,Whian Whian State Conservation Area,153.37861,-28.59882
+505,Camping Platform - Site 10,Other,Whian Whian SCA,Whian Whian State Conservation Area,153.37863,-28.59895
+506,Camping Platform - Site 13,Other,Border Ranges NP,Border Ranges National Park,153.02222,-28.41215
+507,Camping Platform - Site 10,Other,Border Ranges NP,Border Ranges National Park,153.02205,-28.4124
+508,Camping Platform - Site 6,Other,Border Ranges NP,Border Ranges National Park,153.02218,-28.41296
+509,Camping Platform - Ngambaa - 01,Other,Ngambaa NR,Ngambaa Nature Reserve,152.7917,-30.88883
+510,Camping Platform - Site 11,Other,Border Ranges NP,Border Ranges National Park,153.02196,-28.4122
+511,Camping Platform - 03,Other,Nightcap NP,Nightcap National Park,153.34807,-28.5646
+512,Camping Platform - Site 11,Other,Whian Whian SCA,Whian Whian State Conservation Area,153.37864,-28.59909
+513,Camping Platform - Site 3,Other,Border Ranges NP,Border Ranges National Park,153.02289,-28.41328
+514,Camping Platform - Ngambaa - 02,Other,Ngambaa NR,Ngambaa Nature Reserve,152.79223,-30.88935
+515,Camping Platform - 01,Other,Nightcap NP,Nightcap National Park,153.34786,-28.5644
+516,Camping Platform - 04,Other,Nightcap NP,Nightcap National Park,153.34822,-28.56447
+517,Camping Platform - 01,Other,Nightcap NP,Nightcap National Park,153.39498,-28.58697
+518,Camping Platform - 03,Other,Nightcap NP,Nightcap National Park,153.39483,-28.58729
+519,Camping Platform - 06,Other,Nightcap NP,Nightcap National Park,153.39502,-28.58787
+520,Camping Platform - 09,Other,Nightcap NP,Nightcap National Park,153.39491,-28.58813
+521,Camping Platform - 05,Other,Nightcap NP,Nightcap National Park,153.39498,-28.58736
+522,Camping Platform - 02,Other,Nightcap NP,Nightcap National Park,153.34801,-28.56443
+523,Camping Platform - 05,Other,Nightcap NP,Nightcap National Park,153.34827,-28.56434
+524,Camping Platform - 04,Other,Nightcap NP,Nightcap National Park,153.39495,-28.58724
+525,Camping Platform - 07,Other,Nightcap NP,Nightcap National Park,153.39491,-28.58801
+526,Camping Platform - 10,Other,Nightcap NP,Nightcap National Park,153.39502,-28.58821
+527,Camping Platform - 11,Other,Nightcap NP,Nightcap National Park,153.39516,-28.5882
+528,Camping Platform - Site 8,Other,Border Ranges NP,Border Ranges National Park,153.02213,-28.41274
+529,Camping Platform - Site 8,Other,Whian Whian SCA,Whian Whian State Conservation Area,153.3784,-28.59871
+530,Camping Platform - 02,Other,Nightcap NP,Nightcap National Park,153.39485,-28.58713
+531,Camping Platform - 08,Other,Nightcap NP,Nightcap National Park,153.3949,-28.58805
+532,Camping Platform - Ngambaa - 03,Other,Ngambaa NR,Ngambaa Nature Reserve,152.79228,-30.88947
+533,Camping Platform - 06,Other,Mount Jerusalem NP,Mount Jerusalem National Park,153.35791,-28.49566
+534,Camping Platform - 05,Other,Mount Jerusalem NP,Mount Jerusalem National Park,153.35784,-28.49571
+535,Camping Platform - 04,Other,Mount Jerusalem NP,Mount Jerusalem National Park,153.35788,-28.49581
+536,Camping Platform - 03,Other,Mount Jerusalem NP,Mount Jerusalem National Park,153.35799,-28.4958
+537,Camping Platform - 02,Other,Mount Jerusalem NP,Mount Jerusalem National Park,153.3581,-28.49578
+538,Camping Platform - 01,Other,Mount Jerusalem NP,Mount Jerusalem National Park,153.35811,-28.49565
+539,Camping Platform - 07,Other,Mount Jerusalem NP,Mount Jerusalem National Park,153.3579,-28.49525
+540,Camping Platform - 08,Other,Mount Jerusalem NP,Mount Jerusalem National Park,153.35777,-28.49517
+541,Camping Platform - 09,Other,Mount Jerusalem NP,Mount Jerusalem National Park,153.35764,-28.49503
+542,Camping Platform - 10,Other,Mount Jerusalem NP,Mount Jerusalem National Park,153.35785,-28.49494
+543,Camping Platform - 11,Other,Mount Jerusalem NP,Mount Jerusalem National Park,153.35786,-28.49486
+544,Camping Platform - 11,Other,Nightcap NP,Nightcap National Park,153.34748,-28.56369
+545,Camping Platform - 06,Other,Nightcap NP,Nightcap National Park,153.34747,-28.56378
+546,Camping Platform - 07,Other,Nightcap NP,Nightcap National Park,153.34741,-28.56392
+547,Camping Platform - 08,Other,Nightcap NP,Nightcap National Park,153.34745,-28.56403
+548,Camping Platform - 09,Other,Nightcap NP,Nightcap National Park,153.34756,-28.56391
+549,Camping Platform - 10,Other,Nightcap NP,Nightcap National Park,153.34759,-28.56381
+550,Camping platform - Site 13,Other,Mebbin NP,Mebbin National Park,153.19423,-28.44577
+551,Camping platform - Site 14,Other,Mebbin NP,Mebbin National Park,153.19418,-28.44568
+552,Camping platform - Site 15,Other,Outside NPWS estate,,153.1941,-28.44515
+553,Camping platform - Site 16,Other,Outside NPWS estate,,153.19407,-28.44508
+554,Camping platform - Site 17,Other,Outside NPWS estate,,153.19406,-28.44501
+555,Camping platform - Site 18,Other,Outside NPWS estate,,153.19387,-28.44496
+556,Camping platform - Site 19,Other,Outside NPWS estate,,153.19379,-28.4449
+557,Camping platform - Site 20,Other,Mebbin NP,Mebbin National Park,153.19366,-28.44483
+567,Lions Lookout,On-ground lookout,Oxley Wild Rivers NP,Oxley Wild Rivers National Park,151.76532,-31.05229
+568,Landslide Lookout,Viewing platform,Oxley Wild Rivers NP,Oxley Wild Rivers National Park,151.76862,-31.05117
+569,Lower Pool Lookout,Viewing platform,Oxley Wild Rivers NP,Oxley Wild Rivers National Park,151.76914,-31.05097
+570,Main Falls Lookout,Viewing platform,Oxley Wild Rivers NP,Oxley Wild Rivers National Park,151.76999,-31.05005
+571,Tia - 02,On-ground lookout,Oxley Wild Rivers NP,Oxley Wild Rivers National Park,151.85828,-31.15636
+572,Tia - 01,Viewing platform,Oxley Wild Rivers NP,Oxley Wild Rivers National Park,151.85775,-31.1572
+573,Tiara - 01,On-ground lookout,Oxley Wild Rivers NP,Oxley Wild Rivers National Park,151.85555,-31.15355
+574,Tiara - 02,Viewing platform,Oxley Wild Rivers NP,Oxley Wild Rivers National Park,151.86018,-31.14749
+575,Oxley Lookout,Viewing platform,Oxley Wild Rivers NP,Oxley Wild Rivers National Park,151.77098,-31.0494
+576,Chasm Lookout,Viewing platform,Oxley Wild Rivers NP,Oxley Wild Rivers National Park,151.77157,-31.05148
+577,Lower Falls Lookout,Viewing platform,Oxley Wild Rivers NP,Oxley Wild Rivers National Park,151.77048,-31.05294
+578,Slate Walls Lookout,On-ground lookout,Oxley Wild Rivers NP,Oxley Wild Rivers National Park,151.7696,-31.05242
+579,Mummel Gulf Walk,On-ground lookout,Mummel Gulf NP,Mummel Gulf National Park,151.8672,-31.33103
+580,Budds Mare,Viewing platform,Oxley Wild Rivers NP,Oxley Wild Rivers National Park,151.97212,-30.98476
+581,Marys View,On-ground lookout,Oxley Wild Rivers NP,Oxley Wild Rivers National Park,152.16946,-30.84624
+582,Dangars Gorge,On-ground lookout,Oxley Wild Rivers NP,Oxley Wild Rivers National Park,151.72533,-30.67433
+583,River View,On-ground lookout,Oxley Wild Rivers NP,Oxley Wild Rivers National Park,151.72632,-30.67613
+584,Main Falls,Viewing platform,Oxley Wild Rivers NP,Oxley Wild Rivers National Park,151.72704,-30.67642
+585,Rock Wall - 01,Viewing platform,Oxley Wild Rivers NP,Oxley Wild Rivers National Park,151.72591,-30.67549
+586,Rock Wall - 02,Viewing platform,Oxley Wild Rivers NP,Oxley Wild Rivers National Park,151.72554,-30.67476
+587,Edgars lookout,Viewing platform,Oxley Wild Rivers NP,Oxley Wild Rivers National Park,152.02685,-30.53331
+588,Eagle View lookout,Viewing platform,Oxley Wild Rivers NP,Oxley Wild Rivers National Park,152.03851,-30.53119
+589,Wollomombi Falls lookout,Viewing platform,Oxley Wild Rivers NP,Oxley Wild Rivers National Park,152.04114,-30.53158
+590,Viewing Platform- Chandler Falls lookout,Viewing platform,Oxley Wild Rivers NP,Oxley Wild Rivers National Park,152.04481,-30.53264
+591,Falls Lookdown,Viewing platform,Oxley Wild Rivers NP,Oxley Wild Rivers National Park,151.72782,-30.67662
+592,Rock Wallaby,Viewing platform,Oxley Wild Rivers NP,Oxley Wild Rivers National Park,151.73096,-30.67637
+593,McDirtys,Viewing platform,Oxley Wild Rivers NP,Oxley Wild Rivers National Park,151.74576,-30.67617
+594,Mihi Falls,On-ground lookout,Oxley Wild Rivers NP,Oxley Wild Rivers National Park,151.73392,-30.69319
+595,Mount Yarrowyck,Viewing platform,Bulagaranda (Mt Yarrowyck) AA,Bulagaranda (Mt Yarrowyck) Aboriginal Area,151.37685,-30.45591
+596,Horton Falls,On-ground lookout,Horton Falls CCAZ1 NP,Horton Falls CCA Zone 1 National Park,150.33664,-30.3356
+597,Ebor Walking Track,On-ground lookout,Guy Fawkes River NP,Guy Fawkes River National Park,152.3399,-30.40379
+598,Raspberry,On-ground lookout,Gibraltar Range NP,Gibraltar Range National Park,152.25183,-29.55563
+599,Coachwood Pool,Viewing platform,Washpool NP,Washpool National Park,152.31711,-29.46936
+600,Boonoo Boonoo Falls,Viewing platform,Boonoo Boonoo NP,Boonoo Boonoo National Park,152.16591,-28.7964
+601,Macintyre Falls,On-ground lookout,Kwiambal NP,Kwiambal National Park,150.96635,-29.15295
+602,The Dungeon,On-ground lookout,Kwiambal NP,Kwiambal National Park,150.97907,-29.13445
+603,Billyrimba Lookout,Viewing platform,Washpool NP,Washpool National Park,152.17739,-29.22634
+604,The Beach,Viewing platform,Kwiambal NP,Kwiambal National Park,150.96737,-29.15169
+605,Norfolk Falls,Viewing platform,Coolah Tops NP,Coolah Tops National Park,150.01107,-31.74704
+606,Bundella,On-ground lookout,Coolah Tops NP,Coolah Tops National Park,150.01781,-31.69704
+607,Bundabulla lookout,Viewpoint,Mount Kaputar NP,Mount Kaputar National Park,150.17055,-30.29367
+608,Breeza Lookout,On-ground lookout,Coolah Tops NP,Coolah Tops National Park,150.19388,-31.81893
+609,Shepherds Peak,On-ground lookout,Coolah Tops NP,Coolah Tops National Park,150.20536,-31.82151
+610,Norfolk Falls,On-ground lookout,Coolah Tops NP,Coolah Tops National Park,150.01187,-31.74743
+611,Talbragar,On-ground lookout,Coolah Tops NP,Coolah Tops National Park,150.09301,-31.75403
+612,Sawn Rocks,Viewing platform,Mount Kaputar NP,Mount Kaputar National Park,150.06024,-30.14524
+613,Whitegum,On-ground lookout,Warrumbungle NP,Warrumbungle National Park,149.03881,-31.29255
+614,Kaputar Summit,Viewing platform,Mount Kaputar NP,Mount Kaputar National Park,150.16449,-30.27343
+615,Doug Sky Lookout,Viewing platform,Mount Kaputar NP,Mount Kaputar National Park,150.14918,-30.29359
+616,Viewing Platform MM Observation  Platfo*,Viewing platform,Outside NPWS estate,,147.71172,-30.8774
+617,Baileys lookout,On-ground lookout,Pilliga NR,Pilliga Nature Reserve,149.72708,-30.886
+618,Eckford,On-ground lookout,Mount Kaputar NP,Mount Kaputar National Park,150.16583,-30.29019
+619,Horsearm Creek,Viewing platform,Mount Kaputar NP,Mount Kaputar National Park,150.16621,-30.28644
+620,Governor,Viewing platform,Mount Kaputar NP,Mount Kaputar National Park,150.14826,-30.28161
+621,Euglah Rock,Viewing platform,Mount Kaputar NP,Mount Kaputar National Park,150.1441,-30.29295
+622,OnGround Lookout Spirey View,On-ground lookout,Warrumbungle NP,Warrumbungle National Park,148.99946,-31.31934
+623,OnGround Lookout Macha Tor,On-ground lookout,Warrumbungle NP,Warrumbungle National Park,149.00412,-31.31574
+624,OnGround Lookout Febor Tor,On-ground lookout,Warrumbungle NP,Warrumbungle National Park,148.99929,-31.31383
+625,OnGround Lookout Bress Peak,On-ground lookout,Warrumbungle NP,Warrumbungle National Park,148.99201,-31.32
+626,OnGround Lookout Bridget Peak,On-ground lookout,Warrumbungle NP,Warrumbungle National Park,148.99287,-31.31965
+627,OnGround Lookout Fans Horizon,On-ground lookout,Warrumbungle NP,Warrumbungle National Park,148.98583,-31.3026
+628,Little Mtn Wk Tr,Viewing platform,Gundabooka NP,Gundabooka National Park,145.7119,-30.54027
+629,Kunderang Brook View,On-ground lookout,Oxley Wild Rivers NP,Oxley Wild Rivers National Park,152.22209,-31.08887
+630,The Rocks Lookout,On-ground lookout,Oxley Wild Rivers NP,Oxley Wild Rivers National Park,152.11631,-31.03839
+631,Viewpoint - Lucifers Thumb,Viewpoint,Guy Fawkes River NP,Guy Fawkes River National Park,152.32172,-30.05576
+632,Viewpoint - Cathedral Rock,Viewpoint,Cathedral Rock NP,Cathedral Rock National Park,152.25088,-30.43337
+633,Viewpoint - Woolpack Rocks,Viewpoint,Cathedral Rock NP,Cathedral Rock National Park,152.25405,-30.40984
+634,Viewpoint - Misty Creek,Viewpoint,Guy Fawkes River NP,Guy Fawkes River National Park,152.3419,-30.11408
+635,Viewpoint - Hamburger Rock,Viewpoint,Guy Fawkes River NP,Guy Fawkes River National Park,152.35724,-30.05817
+636,Viewpoint - Warrung,Viewpoint,Guy Fawkes River NP,Guy Fawkes River National Park,152.32143,-30.06535
+637,Viewpoint - Paddy Ross Ridge Lookout,Viewpoint,Guy Fawkes River NP,Guy Fawkes River National Park,152.20302,-30.04423
+638,Dndry Sculpt 2: first lesson,On-ground lookout,Timmallallie CCAZ1 NP,Timmallallie CCA Zone 1 National Park,149.24092,-30.99597
+639,Scultpture 1; scrub spirit,On-ground lookout,Timmallallie CCAZ1 NP,Timmallallie CCA Zone 1 National Park,149.23743,-30.99629
+640,Sndstn Caves Art Site,Viewing platform,Pilliga NR,Pilliga Nature Reserve,149.41426,-31.01574
+641,Dangars Falls View,Viewing platform,Oxley Wild Rivers NP,Oxley Wild Rivers National Park,151.72587,-30.67394
+642,Lyrebird Falls,On-ground lookout,Gibraltar Range NP,Gibraltar Range National Park,152.2436,-29.52843
+643,Viewpoint - Bald Rock Trig,Viewpoint,Bald Rock NP,Bald Rock National Park,152.04012,-28.85278
+644,Bluff Mountain,On-ground lookout,Warrumbungle NP,Warrumbungle National Park,148.97754,-31.32879
+645,Breadknife - Grand High Tops Lookout,On-ground lookout,Warrumbungle NP,Warrumbungle National Park,148.99582,-31.3326
+646,Mt Exmouth,On-ground lookout,Warrumbungle NP,Warrumbungle National Park,148.95129,-31.3113
+647,Gara Gorge Lookout,Viewing platform,Oxley Wild Rivers NP,Oxley Wild Rivers National Park,151.81188,-30.60183
+648,Four Mile Trig,On-ground lookout,Outside NPWS estate,,152.20315,-29.71282
+649,London Bridge,On-ground lookout,Guy Fawkes River NP,Guy Fawkes River National Park,152.2478,-29.83925
+650,Glen Nevis,On-ground lookout,Guy Fawkes River NP,Guy Fawkes River National Park,152.24755,-29.90687
+651,Mount Talowla Lookout,On-ground lookout,Toorale SCA,Toorale State Conservation Area,145.2494,-30.38539
+652,Gabaga Yanagubaa - 01,Viewing platform,Deriah CCAZ2 AA,Deriah CCA Zone 2 Aboriginal Area,150.03356,-30.35183
+653,Onground Lookout - Chaelundi Falls,On-ground lookout,Guy Fawkes River NP,Guy Fawkes River National Park,152.33317,-30.06789
+654,Warrego wetland exp,Viewing platform,Toorale SCA,Toorale State Conservation Area,145.35857,-30.22206
+655,Salt Caves Fire Tower,Viewing platform,Timmallallie CCAZ1 NP,Timmallallie CCA Zone 1 National Park,149.29047,-30.74599
+656,Main Falls lookout,Viewing platform,Oxley Wild Rivers NP,Oxley Wild Rivers National Park,152.03308,-30.53373
+657,Lindsay Rock Tops lookout,Viewing platform,Mount Kaputar NP,Mount Kaputar National Park,150.1781,-30.2821
+658,Viewpoint - Pinnacle lookout,Viewpoint,Coolah Tops NP,Coolah Tops National Park,150.01224,-31.69441
+659,View point - Valley of the Eagles,Viewpoint,Gundabooka NP,Gundabooka National Park,145.68637,-30.59397
+660,Tommys Rock,On-ground lookout,Mann River NR,Mann River Nature Reserve,152.0699,-29.70966
+661,Boundary Creek,Viewing platform,Gibraltar Range NP,Gibraltar Range National Park,152.24899,-29.5329
+662,Thunderbolts,Viewing platform,Torrington SCA,Torrington State Conservation Area,151.68237,-29.31181
+663,Gabaga Yanagubaa - 02,On-ground lookout,Deriah CCAZ2 AA,Deriah CCA Zone 2 Aboriginal Area,150.03197,-30.35618
+664,Viewpoint - Granite Lookout,Viewpoint,Washpool NP,Washpool National Park,152.323,-29.48505
+665,Checks lookout,On-ground lookout,Oxley Wild Rivers NP,Oxley Wild Rivers National Park,152.03328,-30.53533
+666,View point - Chandler lookout,Viewpoint,Oxley Wild Rivers NP,Oxley Wild Rivers National Park,152.02984,-30.5414
+667,Sarum Hill,On-ground lookout,Oxley Wild Rivers NP,Oxley Wild Rivers National Park,151.75828,-30.6834
+668,Salisbury,Viewpoint,Oxley Wild Rivers NP,Oxley Wild Rivers National Park,151.76696,-30.68792
+669,Peregrine lookout,On-ground lookout,Barool NP,Barool National Park,152.20338,-29.61263
+670,Viewpoint - Thunderbolts Rock,Viewpoint,Goonoowigal CCAZ3 SCA,Goonoowigal CCA Zone 3 State Conservation Area,151.13065,-29.8179
+671,Viewpoint - Marbles,Viewpoint,Brindingabba NP,Brindingabba National Park,144.89951,-29.07701
+672,Viewpoint - Lancewood,Viewpoint,Brindingabba NP,Brindingabba National Park,144.92339,-29.02136
+673,Viewpoint - Leopardwood,Viewpoint,Brindingabba NP,Brindingabba National Park,144.80116,-29.0519
+674,Viewpoint - Clarkes,Viewpoint,Brindingabba NP,Brindingabba National Park,144.97351,-29.04898
+675,Lower Falls 01,Viewing platform,Guy Fawkes River NP,Guy Fawkes River National Park,152.33694,-30.40302
+676,Lower Falls 02,Viewing platform,Guy Fawkes River NP,Guy Fawkes River National Park,152.33606,-30.40317
+677,Upper Falls 01,Viewing platform,Guy Fawkes River NP,Guy Fawkes River National Park,152.34292,-30.40285
+678,Upper Falls 02,Viewing platform,Guy Fawkes River NP,Guy Fawkes River National Park,152.34376,-30.40287
+681,Summit Creek Falls,Viewing platform,Gibraltar Range NP,Gibraltar Range National Park,152.34314,-29.46715
+682,View Point - Rockpools,Viewpoint,Boonoo Boonoo NP,Boonoo Boonoo National Park,152.16543,-28.79773
+683,Twin Cedars,Viewing platform,Gibraltar Range NP,Gibraltar Range National Park,152.33433,-29.47553
+684,Yapa Mulgowan Art,Viewing platform,Gundabooka NP,Gundabooka National Park,145.76223,-30.6381
+686,Maddens Falls Loolout,Viewing platform,Dharawal NP,Dharawal National Park,150.91382,-34.2387
+687,Longview Lookout,On-ground lookout,Outside NPWS estate,,150.98067,-34.22093
+688,Robertsons Lookout,Viewing platform,Illawarra Escarpment SCA,Illawarra Escarpment State Conservation Area,150.84068,-34.40211
+689,Congo Day Use/Camping,Viewing platform,Eurobodalla NP,Eurobodalla National Park,150.15915,-35.95477
+690,Viewpoint - Sandy Creek,Viewpoint,Bournda NP,Bournda National Park,149.9352,-36.81629
+691,Terrace Beach,Viewing platform,Beowa NP,Beowa National Park,149.93234,-37.01
+692,TBRNViewing Platform - North Head - 01,Viewing platform,Beowa NP,Beowa National Park,149.94251,-37.05468
+693,TBRNViewing Platform - North Head - 02,Viewing platform,Beowa NP,Beowa National Park,149.94345,-37.0542
+694,Wajurda Pt,On-ground lookout,Outside NPWS estate,,149.99567,-36.69119
+695,Toragy Point Day Use,On-ground lookout,Eurobodalla NP,Eurobodalla National Park,150.16118,-35.90866
+696,Shelly Beach Day Use,Viewing platform,Eurobodalla NP,Eurobodalla National Park,150.15627,-35.90869
+697,Mystery Bay Day Use,On-ground lookout,Eurobodalla NP,Eurobodalla National Park,150.13629,-36.30568
+698,Corunna Velodrome,On-ground lookout,Eurobodalla NP,Eurobodalla National Park,150.1313,-36.29061
+699,Pipers Lkt - MainArea,On-ground lookout,South East Forest NP,South East Forest National Park,149.44458,-36.59738
+700,Mumbulla Creek Falls,Viewing platform,Biamanga NP,Biamanga National Park,149.89399,-36.57556
+701,Disaster Bay,Viewing platform,Beowa NP,Beowa National Park,149.99391,-37.23602
+702,Pambula Rvr -01 -East,Viewing platform,Outside NPWS estate,,149.91257,-36.9484
+703,Pambula Rvr -02 -West,Viewing platform,Outside NPWS estate,,149.90697,-36.9502
+704,North Tura,Viewing platform,Bournda NP,Bournda National Park,149.93482,-36.82917
+705,Dolphin Dreaming,Viewing platform,Mimosa Rocks NP,Mimosa Rocks National Park,150.05124,-36.5831
+706,Midden,Viewing platform,Mimosa Rocks NP,Mimosa Rocks National Park,150.05214,-36.58289
+707,Mimosa Rocks,Viewing platform,Mimosa Rocks NP,Mimosa Rocks National Park,150.05313,-36.5827
+708,Middle Beach,Viewing platform,Mimosa Rocks NP,Mimosa Rocks National Park,150.01235,-36.64477
+709,Gillards Day Use,Viewing platform,Outside NPWS estate,,150.00344,-36.65812
+710,Beach,Viewing platform,Mimosa Rocks NP,Mimosa Rocks National Park,150.04611,-36.58559
+711,Myanba Ck,Viewing platform,South East Forest NP,South East Forest National Park,149.4378,-36.97355
+712,Myanba Gorge,Viewing platform,South East Forest NP,South East Forest National Park,149.44283,-36.9711
+713,Pulpit,Viewing platform,South East Forest NP,South East Forest National Park,149.43802,-36.97228
+714,Turingal Head,Viewing platform,Bournda NP,Bournda National Park,149.96171,-36.78708
+715,Big Hole,Viewing platform,Deua NP,Deua National Park,149.65989,-35.72775
+716,Nunnock Northern,Viewing platform,South East Forest NP,South East Forest National Park,149.44694,-36.70925
+717,Viewpoint - Mallacoota,Viewpoint,Nadgee NR,Nadgee Nature Reserve,149.82699,-37.43458
+718,Viewpoint - Tumbledown,Viewpoint,Nadgee NR,Nadgee Nature Reserve,149.93928,-37.35095
+719,Bittangabee Ruins,Viewing platform,Beowa NP,Beowa National Park,150.01289,-37.21555
+720,Cascades Falls,Viewing platform,Outside NPWS estate,,149.52104,-36.22502
+721,Montague Landing Area,Viewing platform,Outside NPWS estate,,150.22443,-36.25067
+722,Hanging Mountain,Viewing platform,Deua NP,Deua National Park,149.89336,-36.00782
+723,Beachamps Cliffs L/O,On-ground lookout,Morton NP,Morton National Park,150.29753,-34.68705
+724,Bonnie View Lookout,On-ground lookout,Morton NP,Morton National Park,150.2962,-34.68759
+725,Sunrise Point Lookout,On-ground lookout,Morton NP,Morton National Park,150.30268,-34.68146
+726,Echo Point Lookout,Viewing platform,Morton NP,Morton National Park,150.28946,-34.68489
+727,Grand Canyon Lookout,On-ground lookout,Morton NP,Morton National Park,150.30153,-34.68193
+728,Onground Lookout - Riverview,On-ground lookout,Morton NP,Morton National Park,150.32307,-34.66961
+729,Onground Lookout - Mark Morton,On-ground lookout,Morton NP,Morton National Park,150.32309,-34.67028
+730,Fairy Bower Lookout,On-ground lookout,Morton NP,Morton National Park,150.30681,-34.67811
+731,Glow Worm Glen,Viewing platform,Morton NP,Morton National Park,150.3196,-34.65682
+732,Tooths Lookout,On-ground lookout,Morton NP,Morton National Park,150.30462,-34.6803
+733,East Rim Lookout,Viewing platform,Morton NP,Morton National Park,150.4826,-34.64837
+734,Yarrunga Lookout,On-ground lookout,Morton NP,Morton National Park,150.48165,-34.66569
+735,Yarrunga 01,On-ground lookout,Morton NP,Morton National Park,150.48132,-34.664
+736,Yarrunga 02,On-ground lookout,Morton NP,Morton National Park,150.48145,-34.6638
+737,Valley View,On-ground lookout,Morton NP,Morton National Park,150.48229,-34.66147
+738,Lamond Lookout,On-ground lookout,Morton NP,Morton National Park,150.48276,-34.65947
+739,Warragong Lookout,On-ground lookout,Morton NP,Morton National Park,150.48163,-34.65168
+740,May Lookout,On-ground lookout,Morton NP,Morton National Park,150.48258,-34.64997
+741,Fitzroy Falls Lookout,Viewing platform,Morton NP,Morton National Park,150.48247,-34.6478
+742,Richardson L/ookout,Viewing platform,Morton NP,Morton National Park,150.478,-34.64893
+743,Jersey Lookout,Viewing platform,Morton NP,Morton National Park,150.47972,-34.64842
+744,Twin Falls - 01,On-ground lookout,Morton NP,Morton National Park,150.4768,-34.64874
+745,Twin Falls - 02,On-ground lookout,Morton NP,Morton National Park,150.47674,-34.64865
+746,Renown Lookout,On-ground lookout,Morton NP,Morton National Park,150.47295,-34.65358
+747,Starky's Lookout,On-ground lookout,Morton NP,Morton National Park,150.47362,-34.65217
+748,Paines West Rim L/O,On-ground lookout,Morton NP,Morton National Park,150.47542,-34.64851
+749,Twin Falls South L/O,On-ground lookout,Morton NP,Morton National Park,150.47605,-34.64826
+750,Purnoo North Lookout,On-ground lookout,Morton NP,Morton National Park,150.31957,-34.755
+751,Purnoo South Lookout,On-ground lookout,Morton NP,Morton National Park,150.31913,-34.75541
+752,Paul's Lookout,On-ground lookout,Morton NP,Morton National Park,150.3092,-34.76554
+753,Long Point Main L/O,On-ground lookout,Morton NP,Morton National Park,150.05517,-34.76351
+754,L/Point Upper Lookout,On-ground lookout,Morton NP,Morton National Park,150.05367,-34.76482
+755,Onground Lookout - Mannings Lookout,On-ground lookout,Morton NP,Morton National Park,150.50434,-34.66691
+756,Missingham Lookout,On-ground lookout,Budderoo NP,Budderoo National Park,150.64188,-34.62171
+757,Missingham West L/O,On-ground lookout,Budderoo NP,Budderoo National Park,150.64076,-34.62097
+758,Izzards Lookout,On-ground lookout,Budderoo NP,Budderoo National Park,150.65149,-34.62513
+759,Warris Chair Lookout,On-ground lookout,Budderoo NP,Budderoo National Park,150.64929,-34.62375
+760,Lyrebird Loop Walk,Viewing platform,Budderoo NP,Budderoo National Park,150.72711,-34.63487
+761,Top End Of Loop - 01,Viewing platform,Budderoo NP,Budderoo National Park,150.72203,-34.63465
+762,Classroom,Viewing platform,Budderoo NP,Budderoo National Park,150.72193,-34.63471
+763,Lees Lookout,On-ground lookout,Budderoo NP,Budderoo National Park,150.67759,-34.59863
+764,Caloola Pass Lookout,On-ground lookout,Budderoo NP,Budderoo National Park,150.67939,-34.60039
+765,Jamberoo Lookout,Viewing platform,Outside NPWS estate,,150.7043,-34.65628
+766,Illawarra Lookout,On-ground lookout,Barren Grounds NR,Barren Grounds Nature Reserve,150.72063,-34.67272
+767,Adams Lookout Main,Viewing platform,Bungonia NP,Bungonia National Park,150.00872,-34.79738
+768,Adams Lookout Lower,Viewing platform,Bungonia NP,Bungonia National Park,150.00869,-34.79732
+769,Jerrara Lookout,On-ground lookout,Bungonia NP,Bungonia National Park,150.00658,-34.79804
+770,Lookdown Lookout,Viewing platform,Bungonia NP,Bungonia National Park,150.01909,-34.79918
+771,Bungonia Creek,Viewing platform,Bungonia NP,Bungonia National Park,150.0189,-34.79867
+772,Yellow Track Lookout,On-ground lookout,Bungonia SCA,Bungonia State Conservation Area,149.9993,-34.79751
+773,Red Rocks Trig L/O,On-ground lookout,Cambewarra Range NR,Cambewarra Range Nature Reserve,150.51089,-34.76543
+774,Hindmarsh Lookout,On-ground lookout,Morton NP,Morton National Park,150.55711,-34.64444
+775,West Hindmarsh L/O,On-ground lookout,Morton NP,Morton National Park,150.55679,-34.6444
+776,Belmore Falls - 01,On-ground lookout,Morton NP,Morton National Park,150.55782,-34.64245
+777,Belmore Falls - 02,On-ground lookout,Morton NP,Morton National Park,150.55918,-34.64204
+778,East Of Ford Lookout,On-ground lookout,Morton NP,Morton National Park,150.55885,-34.6392
+779,Tianjara Falls L/O,Viewing platform,Morton NP,Morton National Park,150.3322,-35.10881
+780,Viewing Platform -Bull Waterhole Lookout,Viewing platform,Jervis Bay NP,Jervis Bay National Park,150.78002,-34.97709
+781,Beach Rd Day Use Area,Viewing platform,Outside NPWS estate,,150.7808,-34.79212
+782,Chinamans Beach L/O,On-ground lookout,Jervis Bay NP,Jervis Bay National Park,150.69388,-35.09218
+783,JB W/Sands Half Way,On-ground lookout,Outside NPWS estate,,150.69334,-35.0902
+784,White Sands Lookout,On-ground lookout,Jervis Bay NP,Jervis Bay National Park,150.69189,-35.08911
+785,Weir Lookout,On-ground lookout,Outside NPWS estate,,150.59016,-34.84508
+786,Mossy Gully Lookout,On-ground lookout,Bomaderry Creek RP,Bomaderry Creek Regional Park,150.58967,-34.8473
+787,Gorge Lookout,On-ground lookout,Bomaderry Creek RP,Bomaderry Creek Regional Park,150.58971,-34.84638
+788,Haven Alamein - 01,Viewing platform,Outside NPWS estate,,150.59034,-35.17663
+789,Haven Alamein - 02,Viewing platform,Conjola NP,Conjola National Park,150.59019,-35.17683
+790,Haven Alamein - 03,Viewing platform,Conjola NP,Conjola National Park,150.58987,-35.17915
+791,Haven Alamein - 04,Viewing platform,Conjola NP,Conjola National Park,150.58995,-35.17969
+792,NCNR - Beach Road,Viewing platform,Outside NPWS estate,,150.48444,-35.28403
+793,Snapper Point WT,Viewing platform,Murramarang NP,Murramarang National Park,150.37083,-35.56987
+794,Granite Falls Lookout,Viewing platform,Morton NP,Morton National Park,150.37677,-35.16162
+795,Mangrove Track,Viewing platform,Outside NPWS estate,,150.20895,-35.69936
+796,George Boyd Lookout,On-ground lookout,Morton NP,Morton National Park,150.36995,-35.17413
+797,Pointer Gap Lookout,Viewing platform,Morton NP,Morton National Park,150.35574,-35.26481
+798,North Head Lookout,Viewing platform,Murramarang NP,Murramarang National Park,150.27702,-35.71796
+799,Pretty Beach,Viewing platform,Murramarang NP,Murramarang National Park,150.36614,-35.569
+800,Viewing Platform  - Pebbly Beach Access,Viewing platform,Murramarang NP,Murramarang National Park,150.32736,-35.60806
+801,Jerrawangala Lookout,Viewing platform,Outside NPWS estate,,150.40817,-35.10315
+802,Mt Kembla Lookout,On-ground lookout,Outside NPWS estate,,150.7921,-34.43971
+803,Viewpoint - Myrtle Mountain,Viewpoint,South East Forest NP,South East Forest National Park,149.69043,-36.85786
+804,Pulpit Rock,On-ground lookout,Beowa NP,Beowa National Park,150.03415,-37.23983
+805,Mumbulla Creek,On-ground lookout,Biamanga NP,Biamanga National Park,149.89526,-36.57453
+806,Greencape,On-ground lookout,Outside NPWS estate,,150.05066,-37.26217
+807,Viewing Plaftorm - North Head Lookout,Viewing platform,Murramarang NP,Murramarang National Park,150.27314,-35.71857
+808,Three Peaks Lookout,Viewpoint,Morton SCA,Morton State Conservation Area,150.40309,-34.87823
+809,Barren Grounds LO,Viewing platform,Barren Grounds NR,Barren Grounds Nature Reserve,150.73917,-34.68214
+810,Meroo Lookout,Viewing platform,Meroo NP,Meroo National Park,150.39306,-35.4753
+811,Cecil Hoskins.,Viewing platform,Cecil Hoskins NR,Cecil Hoskins Nature Reserve,150.39872,-34.53055
+812,O'Hares Lookout,Viewing platform,Dharawal NP,Dharawal National Park,150.84002,-34.15848
+813,Minerva Pool,Viewing platform,Dharawal NP,Dharawal National Park,150.82114,-34.16265
+814,Corunna Point,On-ground lookout,Outside NPWS estate,,150.13311,-36.29191
+815,Wasp Head W/Track,On-ground lookout,Outside NPWS estate,,150.3066,-35.66839
+816,Hammerhead Point,Viewing platform,Jervis Bay NP,Jervis Bay National Park,150.78968,-34.99561
+817,Cattlemans Track,Viewing platform,South East Forest NP,South East Forest National Park,149.44543,-36.72017
+818,Point Upright,Viewing platform,Murramarang NP,Murramarang National Park,150.32229,-35.63881
+819,Murra AA Lookout 1,Viewing platform,Murramarang AA,Murramarang Aboriginal Area,150.40352,-35.53087
+820,Murra AA Lookout 2,Viewing platform,Murramarang AA,Murramarang Aboriginal Area,150.40493,-35.52951
+821,Falls View,Viewing platform,Budderoo NP,Budderoo National Park,150.65419,-34.625
+822,Scenic View,Viewing platform,Budderoo NP,Budderoo National Park,150.65463,-34.62491
+823,Valley View,Viewing platform,Budderoo NP,Budderoo National Park,150.6551,-34.62426
+824,Didthul/Pigeon House,Viewing platform,Morton NP,Morton National Park,150.26497,-35.3493
+825,Pinnacles - West,Viewing platform,Beowa NP,Beowa National Park,149.92418,-36.99131
+826,Onground Lookout - Pinnacles - East,On-ground lookout,Beowa NP,Beowa National Park,149.92495,-36.99107
+827,Viewpoint - The Grotto,Viewpoint,Morton NP,Morton National Park,150.47394,-34.64863
+828,Mount Bushwalker,Viewing platform,Morton NP,Morton National Park,150.29291,-35.23939
+829,The Farm,Viewing platform,Killalea RP,Killalea Regional Park,150.86344,-34.60226
+830,Rest Point 1 BackTrk,Viewing platform,Budderoo NP,Budderoo National Park,150.72256,-34.63484
+831,Rest Point 2 BackTrk,Viewing platform,Budderoo NP,Budderoo National Park,150.72321,-34.63459
+832,Rest Point 3 BackTrk,Viewing platform,Budderoo NP,Budderoo National Park,150.72463,-34.63431
+833,Rest Point 4 BackTrk,Viewing platform,Budderoo NP,Budderoo National Park,150.72532,-34.63385
+834,Little Forest,Viewing platform,Morton NP,Morton National Park,150.33912,-35.28455
+835,Hindmarsh Lookout,Viewing platform,Morton NP,Morton National Park,150.55711,-34.64443
+836,Belmore Falls - 02,Viewing platform,Morton NP,Morton National Park,150.55924,-34.64201
+837,Glow Worm Glen,Viewing platform,Morton NP,Morton National Park,150.31969,-34.65684
+838,Boyds Lookout,Viewing platform,Beowa NP,Beowa National Park,149.95308,-37.10278
+839,Boyds Tower - 01,Viewing platform,Beowa NP,Beowa National Park,149.95325,-37.10179
+840,Boyds Tower - 02,Viewing platform,Beowa NP,Beowa National Park,149.95314,-37.10186
+841,Worange Point - 02,Viewing platform,Beowa NP,Beowa National Park,149.94246,-37.05466
+842,Worange Point - 01,Viewing platform,Beowa NP,Beowa National Park,149.94338,-37.05418
+843,Tuross Falls,Viewing platform,Wadbilliga NP,Wadbilliga National Park,149.53569,-36.22271
+844,Killalea Ridge,Viewing platform,Killalea RP,Killalea Regional Park,150.86003,-34.60966
+845,Six Mile Creek WT,Viewing platform,South East Forest NP,South East Forest National Park,149.5421,-36.78717
+846,TBRNViewing Platform - Tuross Falls,Viewing platform,Wadbilliga NP,Wadbilliga National Park,149.53569,-36.22271
+847,Camping Platform - Mowarry 05,Other,Beowa NP,Beowa National Park,149.99054,-37.14011
+848,Camping Platform - Mowarry 04,Other,Beowa NP,Beowa National Park,149.99039,-37.14008
+849,Camping Platform - Mowarry 01,Other,Beowa NP,Beowa National Park,149.99038,-37.1405
+850,Camping Platform - Mowarry 03,Other,Beowa NP,Beowa National Park,149.99036,-37.1402
+851,Camping Platform - Mowarry 06,Other,Beowa NP,Beowa National Park,149.99064,-37.13999
+852,Camping Platform - Mowarry 02,Other,Beowa NP,Beowa National Park,149.99031,-37.14039
+853,Camping Platform - Mowarry 07,Other,Beowa NP,Beowa National Park,149.9908,-37.14016
+854,Camping Platform - Mowarry 08,Other,Beowa NP,Beowa National Park,149.99051,-37.14026
+855,Camping Platform - Mowarry 09,Other,Beowa NP,Beowa National Park,149.99066,-37.14027
+856,Camping Platform - Mowarry 10,Other,Beowa NP,Beowa National Park,149.99059,-37.1405
+858,Viewpoint - Jump Up's,Viewpoint,Sturt NP,Sturt National Park,141.86354,-29.07398
+859,Walls,Viewing platform,Mungo NP,Mungo National Park,143.1271,-33.74156
+860,Red top,Viewing platform,Mungo NP,Mungo National Park,143.11324,-33.78789
+861,Mungo lookout,Viewing platform,Mungo NP,Mungo National Park,143.02082,-33.73834
+862,Onground Lookout - Jacks Ck - Western,On-ground lookout,Cocoparra NP,Cocoparra National Park,146.20237,-34.13269
+863,Onground Lookout - Mt Brogden,On-ground lookout,Cocoparra NP,Cocoparra National Park,146.29102,-34.20571
+864,Onground Lookout - Oscars,On-ground lookout,Cocoparra NP,Cocoparra National Park,146.28484,-34.2093
+865,On Ground Lookout - Ironbark WT,On-ground lookout,Conimbla NP,Conimbla National Park,148.4564,-33.80882
+866,Peregrine Lookout,On-ground lookout,Weddin Mountains NP,Weddin Mountains National Park,147.99467,-33.89916
+867,Caloma,Viewing platform,Goobang NP,Goobang National Park,148.33277,-32.68105
+868,Mt Nangar Lookout,Viewing platform,Nangar NP,Nangar National Park,148.53156,-33.42385
+869,Wright Cave,Viewing platform,Mutawintji NP,Mutawintji National Park,142.30389,-31.2744
+870,Vigars Wells,Viewing platform,Mungo NP,Mungo National Park,143.10443,-33.69261
+871,Yanga Lake,Viewing platform,Yanga NP,Yanga National Park,143.60894,-34.71606
+872,Yanga Woolshed,Viewing platform,Yanga NP,Yanga National Park,143.52348,-34.6609
+873,Eualdrie Lookout,On-ground lookout,Weddin Mountains NP,Weddin Mountains National Park,147.98987,-33.89918
+874,Mungo Footprints,Viewing platform,Mungo NP,Mungo National Park,143.02691,-33.72287
+875,Hand Stencils - North,Viewing platform,Mutawintji HS,Mutawintji Historic Site,142.28631,-31.24093
+876,Hand Stencils -Middle,Viewing platform,Mutawintji HS,Mutawintji Historic Site,142.28664,-31.24129
+877,Hand Stencils - South,Viewing platform,Mutawintji HS,Mutawintji Historic Site,142.28695,-31.2417
+878,View Point - Dungula,Viewpoint,Murray Valley RP,Murray Valley Regional Park,144.69066,-36.06192
+879,Caryapundy camping,On-ground lookout,Narriearra Caryapundy Swamp NP,Narriearra Caryapundy Swamp National Park,142.46568,-29.21489
+880,Wild Deserts,Viewing platform,Sturt NP,Sturt National Park,141.09601,-28.99958
+881,The Walls,Viewing platform,Mount Canobolas SCA,Mount Canobolas State Conservation Area,148.98523,-33.35094
+882,View Point - Orange View,Viewpoint,Mount Canobolas SCA,Mount Canobolas State Conservation Area,149.00139,-33.33866
+883,- Canobolas Summit,Viewing platform,Mount Canobolas SCA,Mount Canobolas State Conservation Area,148.98285,-33.34412
+884,Steel Kosciuszko,Viewing platform,Kosciuszko NP,Kosciuszko National Park,148.27787,-36.4796
+885,Steel Wallace Craigie,Viewing platform,Kosciuszko NP,Kosciuszko National Park,148.45102,-36.69239
+886,Steel Thredbo River,Viewing platform,Kosciuszko NP,Kosciuszko National Park,148.28168,-36.51626
+887,Scammell Ridge,Viewing platform,Kosciuszko NP,Kosciuszko National Park,148.20052,-36.32375
+888,River,Viewing platform,Kosciuszko NP,Kosciuszko National Park,148.17921,-36.38242
+889,Steel Waterfall,Viewing platform,Kosciuszko NP,Kosciuszko National Park,148.54288,-36.34033
+890,North Glory Lookout,Viewing platform,Kosciuszko NP,Kosciuszko National Park,148.48672,-35.7243
+891,Viewpoint - Trig Trail,Viewpoint,Outside NPWS estate,,148.20024,-35.35132
+892,Jersey Cave Lookout,On-ground lookout,Kosciuszko NP,Kosciuszko National Park,148.48685,-35.7234
+893,Bluff Lookout,On-ground lookout,Kosciuszko NP,Kosciuszko National Park,148.4903,-35.723
+894,Veiwing Platform - Talbingo Resevoir,Viewing platform,Kosciuszko NP,Kosciuszko National Park,148.35079,-35.63996
+895,Veiwing Platform - Landers Falls Lookout,Viewing platform,Kosciuszko NP,Kosciuszko National Park,148.34916,-35.6423
+896,Wallace Creek Lookout,Viewing platform,Kosciuszko NP,Kosciuszko National Park,148.4234,-35.86873
+897,Black Perry Lookout,Viewing platform,Outside NPWS estate,,148.35621,-35.59461
+898,Viewpoint - Norths,Viewpoint,Woomargama NP,Woomargama National Park,147.41285,-35.86
+899,Snow Gums Top Lookout,Viewing platform,Kosciuszko NP,Kosciuszko National Park,148.32932,-36.43041
+900,The Rock,On-ground lookout,The Rock NR,The Rock Nature Reserve,147.07408,-35.27501
+901,Boulder Lookout,Viewing platform,Outside NPWS estate,,148.51661,-36.39904
+903,Blue Lake,Viewing platform,Kosciuszko NP,Kosciuszko National Park,148.31031,-36.40758
+904,Wambariga (Yambla),Viewing platform,Woomargama SCA,Woomargama State Conservation Area,147.3113,-35.90866
+905,Viewpoint - Cootapatamba,Viewpoint,Kosciuszko NP,Kosciuszko National Park,148.26889,-36.46539
+906,Jacks Lookout,Viewing platform,Kosciuszko NP,Kosciuszko National Park,148.40397,-36.80665
+907,Viewpoint - Mount Aggie,Viewpoint,Bimberi NR,Bimberi Nature Reserve,148.76714,-35.46543
+908,Viewpoint - Blue Waterholes (Large),Viewpoint,Kosciuszko NP,Kosciuszko National Park,148.68418,-35.62416
+909,Viewpoint - Blue Waterholes (Small),Viewpoint,Kosciuszko NP,Kosciuszko National Park,148.68433,-35.62484
+910,Viewpoint - Porcupine Rocks,Viewpoint,Kosciuszko NP,Kosciuszko National Park,148.40041,-36.43067
+911,Viewpoint - Mount Stilwell,Viewpoint,Kosciuszko NP,Kosciuszko National Park,148.3244,-36.44456
+912,Viewpoint - Mount Kosciuszko,Viewpoint,Kosciuszko NP,Kosciuszko National Park,148.26349,-36.45584
+913,Viewpoint - Bald Hill,Viewpoint,Kosciuszko NP,Kosciuszko National Park,148.29752,-35.41049
+914,Viewpoint - Warogong Sugarloaf,Viewpoint,Kosciuszko NP,Kosciuszko National Park,148.31579,-35.3995
+915,Viewpoint - Lower Falls,Viewpoint,Kosciuszko NP,Kosciuszko National Park,148.24921,-35.63985
+916,Viewpoint - Upper Falls,Viewpoint,Kosciuszko NP,Kosciuszko National Park,148.24686,-35.64034
+917,Olsens Picnic Area,On-ground lookout,Kosciuszko NP,Kosciuszko National Park,148.2513,-36.35955
+918,Illawong Trackhead,Viewing platform,Kosciuszko NP,Kosciuszko National Park,148.37187,-36.38153
+919,Perisher to Bullocks,Viewing platform,Kosciuszko NP,Kosciuszko National Park,148.43037,-36.42178

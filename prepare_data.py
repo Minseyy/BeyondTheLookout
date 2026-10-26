@@ -14,7 +14,8 @@ Files it makes in data/ (everything else in data/ is an original):
     track_waffle.json           the 100 waffle squares
     park_track_difficulty.json  km of track by difficulty for each top-20 park
     park_map_shapes.json, park_map_lookouts.json, park_list.json   park map
-    park_info.json              one row per top-20 park (map, rank bars, info panel)
+    park_info.json              one row per top-20 park (rank bars, info panel)
+    park_circles.json           the coral circles: on the NSW map and in the Sydney lens
     sydney_lens.json, sydney_lens_label.json   the magnified Sydney "lens"
     trip_role_squares.json      one row per square in the trip-role chart
     page_numbers.json           numbers for the page text
@@ -52,8 +53,8 @@ PARK_MAP_HEIGHT = 468
 # Map units are degrees on the Mercator map (x = longitude, y = Mercator latitude).
 LENS_SPOT = (150.85, -33.87)   # centre of the area that is magnified (lon, lat)
 LENS_SPOT_RADIUS = 0.85        # size of that area
-LENS_CENTRE = (159.2, -33.0)   # where the lens is drawn (lon, lat), out to sea
-LENS_RADIUS = 5.0              # size of the lens; magnification = LENS_RADIUS / LENS_SPOT_RADIUS
+LENS_CENTRE = (158.3, -33.0)   # where the lens is drawn (lon, lat), out to sea
+LENS_RADIUS = 4.5              # size of the lens; magnification = LENS_RADIUS / LENS_SPOT_RADIUS
 
 ZOOM_LABELS = {1: (0.0, -0.09), 2: (0.03, -0.06), 3: (0.05, 0.03), 4: (-0.07, 0.0), 6: (0.05, 0.0),
                7: (0.05, 0.03), 9: (0.05, 0.0), 12: (0.05, -0.02), 13: (0.05, 0.0), 15: (-0.06, 0.03),
@@ -279,16 +280,16 @@ def circle(centre, radius, n=96):
 
 
 def clip_to_circle(ring_lonlat):
-    """Cuts a ring to the spot circle (Sutherland-Hodgman against a convex polygon), in map units."""
+    """Cuts a ring to the spot circle (Sutherland-Hodgman against a convex polygon), then magnifies it."""
     clip = circle(SPOT, LENS_SPOT_RADIUS)[::-1][:-1]  # anticlockwise, so "inside" = left of each edge
     pts = [to_map(x, y) for x, y in ring_lonlat[:-1]]
     for i in range(len(clip)):
         if not pts:
             break
         a, b = clip[i], clip[(i + 1) % len(clip)]
-        inside = lambda p: (b[0] - a[0]) * (p[1] - a[1]) - (b[1] - a[1]) * (p[0] - a[0]) >= 0
-        def cross(p, q):
-            x1, y1, x2, y2 = p[0], p[1], q[0], q[1]
+        inside = lambda q: (b[0] - a[0]) * (q[1] - a[1]) - (b[1] - a[1]) * (q[0] - a[0]) >= 0
+        def cross(q, r):
+            x1, y1, x2, y2 = q[0], q[1], r[0], r[1]
             x3, y3, x4, y4 = a[0], a[1], b[0], b[1]
             d = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4)
             t = ((x1 - x3) * (y3 - y4) - (y1 - y3) * (x3 - x4)) / d
@@ -509,7 +510,7 @@ def main():
     write_json("park_map_lookouts.json", map_lookouts)
     write_json("park_list.json", sorted(park_list, key=lambda p: p["rank"]))
 
-    # 6b. Top-20 chart: one row per park (map circles, rank bars and the info panel),
+    # 6b. Top-20 chart: one row per park (rank bars, info panel), the coral circles,
     #     and the Sydney lens: land, parks and points around Sydney, magnified
     tracks_of = {tp["park"]: tp for tp in top_parks}
     park_info = []
@@ -520,7 +521,7 @@ def main():
         dx, dy = ZOOM_LABELS.get(rank, (0.05, 0.0))
         zlon, zlat = magnify(lon, lat)
         zx, zy = to_map(zlon, zlat)
-        label = from_map(zx + dx * ZOOM * 0.85, zy + dy * ZOOM * 0.85 * 180 / math.pi * math.pi / 180)
+        label = from_map(zx + dx * ZOOM * 0.85, zy + dy * ZOOM * 0.85)
         park_info.append({
             "rank": rank, "park": r["park"], "park_full": r["park_full"], "branch": r["branch"],
             "lon": lon, "lat": lat, "visits": num(r["visits_2024_25"]),
@@ -534,6 +535,15 @@ def main():
             "lookouts": lookout_count.get(r["park"], 0),
         })
     write_json("park_info.json", park_info)
+
+    # the coral circles: one row on the NSW map for every park, plus a second row
+    # inside the lens for the parks near Sydney (one layer, so one click selection)
+    circles = []
+    for r in park_info:
+        circles.append({**r, "where": "map", "plon": r["lon"], "plat": r["lat"]})
+        if r["in_zoom"]:
+            circles.append({**r, "where": "lens", "plon": r["zlon"], "plat": r["zlat"]})
+    write_json("park_circles.json", circles)
 
     for pt in points:
         pt["in_zoom"] = in_spot(pt["lon"], pt["lat"])

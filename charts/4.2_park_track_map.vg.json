@@ -19,7 +19,7 @@
   "layer": [
     {
       "data": {
-        "url": "data/park_map_shapes.json",
+        "url": "data/4.2_park_track_map/park_map_shapes.json",
         "format": {
           "type": "json",
           "property": "features"
@@ -38,7 +38,7 @@
     },
     {
       "data": {
-        "url": "data/park_map_shapes.json",
+        "url": "data/4.2_park_track_map/park_map_shapes.json",
         "format": {
           "type": "json",
           "property": "features"
@@ -57,7 +57,7 @@
     },
     {
       "data": {
-        "url": "data/park_map_shapes.json",
+        "url": "data/4.2_park_track_map/park_map_shapes.json",
         "format": {
           "type": "json",
           "property": "features"
@@ -77,7 +77,7 @@
     },
     {
       "data": {
-        "url": "data/park_map_shapes.json",
+        "url": "data/4.2_park_track_map/park_map_shapes.json",
         "format": {
           "type": "json",
           "property": "features"
@@ -105,7 +105,7 @@
     },
     {
       "data": {
-        "url": "data/park_map_shapes.json",
+        "url": "data/4.2_park_track_map/park_map_shapes.json",
         "format": {
           "type": "json",
           "property": "features"
@@ -160,7 +160,7 @@
     },
     {
       "data": {
-        "url": "data/park_map_lookouts.json"
+        "url": "data/4.2_park_track_map/park_map_lookouts.json"
       },
       "transform": [
         {

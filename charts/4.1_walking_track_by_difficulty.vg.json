@@ -5,7 +5,7 @@
   "width": 320,
   "height": 320,
   "data": {
-    "url": "data/track_waffle.json"
+    "url": "data/4.1_walking_track_by_difficulty/track_waffle.json"
   },
   "mark": {
     "type": "square",

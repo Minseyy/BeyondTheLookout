@@ -4,7 +4,7 @@
   "width": "container",
   "height": 500,
   "data": {
-    "url": "data/park_track_difficulty.json"
+    "url": "data/4.2_track_difficulty_in_top_20_parks/park_track_difficulty.json"
   },
   "params": [
     {

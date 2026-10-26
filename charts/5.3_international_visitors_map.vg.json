@@ -20,7 +20,7 @@
   "layer": [
     {
       "data": {
-        "url": "data/world-110m.json",
+        "url": "data/5.3_international_visitors_map/world-110m.json",
         "format": {
           "type": "topojson",
           "feature": "countries"
@@ -40,7 +40,7 @@
     },
     {
       "data": {
-        "url": "data/world-110m.json",
+        "url": "data/5.3_international_visitors_map/world-110m.json",
         "format": {
           "type": "topojson",
           "feature": "countries"
@@ -60,7 +60,7 @@
     },
     {
       "data": {
-        "url": "data/international_visitors_2024_25.csv",
+        "url": "data/5.3_international_visitors_map/international_visitors_2024_25.csv",
         "format": {
           "parse": {
             "visitors": "number",

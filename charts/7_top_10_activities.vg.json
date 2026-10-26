@@ -4,7 +4,7 @@
   "width": "container",
   "height": 300,
   "data": {
-    "url": "data/top10_activities_2024_25.csv"
+    "url": "data/7_top_10_activities/top10_activities_2024_25.csv"
   },
   "mark": {
     "type": "point",

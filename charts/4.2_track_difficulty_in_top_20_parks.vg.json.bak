@@ -1,0 +1,122 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Track difficulty in the top 20 parks",
+  "width": "container",
+  "height": 500,
+  "data": {
+    "url": "data/park_track_difficulty.json"
+  },
+  "params": [
+    {
+      "name": "pickPark",
+      "select": {
+        "type": "point",
+        "fields": [
+          "park"
+        ],
+        "on": "click",
+        "clear": false
+      }
+    },
+    {
+      "name": "highlightPark",
+      "value": ""
+    }
+  ],
+  "mark": {
+    "type": "bar",
+    "height": {
+      "band": 0.75
+    },
+    "cursor": "pointer"
+  },
+  "encoding": {
+    "y": {
+      "field": "park",
+      "type": "nominal",
+      "title": null,
+      "sort": {
+        "field": "rank",
+        "op": "min",
+        "order": "ascending"
+      },
+      "axis": {
+        "labelFontSize": 11,
+        "labelLimit": 150
+      }
+    },
+    "x": {
+      "field": "km",
+      "type": "quantitative",
+      "stack": "normalize",
+      "title": "Share of the park's walking track",
+      "axis": {
+        "format": "%",
+        "tickCount": 4
+      }
+    },
+    "color": {
+      "field": "difficulty",
+      "type": "nominal",
+      "title": null,
+      "scale": {
+        "domain": [
+          "Easy (Class 1–2)",
+          "Moderate (Class 3–4)",
+          "Hard (Class 5–6)"
+        ],
+        "range": [
+          "#2a9d8f",
+          "#e9c46a",
+          "#e76f51"
+        ]
+      },
+      "legend": {
+        "orient": "top",
+        "direction": "horizontal",
+        "labelFontSize": 11,
+        "symbolSize": 80,
+        "labelExpr": "split(datum.label, ' (')[0]"
+      }
+    },
+    "order": {
+      "field": "order",
+      "type": "quantitative"
+    },
+    "opacity": {
+      "condition": {
+        "test": "highlightPark == '' || datum.park == highlightPark",
+        "value": 1
+      },
+      "value": 0.3
+    },
+    "tooltip": [
+      {
+        "field": "park",
+        "title": "Park"
+      },
+      {
+        "field": "rank",
+        "title": "Visit rank"
+      },
+      {
+        "field": "difficulty",
+        "title": "Difficulty"
+      },
+      {
+        "field": "km",
+        "title": "Track (km)",
+        "format": ",.1f"
+      },
+      {
+        "field": "share",
+        "title": "Share of park's track",
+        "format": ".0%"
+      },
+      {
+        "field": "totalKm",
+        "title": "Park's total track (km)"
+      }
+    ]
+  }
+}

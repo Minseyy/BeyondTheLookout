@@ -53,7 +53,7 @@
         {
           "name": "share_map_0",
           "data": {
-            "url": "data/region_share_maps.json"
+            "url": "data/3.2_share_of_park_visits_by_region/region_share_maps.json"
           },
           "transform": [
             {
@@ -133,7 +133,7 @@
         },
         {
           "data": {
-            "url": "data/region_share_maps.json"
+            "url": "data/3.2_share_of_park_visits_by_region/region_share_maps.json"
           },
           "transform": [
             {
@@ -199,7 +199,7 @@
         {
           "name": "share_map_1",
           "data": {
-            "url": "data/region_share_maps.json"
+            "url": "data/3.2_share_of_park_visits_by_region/region_share_maps.json"
           },
           "transform": [
             {
@@ -279,7 +279,7 @@
         },
         {
           "data": {
-            "url": "data/region_share_maps.json"
+            "url": "data/3.2_share_of_park_visits_by_region/region_share_maps.json"
           },
           "transform": [
             {
@@ -345,7 +345,7 @@
         {
           "name": "share_map_2",
           "data": {
-            "url": "data/region_share_maps.json"
+            "url": "data/3.2_share_of_park_visits_by_region/region_share_maps.json"
           },
           "transform": [
             {
@@ -425,7 +425,7 @@
         },
         {
           "data": {
-            "url": "data/region_share_maps.json"
+            "url": "data/3.2_share_of_park_visits_by_region/region_share_maps.json"
           },
           "transform": [
             {
@@ -491,7 +491,7 @@
         {
           "name": "share_map_3",
           "data": {
-            "url": "data/region_share_maps.json"
+            "url": "data/3.2_share_of_park_visits_by_region/region_share_maps.json"
           },
           "transform": [
             {
@@ -571,7 +571,7 @@
         },
         {
           "data": {
-            "url": "data/region_share_maps.json"
+            "url": "data/3.2_share_of_park_visits_by_region/region_share_maps.json"
           },
           "transform": [
             {
@@ -637,7 +637,7 @@
         {
           "name": "share_map_4",
           "data": {
-            "url": "data/region_share_maps.json"
+            "url": "data/3.2_share_of_park_visits_by_region/region_share_maps.json"
           },
           "transform": [
             {
@@ -717,7 +717,7 @@
         },
         {
           "data": {
-            "url": "data/region_share_maps.json"
+            "url": "data/3.2_share_of_park_visits_by_region/region_share_maps.json"
           },
           "transform": [
             {
@@ -783,7 +783,7 @@
         {
           "name": "share_map_5",
           "data": {
-            "url": "data/region_share_maps.json"
+            "url": "data/3.2_share_of_park_visits_by_region/region_share_maps.json"
           },
           "transform": [
             {
@@ -863,7 +863,7 @@
         },
         {
           "data": {
-            "url": "data/region_share_maps.json"
+            "url": "data/3.2_share_of_park_visits_by_region/region_share_maps.json"
           },
           "transform": [
             {
@@ -929,7 +929,7 @@
         {
           "name": "share_map_6",
           "data": {
-            "url": "data/region_share_maps.json"
+            "url": "data/3.2_share_of_park_visits_by_region/region_share_maps.json"
           },
           "transform": [
             {
@@ -1009,7 +1009,7 @@
         },
         {
           "data": {
-            "url": "data/region_share_maps.json"
+            "url": "data/3.2_share_of_park_visits_by_region/region_share_maps.json"
           },
           "transform": [
             {
@@ -1075,7 +1075,7 @@
         {
           "name": "share_map_7",
           "data": {
-            "url": "data/region_share_maps.json"
+            "url": "data/3.2_share_of_park_visits_by_region/region_share_maps.json"
           },
           "transform": [
             {
@@ -1155,7 +1155,7 @@
         },
         {
           "data": {
-            "url": "data/region_share_maps.json"
+            "url": "data/3.2_share_of_park_visits_by_region/region_share_maps.json"
           },
           "transform": [
             {
@@ -1221,7 +1221,7 @@
         {
           "name": "share_map_8",
           "data": {
-            "url": "data/region_share_maps.json"
+            "url": "data/3.2_share_of_park_visits_by_region/region_share_maps.json"
           },
           "transform": [
             {
@@ -1301,7 +1301,7 @@
         },
         {
           "data": {
-            "url": "data/region_share_maps.json"
+            "url": "data/3.2_share_of_park_visits_by_region/region_share_maps.json"
           },
           "transform": [
             {

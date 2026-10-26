@@ -57,8 +57,8 @@ for (const [divId, name] of Object.entries(CHARTS)) {
 // Clicking a park(map/bar) shows it in the panel under the chart.
 // numbers from park_info.json
 // Photo n description come from park_details.json
-const parkInfo = loadJSON("data/park_info.json");
-const parkDetails = loadJSON("data/park_details.json").catch(() => ({}));
+const parkInfo = loadJSON("data/_shared/park_info.json");
+const parkDetails = loadJSON("data/_page/park_details.json").catch(() => ({}));
 const panel = document.getElementById("park_info");
 const EMPTY_PANEL = panel ? panel.innerHTML : "";
 
@@ -125,7 +125,7 @@ function linkParkInfo(view) {
 // The dropdown, the difficulty bars and the map all show the same park.
 let parkBarsView = null;
 const parkMapSpec = loadJSON(chartFile("4.2_park_track_map"));
-const parkList = loadJSON("data/park_list.json"); // [{ park, rank, summary }]
+const parkList = loadJSON("data/_page/park_list.json"); // [{ park, rank, summary }]
 const parkSelect = document.getElementById("park_select");
 
 async function drawParkMap(park) {
@@ -167,7 +167,7 @@ if (parkSelect) {
 // ---------------------------------------------------------------- numbers in the page text
 // Every <span data-stat="name"> gets its value from page_numbers.json.
 // The text typed into index.html is only a fallback.
-loadJSON("data/page_numbers.json")
+loadJSON("data/_page/page_numbers.json")
   .then((stats) => {
     document.querySelectorAll("[data-stat]").forEach((el) => {
       if (stats[el.dataset.stat] !== undefined) el.textContent = stats[el.dataset.stat];

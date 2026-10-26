@@ -4,7 +4,7 @@
   "width": "container",
   "height": 280,
   "data": {
-    "url": "data/visits_by_year.csv",
+    "url": "data/1_park_visits_per_survey_year/visits_by_year.csv",
     "format": {
       "parse": {
         "year": "string"

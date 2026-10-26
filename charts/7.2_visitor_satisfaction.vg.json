@@ -6,7 +6,7 @@
   },
   "width": "container",
   "height": 180,
-  "data": { "url": "data/satisfaction_2024_25.csv" },
+  "data": { "url": "data/7.2_visitor_satisfaction/satisfaction_2024_25.csv" },
   "transform": [{ "filter": "datum.group_type == 'Age'" }],
   "encoding": {
     "y": { "field": "group", "type": "nominal", "sort": null, "title": "Age",
