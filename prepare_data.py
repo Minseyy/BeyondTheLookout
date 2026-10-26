@@ -6,8 +6,9 @@ finding which region a lookout is in, rounding a waffle to exactly 100
 squares, cutting map layers to a frame). This script does that work once and
 saves the results, so every chart can be a plain .vg.json file.
 
-Files it makes in data/ (everything else in data/ is an original):
-    nsw_fixed.json, branches_fixed.json   map shapes, fixed
+Files it makes (each goes in the folder set in data_layout.py; everything else is an original):
+    nsw_fixed.json, branches_fixed.json   map shapes, fixed (regions simplified for statewide maps)
+    parks_map.json              park outlines, simplified for the statewide top-20 map
     region_share_maps.json      share maps (one shape per region per year)
     lookouts_by_region.json     each lookout + the region it is in
     region_lookouts.json        visits, lookouts and visits per lookout by region
@@ -17,13 +18,12 @@ Files it makes in data/ (everything else in data/ is an original):
     park_info.json              one row per top-20 park (rank bars, info panel)
     park_circles.json           the coral circles: on the NSW map and in the Sydney lens
     sydney_lens.json, sydney_lens_label.json   the magnified Sydney "lens"
-    trip_role_squares.json      one row per square in the trip-role chart
     page_numbers.json           numbers for the page text
 
 Run it again whenever one of the original data files changes:
     python prepare_data.py
 
-Needs only Python 3 (no extra packages).
+Needs only Python 3 (no extra packages); data_layout.py must sit next to this file.
 """
 
 import csv
@@ -31,8 +31,10 @@ import json
 import math
 import os
 
+import data_layout
+
 DATA = "data"
-OUT = DATA  # prepared files are saved next to the original data
+OUT = DATA  # each file is saved in the folder set in data_layout.py
 
 # Track difficulty groups (NPWS track classes)
 DIFFICULTY = [
@@ -63,19 +65,34 @@ ZOOM_LABELS = {1: (0.0, -0.09), 2: (0.03, -0.06), 3: (0.05, 0.03), 4: (-0.07, 0.
 
 # ---------------------------------------------------------------- helpers
 def read_csv(name):
-    with open(os.path.join(DATA, name), encoding="utf-8-sig", newline="") as f:
+    with open(data_layout.in_path(name), encoding="utf-8-sig", newline="") as f:
         return list(csv.DictReader(f))
 
 
 def read_features(name):
-    with open(os.path.join(DATA, name), encoding="utf-8") as f:
+    with open(data_layout.in_path(name), encoding="utf-8") as f:
         return json.load(f).get("features", [])
 
 
+def round_coordinates(value, places=4):
+    """Rounds every map coordinate to 4 decimal places (about 10 m), which keeps files small."""
+    if isinstance(value, dict):
+        return {k: (round_coordinates(v, places) if k != "coordinates" else _round(v, places))
+                for k, v in value.items()}
+    if isinstance(value, list):
+        return [round_coordinates(v, places) for v in value]
+    return value
+
+
+def _round(c, places):
+    return [_round(x, places) for x in c] if isinstance(c, list) else round(c, places)
+
+
 def write_json(name, value):
-    with open(os.path.join(OUT, name), "w", encoding="utf-8") as f:
-        json.dump(value, f, ensure_ascii=False, separators=(",", ":"))
-    print("wrote", os.path.join(OUT, name))
+    path = data_layout.out_path(name)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(round_coordinates(value), f, ensure_ascii=False, separators=(",", ":"))
+    print("wrote", path)
 
 
 def num(text):
@@ -336,12 +353,17 @@ def main():
     nsw = fixed_features("nsw.json")
     parks = fixed_features("parks.geojson")
     branches = fixed_features("branches.json")
-    for name, feats in [("nsw_fixed.json", nsw), ("branches_fixed.json", branches)]:
-        write_json(name, {"type": "FeatureCollection", "features": feats})
+    # the region and park outlines are drawn on statewide maps, where detail finer than
+    # ~0.5-1 km is smaller than a pixel, so save lighter copies (the maths below still
+    # uses the full-detail shapes)
+    light = lambda feats, tol: [f for f in (rewind(thin(f, tol)) for f in feats) if f["geometry"]]
+    write_json("nsw_fixed.json", {"type": "FeatureCollection", "features": nsw})
+    write_json("branches_fixed.json", {"type": "FeatureCollection", "features": light(branches, 0.005)})
+    write_json("parks_map.json", {"type": "FeatureCollection", "features": light(parks, 0.01)})
 
     # 2. Region share maps: one shape per region per survey year
     shares = read_csv("branch_share_by_year.csv")
-    outline = {f["properties"]["NAME"]: thin(f, 0.02) for f in branches}
+    outline = {f["properties"]["NAME"]: thin(f, 0.03) for f in branches}
     totals = {}
     for r in shares:
         totals[r["year"]] = totals.get(r["year"], 0) + num(r["share_pct"])
@@ -471,7 +493,22 @@ def main():
             box["north"] = lat_from_y(merc_y(box["north"]) + extra)
             box["south"] = lat_from_y(merc_y(box["south"]) - extra)
 
+        # outline points closer than ~1/1500 of the frame are under a pixel on the map: drop them
+        tol = (box["east"] - box["west"]) / 1500
+
         def add(layer, feature, props=None):
+            g = feature["geometry"]
+            if g and g["type"] == "MultiPolygon" and layer != "frame":
+                feature = rewind(thin(feature, tol))
+                if not feature["geometry"]:
+                    return
+            elif g and g["type"] == "LineString" and len(g["coordinates"]) > 2:
+                pts = [g["coordinates"][0]]
+                for q in g["coordinates"][1:-1]:
+                    if abs(q[0] - pts[-1][0]) > tol or abs(q[1] - pts[-1][1]) > tol:
+                        pts.append(q)
+                pts.append(g["coordinates"][-1])
+                feature = {**feature, "geometry": {"type": "LineString", "coordinates": pts}}
             map_features.append({"type": "Feature", "geometry": feature["geometry"],
                                  "properties": {**(props or {}), "map_park": name, "layer": layer}})
 
@@ -572,28 +609,6 @@ def main():
     write_json("sydney_lens.json", {"type": "FeatureCollection", "features": lens})
     title = from_map(LENS[0], LENS[1] + LENS_RADIUS + 0.55)
     write_json("sydney_lens_label.json", [{"lon": title[0], "lat": title[1], "text": f"Sydney, {ZOOM:.0f}× closer"}])
-
-    # 6c. Trip-role chart: one row per square (each square = 2% of visitors).
-    #     Each answer gets two stacks side by side: local, then non-local.
-    trip = read_csv("trip_role_2024_25.csv")
-    short_names = {"The only reason": "Only reason", "The main reason": "Main reason",
-                   "One of the main reasons": "A main reason", "A minor reason": "Minor reason",
-                   "Not one of the reasons": "Not a reason"}
-    squares_out = []
-    for i, r in enumerate(trip):
-        for j, (column, visitor) in enumerate([("intrastate_pct", "Local"), ("interstate_pct", "Non-local")]):
-            pct = num(r[column])
-            count = js_round(pct / 2)
-            for k in range(1, count + 1):
-                squares_out.append({
-                    "x": i * 3 + j,                       # answer i, stack j
-                    "square": k,                          # height in the stack
-                    "is_top": k == count,                 # the % label sits on the top square
-                    "answer": short_names.get(r["role"], r["role"]),
-                    "role": r["role"], "visitor": visitor, "pct": pct,
-                    "pctLabel": f"{js_round(pct)}%",
-                })
-    write_json("trip_role_squares.json", squares_out)
 
     # 7. Numbers for the page text (<span data-stat="...">)
     years = read_csv("visits_by_year.csv")

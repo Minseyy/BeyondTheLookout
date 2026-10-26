@@ -1,10 +1,11 @@
 """
 Download and clean NSW NPWS spatial data for the "Worth the Walk" DV2 project.
 
-Run from your project folder (needs only Python 3.8+; no extra packages):
+Run from your project folder (needs only Python 3.8+; no extra packages;
+data_layout.py must sit next to this file):
     python get_npws_data.py
 
-Creates in ./data/:
+Creates in ./data/ (each file goes in the folder set in data_layout.py):
     (survey CSVs)              visits_by_year, top20_parks, visitor_origin, branch_*, satisfaction,
                                trip_role, visit_duration, top10_activities, monthly_index_..._CHECK
                                -- only written if missing, so your edits are kept
@@ -32,6 +33,8 @@ import sys
 import time
 import urllib.parse
 import urllib.request
+
+import data_layout
 
 OUT = "data"
 
@@ -254,7 +257,7 @@ def get_parks():
             "gis_area": round(p["GIS_AREA"], 1) if p.get("GIS_AREA") is not None else None,
         }
         out.append(f)
-    write_geojson(os.path.join(OUT, "parks.geojson"), out)
+    write_geojson(data_layout.out_path("parks.geojson"), out)
     write_park_points(out)
     return out
 
@@ -290,10 +293,10 @@ def write_park_points(park_feats):
     rows = sorted(best.values(), key=lambda r: r["park"] or "")
     for r in rows:
         r.pop("_area")
-    write_csv(os.path.join(OUT, "park_points.csv"), rows, ["park", "park_short", "type", "lon", "lat"])
+    write_csv(data_layout.out_path("park_points.csv"), rows, ["park", "park_short", "type", "lon", "lat"])
 
-    top_path = os.path.join(OUT, "top20_parks.csv")
-    if not os.path.exists(top_path):
+    top_path = data_layout.find("top20_parks.csv")
+    if not top_path:
         return
     with open(top_path, encoding="utf-8") as f:
         top = list(csv.DictReader(f))
@@ -310,7 +313,7 @@ def write_park_points(park_feats):
         else:
             missing.append(t["park"])
             out.append({**t, "park_full": "", "lon": "", "lat": ""})
-    write_csv(os.path.join(OUT, "top20_parks_located.csv"), out, ["rank", "park", "visits_2024_25", "park_full", "lon", "lat"])
+    write_csv(data_layout.out_path("top20_parks_located.csv"), out, ["rank", "park", "visits_2024_25", "park_full", "lon", "lat"])
     if missing:
         print("  ! no boundary match for:", ", ".join(missing), "- fill lon/lat by hand in top20_parks_located.csv")
 
@@ -321,7 +324,7 @@ def get_nsw_outline():
         feats = fetch_layer(ABS_STATE_URL, where="state_code_2021='1'", out_fields="state_name_2021", offset=0.005)
         for f in feats:
             f["properties"] = {"state": f["properties"].get("state_name_2021", "New South Wales")}
-        write_geojson(os.path.join(OUT, "nsw_outline.geojson"), feats)
+        write_geojson(data_layout.out_path("nsw_outline.geojson"), feats)
     except Exception as e:
         print(f"  could not download automatically ({e}). Get the STE 2021 shapefile from the ABS ASGS page instead.")
 
@@ -346,8 +349,8 @@ def get_lookouts(index):
         out.append({"type": "Feature", "geometry": {"type": "Point", "coordinates": [props["lon"], props["lat"]]},
                     "properties": props})
         rows.append(props)
-    write_geojson(os.path.join(OUT, "lookouts.geojson"), out)
-    write_csv(os.path.join(OUT, "lookouts.csv"), rows, list(rows[0].keys()) if rows else ["id"])
+    write_geojson(data_layout.out_path("lookouts.geojson"), out)
+    write_csv(data_layout.out_path("lookouts.csv"), rows, list(rows[0].keys()) if rows else ["id"])
 
     counts = {}
     for r in rows:
@@ -360,7 +363,7 @@ def get_lookouts(index):
         c["platforms"] += r["type"] == "Viewing platform"
         c["viewpoints"] += r["type"] == "Viewpoint"
     per_park = sorted(counts.values(), key=lambda c: -c["lookouts"])
-    write_csv(os.path.join(OUT, "lookouts_per_park.csv"), per_park, list(per_park[0].keys()) if per_park else ["park"])
+    write_csv(data_layout.out_path("lookouts_per_park.csv"), per_park, list(per_park[0].keys()) if per_park else ["park"])
 
 
 def get_tracks(index):
@@ -388,8 +391,8 @@ def get_tracks(index):
         }
         out.append({"type": "Feature", "geometry": g, "properties": props})
         rows.append(props)
-    write_geojson(os.path.join(OUT, "tracks.geojson"), out)
-    write_csv(os.path.join(OUT, "tracks.csv"), rows, list(rows[0].keys()) if rows else ["id"])
+    write_geojson(data_layout.out_path("tracks.geojson"), out)
+    write_csv(data_layout.out_path("tracks.csv"), rows, list(rows[0].keys()) if rows else ["id"])
 
     by_class = {}
     for r in rows:
@@ -399,7 +402,7 @@ def get_tracks(index):
     summary = sorted(by_class.values(), key=lambda c: (c["class_num"] is None, c["class_num"] or 0))
     for c in summary:
         c["total_km"] = round(c["total_km"], 1)
-    write_csv(os.path.join(OUT, "tracks_by_class.csv"), summary, ["class", "class_num", "sections", "total_km"])
+    write_csv(data_layout.out_path("tracks_by_class.csv"), summary, ["class", "class_num", "sections", "total_km"])
 
     grid = {}
     for r in rows:
@@ -407,7 +410,7 @@ def get_tracks(index):
         grid[(band, r["class"])] = grid.get((band, r["class"]), 0) + 1
     heat = [{"length_band": b, "band_order": i, "class": c, "sections": grid.get((b, c), 0)}
             for i, (_, _, b) in enumerate(LENGTH_BANDS) for c in TRACK_CLASS.values()]
-    write_csv(os.path.join(OUT, "tracks_length_x_class.csv"), heat, ["length_band", "band_order", "class", "sections"])
+    write_csv(data_layout.out_path("tracks_length_x_class.csv"), heat, ["length_band", "band_order", "class", "sections"])
 
 
 def get_expenditure():
@@ -418,7 +421,7 @@ def get_expenditure():
         if not res:
             raise RuntimeError("no CSV resource listed")
         raw = http(res[0]["url"])
-        path = os.path.join(OUT, "nsw_visitor_expenditure.csv")
+        path = data_layout.out_path("nsw_visitor_expenditure.csv")
         with open(path, "wb") as f:
             f.write(raw)
         print(f"  wrote {path}")
@@ -432,10 +435,11 @@ def get_expenditure():
 def write_survey_tables():
     print("\n[0/5] Visitor survey tables")
     for name, text in SURVEY_TABLES.items():
-        path = os.path.join(OUT, name)
-        if os.path.exists(path):
-            print(f"  kept existing {path}")
+        existing = data_layout.find(name)
+        if existing:
+            print(f"  kept existing {existing}")
         else:
+            path = data_layout.out_path(name)
             with open(path, "w", encoding="utf-8", newline="") as f:
                 f.write(text)
             print(f"  wrote {path}")

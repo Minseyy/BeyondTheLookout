@@ -9,8 +9,6 @@ const CHARTS = {
   "#intl_isotype": "5.2_international_isotype",
   "#intl_map": "5.3_international_visitors_map",
   "#profile_mosaic": "5.4_visitor_profile_mosaic",
-  "#profile_bars": "5.4b_visitor_profile_bars",
-  "#profile_bars2": "5.4c_v_p_b",
   "#monthly_chart": "6.1_visits_through_the_year",
   "#satisfaction_chart": "7.2_visitor_satisfaction",
 };
