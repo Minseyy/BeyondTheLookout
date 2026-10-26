@@ -53,7 +53,11 @@
             </ul>
             <a class="hero-button" href="#intro">Start the walk <span aria-hidden="true">↓</span></a>
         </div>
-        <!-- <p class="hero-credit">Photo from </p> -->
+        <p class="hero-credit">
+            Image source: <a
+                href="https://www.skyscanner.com.au/destinations/advice/where-to-stay-in-the-blue-mountains"
+                target="_blank" rel="noopener noreferrer">Skyscanner Australia</a>
+        </p>
     </header>
 
     <main class="trail">
@@ -87,21 +91,30 @@
             </dl>
         </section>
 
-        <!-- Stop 1 -->
         <section id="sec1" class="stop">
             <span class="marker" aria-hidden="true">1</span>
-            <h2>Visits to NSW national parks, <span data-stat="firstYear">2008</span>–<span
-                    data-stat="latestYear">2024/25</span></h2>
-            <p>NSW National Parks and Wildlife Service (NPWS) counts park visits every two years. The numbers barely
-                moved until 2014, then jumped. During the
-                2020 lockdowns visits fell by about <span data-stat="covidDrop">10 million</span>, but by <span
-                    data-stat="latestYear">2024/25</span> they were higher than ever.</p>
+            <h2>
+                NSW national park visits across <br>
+                <span data-stat="firstYear">2008</span> – <span data-stat="latestYear">2024/25</span>
+            </h2>
+            <p>Every two years, NSW National Parks and Wildlife Service (NPWS) counts how many visits are made to its
+                parks. Visits crept along until 2014, then jumped.</p>
+            <p>COVID-19 lockdowns cut about <strong><span data-stat="covidDrop">10 million</span></strong> visits in
+                2020.
+                Numbers climbed back in 2022, and by <span data-stat="latestYear">2024/25</span> they passed the
+                pre-COVID peak to reach a new record.</p>
+            <p class="hint">Hover over each bar to view actual number of visits in the year of interest</p>
             <div id="bar_chart" class="chart"></div>
             <div class="takeaway">
-                <p class="takeaway-num" data-stat="visitsLatest">65.6M</p>
-                <p class="takeaway-text">park visits in <span data-stat="latestYear">2024/25</span>, a new record,
-                    even after COVID-19 lockdowns cut visits by about <span data-stat="covidDrop">10 million</span>
-                    in 2020.</p>
+                <p class="takeaway-num">+<span data-stat="visitsGrowthPct">73</span>%</p>
+                <p class="takeaway-text">
+                    From <strong data-stat="visitsFirst">37.9M</strong> visits in
+                    <span data-stat="firstYear">2008</span> to
+                    <strong data-stat="visitsLatest">65.6M</strong> in
+                    <span data-stat="latestYear">2024/25</span>: exactly
+                    <strong data-stat="visitsGainExact">27,662,496</strong> more visits, even after COVID-19
+                    cut about <span data-stat="covidDrop">10 million</span> in 2020.
+                </p>
             </div>
         </section>
 
@@ -124,7 +137,7 @@
             </aside>
         </section>
 
-        <!-- Stop 3 -->
+        <!-- Sec 3 -->
         <section id="sec3" class="stop">
             <span class="marker" aria-hidden="true">3</span>
             <h2>How crowded are the lookouts?</h2>

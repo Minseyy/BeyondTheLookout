@@ -1,73 +1,282 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Park visits per survey year",
+  "title": {
+    "text": "Park visits per survey year",
+    "subtitle": "Each bar represents a survey year; the dashed line marks the 2018 pre-COVID baseline."
+  },
   "width": "container",
-  "height": 280,
+  "height": 400,
   "data": {
     "url": "data/1_park_visits_per_survey_year/visits_by_year.csv",
-    "format": {
-      "parse": {
-        "year": "string"
-      }
-    }
-  },
-  "encoding": {
-    "x": {
-      "field": "year",
-      "type": "ordinal",
-      "title": "Survey year",
-      "axis": {
-        "labelAngle": 0
-      }
-    },
-    "y": {
-      "field": "total_visits",
-      "type": "quantitative",
-      "title": "Visits per year",
-      "axis": {
-        "format": "~s"
-      }
-    }
+    "format": { "parse": { "year": "string" } }
   },
   "layer": [
     {
-      "mark": {
-        "type": "bar",
-        "cornerRadiusEnd": 3
-      },
+      "mark": { "type": "bar", "cornerRadiusEnd": 3 },
       "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "title": "Survey year",
+          "axis": { "labelAngle": 0 }
+        },
+        "y": {
+          "field": "total_visits",
+          "type": "quantitative",
+          "title": "Visits per year (millions)",
+          "scale": { "domain": [0, 80000000], "nice": false },
+          "axis": {
+            "format": "~s",
+            "tickCount": 8,
+            "labelPadding": 10,
+            "titlePadding": 15
+          }
+        },
         "color": {
-          "condition": {
-            "test": "datum.year == '2020'",
-            "value": "#e76f51"
-          },
+          "condition": { "test": "datum.year == '2020'", "value": "#e76f51" },
           "value": "#2f5e22"
         },
         "tooltip": [
-          {
-            "field": "year",
-            "title": "Year"
-          },
-          {
-            "field": "total_visits",
-            "title": "Visits",
-            "format": ","
-          }
+          { "field": "year", "title": "Year" },
+          { "field": "total_visits", "title": "Visits", "format": "," }
         ]
       }
     },
+
     {
-      "transform": [
-        {
-          "filter": "datum.year == '2020'"
-        }
-      ],
+      "transform": [{ "filter": "datum.year == '2020'" }],
       "mark": {
         "type": "text",
         "text": "COVID-19",
-        "dy": -8,
+        "baseline": "top",
+        "dy": 6,
+        "color": "white",
+        "fontWeight": "bold",
+        "fontSize": 11
+      },
+      "encoding": {
+        "x": { "field": "year", "type": "ordinal" },
+        "y": { "field": "total_visits", "type": "quantitative" }
+      }
+    },
+
+    {
+      "transform": [
+        { "filter": "datum.year == '2020' || datum.year == '2022'" },
+        {
+          "window": [{ "op": "lag", "field": "total_visits", "as": "prev" }],
+          "sort": [{ "field": "year" }]
+        },
+        { "filter": "datum.year == '2022'" },
+        {
+          "calculate": "'↑ +' + format((datum.total_visits - datum.prev) / 1e6, '.1f') + 'M'",
+          "as": "label"
+        }
+      ],
+      "layer": [
+        {
+          "mark": {
+            "type": "text",
+            "baseline": "top",
+            "dy": 6,
+            "color": "white",
+            "fontWeight": "bold",
+            "fontSize": 11
+          },
+          "encoding": {
+            "x": { "field": "year", "type": "ordinal" },
+            "y": { "field": "total_visits", "type": "quantitative" },
+            "text": { "field": "label" }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "baseline": "top",
+            "dy": 21,
+            "color": "white",
+            "fontSize": 10
+          },
+          "encoding": {
+            "x": { "field": "year", "type": "ordinal" },
+            "y": { "field": "total_visits", "type": "quantitative" },
+            "text": { "value": "rebound" }
+          }
+        }
+      ]
+    },
+
+    {
+      "transform": [
+        { "filter": "datum.year == '2018' || datum.year == '2020'" },
+        {
+          "window": [{ "op": "lag", "field": "total_visits", "as": "prev" }],
+          "sort": [{ "field": "year" }]
+        },
+        { "filter": "datum.year == '2020'" },
+        {
+          "calculate": "'↓' + format((datum.prev - datum.total_visits) / 1e6, '.1f') + 'M vs 2018'",
+          "as": "dropLabel"
+        },
+        {
+          "calculate": "'Before COVID (2018): ' + format(datum.prev / 1e6, '.1f') + 'M'",
+          "as": "levelLabel"
+        }
+      ],
+      "layer": [
+        {
+          "mark": {
+            "type": "rule",
+            "strokeDash": [4, 4],
+            "color": "#4a4a4a",
+            "strokeWidth": 1
+          },
+          "encoding": {
+            "y": { "field": "prev", "type": "quantitative" },
+            "x": { "value": 0 },
+            "x2": { "value": "width" }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "bottom",
+            "dy": -5,
+            "color": "#4a4a4a",
+            "fontSize": 11
+          },
+          "encoding": {
+            "x": { "value": 6 },
+            "y": { "field": "prev", "type": "quantitative" },
+            "text": { "field": "levelLabel" }
+          }
+        },
+        {
+          "mark": { "type": "rule", "color": "#e76f51", "strokeWidth": 2.5 },
+          "encoding": {
+            "x": { "field": "year", "type": "ordinal" },
+            "y": { "field": "prev", "type": "quantitative" },
+            "y2": { "field": "total_visits" }
+          }
+        },
+        {
+          "mark": {
+            "type": "point",
+            "shape": "triangle-down",
+            "filled": true,
+            "size": 80,
+            "color": "#e76f51",
+            "opacity": 1,
+            "dy": -5
+          },
+          "encoding": {
+            "x": { "field": "year", "type": "ordinal" },
+            "y": { "field": "total_visits", "type": "quantitative" }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "baseline": "bottom",
+            "dy": -22,
+            "color": "#e76f51",
+            "fontWeight": "bold",
+            "fontSize": 13
+          },
+          "encoding": {
+            "x": { "field": "year", "type": "ordinal" },
+            "y": { "field": "prev", "type": "quantitative" },
+            "text": { "field": "dropLabel" }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "baseline": "bottom",
+            "dy": -7,
+            "color": "#6b6b6b",
+            "fontSize": 11
+          },
+          "encoding": {
+            "x": { "field": "year", "type": "ordinal" },
+            "y": { "field": "prev", "type": "quantitative" },
+            "text": { "value": "COVID-19 lockdowns" }
+          }
+        }
+      ]
+    },
+
+    {
+      "data": { "values": [{ "year": "2010" }] },
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "bottom",
+        "color": "#6b6b6b",
+        "fontSize": 11,
+        "lineHeight": 13,
+        "text": ["Flat for six years:", "about 34–39M a year"]
+      },
+      "encoding": {
+        "x": { "field": "year", "type": "ordinal" },
+        "y": { "datum": 41000000, "type": "quantitative" }
+      }
+    },
+    {
+      "data": { "values": [{ "year": "2016" }] },
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "bottom",
+        "dx": -50,
+        "color": "#2a9d8f",
+        "fontWeight": "bold",
+        "fontSize": 12,
+        "lineHeight": 14,
+        "text": ["Biggest jump:", "+12.2M in two years"]
+      },
+      "encoding": {
+        "x": { "field": "year", "type": "ordinal" },
+        "y": { "datum": 43000000, "type": "quantitative" }
+      }
+    },
+
+    {
+      "transform": [
+        { "filter": "datum.year == '2008' || datum.year == '2024/25'" }
+      ],
+      "mark": {
+        "type": "text",
+        "baseline": "bottom",
+        "dy": -4,
+        "fontWeight": "bold",
+        "color": "#2f5e22"
+      },
+      "encoding": {
+        "x": { "field": "year", "type": "ordinal" },
+        "y": { "field": "total_visits", "type": "quantitative" },
+        "text": {
+          "field": "total_visits",
+          "type": "quantitative",
+          "format": ".3s"
+        }
+      }
+    },
+    {
+      "transform": [{ "filter": "datum.year == '2024/25'" }],
+      "mark": {
+        "type": "text",
+        "baseline": "bottom",
+        "dy": -19,
+        "fontWeight": "bold",
         "color": "#e76f51",
-        "fontWeight": "bold"
+        "fontSize": 11,
+        "text": "Record high"
+      },
+      "encoding": {
+        "x": { "field": "year", "type": "ordinal" },
+        "y": { "field": "total_visits", "type": "quantitative" }
       }
     }
   ]
