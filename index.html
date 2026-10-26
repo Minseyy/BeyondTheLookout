@@ -128,13 +128,17 @@
                 state's <span data-stat="lookouts">794</span> lookouts: the views are spread right across NSW, but
                 the visitors are not.
             </p>
-            <p class="hint">Click a park on either map, or its bar, to see more about it. Double-click to reset.</p>
-            <div id="regions_map" class="chart"></div>
+            <p class="hint">Click a park on the map or a bar to see more about it. Double-click to reset.</p>
 
-            <!-- Filled in by main.js when a park is clicked. Photos and descriptions: data/park_details.json -->
-            <aside id="park_info" class="park-info plate" aria-live="polite">
-                <p class="park-info-empty">Click a park to see its photo, details and walking tracks.</p>
-            </aside>
+            <div class="canvas">
+                <div id="regions_map"></div>
+                <div class="pair">
+                    <div id="rank_chart"></div>
+                    <div id="park_info" class="park-info" aria-live="polite">
+                        <p class="park-info-empty">Click a park to see its photo, details and walking tracks.</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Sec 3 -->
@@ -162,19 +166,29 @@
                 </p>
             </div>
             <h3>And the pull of Sydney keeps growing</h3>
-            <p>Each little map below is one survey. The darker a region, the bigger its share of all park visits
-                that year. In <span data-stat="sydneyShareFirstYear">2008</span> Greater Sydney had
-                <span data-stat="sydneyShareFirst">30%</span> of visits. By <span data-stat="latestYear">2024/25</span>
-                it had <span data-stat="sydneyShareLast">43%</span>. Every other region except the West ended up with
-                a slightly smaller share.
+            <p>Each small map below is one survey. The darker a region, the bigger its share of all park visits
+                that year. Greater Sydney is the small dark patch on the coast: tiny on the map, but it gets the
+                most visits.</p>
+            <p>In <span data-stat="sydneyShareFirstYear">2008</span> Greater Sydney had
+                <span data-stat="sydneyShareFirst">30%</span> of all park visits. By
+                <span data-stat="latestYear">2024/25</span> it had <span data-stat="sydneyShareLast">43%</span>,
+                more than 4 in every 10 visits. The biggest jump came in 2020, the COVID-19 year, when its share
+                rose from 33% to 39%.
             </p>
-            <p class="hint">Hover a region to follow it through the years.</p>
+            <p>Almost every other region lost ground. The Blue Mountains, Hunter Central Coast, South Coast,
+                North Coast, Southern Ranges and Northern Inland all ended up with a smaller share than in 2008.
+                The one exception is the West: still small, but up from 1% to 4%.</p>
+            <p class="hint">Hover over a region to follow it through all nine surveys.</p>
             <div id="share_maps" class="chart"></div>
+            <p class="tip">The shares are the figures published for each survey. Before 2024/25 the eight regions
+                add up to 87–96% of visits rather than 100%, so some visits are not counted in any of these
+                regions.</p>
             <div class="takeaway">
                 <p class="takeaway-num" data-stat="sydneyShare">43%</p>
-                <p class="takeaway-text">of all park visits are now to parks in Greater Sydney, up from
+                <p class="takeaway-text">of all park visits are now to parks in Greater Sydney, grew from
                     <span data-stat="sydneyShareFirst">30%</span> in
-                    <span data-stat="sydneyShareFirstYear">2008</span>.
+                    <span data-stat="sydneyShareFirstYear">2008</span>. That is more than three times the share of
+                    the next busiest region, the Blue Mountains (13%).
                 </p>
             </div>
         </section>
@@ -381,38 +395,38 @@
         </section>
 
         <!-- conclusion -->
-<section id="end" class="stop stop-end">
-    <span class="marker" aria-hidden="true"></span>
-    <h2>The view from the end of the trail</h2>
+        <section id="end" class="stop stop-end">
+            <span class="marker" aria-hidden="true"></span>
+            <h2>The view from the end of the trail</h2>
 
-    <p>
-        So, is the view worth the walk? The data points to a growing
-        interest in NSW's national parks, but that interest is not
-        spread evenly across the state. Greater Sydney attracts a
-        large share of visits, while the accessibility of walking
-        tracks varies considerably. The appeal of these landscapes
-        is clear, but the opportunity to experience them is not the
-        same everywhere.
-    </p>
+            <p>
+                So, is the view worth the walk? The data points to a growing
+                interest in NSW's national parks, but that interest is not
+                spread evenly across the state. Greater Sydney attracts a
+                large share of visits, while the accessibility of walking
+                tracks varies considerably. The appeal of these landscapes
+                is clear, but the opportunity to experience them is not the
+                same everywhere.
+            </p>
 
-    <p>
-        There is also an important distinction between visiting a
-        national park and visiting a lookout. Park visitation figures
-        cannot tell us exactly how crowded individual lookouts are,
-        and visits per lookout should be treated as a broad regional
-        comparison rather than a direct measure of crowding.
-    </p>
+            <p>
+                There is also an important distinction between visiting a
+                national park and visiting a lookout. Park visitation figures
+                cannot tell us exactly how crowded individual lookouts are,
+                and visits per lookout should be treated as a broad regional
+                comparison rather than a direct measure of crowding.
+            </p>
 
-    <p>
-        These findings point to two considerations for park
-        management: making natural experiences more accessible and
-        understanding where visitor demand places the greatest
-        pressure on park facilities. The goal is not simply to bring
-        more people to the parks, but to help them experience these
-        landscapes sustainably.
-    </p>
-    <div class=" conclusion-end"></div>
-</section>
+            <p>
+                These findings point to two considerations for park
+                management: making natural experiences more accessible and
+                understanding where visitor demand places the greatest
+                pressure on park facilities. The goal is not simply to bring
+                more people to the parks, but to help them experience these
+                landscapes sustainably.
+            </p>
+            <div class=" conclusion-end"></div>
+        </section>
     </main>
 
     <!-- Footer: data sources -->

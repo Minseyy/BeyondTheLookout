@@ -11,6 +11,7 @@ const CHARTS = {
   "#profile_mosaic": "5.4_visitor_profile_mosaic",
   "#monthly_chart": "6.1_visits_through_the_year",
   "#satisfaction_chart": "7.2_visitor_satisfaction",
+  "#rank_chart": "2.2_ranked_by_visits",
 };
 
 const chartFile = (name) => `charts/${name}.vg.json`;
@@ -46,8 +47,9 @@ const loadJSON = (url) => fetch(url).then((res) => res.json());
 for (const [divId, name] of Object.entries(CHARTS)) {
   vegaEmbed(divId, chartFile(name), OPTIONS)
     .then((result) => {
-      if (divId === "#regions_map") linkParkInfo(result.view);
+      if (divId === "#regions_map") linkParkPicker(result.view);
       if (divId === "#park_difficulty") linkBarsToParkMap(result.view);
+      if (divId === "#regions_map" || divId === "#rank_chart") linkParkPicker(result.view);
     })
     .catch((err) => showError(divId, err));
 }
@@ -119,6 +121,19 @@ function linkParkInfo(view) {
   });
 }
 
+
+
+const pickerViews = [];
+function linkParkPicker(view) {
+  pickerViews.push(view);
+  view.addSignalListener("pickPark", (name, value) => {
+    const picked = value && (value.park_full || value.park);
+    const park = Array.isArray(picked) ? picked[0] : picked;
+    pickerViews.forEach((v) => v.signal("highlightPark", park || null).run());
+    showParkInfo(park); // undefined (double-click) resets the card
+  });
+}
+
 // ---------------------------------------------------------------- park map (Section 4)
 // The dropdown, the difficulty bars and the map all show the same park.
 let parkBarsView = null;
@@ -172,3 +187,5 @@ loadJSON("data/_page/page_numbers.json")
     });
   })
   .catch((err) => console.warn("Page numbers not updated (showing the typed-in values):", err.message));
+
+  

@@ -68,7 +68,7 @@
             "color": {
               "field": "share",
               "type": "quantitative",
-              "title": "Share of all visits (%)",
+              "title": "Share of all park visits (%)",
               "scale": {
                 "type": "threshold",
                 "domain": [
@@ -122,11 +122,6 @@
                 "field": "share",
                 "title": "Share of visits (%)",
                 "format": ".1f"
-              },
-              {
-                "field": "yearTotal",
-                "title": "All 8 regions add to (%)",
-                "format": ".1f"
               }
             ]
           }
@@ -149,6 +144,51 @@
             },
             {
               "calculate": "-34.5",
+              "as": "lat"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "lineBreak": "\n",
+            "fontSize": 11,
+            "fontWeight": "bold",
+            "color": "#8a3b24"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "label",
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "data": {
+            "url": "data/3.2_share_of_park_visits_by_region/region_share_maps.json"
+          },
+          "transform": [
+            {
+              "filter": "datum.year == '2008' && datum.branch == 'Greater Sydney'"
+            },
+            {
+              "calculate": "'Starting point:\\n30% of visits'",
+              "as": "label"
+            },
+            {
+              "calculate": "141.3",
+              "as": "lon"
+            },
+            {
+              "calculate": "-35.75",
               "as": "lat"
             }
           ],
@@ -214,7 +254,7 @@
             "color": {
               "field": "share",
               "type": "quantitative",
-              "title": "Share of all visits (%)",
+              "title": "Share of all park visits (%)",
               "scale": {
                 "type": "threshold",
                 "domain": [
@@ -267,11 +307,6 @@
               {
                 "field": "share",
                 "title": "Share of visits (%)",
-                "format": ".1f"
-              },
-              {
-                "field": "yearTotal",
-                "title": "All 8 regions add to (%)",
                 "format": ".1f"
               }
             ]
@@ -360,7 +395,7 @@
             "color": {
               "field": "share",
               "type": "quantitative",
-              "title": "Share of all visits (%)",
+              "title": "Share of all park visits (%)",
               "scale": {
                 "type": "threshold",
                 "domain": [
@@ -413,11 +448,6 @@
               {
                 "field": "share",
                 "title": "Share of visits (%)",
-                "format": ".1f"
-              },
-              {
-                "field": "yearTotal",
-                "title": "All 8 regions add to (%)",
                 "format": ".1f"
               }
             ]
@@ -506,7 +536,7 @@
             "color": {
               "field": "share",
               "type": "quantitative",
-              "title": "Share of all visits (%)",
+              "title": "Share of all park visits (%)",
               "scale": {
                 "type": "threshold",
                 "domain": [
@@ -559,11 +589,6 @@
               {
                 "field": "share",
                 "title": "Share of visits (%)",
-                "format": ".1f"
-              },
-              {
-                "field": "yearTotal",
-                "title": "All 8 regions add to (%)",
                 "format": ".1f"
               }
             ]
@@ -652,7 +677,7 @@
             "color": {
               "field": "share",
               "type": "quantitative",
-              "title": "Share of all visits (%)",
+              "title": "Share of all park visits (%)",
               "scale": {
                 "type": "threshold",
                 "domain": [
@@ -705,11 +730,6 @@
               {
                 "field": "share",
                 "title": "Share of visits (%)",
-                "format": ".1f"
-              },
-              {
-                "field": "yearTotal",
-                "title": "All 8 regions add to (%)",
                 "format": ".1f"
               }
             ]
@@ -798,7 +818,7 @@
             "color": {
               "field": "share",
               "type": "quantitative",
-              "title": "Share of all visits (%)",
+              "title": "Share of all park visits (%)",
               "scale": {
                 "type": "threshold",
                 "domain": [
@@ -851,11 +871,6 @@
               {
                 "field": "share",
                 "title": "Share of visits (%)",
-                "format": ".1f"
-              },
-              {
-                "field": "yearTotal",
-                "title": "All 8 regions add to (%)",
                 "format": ".1f"
               }
             ]
@@ -944,7 +959,7 @@
             "color": {
               "field": "share",
               "type": "quantitative",
-              "title": "Share of all visits (%)",
+              "title": "Share of all park visits (%)",
               "scale": {
                 "type": "threshold",
                 "domain": [
@@ -998,11 +1013,6 @@
                 "field": "share",
                 "title": "Share of visits (%)",
                 "format": ".1f"
-              },
-              {
-                "field": "yearTotal",
-                "title": "All 8 regions add to (%)",
-                "format": ".1f"
               }
             ]
           }
@@ -1025,6 +1035,51 @@
             },
             {
               "calculate": "-34.5",
+              "as": "lat"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "lineBreak": "\n",
+            "fontSize": 11,
+            "fontWeight": "bold",
+            "color": "#8a3b24"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "label",
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "data": {
+            "url": "data/3.2_share_of_park_visits_by_region/region_share_maps.json"
+          },
+          "transform": [
+            {
+              "filter": "datum.year == '2020' && datum.branch == 'Greater Sydney'"
+            },
+            {
+              "calculate": "'COVID-19 year:\\nbiggest jump'",
+              "as": "label"
+            },
+            {
+              "calculate": "141.3",
+              "as": "lon"
+            },
+            {
+              "calculate": "-35.75",
               "as": "lat"
             }
           ],
@@ -1090,7 +1145,7 @@
             "color": {
               "field": "share",
               "type": "quantitative",
-              "title": "Share of all visits (%)",
+              "title": "Share of all park visits (%)",
               "scale": {
                 "type": "threshold",
                 "domain": [
@@ -1143,11 +1198,6 @@
               {
                 "field": "share",
                 "title": "Share of visits (%)",
-                "format": ".1f"
-              },
-              {
-                "field": "yearTotal",
-                "title": "All 8 regions add to (%)",
                 "format": ".1f"
               }
             ]
@@ -1236,7 +1286,7 @@
             "color": {
               "field": "share",
               "type": "quantitative",
-              "title": "Share of all visits (%)",
+              "title": "Share of all park visits (%)",
               "scale": {
                 "type": "threshold",
                 "domain": [
@@ -1290,11 +1340,6 @@
                 "field": "share",
                 "title": "Share of visits (%)",
                 "format": ".1f"
-              },
-              {
-                "field": "yearTotal",
-                "title": "All 8 regions add to (%)",
-                "format": ".1f"
               }
             ]
           }
@@ -1328,6 +1373,96 @@
             "fontSize": 11,
             "fontWeight": "bold",
             "color": "#8a3b24"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "label",
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "data": {
+            "url": "data/3.2_share_of_park_visits_by_region/region_share_maps.json"
+          },
+          "transform": [
+            {
+              "filter": "datum.year == '2024/25' && datum.branch == 'Greater Sydney'"
+            },
+            {
+              "calculate": "'Record high:\\nover 4 in 10 visits'",
+              "as": "label"
+            },
+            {
+              "calculate": "141.3",
+              "as": "lon"
+            },
+            {
+              "calculate": "-35.75",
+              "as": "lat"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "lineBreak": "\n",
+            "fontSize": 11,
+            "fontWeight": "bold",
+            "color": "#8a3b24"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "label",
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "data": {
+            "url": "data/3.2_share_of_park_visits_by_region/region_share_maps.json"
+          },
+          "transform": [
+            {
+              "filter": "datum.year == '2024/25' && datum.branch == 'Greater Sydney'"
+            },
+            {
+              "calculate": "'The West grew\\n1% → 4%'",
+              "as": "label"
+            },
+            {
+              "calculate": "142.4",
+              "as": "lon"
+            },
+            {
+              "calculate": "-32.6",
+              "as": "lat"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "lineBreak": "\n",
+            "fontSize": 11,
+            "fontWeight": "bold",
+            "color": "#1f3d17"
           },
           "encoding": {
             "longitude": {

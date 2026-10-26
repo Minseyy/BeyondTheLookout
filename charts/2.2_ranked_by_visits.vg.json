@@ -1,0 +1,96 @@
+{
+  "width": "container",
+  "height": {
+    "step": 20
+  },
+  "height": 500,
+  "title": {
+    "text": "Ranked by visits",
+    "anchor": "start",
+    "fontSize": 13
+  },
+  "data": {
+    "url": "data/_shared/park_info.json"
+  },
+  "mark": {
+    "type": "bar",
+    "cornerRadiusEnd": 3,
+    "cursor": "pointer"
+  },
+  "encoding": {
+    "y": {
+      "field": "park",
+      "type": "nominal",
+      "title": null,
+      "sort": {
+        "field": "rank",
+        "order": "ascending"
+      },
+      "axis": {
+        "labelFontSize": 11,
+        "labelLimit": 170
+      }
+    },
+    "x": {
+      "field": "visits",
+      "type": "quantitative",
+      "title": "Visits (2024/25)",
+      "axis": {
+        "format": "~s",
+        "tickCount": 8
+      }
+    },
+    "color": {
+      "condition": {
+        "test": "highlightPark == null || datum.park == highlightPark",
+        "value": "#e76f51"
+      },
+      "value": "#dddddd"
+    },
+    "tooltip": [
+      {
+        "field": "rank",
+        "title": "Rank"
+      },
+      {
+        "field": "park_full",
+        "title": "Park"
+      },
+      {
+        "field": "branch",
+        "title": "NPWS region"
+      },
+      {
+        "field": "visits",
+        "title": "Visits (2024/25)",
+        "format": ","
+      },
+      {
+        "field": "lookouts",
+        "title": "Lookouts"
+      }
+    ]
+  },
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "autosize": {
+    "type": "fit-x",
+    "contains": "padding"
+  },
+  "params": [
+    {
+      "name": "pickPark",
+      "select": {
+        "type": "point",
+        "fields": [
+          "park"
+        ],
+        "on": "click",
+        "clear": "dblclick"
+      }
+    },
+    {
+      "name": "highlightPark",
+      "value": null
+    }
+  ]
+}
