@@ -199,8 +199,13 @@
             <span class="marker" aria-hidden="true">4</span>
             <h2>How hard is it to get to the view?</h2>
             <p>NPWS grades every walking track from Class 1, an all-access path, up to Class 6, an unmarked route you
-                find your own way along. Only <span data-stat="easyShare">7%</span> of the track network is easy
-                walking, and <span data-stat="hardShare">24%</span> is hard going.</p>
+                find your own way along. To make that easier to picture, we grouped the six classes into three: easy,
+                moderate and hard.</p>
+            <p><strong>Imagine all the walking track in NSW national parks shrunk to 100 squares.</strong> Only
+                <span data-stat="easyShare">7%</span> would be easy walking,
+                <span data-stat="moderateShare">69%</span> moderate and
+                <span data-stat="hardShare">24%</span> hard going.
+            </p>
 
             <div class="split plate">
                 <div id="track_waffle"></div>
@@ -209,49 +214,59 @@
                         <p class="key-title"><span class="swatch swatch-easy"></span>Easy,
                             <span data-stat="easyShare">7%</span> of track
                         </p>
-                        <p>Class 1 · All access<br>Class 2 · Graded track</p>
+                        <p>Flat or gently graded paths.<br>Class 1 · All access<br>Class 2 · Graded track</p>
                     </div>
                     <div class="key-group">
                         <p class="key-title"><span class="swatch swatch-moderate"></span>Moderate,
                             <span data-stat="moderateShare">69%</span> of track
                         </p>
-                        <p>Class 3 · Walking track<br>Class 4 · Hiking track</p>
+                        <p>Some hills and steps; a bit of fitness helps.<br>Class 3 · Walking track<br>Class 4 · Hiking
+                            track</p>
                     </div>
                     <div class="key-group">
                         <p class="key-title"><span class="swatch swatch-hard"></span>Hard,
                             <span data-stat="hardShare">24%</span> of track
                         </p>
-                        <p>Class 5 · Marked route<br>Class 6 · Unmarked route</p>
+                        <p>Steep, rough or unmarked; for experienced walkers.<br>Class 5 · Marked route<br>Class 6 ·
+                            Unmarked route</p>
                     </div>
                 </div>
             </div>
             <p class="hint">Each square is 1% of all graded walking track.</p>
 
-            <p>It depends a lot on which park you pick. At <span data-stat="easiestPark">Kamay Botany Bay</span>,
+            <h3>It depends on the park</h3>
+            <p>Where you go makes a big difference. At <span data-stat="easiestPark">Kamay Botany Bay</span>,
                 <span data-stat="easiestShare">69%</span> of the track is easy walking. At
                 <span data-stat="hardestPark">Morton</span>, <span data-stat="hardestShare">87%</span> is hard.
                 And the most visited park of all, <span data-stat="busiestPark">Blue Mountains</span>, is one of the
                 tougher ones: <span data-stat="busiestHard">37%</span> of its track is hard and only
                 <span data-stat="busiestEasy">4%</span> is easy.
             </p>
-            <p class="hint">Click a bar, or pick a park from the list, to see its tracks on the map.</p>
+            <p>Easy walking is not what draws the crowds. In 18 of the 20 busiest parks, less than a quarter of the
+                track is easy.</p>
+            <p class="hint">Each bar is one park. The more green, the easier the walking. Click a bar, or pick a park
+                from the list, to see its tracks on the map.</p>
             <div class="canvas">
                 <div class="canvas-header">
                     <label for="park_select">Park on the map</label>
                     <select id="park_select"></select>
                     <span id="park_summary" class="map-summary"></span>
                 </div>
+                <div id="park_stats" class="park-stats" aria-live="polite"></div>
                 <div class="pair">
                     <div id="park_difficulty"></div>
                     <div id="park_map"></div>
                 </div>
+                <p class="hint">▲ marks a lookout. Hover a track or lookout for its name.</p>
+
             </div>
-            <p class="hint">▲ marks a lookout. Hover a track or lookout for its name.</p>
 
             <div class="takeaway">
-                <p class="takeaway-num"><span data-stat="class1Km">26</span><small>km</small></p>
-                <p class="takeaway-text">is all the park track built for wheelchairs (Class 1), out of
-                    <span data-stat="trackKm">2,700</span> km across NSW.
+                <p class="takeaway-num">69<small>%</small></p>
+                <p class="takeaway-text">
+                    of NSW's graded walking track is moderate, involving hills and steps.
+                    <strong>Easy tracks make up just 7% of all walking tracks</strong>, a small fraction compared with
+                    69% moderate and 24% hard tracks.
                 </p>
             </div>
         </section>
@@ -384,7 +399,7 @@
                 satisfied. NSW visitors were a little happier than interstate visitors (90% against 85%).
                 Visitors aged 50 to 64 were the most satisfied (94%), and 18 to 34 year olds the least (85%),
                 though still a large majority.</p>
-            <p class="hint">The dashed line is the overall level for all visitors (89%).</p>
+            <p class="hint">The 89% benchmark shows how each age group's satisfaction compares with visitors overall.</p>
             <div id="satisfaction_chart" class="chart"></div>
 
             <div class="takeaway">

@@ -1,6 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Park track map",
+  "title": {
+    "text": "Park track map",
+    "subtitle": "Explore walking tracks across the selected park, colour-coded by difficulty."
+  },
   "width": "container",
   "height": 500,
   "params": [
@@ -9,6 +12,7 @@
       "value": "Blue Mountains"
     }
   ],
+  
   "projection": {
     "type": "mercator"
   },
@@ -133,11 +137,7 @@
               "Moderate (Class 3–4)",
               "Hard (Class 5–6)"
             ],
-            "range": [
-              "#2a9d8f",
-              "#e9c46a",
-              "#e76f51"
-            ]
+            "range": ["#2a9d8f", "#e9c46a", "#e76f51"]
           },
           "legend": null
         },

@@ -33,13 +33,14 @@ const OPTIONS = {
     view: { stroke: null },
     background: "#f7f2e4",
     padding: 16,
-    autosize: { type: "fit", contains: "padding" }, // "container" width includes the padding
+    autosize: { type: "fit", contains: "padding" }, 
   },
 };
 
 function showError(divId, err) {
   console.error(divId, err);
-  document.querySelector(divId).innerHTML = `<p style="color:#b3261e">Chart error: ${err.message}</p>`;
+  document.querySelector(divId).innerHTML =
+    `<p style="color:#b3261e">Chart error: ${err.message}</p>`;
 }
 
 const loadJSON = (url) => fetch(url).then((res) => res.json());
@@ -49,7 +50,8 @@ for (const [divId, name] of Object.entries(CHARTS)) {
     .then((result) => {
       if (divId === "#regions_map") linkParkPicker(result.view);
       if (divId === "#park_difficulty") linkBarsToParkMap(result.view);
-      if (divId === "#regions_map" || divId === "#rank_chart") linkParkPicker(result.view);
+      if (divId === "#regions_map" || divId === "#rank_chart")
+        linkParkPicker(result.view);
     })
     .catch((err) => showError(divId, err));
 }
@@ -63,13 +65,21 @@ const panel = document.getElementById("park_info");
 const EMPTY_PANEL = panel ? panel.innerHTML : "";
 
 const escapeHTML = (text) =>
-  String(text).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+  String(text).replace(
+    /[&<>"']/g,
+    (c) =>
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[
+        c
+      ],
+  );
 const formatNumber = (n) => Math.round(n).toLocaleString("en-AU");
 
 async function showParkInfo(park) {
   if (!panel) return;
   // the map selects by full name (park_full), the old version by short name (park): accept both
-  const info = (await parkInfo).find((p) => p.park === park || p.park_full === park);
+  const info = (await parkInfo).find(
+    (p) => p.park === park || p.park_full === park,
+  );
   if (!info) {
     panel.innerHTML = EMPTY_PANEL; // nothing picked (double-click)
     return;
@@ -77,10 +87,15 @@ async function showParkInfo(park) {
   const extra = (await parkDetails)[info.park] || {};
   const photo = extra.image
     ? `<figure><img src="${escapeHTML(extra.image)}" alt="${escapeHTML(info.park_full)}" loading="lazy" referrerpolicy="no-referrer">` +
-    (extra.image_credit ? `<figcaption>${escapeHTML(extra.image_credit)}</figcaption>` : "") +
-    `</figure>`
+      (extra.image_credit
+        ? `<figcaption>${escapeHTML(extra.image_credit)}</figcaption>`
+        : "") +
+      `</figure>`
     : "";
-  const stat = (label, value) => (value === null || value === undefined ? "" : `<div><dt>${label}</dt><dd>${value}</dd></div>`);
+  const stat = (label, value) =>
+    value === null || value === undefined
+      ? ""
+      : `<div><dt>${label}</dt><dd>${value}</dd></div>`;
 
   panel.innerHTML = `
     <div class="park-info-body${photo ? "" : " no-photo"}">
@@ -110,7 +125,9 @@ async function showParkInfo(park) {
 
   panel.querySelector(".park-info-link").addEventListener("click", () => {
     drawParkMap(info.park);
-    document.getElementById("park_map").scrollIntoView({ behavior: "smooth", block: "center" });
+    document
+      .getElementById("park_map")
+      .scrollIntoView({ behavior: "smooth", block: "center" });
   });
 }
 
@@ -120,8 +137,6 @@ function linkParkInfo(view) {
     showParkInfo(Array.isArray(picked) ? picked[0] : picked);
   });
 }
-
-
 
 const pickerViews = [];
 function linkParkPicker(view) {
@@ -144,6 +159,7 @@ const parkSelect = document.getElementById("park_select");
 async function drawParkMap(park) {
   if (parkBarsView) parkBarsView.signal("highlightPark", park).run(); // dim the other bars
   parkSelect.value = park;
+  showTrackStats(park);
 
   const info = (await parkList).find((p) => p.park === park);
   const summary = document.getElementById("park_summary");
@@ -152,26 +168,33 @@ async function drawParkMap(park) {
   // copy the spec and set which park it shows
   const spec = structuredClone(await parkMapSpec);
   spec.params.find((p) => p.name === "park").value = park;
-  return vegaEmbed("#park_map", spec, OPTIONS).catch((err) => showError("#park_map", err));
+  return vegaEmbed("#park_map", spec, OPTIONS).catch((err) =>
+    showError("#park_map", err),
+  );
 }
 
 // Clicking a bar shows that park on the map
 function linkBarsToParkMap(view) {
   parkBarsView = view;
-  if (parkSelect && parkSelect.value) view.signal("highlightPark", parkSelect.value).run();
+  if (parkSelect && parkSelect.value)
+    view.signal("highlightPark", parkSelect.value).run();
   view.addSignalListener("pickPark", (name, value) => {
     const picked = value && value.park;
     const park = Array.isArray(picked) ? picked[0] : picked;
     if (!park) return;
     drawParkMap(park);
-    document.getElementById("park_map").scrollIntoView({ behavior: "smooth", block: "center" });
+    document
+      .getElementById("park_map")
+      .scrollIntoView({ behavior: "smooth", block: "center" });
   });
 }
 
 // Fill the dropdown (busiest park first) and draw the first park
 if (parkSelect) {
   parkList.then((parks) => {
-    parks.forEach((p) => parkSelect.add(new Option(`${p.rank}. ${p.park}`, p.park)));
+    parks.forEach((p) =>
+      parkSelect.add(new Option(`${p.rank}. ${p.park}`, p.park)),
+    );
     parkSelect.addEventListener("change", () => drawParkMap(parkSelect.value));
     drawParkMap(parks[0].park);
   });
@@ -183,9 +206,72 @@ if (parkSelect) {
 loadJSON("data/_page/page_numbers.json")
   .then((stats) => {
     document.querySelectorAll("[data-stat]").forEach((el) => {
-      if (stats[el.dataset.stat] !== undefined) el.textContent = stats[el.dataset.stat];
+      if (stats[el.dataset.stat] !== undefined)
+        el.textContent = stats[el.dataset.stat];
     });
   })
-  .catch((err) => console.warn("Page numbers not updated (showing the typed-in values):", err.message));
+  .catch((err) =>
+    console.warn(
+      "Page numbers not updated (showing the typed-in values):",
+      err.message,
+    ),
+  );
 
-  
+// Section 4: plain-language numbers under the park picker
+const trackRows = loadJSON(
+  "data/4.2_track_difficulty_in_top_20_parks/park_track_difficulty.json",
+);
+const fmtKm = (n) =>
+  n >= 10
+    ? Math.round(n).toLocaleString("en-AU")
+    : String(Math.round(n * 10) / 10);
+const pctText = (s) => Math.round(s * 100) + "%";
+
+async function showTrackStats(park) {
+  const box = document.getElementById("park_stats");
+  if (!box) return;
+  const rows = (await trackRows).filter((r) => r.park === park);
+  if (!rows.length) {
+    box.innerHTML = "";
+    return;
+  }
+
+  const part = (word) =>
+    rows.find((r) => r.difficulty.startsWith(word)) || { km: 0, share: 0 };
+  const easy = part("Easy"),
+    mod = part("Moderate"),
+    hard = part("Hard");
+  const total = Number(rows[0].totalKm);
+  const info = (await parkInfo).find((p) => p.park === park);
+
+  let verdict, detail;
+  if (easy.share >= 0.5) {
+    verdict = "Mostly easy walking.";
+    detail = `${fmtKm(easy.km)} of its ${fmtKm(total)} km is easy to walk.`;
+  } else if (hard.share >= 0.5) {
+    verdict = "Mostly hard going.";
+    detail = `${fmtKm(hard.km)} of its ${fmtKm(total)} km is hard to walk.`;
+  } else {
+    verdict = "Mostly moderate walks.";
+    detail = `${fmtKm(mod.km)} of its ${fmtKm(total)} km is moderate to walk, with ${fmtKm(easy.km)} km easy to walk and ${fmtKm(hard.km)} km hard to walk.`;
+  }
+
+  const cell = (cls, label, r) =>
+    `<div class="stat-${cls}"><dt>${label}</dt><dd>${fmtKm(r.km)} km <small>${pctText(r.share)}</small></dd></div>`;
+
+  box.innerHTML = `
+    <p class="park-stats-verdict"><strong>${verdict}</strong> ${detail}</p>
+    <dl class="park-info-stats">
+        <div><dt>Total track length</dt><dd>${fmtKm(total)} km</dd></div>
+        ${cell("easy", "Easy track", easy)}
+        ${cell("moderate", "Moderate track", mod)}
+        ${cell("hard", "Hard track", hard)}
+        ${
+          info && info.lookouts != null
+            ? `
+            <div><dt>Lookouts</dt><dd>${info.lookouts}</dd></div>
+        `
+            : ""
+        }
+    </dl>`;
+}

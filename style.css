@@ -429,10 +429,6 @@ a {
   font-weight: 600;
 }
 
-.todo {
-  font-style: italic;
-  color: var(--muted);
-}
 
 /* ---------- Waffle + track-class key ---------- */
 .split {
@@ -852,7 +848,6 @@ a {
     border-top: 1px solid var(--rule);
   }
 }
-
 .rank-table {
   width: 100%;
   border-collapse: collapse;
@@ -860,40 +855,36 @@ a {
 }
 
 .rank-table caption {
+  margin-bottom: 8px;
   text-align: left;
-  font-family: Fraunces, Georgia, serif;
+  font-family: var(--heading);
   font-size: 1rem;
-  color: #1f3d17;
-  padding-bottom: 0.5rem;
+  color: var(--green-dark);
 }
 
 .rank-table th {
+  padding: 7px 10px;
+  border-bottom: 2px solid var(--green-dark);
   text-align: left;
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: #6b6b6b;
-  padding: 0.4rem 0.6rem;
-  border-bottom: 2px solid #1f3d17;
+  color: var(--muted);
 }
 
 .rank-table td {
-  padding: 0.45rem 0.6rem;
-  border-bottom: 1px solid #ecebe4;
+  padding: 7px 10px;
+  border-bottom: 1px solid var(--rule);
 }
 
 .rank-table td:first-child {
   width: 3rem;
-  font-family: Fraunces, Georgia, serif;
+  font-family: var(--heading);
   font-weight: 700;
-  color: #e76f51;
+  color: var(--coral);
 }
 
-.rank-table tr.hl td {
-  font-weight: 600;
-  color: #1f3d17;
-}
 
 
 /* Radio buttons for the mosaic toggle (section 5) */
@@ -906,22 +897,6 @@ a {
 .vega-bindings label {
   cursor: pointer;
 }
-
-/* Top 10 activities table (section 7) - skip this block if you already added it */
-.rank-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
-.rank-table caption {
-  text-align: left; font-family: Fraunces, Georgia, serif; font-size: 1rem;
-  color: #1f3d17; padding-bottom: 0.5rem;
-}
-.rank-table th {
-  text-align: left; font-size: 0.75rem; font-weight: 600; text-transform: uppercase;
-  letter-spacing: 0.05em; color: #6b6b6b; padding: 0.4rem 0.6rem; border-bottom: 2px solid #1f3d17;
-}
-.rank-table td { padding: 0.45rem 0.6rem; border-bottom: 1px solid #ecebe4; }
-.rank-table td:first-child {
-  width: 3rem; font-family: Fraunces, Georgia, serif; font-weight: 700; color: #e76f51;
-}
-.rank-table tr.hl td { font-weight: 600; color: #1f3d17; }
 
 
 .lookout-card {
@@ -1040,4 +1015,114 @@ a {
   }
 }
 
+/* Section 4: Selected park statistics */
+.park-stats {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 18px 12px;
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+}
 
+.park-stats-verdict {
+    margin: 0;
+    padding-bottom: 12px;
+    font-family: var(--heading);
+    font-size: 1rem;
+}
+
+/* Statistics row */
+.park-stats .park-info-stats {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 10px;
+    margin: 0;
+}
+
+/* Individual statistic cards */
+.park-stats .park-info-stats > div {
+    min-width: 0;
+    padding: 10px 8px;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-top: 3px solid var(--muted);
+    border-radius: 8px;
+}
+
+/* Easy / moderate / hard accents */
+.park-stats .park-info-stats > .stat-easy {
+    border-top-color: #2a9d8f;
+}
+
+.park-stats .park-info-stats > .stat-moderate {
+    border-top-color: #e9c46a;
+}
+
+.park-stats .park-info-stats > .stat-hard {
+    border-top-color: #e76f51;
+}
+
+/* Statistic values */
+.park-stats .park-info-stats dd {
+    margin: 0 0 3px;
+    font-family: var(--heading);
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.2;
+    
+}
+
+.park-stats .park-info-stats > div {
+    padding: 10px 5px;
+}
+
+/* Labels */
+.park-stats .park-info-stats dt {
+    margin: 0 0 6px;
+    font-family: var(--body);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--muted);
+}
+
+.park-stats .park-info-stats small {
+    font-family: var(--body);
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 1.45;
+    color: var(--muted);
+    font-style: italic;
+}
+
+/* Match values to the chart palette */
+.park-stats .stat-easy dd {
+    color: #1f7a6f;
+}
+
+.park-stats .stat-moderate dd {
+    color: #9a7413;
+}
+
+.park-stats .stat-hard dd {
+    color: #c4492b;
+}
+
+/* Small screens */
+@media (max-width: 560px) {
+    .park-stats {
+        padding: 14px 12px;
+    }
+
+    .park-stats .park-info-stats {
+        gap: 6px;
+    }
+
+    .park-stats .park-info-stats > div {
+        padding: 11px 8px;
+    }
+
+    .park-stats .park-info-stats dt {
+        font-size: 0.72rem;
+    }
+}

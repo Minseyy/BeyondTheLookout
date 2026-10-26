@@ -2,44 +2,62 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Older visitors are the happiest",
-    "subtitle": "Share of visitors satisfied with their last park visit, by age, 2024/25"
+    "subtitle": "Share of visitors satisfied with their last park visit, by age, 2024/25",
+    "offset": 10
   },
   "width": "container",
-  "height": 180,
+  "height": 200,
   "data": { "url": "data/7.2_visitor_satisfaction/satisfaction_2024_25.csv" },
-  "transform": [{ "filter": "datum.group_type == 'Age'" }],
-  "encoding": {
-    "y": { "field": "group", "type": "nominal", "sort": null, "title": "Age",
-           "axis": { "ticks": false, "domain": false, "labelFontSize": 12 } },
-    "x": { "field": "net_satisfied_pct", "type": "quantitative", "title": "Visitors satisfied (%)",
-           "scale": { "domain": [80, 100] }, "axis": { "values": [80, 85, 90, 95, 100] } }
-  },
   "layer": [
     {
-      "data": { "values": [{}] },
+      "transform": [{ "filter": "datum.group_type == 'Overall'" }],
       "mark": { "type": "rule", "color": "#1f3d17", "strokeWidth": 1.5, "strokeDash": [5, 4] },
-      "encoding": { "x": { "datum": 89 }, "y": null }
-    },
-    {
-      "data": { "values": [{}] },
-      "mark": { "type": "text", "text": "All visitors 89%", "align": "left", "dx": 5, "dy": -4,
-                "baseline": "bottom", "fontSize": 11, "fontWeight": "bold", "color": "#1f3d17" },
-      "encoding": { "x": { "datum": 89 }, "y": null }
-    },
-    {
-      "mark": { "type": "rule", "color": "#d9d4c7", "strokeWidth": 2 },
-      "encoding": { "x": { "datum": 80 }, "x2": { "field": "net_satisfied_pct" } }
-    },
-    {
-      "mark": { "type": "circle", "size": 220, "opacity": 1 },
       "encoding": {
-        "color": { "condition": { "test": "datum.net_satisfied_pct == 94", "value": "#8a3b24" }, "value": "#e76f51" },
-        "tooltip": [{ "field": "group", "title": "Age" }, { "field": "net_satisfied_pct", "title": "Satisfied (%)" }]
+        "x": { "field": "net_satisfied_pct", "type": "quantitative",
+               "title": "Visitors satisfied (%)",
+               "scale": { "domain": [80, 100] },
+               "axis": { "values": [80, 85, 90, 95, 100] } }
       }
     },
     {
-      "mark": { "type": "text", "align": "left", "dx": 12, "fontSize": 11, "fontWeight": "bold", "color": "#2b2b2b" },
-      "encoding": { "text": { "field": "net_satisfied_pct", "type": "quantitative", "format": "d" } }
+      "transform": [
+        { "filter": "datum.group_type == 'Overall'" },
+        { "calculate": "'Average satisfaction ' + format(datum.net_satisfied_pct, 'd') + '%'", "as": "label" }
+      ],
+      "mark": { "type": "text", "y": 0, "align": "left", "dx": 5, "dy": -4, "baseline": "bottom",
+                "fontSize": 11, "fontWeight": "bold", "color": "#1f3d17" },
+      "encoding": {
+        "x": { "field": "net_satisfied_pct", "type": "quantitative" },
+        "text": { "field": "label", "type": "nominal" }
+      }
+    },
+    {
+      "transform": [{ "filter": "datum.group_type == 'Age'" }],
+      "encoding": {
+        "y": { "field": "group", "type": "nominal", "sort": null, "title": "Age",
+               "axis": { "ticks": false, "domain": false, "labelFontSize": 12 } },
+        "x": { "field": "net_satisfied_pct", "type": "quantitative" }
+      },
+      "layer": [
+        {
+          "mark": { "type": "rule", "color": "#d9d4c7", "strokeWidth": 2 },
+          "encoding": { "x": { "datum": 80 }, "x2": { "field": "net_satisfied_pct" } }
+        },
+        {
+          "mark": { "type": "circle", "size": 220, "opacity": 1, "color": "#e76f51" },
+          "encoding": {
+            "tooltip": [
+              { "field": "group", "title": "Age" },
+              { "field": "net_satisfied_pct", "title": "Satisfied (%)" }
+            ]
+          }
+        },
+        {
+          "mark": { "type": "text", "align": "left", "dx": 12, "fontSize": 11,
+                    "fontWeight": "bold", "color": "#2b2b2b" },
+          "encoding": { "text": { "field": "net_satisfied_pct", "type": "quantitative", "format": "d" } }
+        }
+      ]
     }
   ]
 }

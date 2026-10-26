@@ -1,8 +1,14 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Track difficulty in the top 20 parks",
+  "title": {
+    "text": "How hard is the walking in each of the 20 busiest parks?",
+    "subtitle": "Each park’s tracks are split by difficulty, ranked from most to least visited.",
+    "anchor": "start",
+    "subtitleFontSize": 11.5,
+    "subtitleColor": "#6b6b6b"
+  },
   "width": "container",
-  "height": 500,
+  "height": 520,
   "data": {
     "url": "data/4.2_track_difficulty_in_top_20_parks/park_track_difficulty.json"
   },
@@ -11,112 +17,124 @@
       "name": "pickPark",
       "select": {
         "type": "point",
-        "fields": [
-          "park"
-        ],
+        "fields": ["park"],
         "on": "click",
         "clear": false
-      }
+      },
+      "views": ["track_bars"]
     },
-    {
-      "name": "highlightPark",
-      "value": ""
-    }
+    { "name": "highlightPark", "value": "" }
   ],
-  "mark": {
-    "type": "bar",
-    "height": {
-      "band": 0.75
-    },
-    "cursor": "pointer"
-  },
   "encoding": {
     "y": {
       "field": "park",
       "type": "nominal",
       "title": null,
-      "sort": {
-        "field": "rank",
-        "op": "min",
-        "order": "ascending"
+      "sort": { "field": "rank", "op": "min", "order": "ascending" },
+      "axis": { "labelFontSize": 11, "labelLimit": 150 }
+    }
+  },
+  "layer": [
+    {
+      "name": "track_bars",
+      "mark": {
+        "type": "bar",
+        "height": { "band": 0.78 },
+        "cursor": "pointer"
       },
-      "axis": {
-        "labelFontSize": 11,
-        "labelLimit": 150
-      }
-    },
-    "x": {
-      "field": "km",
-      "type": "quantitative",
-      "stack": "normalize",
-      "title": "Share of the park's walking track",
-      "axis": {
-        "format": "%",
-        "tickCount": 4
-      }
-    },
-    "color": {
-      "field": "difficulty",
-      "type": "nominal",
-      "title": null,
-      "scale": {
-        "domain": [
-          "Easy (Class 1–2)",
-          "Moderate (Class 3–4)",
-          "Hard (Class 5–6)"
-        ],
-        "range": [
-          "#2a9d8f",
-          "#e9c46a",
-          "#e76f51"
+      "encoding": {
+        "x": {
+          "field": "km",
+          "type": "quantitative",
+          "stack": "normalize",
+          "title": "Share of the park's walking track",
+          "scale": { "domain": [0, 1] },
+          "axis": { "format": "%", "tickCount": 4 }
+        },
+        "color": {
+          "field": "difficulty",
+          "type": "nominal",
+          "title": null,
+          "scale": {
+            "domain": [
+              "Easy (Class 1–2)",
+              "Moderate (Class 3–4)",
+              "Hard (Class 5–6)"
+            ],
+            "range": ["#2a9d8f", "#e9c46a", "#e76f51"]
+          },
+          "legend": {
+            "orient": "top",
+            "direction": "horizontal",
+            "labelFontSize": 11,
+            "symbolSize": 80,
+            "labelExpr": "split(datum.label, ' (')[0]"
+          }
+        },
+        "order": { "field": "order", "type": "quantitative" },
+        "opacity": {
+          "condition": {
+            "test": "highlightPark == '' || datum.park == highlightPark",
+            "value": 1
+          },
+          "value": 0.3
+        },
+        "tooltip": [
+          { "field": "park", "title": "Park" },
+          { "field": "rank", "title": "Visit rank" },
+          { "field": "difficulty", "title": "Difficulty" },
+          { "field": "km", "title": "Track (km)", "format": ",.1f" },
+          {
+            "field": "share",
+            "title": "Share of park's track",
+            "format": ".0%"
+          },
+          { "field": "totalKm", "title": "Park's total track (km)" }
         ]
-      },
-      "legend": {
-        "orient": "top",
-        "direction": "horizontal",
-        "labelFontSize": 11,
-        "symbolSize": 80,
-        "labelExpr": "split(datum.label, ' (')[0]"
       }
     },
-    "order": {
-      "field": "order",
-      "type": "quantitative"
-    },
-    "opacity": {
-      "condition": {
-        "test": "highlightPark == '' || datum.park == highlightPark",
-        "value": 1
+    {
+      "transform": [
+        {
+          "stack": "km",
+          "groupby": ["park"],
+          "offset": "normalize",
+          "sort": [{ "field": "order", "order": "ascending" }],
+          "as": ["s0", "s1"]
+        },
+        { "calculate": "(datum.s0 + datum.s1) / 2", "as": "mid" },
+        { "filter": "datum.share >= 0.12" }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 10.5,
+        "fontWeight": "bold",
+        "baseline": "middle",
+        "interactive": false
       },
-      "value": 0.3
-    },
-    "tooltip": [
-      {
-        "field": "park",
-        "title": "Park"
-      },
-      {
-        "field": "rank",
-        "title": "Visit rank"
-      },
-      {
-        "field": "difficulty",
-        "title": "Difficulty"
-      },
-      {
-        "field": "km",
-        "title": "Track (km)",
-        "format": ",.1f"
-      },
-      {
-        "field": "share",
-        "title": "Share of park's track",
-        "format": ".0%"
-      },
-      {
-        "field": "totalKm",
-        "title": "Park's total track (km)"
+      "encoding": {
+        "x": {
+          "field": "mid",
+          "type": "quantitative",
+          "scale": { "domain": [0, 1] },
+          "axis": null
+        },
+        "text": { "field": "share", "type": "quantitative", "format": ".0%" },
+        "color": {
+          "condition": {
+            "test": "indexof(datum.difficulty, 'Moderate') >= 0",
+            "value": "#4a3b0b"
+          },
+          "value": "white"
+        },
+        "opacity": {
+          "condition": {
+            "test": "highlightPark == '' || datum.park == highlightPark",
+            "value": 1
+          },
+          "value": 0.3
+        }
       }
-    ]
-  }
+    }
+  ]
 }
