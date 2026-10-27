@@ -105,7 +105,7 @@ async function showParkInfo(park) {
         <p class="park-info-region">${escapeHTML(info.branch)} region</p>
         ${extra.description ? `<p class="park-info-text">${escapeHTML(extra.description)}</p>` : ""}
         <dl class="park-info-stats">
-          ${stat("Visits (2024/25)", formatNumber(info.visits))}
+          ${stat("Visits", formatNumber(info.visits))}
           ${stat("Lookouts", info.lookouts)}
           ${stat("Walking track", info.track_km === null ? null : `${formatNumber(info.track_km)} km`)}
           ${stat("Easy track", info.easy_pct === null ? null : `${info.easy_pct}%`)}
