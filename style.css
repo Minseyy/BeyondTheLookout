@@ -5,73 +5,53 @@
   --teal: #2a9d8f;
   --coral: #e76f51;
   --sand: #e9c46a;
-  /* "moderate" track colour */
   --rust: #8a3b24;
-  /* handwritten notes color*/
-
   --paper: #f7f2e4;
-  /* page background */
   --plate: #fffdf6;
-  /* chart panels */
   --ink: #2b2b2b;
   --muted: #6b6b6b;
   --rule: #e4e2d8;
-  /* thin dividers */
   --line: #d9d2bd;
-  /* panel borders */
   --shadow: 5px 5px 0 rgba(31, 61, 23, 0.14);
-
   --heading: 'Fraunces', Georgia, serif;
   --body: 'Inter', system-ui, sans-serif;
   --brand: 'Poiret One', Georgia, serif;
   --hand: 'Caveat', cursive;
-
   --gutter: 72px;
-  /* width of the trail column on the left */
-  --side: clamp(16px, 4vw, 40px);
+  --side: clamp(16px, 4vw, 40px)
 }
 
-/* =====================================================================
-   Base
-   ===================================================================== */
 body {
   margin: 0;
   background-color: var(--paper);
-  /* faint paper grain */
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.35  0 0 0 0 0.3  0 0 0 0 0.2  0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   color: var(--ink);
   font-family: var(--body);
   font-size: 17px;
   line-height: 1.7;
-  overflow-x: hidden;
+  overflow-x: hidden
 }
 
 h1, h2, h3 {
   font-family: var(--heading);
   font-weight: 700;
   line-height: 1.15;
-  color: var(--green-dark);
+  color: var(--green-dark)
 }
 
-/* Fraunces in its soft, slightly wonky mode */
-h1, h2, .lead, .stat dd, .marker, .takeaway-num, .hero-deck strong {
-  font-variation-settings: "SOFT"100, "WONK"1;
+.hero-deck strong, .lead, .marker, .stat dd, .takeaway-num, h1, h2 {
+  font-variation-settings: "SOFT"100, "WONK"1
 }
-
-
 
 a {
-  color: var(--teal);
+  color: var(--teal)
 }
 
 :focus-visible {
   outline: 3px solid var(--coral);
-  outline-offset: 3px;
+  outline-offset: 3px
 }
 
-/* =====================================================================
-   Navbar
-   ===================================================================== */
 .navbar {
   position: sticky;
   top: 0;
@@ -80,7 +60,7 @@ a {
   align-items: baseline;
   gap: 28px;
   padding: 12px var(--side);
-  background: var(--green-dark);
+  background: var(--green-dark)
 }
 
 .navbar-brand {
@@ -89,24 +69,21 @@ a {
   font-family: var(--brand);
   font-size: 1.35rem;
   font-weight: 700;
-  color: var(--plate);
+  color: var(--plate)
 }
 
 .navbar a {
   white-space: nowrap;
-  font-size: 0.95rem;
+  font-size: .95rem;
   font-weight: 500;
   color: var(--green-light);
-  text-decoration: none;
+  text-decoration: none
 }
 
 .navbar a:hover {
-  color: var(--plate);
+  color: var(--plate)
 }
 
-/* =====================================================================
-   Hero: faded photo, torn bottom edge, text bottom-left
-   ===================================================================== */
 .hero {
   position: relative;
   isolation: isolate;
@@ -116,23 +93,20 @@ a {
   padding: 0 clamp(16px, 5vw, 64px) calc(clamp(40px, 8vh, 80px) + 14px);
   background: var(--green);
   color: var(--plate);
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5px), 98.33% calc(100% - 3px), 96.67% calc(100% - 7px), 95% calc(100% - 11px), 93.33% 100%, 91.67% 100%, 90% calc(100% - 14px), 88.33% calc(100% - 9px), 86.67% 100%, 85% calc(100% - 5px), 83.33% calc(100% - 9px), 81.67% 100%, 80% calc(100% - 9px), 78.33% calc(100% - 3px), 76.67% 100%, 75% 100%, 73.33% calc(100% - 7px), 71.67% calc(100% - 7px), 70% 100%, 68.33% calc(100% - 3px), 66.67% 100%, 65% calc(100% - 9px), 63.33% calc(100% - 7px), 61.67% 100%, 60% calc(100% - 14px), 58.33% calc(100% - 9px), 56.67% 100%, 55% calc(100% - 3px), 53.33% calc(100% - 11px), 51.67% calc(100% - 11px), 50% calc(100% - 9px), 48.33% 100%, 46.67% calc(100% - 9px), 45% calc(100% - 9px), 43.33% calc(100% - 7px), 41.67% 100%, 40% calc(100% - 3px), 38.33% 100%, 36.67% calc(100% - 9px), 35% calc(100% - 14px), 33.33% calc(100% - 3px), 31.67% calc(100% - 5px), 30% calc(100% - 7px), 28.33% calc(100% - 3px), 26.67% calc(100% - 9px), 25% 100%, 23.33% calc(100% - 9px), 21.67% calc(100% - 5px), 20% calc(100% - 9px), 18.33% calc(100% - 14px), 16.67% calc(100% - 11px), 15% calc(100% - 3px), 13.33% 100%, 11.67% calc(100% - 9px), 10% calc(100% - 9px), 8.33% calc(100% - 11px), 6.67% calc(100% - 3px), 5% calc(100% - 5px), 3.33% 100%, 1.67% calc(100% - 9px), 0 calc(100% - 11px));
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5px), 98.33% calc(100% - 3px), 96.67% calc(100% - 7px), 95% calc(100% - 11px), 93.33% 100%, 91.67% 100%, 90% calc(100% - 14px), 88.33% calc(100% - 9px), 86.67% 100%, 85% calc(100% - 5px), 83.33% calc(100% - 9px), 81.67% 100%, 80% calc(100% - 9px), 78.33% calc(100% - 3px), 76.67% 100%, 75% 100%, 73.33% calc(100% - 7px), 71.67% calc(100% - 7px), 70% 100%, 68.33% calc(100% - 3px), 66.67% 100%, 65% calc(100% - 9px), 63.33% calc(100% - 7px), 61.67% 100%, 60% calc(100% - 14px), 58.33% calc(100% - 9px), 56.67% 100%, 55% calc(100% - 3px), 53.33% calc(100% - 11px), 51.67% calc(100% - 11px), 50% calc(100% - 9px), 48.33% 100%, 46.67% calc(100% - 9px), 45% calc(100% - 9px), 43.33% calc(100% - 7px), 41.67% 100%, 40% calc(100% - 3px), 38.33% 100%, 36.67% calc(100% - 9px), 35% calc(100% - 14px), 33.33% calc(100% - 3px), 31.67% calc(100% - 5px), 30% calc(100% - 7px), 28.33% calc(100% - 3px), 26.67% calc(100% - 9px), 25% 100%, 23.33% calc(100% - 9px), 21.67% calc(100% - 5px), 20% calc(100% - 9px), 18.33% calc(100% - 14px), 16.67% calc(100% - 11px), 15% calc(100% - 3px), 13.33% 100%, 11.67% calc(100% - 9px), 10% calc(100% - 9px), 8.33% calc(100% - 11px), 6.67% calc(100% - 3px), 5% calc(100% - 5px), 3.33% 100%, 1.67% calc(100% - 9px), 0 calc(100% - 11px))
 }
 
-/* the photo, with a dark fade at the bottom so the text reads */
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
-  background:
-    linear-gradient(to top, rgba(31, 24, 10, 0.82) 0%, rgba(31, 24, 10, 0.3) 55%, rgba(31, 24, 10, 0.1) 100%),
-    url("img/hero2.jpg") center / cover no-repeat;
-  filter: sepia(0.35) saturate(0.8) contrast(1.05) brightness(0.95);
+  background: linear-gradient(to top, rgba(31, 24, 10, .82) 0, rgba(31, 24, 10, .3) 55%, rgba(31, 24, 10, .1) 100%), url(img/hero2.jpg) center/cover no-repeat;
+  filter: sepia(.35) saturate(.8) contrast(1.05) brightness(.95)
 }
 
 .hero-inner {
-  max-width: 780px;
+  max-width: 780px
 }
 
 .hero h1 {
@@ -140,35 +114,34 @@ a {
   max-width: 14ch;
   font-size: clamp(2.6rem, 7vw, 4.8rem);
   line-height: 1.05;
-  color: var(--plate);
+  color: var(--plate)
 }
 
 .hero h1 em {
   font-style: italic;
-  color: var(--coral);
+  color: var(--coral)
 }
 
 .hero-deck {
   margin: 0 0 20px;
   max-width: 38em;
   font-size: clamp(1.05rem, 2vw, 1.2rem);
-  color: color-mix(in srgb, var(--plate) 88%, transparent);
+  color: color-mix(in srgb, var(--plate) 88%, transparent)
 }
 
 .hero-deck strong {
   font-family: var(--heading);
   font-size: 1.1em;
-  color: var(--coral);
+  color: var(--coral)
 }
 
-/* the brief's themes as small tags that jump to their sections */
 .hero-themes {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   margin: 0 0 28px;
   padding: 0;
-  list-style: none;
+  list-style: none
 }
 
 .hero-themes a {
@@ -176,16 +149,16 @@ a {
   padding: 3px 12px;
   border: 1px solid color-mix(in srgb, var(--green-light) 60%, transparent);
   border-radius: 999px;
-  font-size: 0.85rem;
+  font-size: .85rem;
   font-weight: 500;
   color: var(--green-light);
   text-decoration: none;
-  transition: background 0.2s, color 0.2s;
+  transition: background .2s, color .2s
 }
 
 .hero-themes a:hover {
   background: var(--green-light);
-  color: var(--green-dark);
+  color: var(--green-dark)
 }
 
 .hero-button {
@@ -199,19 +172,19 @@ a {
   color: var(--plate);
   font-weight: 600;
   text-decoration: none;
-  transition: background 0.2s;
+  transition: background .2s
 }
 
 .hero-button:hover {
-  background: transparent;
+  background: 0 0
 }
 
 .hero-button span {
-  transition: transform 0.2s;
+  transition: transform .2s
 }
 
 .hero-button:hover span {
-  transform: translateY(3px);
+  transform: translateY(3px)
 }
 
 .hero-credit {
@@ -219,18 +192,15 @@ a {
   right: clamp(16px, 5vw, 64px);
   bottom: 22px;
   margin: 0;
-  font-size: 0.72rem;
-  color: color-mix(in srgb, var(--plate) 60%, transparent);
+  font-size: .72rem;
+  color: color-mix(in srgb, var(--plate) 60%, transparent)
 }
 
-/* =====================================================================
-   The trail: dashed line down the left, each section is a stop
-   ===================================================================== */
 .trail {
   position: relative;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 72px var(--side) 96px;
+  padding: 72px var(--side) 96px
 }
 
 .trail::before {
@@ -238,70 +208,66 @@ a {
   position: absolute;
   top: 96px;
   bottom: 96px;
-  left: calc(var(--side) + var(--gutter) / 2 - 1px);
+  left: calc(var(--side) + var(--gutter)/ 2 - 1px);
   border-left: 2px dashed var(--coral);
-  opacity: 0.8;
+  opacity: .8
 }
 
 .stop {
   position: relative;
   padding-left: var(--gutter);
   margin-bottom: 104px;
-  scroll-margin-top: 70px;
+  scroll-margin-top: 70px
 }
 
 .stop:last-child {
-  margin-bottom: 0;
+  margin-bottom: 0
 }
 
 .stop h2 {
   margin: 0 0 18px;
-  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-size: clamp(2rem, 4.5vw, 3rem)
 }
 
 .stop h3 {
   margin: 56px 0 10px;
-  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  font-size: clamp(1.4rem, 3vw, 1.8rem)
 }
 
 .stop:not(.stop-start) {
-  padding-top: 52px;
-  /* room for the band above the heading */
+  padding-top: 52px
 }
 
 .stop:not(.stop-start)::before {
   content: "";
   position: absolute;
   top: 12px;
-  left: calc(var(--gutter) / 2);
-  /* starts at the centre of the marker */
+  left: calc(var(--gutter)/ 2);
   right: 0;
   height: 24px;
-  background: var(--green-dark);
+  background: var(--green-dark)
 }
 
-/* marker sits on top of the band, centred on it */
 .marker {
   z-index: 1;
-  top: 4px;
+  top: 4px
 }
 
 .stop-end .marker {
-  top: 11px;
+  top: 11px
 }
 
-@media (max-width: 720px) {
+@media (max-width:720px) {
   .marker {
-    top: 9px;
+    top: 9px
   }
 }
 
-/* numbered marker on the line */
 .marker {
   box-sizing: border-box;
   position: absolute;
   top: 2px;
-  left: calc(var(--gutter) / 2 - 20px);
+  left: calc(var(--gutter)/ 2 - 20px);
   width: 40px;
   height: 40px;
   display: grid;
@@ -312,60 +278,54 @@ a {
   font-family: var(--heading);
   font-size: 1.25rem;
   font-weight: 700;
-  box-shadow: 0 0 0 6px var(--paper);
-  /* gap in the dashed line */
+  box-shadow: 0 0 0 6px var(--paper)
 }
 
-/* start: hollow ring */
 .stop-start .marker {
   top: 12px;
-  left: calc(var(--gutter) / 2 - 11px);
+  left: calc(var(--gutter)/ 2 - 11px);
   width: 22px;
   height: 22px;
   background: var(--paper);
-  border: 4px solid var(--coral);
+  border: 4px solid var(--coral)
 }
 
-/* end: dark dot with a coral ring */
 .stop-end .marker {
   top: 12px;
-  left: calc(var(--gutter) / 2 - 13px);
+  left: calc(var(--gutter)/ 2 - 13px);
   width: 26px;
   height: 26px;
-  border: 4px solid var(--coral);
+  border: 4px solid var(--coral)
 }
 
-/* =====================================================================
-   Intro
-   ===================================================================== */
 .lead {
   margin: 0 0 48px;
   max-width: 34em;
   font-family: var(--heading);
   font-size: clamp(1.25rem, 2.5vw, 1.5rem);
   line-height: 1.55;
-  color: var(--green-dark);
+  color: var(--green-dark)
 }
 
 .stats {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   margin: 0;
-  border-top: 4px double var(--green-dark);
+  border-top: 4px double var(--green-dark)
 }
 
 .stat {
-  padding: 14px 20px 0 0;
+  padding: 14px 20px 0 0
 }
 
 .stat+.stat {
   padding-left: 20px;
-  border-left: 1px solid var(--rule);
+  border-left: 1px solid var(--rule)
 }
 
 .stat dt {
-  font-size: 0.9rem;
-  color: var(--muted);
+  font-size: .9rem;
+  color: var(--muted)
 }
 
 .stat dd {
@@ -374,89 +334,78 @@ a {
   font-size: clamp(2.1rem, 4.5vw, 2.9rem);
   font-weight: 700;
   line-height: 1.1;
-  color: var(--teal);
+  color: var(--teal)
 }
 
 .stat dd small {
   margin-left: 4px;
-  font-size: 0.45em;
+  font-size: .45em;
   font-weight: 600;
-  color: var(--muted);
+  color: var(--muted)
 }
 
-/* =====================================================================
-   Charts: printed plates
-   ===================================================================== */
-.chart,
-.plate,
-.canvas {
+.canvas, .chart, .plate {
   box-sizing: border-box;
   background: var(--paper);
   border: 1px solid var(--line);
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow)
 }
 
-.chart canvas,
-.chart svg {
-  display: block;
+.chart canvas, .chart svg {
+  display: block
 }
 
 .chart {
   width: 100%;
-  margin: 28px 0 8px;
+  margin: 28px 0 8px
 }
 
 .plate {
-  padding: 16px 28px;
+  padding: 16px 28px
 }
 
-/* wide maps scroll sideways on phones */
-#regions_map,
-#share_maps,
-#lookout_map {
-  overflow-x: auto;
+#lookout_map, #regions_map, #share_maps {
+  overflow-x: auto
 }
 
 .hint {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: .9rem;
   font-style: italic;
-  color: var(--teal);
+  color: var(--teal)
 }
 
 .hint::before {
   content: "Tips: ";
-  font-weight: 600;
+  font-weight: 600
 }
 
-
-/* ---------- Waffle + track-class key ---------- */
 .split {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
   gap: 32px 56px;
-  margin: 28px 0 8px;
+  margin: 28px 0 8px
 }
 
 .class-key {
   display: grid;
-  gap: 18px;
+  gap: 18px
 }
 
 .key-group p {
   margin: 0;
-  font-size: 0.92rem;
+  font-size: .92rem;
   line-height: 1.6;
-  color: var(--muted);
+  color: var(--muted)
 }
 
 .key-group .key-title {
   margin-bottom: 2px;
   font-size: 1rem;
   font-weight: 600;
-  color: var(--ink);
+  color: var(--ink)
 }
 
 .swatch {
@@ -464,24 +413,23 @@ a {
   width: 14px;
   height: 14px;
   margin-right: 8px;
-  vertical-align: -1px;
+  vertical-align: -1px
 }
 
 .swatch-easy {
-  background: var(--teal);
+  background: var(--teal)
 }
 
 .swatch-moderate {
-  background: var(--sand);
+  background: var(--sand)
 }
 
 .swatch-hard {
-  background: var(--coral);
+  background: var(--coral)
 }
 
-/* ---------- Park bar chart + map on one canvas ---------- */
 .canvas {
-  margin: 14px 0 8px;
+  margin: 14px 0 8px
 }
 
 .canvas-header {
@@ -490,16 +438,14 @@ a {
   align-items: baseline;
   gap: 6px 14px;
   padding: 14px 20px 12px;
-  border-bottom: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule)
 }
 
-.canvas-header label,
-.map-summary {
-  font-size: 0.9rem;
-  color: var(--muted);
+.canvas-header label, .map-summary {
+  font-size: .9rem;
+  color: var(--muted)
 }
 
-/* park picker: serif name with a coral underline */
 .canvas-header select {
   appearance: none;
   padding: 0 28px 2px 0;
@@ -512,36 +458,35 @@ a {
   font-size: 1rem;
   font-weight: 700;
   color: var(--green-dark);
-  cursor: pointer;
+  cursor: pointer
 }
 
 .canvas-header select:hover {
-  color: var(--green);
+  color: var(--green)
 }
 
 .pair {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-  align-items: start;
+  align-items: start
 }
 
 .pair>div+div {
-  border-left: 1px solid var(--rule);
+  border-left: 1px solid var(--rule)
 }
 
-/* ---------- Controls Vega-Lite adds under charts ---------- */
 .vega-bindings {
   display: flex;
   flex-wrap: wrap;
   gap: 8px 24px;
   margin-top: 14px;
-  font-size: 0.92rem;
-  color: var(--ink);
+  font-size: .92rem;
+  color: var(--ink)
 }
 
 .vega-bind-name {
   margin-right: 6px;
-  font-weight: 600;
+  font-weight: 600
 }
 
 .vega-bindings select {
@@ -552,66 +497,63 @@ a {
   background: var(--plate) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%231f3d17' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 12px center;
   font: inherit;
   color: var(--ink);
-  cursor: pointer;
+  cursor: pointer
 }
 
-.vega-bindings input[type="checkbox"] {
+.vega-bindings input[type=checkbox] {
   width: 16px;
   height: 16px;
   vertical-align: -3px;
-  accent-color: var(--green);
+  accent-color: var(--green)
 }
 
-/* =====================================================================
-   Section 2 info panel: one top-20 park, filled in by main.js
-   ===================================================================== */
 .park-info {
   margin: 18px 0 8px;
-  padding: 20px 24px;
+  padding: 20px 24px
 }
 
 .park-info-empty {
   margin: 0;
   font-style: italic;
-  color: var(--muted);
+  color: var(--muted)
 }
 
 .park-info-body.no-photo {
-  grid-template-columns: minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr)
 }
 
 .park-info figure {
-  margin: 0;
+  margin: 0
 }
 
 .park-info img {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 4/3;
   object-fit: cover;
-  border: 1px solid var(--line);
+  border: 1px solid var(--line)
 }
 
 .park-info figcaption {
   margin-top: 4px;
-  font-size: 0.75rem;
-  color: var(--muted);
+  font-size: .75rem;
+  color: var(--muted)
 }
 
 .park-info h3 {
   margin: 0 0 2px;
-  font-size: clamp(1.3rem, 2.6vw, 1.6rem);
+  font-size: clamp(1.3rem, 2.6vw, 1.6rem)
 }
 
 .park-info-region {
   margin: 0 0 10px;
-  font-size: 0.9rem;
-  color: var(--muted);
+  font-size: .9rem;
+  color: var(--muted)
 }
 
 .park-info-text {
   margin: 0 0 14px;
-  max-width: 38em;
+  max-width: 38em
 }
 
 .park-info-stats {
@@ -619,13 +561,12 @@ a {
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 5px;
   margin: 0 0 14px;
-  text-align: end;
-
+  text-align: end
 }
 
 .park-info-stats dt {
-  font-size: 0.68rem;
-  color: var(--muted);
+  font-size: .68rem;
+  color: var(--muted)
 }
 
 .park-info-stats dd {
@@ -634,35 +575,32 @@ a {
   font-size: 1.25rem;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
-  color: var(--green-dark);
+  color: var(--green-dark)
 }
 
 .park-info-link {
   padding: 0 0 1px;
   border: none;
   border-bottom: 2px solid var(--coral);
-  background: none;
+  background: 0 0;
   font: inherit;
-  font-size: 0.9rem;
+  font-size: .9rem;
   color: var(--coral);
-  cursor: pointer;
+  cursor: pointer
 }
 
 .park-info-link:hover {
   color: var(--green);
-  border-bottom-color: var(--green);
+  border-bottom-color: var(--green)
 }
 
-/* =====================================================================
-   Takeaways: big number + sentence, with a "field notes" label
-   ===================================================================== */
 .takeaway {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
   align-items: center;
   gap: 4px 20px;
   max-width: 44em;
-  margin: 64px 0 0;
+  margin: 64px 0 0
 }
 
 .takeaway-num {
@@ -673,7 +611,7 @@ a {
   font-weight: 700;
   line-height: 1;
   white-space: nowrap;
-  color: var(--coral);
+  color: var(--coral)
 }
 
 .takeaway-num::before {
@@ -690,7 +628,7 @@ a {
   white-space: nowrap;
   color: var(--rust);
   transform: rotate(-3deg);
-  transform-origin: left bottom;
+  transform-origin: left bottom
 }
 
 .takeaway-text {
@@ -700,18 +638,15 @@ a {
   font-family: var(--heading);
   font-size: 1.2rem;
   line-height: 1.5;
-  color: var(--green-dark);
+  color: var(--green-dark)
 }
 
-/* =====================================================================
-   Conclusion: numbered findings
-   ===================================================================== */
 .findings {
   max-width: 44em;
   margin: 28px 0;
   padding: 0;
   list-style: none;
-  counter-reset: finding;
+  counter-reset: finding
 }
 
 .findings li {
@@ -719,11 +654,11 @@ a {
   padding: 14px 0 14px 52px;
   border-top: 1px solid var(--rule);
   line-height: 1.6;
-  counter-increment: finding;
+  counter-increment: finding
 }
 
 .findings li:last-child {
-  border-bottom: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule)
 }
 
 .findings li::before {
@@ -739,119 +674,114 @@ a {
   border-radius: 50%;
   font-family: var(--heading);
   font-weight: 700;
-  color: var(--coral);
+  color: var(--coral)
 }
 
 .findings strong {
-  color: var(--green-dark);
+  color: var(--green-dark)
 }
 
-/* =====================================================================
-   Footer: one green strip of sources
-   ===================================================================== */
 .site-footer {
-  /* text lines up with the 1100px page column */
-  padding: 14px max(var(--side), calc((100% - 1100px) / 2 + var(--side)));
-  background: var(--green-dark);
-  font-size: 0.78rem;
-  line-height: 1.6;
-  color: color-mix(in srgb, var(--green-light) 75%, var(--green-dark));
+    padding: 24px;
+    background: var(--green-dark);
+    font-size: 0.78rem;
+    line-height: 1.7;
+    color: color-mix(in srgb, var(--green-light) 75%, var(--green-dark));
 }
 
-.site-footer h2 {
-  display: inline;
-  margin: 0 10px 0 0;
-  font-family: var(--body);
-  font-size: inherit;
-  font-weight: 600;
-  color: var(--plate);
+.site-footer .footer-title {
+    margin: 0 0 20px;
+    font-family: var(--body);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--plate);
 }
 
-.sources {
-  display: inline;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.site-footer .row {
+    justify-content: center;
 }
 
-.sources li {
-  display: inline;
+.site-footer h3 {
+    margin: 0 0 12px;
+    font-family: var(--heading);
+    font-size: 1.15rem;
+    color: var(--green-light);
 }
 
-.sources li+li::before {
-  content: "·";
-  margin: 0 8px;
+.site-footer .sources {
+    list-style: none;
+    padding: 0;
+}
+
+.site-footer .sources li {
+    display: block;
+    margin-bottom: 12px;
+    overflow-wrap: anywhere;
+}
+
+.site-footer .sources li + li::before {
+    content: none;
 }
 
 .site-footer a {
-  color: var(--green-light);
-  text-underline-offset: 2px;
+    color: var(--green-light);
+    text-underline-offset: 2px;
 }
 
 .site-footer a:hover {
-  color: var(--coral);
+    color: var(--coral);
 }
 
-/* =====================================================================
-   Smaller screens
-   ===================================================================== */
-@media (max-width: 900px) {
-  .pair {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .park-info-body {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .pair>div+div {
-    border-left: none;
-    border-top: 1px solid var(--rule);
-  }
+.site-footer .credit {
+    margin: 20px 0 0;
+    padding-top: 12px;
+    border-top: 1px solid rgba(214, 232, 200, 0.25);
+    font-size: 0.75rem;
 }
 
-@media (max-width: 720px) {
+@media (max-width:720px) {
   :root {
-    --gutter: 40px;
+    --gutter: 40px
   }
 
   .navbar {
-    gap: 16px;
+    gap: 16px
   }
 
   .navbar-brand {
-    font-size: 1.15rem;
+    font-size: 1.15rem
   }
 
   .navbar a {
-    font-size: 1rem;
+    font-size: 1rem
   }
 
   .marker {
-    left: calc(var(--gutter) / 2 - 15px);
+    left: calc(var(--gutter)/ 2 - 15px);
     width: 30px;
     height: 30px;
-    font-size: 1.1rem;
+    font-size: 1.1rem
   }
 
   .stats {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr))
   }
 
   .stat:nth-child(3) {
     padding-left: 0;
-    border-left: none;
+    border-left: none
   }
 
-  .stat:nth-child(n + 3) {
+  .stat:nth-child(n+3) {
     margin-top: 12px;
-    border-top: 1px solid var(--rule);
+    border-top: 1px solid var(--rule)
   }
 }
+
 .rank-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.95rem;
+  font-size: .95rem
 }
 
 .rank-table caption {
@@ -859,45 +789,41 @@ a {
   text-align: left;
   font-family: var(--heading);
   font-size: 1rem;
-  color: var(--green-dark);
+  color: var(--green-dark)
 }
 
 .rank-table th {
   padding: 7px 10px;
   border-bottom: 2px solid var(--green-dark);
   text-align: left;
-  font-size: 0.75rem;
+  font-size: .75rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--muted);
+  letter-spacing: .05em;
+  color: var(--muted)
 }
 
 .rank-table td {
   padding: 7px 10px;
-  border-bottom: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule)
 }
 
 .rank-table td:first-child {
   width: 3rem;
   font-family: var(--heading);
   font-weight: 700;
-  color: var(--coral);
+  color: var(--coral)
 }
 
-
-
-/* Radio buttons for the mosaic toggle (section 5) */
-.vega-bindings input[type="radio"] {
+.vega-bindings input[type=radio] {
   accent-color: var(--green);
   margin: 0 4px 0 12px;
-  vertical-align: -2px;
+  vertical-align: -2px
 }
 
 .vega-bindings label {
-  cursor: pointer;
+  cursor: pointer
 }
-
 
 .lookout-card {
   background-color: #dceef2;
@@ -906,35 +832,30 @@ a {
   overflow: hidden;
   box-sizing: border-box;
   width: 100%;
-  min-width: 0;
+  min-width: 0
 }
 
-.lookout-card .vega-embed,
-.lookout-card .vega-embed canvas,
-.lookout-card .vega-embed svg {
-  max-width: 100%;
+.lookout-card .vega-embed, .lookout-card .vega-embed canvas, .lookout-card .vega-embed svg {
+  max-width: 100%
 }
 
 .conclusion-end {
-    width: 100%;
-    height: 4px;
-    background-color: #E07A5F;
-    margin: 40px auto 0;
-    border-radius: 2px;
+  width: 100%;
+  height: 4px;
+  background-color: #e07a5f;
+  margin: 40px auto 0;
+  border-radius: 2px
 }
 
 #regions_map .vega-embed {
   display: block;
   width: 100%;
-  margin: 0;
+  margin: 0
 }
 
-#regions_map canvas,
-#regions_map svg,
-#rank_chart canvas,
-#rank_chart svg {
+#rank_chart canvas, #rank_chart svg, #regions_map canvas, #regions_map svg {
   display: block;
-  width: 100%;
+  width: 100%
 }
 
 #sec2 .pair {
@@ -942,54 +863,50 @@ a {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 1.5rem;
   border-top: 1px solid var(--rule);
-  align-items: start;
+  align-items: start
 }
 
-#sec2 .pair > * {
+#sec2 .pair>* {
   min-width: 0;
-  width: 100%;
+  width: 100%
 }
 
 #sec2 .park-info {
-  margin: 0;
+  margin: 0
 }
 
 #sec2 .park-info-body {
-  grid-template-columns: minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr)
 }
 
 #sec2 .park-info img {
-  aspect-ratio: 2 / 1;
+  aspect-ratio: 2/1
 }
 
-@media (max-width: 700px) {
+@media (max-width:700px) {
   #sec2 .pair {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr
   }
 }
 
-/* Keep both columns within the available width */
 #sec2 .pair {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 1.5rem;
   width: 100%;
-  box-sizing: border-box;
+  box-sizing: border-box
 }
 
-#sec2 .pair > #rank_chart,
-#sec2 .pair > #park_info {
+#sec2 .pair>#park_info, #sec2 .pair>#rank_chart {
   min-width: 0;
   max-width: 100%;
-  box-sizing: border-box;
+  box-sizing: border-box
 }
 
-/* Prevent card content from forcing the card wider */
-#sec2 .park-info,
-#sec2 .park-info-body {
+#sec2 .park-info, #sec2 .park-info-body {
   min-width: 0;
   max-width: 100%;
-  box-sizing: border-box;
+  box-sizing: border-box
 }
 
 #sec2 .park-info img {
@@ -998,131 +915,118 @@ a {
   max-width: 100%;
   height: auto;
   object-fit: cover;
-  aspect-ratio: 2 / 1;
+  aspect-ratio: 2/1
 }
 
-/* Allow long text to wrap */
-#sec2 .park-info p,
-#sec2 .park-info h3,
-#sec2 .park-info a {
-  overflow-wrap: anywhere;
+#sec2 .park-info a, #sec2 .park-info h3, #sec2 .park-info p {
+  overflow-wrap: anywhere
 }
 
-/* Stack the card below the chart on smaller screens */
-@media (max-width: 700px) {
+@media (max-width:700px) {
   #sec2 .pair {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr)
   }
 }
 
-/* Section 4: Selected park statistics */
 .park-stats {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 12px;
-    padding: 18px 12px;
-    background: var(--paper);
-    border-bottom: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  padding: 18px 12px;
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule)
 }
 
 .park-stats-verdict {
-    margin: 0;
-    padding-bottom: 12px;
-    font-family: var(--heading);
-    font-size: 1rem;
+  margin: 0;
+  padding-bottom: 12px;
+  font-family: var(--heading);
+  font-size: 1rem
 }
 
-/* Statistics row */
 .park-stats .park-info-stats {
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 10px;
-    margin: 0;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0
 }
 
-/* Individual statistic cards */
-.park-stats .park-info-stats > div {
-    min-width: 0;
-    padding: 10px 8px;
-    background: var(--paper);
-    border: 1px solid var(--rule);
-    border-top: 3px solid var(--muted);
-    border-radius: 8px;
+.park-stats .park-info-stats>div {
+  min-width: 0;
+  padding: 10px 8px;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-top: 3px solid var(--muted);
+  border-radius: 8px
 }
 
-/* Easy / moderate / hard accents */
-.park-stats .park-info-stats > .stat-easy {
-    border-top-color: #2a9d8f;
+.park-stats .park-info-stats>.stat-easy {
+  border-top-color: #2a9d8f
 }
 
-.park-stats .park-info-stats > .stat-moderate {
-    border-top-color: #e9c46a;
+.park-stats .park-info-stats>.stat-moderate {
+  border-top-color: #e9c46a
 }
 
-.park-stats .park-info-stats > .stat-hard {
-    border-top-color: #e76f51;
+.park-stats .park-info-stats>.stat-hard {
+  border-top-color: #e76f51
 }
 
-/* Statistic values */
 .park-stats .park-info-stats dd {
-    margin: 0 0 3px;
-    font-family: var(--heading);
-    font-size: 1.2rem;
-    font-weight: 600;
-    line-height: 1.2;
-    
+  margin: 0 0 3px;
+  font-family: var(--heading);
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.2
 }
 
-.park-stats .park-info-stats > div {
-    padding: 10px 5px;
+.park-stats .park-info-stats>div {
+  padding: 10px 5px
 }
 
-/* Labels */
 .park-stats .park-info-stats dt {
-    margin: 0 0 6px;
-    font-family: var(--body);
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--muted);
+  margin: 0 0 6px;
+  font-family: var(--body);
+  font-size: .8rem;
+  font-weight: 600;
+  color: var(--muted)
 }
 
 .park-stats .park-info-stats small {
-    font-family: var(--body);
-    font-size: 0.75rem;
-    font-weight: 400;
-    line-height: 1.45;
-    color: var(--muted);
-    font-style: italic;
+  font-family: var(--body);
+  font-size: .75rem;
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--muted);
+  font-style: italic
 }
 
-/* Match values to the chart palette */
 .park-stats .stat-easy dd {
-    color: #1f7a6f;
+  color: #1f7a6f
 }
 
 .park-stats .stat-moderate dd {
-    color: #9a7413;
+  color: #9a7413
 }
 
 .park-stats .stat-hard dd {
-    color: #c4492b;
+  color: #c4492b
 }
 
-/* Small screens */
-@media (max-width: 560px) {
-    .park-stats {
-        padding: 14px 12px;
-    }
+@media (max-width:560px) {
+  .park-stats {
+    padding: 14px 12px
+  }
 
-    .park-stats .park-info-stats {
-        gap: 6px;
-    }
+  .park-stats .park-info-stats {
+    gap: 6px
+  }
 
-    .park-stats .park-info-stats > div {
-        padding: 11px 8px;
-    }
+  .park-stats .park-info-stats>div {
+    padding: 11px 8px
+  }
 
-    .park-stats .park-info-stats dt {
-        font-size: 0.72rem;
-    }
+  .park-stats .park-info-stats dt {
+    font-size: .72rem
+  }
 }

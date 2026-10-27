@@ -20,6 +20,8 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
 
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -289,7 +291,8 @@
                 These visitors are not part of the 65.6 million domestic visits above.</p>
             <div id="intl_isotype" class="chart"></div>
             <br>
-            <p class="hint" style="margin-bottom: -12px; margin-top: 12px">Hover a circle for the exact number of visitors.</p>
+            <p class="hint" style="margin-bottom: -12px; margin-top: 12px">Hover a circle for the exact number of
+                visitors.</p>
             <div id="intl_map" class="chart"></div>
 
             <h3>For locals the park is the trip. For interstate visitors it's one stop</h3>
@@ -303,8 +306,6 @@
                 stands for. Hover a block for the details.</p>
 
             <div id="profile_mosaic" class="chart "></div>
-            <!-- <div id="profile_bars" class="chart d-flex justify-content-center align-items-center"></div> -->
-            <!-- <div id="profile_bars2" class="chart d-flex justify-content-center align-items-center"></div> -->
             <p class="hint">
                 Each block's size is the number of visits it stands for, 2024/25.
             </p>
@@ -400,7 +401,8 @@
                 satisfied. NSW visitors were a little happier than interstate visitors (90% against 85%).
                 Visitors aged 50 to 64 were the most satisfied (94%), and 18 to 34 year olds the least (85%),
                 though still a large majority.</p>
-            <p class="hint">The 89% benchmark shows how each age group's satisfaction compares with visitors overall.</p>
+            <p class="hint">The 89% benchmark shows how each age group's satisfaction compares with visitors overall.
+            </p>
             <div id="satisfaction_chart" class="chart"></div>
 
             <div class="takeaway">
@@ -447,25 +449,57 @@
 
     <!-- Footer: data sources -->
     <footer class="site-footer">
-        <h2>Sources</h2>
-        <ul class="sources">
-            <li><a
-                    href="https://www.environment.nsw.gov.au/topics/parks-reserves-and-protected-areas/park-management/npws-park-management/park-visitor-survey">NPWS
-                    Park Visitor Survey</a>
-                (<a
-                    href="https://www.environment.nsw.gov.au/sites/default/files/2026-04/NPWS_parks_visitation_survey_annual_report_fy24-25-optimised.pdf">2024/25
-                    report</a>)</li>
-            <li><a
-                    href="https://mapprod2.environment.nsw.gov.au/arcgis/rest/services/Assets/AMS_Assets/FeatureServer/14">NPWS
-                    lookouts</a></li>
-            <li><a
-                    href="https://mapprod2.environment.nsw.gov.au/arcgis/rest/services/Assets/AMS_Assets/FeatureServer/34">NPWS
-                    walking tracks</a></li>
-            <li><a href="https://mapprod3.environment.nsw.gov.au/arcgis/rest/services/EDP/Estate/MapServer/0">NPWS park
-                    boundaries</a></li>
-            <li><a href="https://data.nsw.gov.au/data/dataset/npws-branches">NPWS regions</a></li>
-            <li><a href="https://www.naturalearthdata.com/">Natural Earth</a></li>
-        </ul>
+        <div class="container-fluid px-0 ">
+            <h2 class="footer-title">Sources</h2>
+
+            <div class="row g-3 justify-content-between">
+                <div class="col-12 col-md-3">
+                    <h3>Data</h3>
+                    <ul class="sources">
+                        <li><a
+                                href="https://www.environment.nsw.gov.au/sites/default/files/2026-04/NPWS_parks_visitation_survey_annual_report_fy24-25-optimised.pdf">NSW
+                                Parks Visitation Survey: FY24-25 Annual Report</a></li>
+                        <li><a
+                                href="https://www.environment.nsw.gov.au/topics/parks-reserves-and-protected-areas/park-management/npws-park-management/park-visitor-survey">NPWS
+                                Park Visitor Survey</a></li>
+                        <li><a href="https://www.tra.gov.au/">Tourism Research Australia</a></li>
+                        <li><a
+                                href="https://mapprod2.environment.nsw.gov.au/arcgis/rest/services/Assets/AMS_Assets/FeatureServer/14">NPWS
+                                Asset Management System – Lookouts</a></li>
+                        <li><a
+                                href="https://mapprod2.environment.nsw.gov.au/arcgis/rest/services/Assets/AMS_Assets/FeatureServer/34">NPWS
+                                Asset Management System – Track Sections</a></li>
+                        <li><a
+                                href="https://www.nationalparks.nsw.gov.au/safety/bushwalking-safety/australian-walking-track-grading-system">Australian
+                                Walking Track Grading System</a></li>
+                        <li><a
+                                href="https://mapprod3.environment.nsw.gov.au/arcgis/rest/services/EDP/Estate/MapServer/0">NPWS
+                                Estate – Park Boundaries</a></li>
+                        <li><a href="https://data.nsw.gov.au/data/dataset/npws-branches">Data.NSW – NPWS Branches</a>
+                        </li>
+                        <li><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0 Licence</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-3">
+                    <h3>Maps</h3>
+                    <ul class="sources">
+                        <li><a
+                                href="https://www.naturalearthdata.com/downloads/50m-cultural-vectors/50m-admin-1-states-provinces/">Natural
+                                Earth – Admin 1 States and Provinces</a></li>
+                        <li><a href="https://www.naturalearthdata.com/">Natural Earth – World Countries</a></li>
+                        <li><a href="https://github.com/vega/vega-datasets">Vega Datasets – world-110m.json</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-3">
+                    <h3>Photos and Design</h3>
+                    <ul class="sources">
+                        <li><a href="https://commons.wikimedia.org/">Wikimedia Commons</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <script src="main.js"></script>
