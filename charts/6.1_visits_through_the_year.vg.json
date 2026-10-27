@@ -5,7 +5,7 @@
     "subtitle": "Visits each month, where 100 is an average month (2024/25)"
   },
   "width": "container",
-  "height": 260,
+  "height": 300,
   "data": {
     "url": "data/6.1_visits_through_the_year/monthly_index_2024_25_CHECK.csv"
   },
@@ -28,7 +28,7 @@
         "y": {
           "field": "visit_index",
           "type": "quantitative",
-          "title": "Visit index (100 = average month)",
+          "title": "Visit index",
           "scale": {
             "domain": [0, 120]
           }
@@ -43,7 +43,7 @@
           },
           {
             "field": "visit_index",
-            "title": "Index (100 = average)"
+            "title": "Visit index"
           }
         ]
       }
@@ -76,7 +76,6 @@
         "dx": -22,
         "dy": -4,
         "fontSize": 11,
-        "fontWeight": "bold",
         "color": "#1f3d17"
       },
       "encoding": {
