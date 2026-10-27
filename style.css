@@ -975,7 +975,7 @@ a {
 .park-stats .park-info-stats dd {
   margin: 0 0 3px;
   font-family: var(--heading);
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   font-weight: 600;
   line-height: 1.2
 }
