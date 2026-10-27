@@ -43,7 +43,7 @@ LAYOUT = {
         "international_visitors_2024_25.csv",
         "world-110m.json",
     ],
-    "6.1_visits_through_the_year": ["monthly_index_2024_25_CHECK.csv"],
+    "6.1_visits_through_the_year": ["monthly_index_2024_25.csv"],
     "6.2_length_of_visit": ["visit_duration_2024_25.csv"],
     "7_top_10_activities": ["top10_activities_2024_25.csv"],
     "7.2_visitor_satisfaction": ["satisfaction_2024_25.csv"],
