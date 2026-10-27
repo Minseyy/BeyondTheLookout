@@ -1,14 +1,14 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Where international park visitors come from",
+    "text": "Half of the top international park visitors come from Asia",
     "subtitle": [
-      "Top 10 countries of international visitors to NSW national parks, 2024/25. Number = rank.",
-      "Circle area = number of visitors. Hover a circle for the exact number."
+      "Top 10 countries of international visitors to NSW national parks, 2024/25. Number in circle = rank.",
+      "Circle area = number of visitors; colour = world region. Hover a circle for the exact number."
     ]
   },
   "width": "container",
-  "height": 330,
+  "height": 360,
   "projection": {
     "type": "equalEarth",
     "rotate": [
@@ -80,8 +80,7 @@
         {
           "mark": {
             "type": "circle",
-            "color": "#e76f51",
-            "opacity": 0.8,
+            "opacity": 0.85,
             "stroke": "white",
             "strokeWidth": 1
           },
@@ -115,11 +114,44 @@
                 "title": "Country"
               },
               {
+                "field": "region",
+                "title": "Region"
+              },
+              {
                 "field": "visitors",
                 "title": "Visitors to NSW parks",
                 "format": ","
               }
-            ]
+            ],
+            "color": {
+              "field": "region",
+              "type": "nominal",
+              "title": "Share of the top 10's visitors",
+              "scale": {
+                "domain": [
+                  "Asia: 52% (1.03M)",
+                  "Europe: 26% (0.52M)",
+                  "North America: 15% (0.30M)",
+                  "New Zealand: 6% (0.12M)"
+                ],
+                "range": [
+                  "#c4553a",
+                  "#2a6f97",
+                  "#7a5c99",
+                  "#4f7d45"
+                ]
+              },
+              "legend": {
+                "orient": "bottom",
+                "direction": "horizontal",
+                "columns": 2,
+                "labelLimit": 0,
+                "symbolType": "circle",
+                "symbolSize": 120,
+                "labelFontSize": 11,
+                "titleFontSize": 11
+              }
+            }
           }
         },
         {
@@ -151,6 +183,10 @@
               {
                 "field": "country",
                 "title": "Country"
+              },
+              {
+                "field": "region",
+                "title": "Region"
               },
               {
                 "field": "visitors",

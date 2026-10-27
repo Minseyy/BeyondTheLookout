@@ -1,11 +1,11 @@
-rank,country,visitors,lon,lat,label_pos
-1,China,362271,104.2,35.9,south
-2,South Korea,346526,127.8,36.5,north
-3,United States,303988,-98.6,39.8,east
-4,United Kingdom,272422,-2.0,53.5,west
-5,Other Europe,141565,25.0,44.0,south
-6,New Zealand,122580,172.5,-41.5,east
-7,Japan,120713,138.3,36.2,east
-8,India,109775,78.9,22.6,west
-9,Germany,102498,10.4,51.2,east
-10,Singapore,89075,103.8,1.35,east
+rank,country,visitors,lon,lat,label_pos,region
+1,China,362271,104.2,35.9,south,Asia: 52% (1.03M)
+2,South Korea,346526,127.8,36.5,north,Asia: 52% (1.03M)
+3,United States,303988,-98.6,39.8,east,North America: 15% (0.30M)
+4,United Kingdom,272422,-2.0,53.5,west,Europe: 26% (0.52M)
+5,Other Europe,141565,25.0,44.0,south,Europe: 26% (0.52M)
+6,New Zealand,122580,172.5,-41.5,east,New Zealand: 6% (0.12M)
+7,Japan,120713,138.3,36.2,east,Asia: 52% (1.03M)
+8,India,109775,78.9,22.6,west,Asia: 52% (1.03M)
+9,Germany,102498,10.4,51.2,east,Europe: 26% (0.52M)
+10,Singapore,89075,103.8,1.35,east,Asia: 52% (1.03M)
